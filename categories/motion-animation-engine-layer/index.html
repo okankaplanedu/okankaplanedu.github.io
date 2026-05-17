@@ -126,31 +126,51 @@ fetch("https://okankaplanedu.github.io/cat-header-container.html")
 <div class="offcanvas offcanvas-start" id="mL"><div class="offcanvas-body"><iframe src="https://okankaplanedu.github.io/archive.html" style="width:100%;height:100%;border:0;"></iframe></div></div>
 <div class="offcanvas offcanvas-end" id="mR"><div class="offcanvas-body"><iframe src="https://okankaplanedu.github.io/toc.html" style="width:100%;height:100%;border:0;"></iframe></div></div>
 
-<!-- ─── Main Content ──────────────────────────────── -->
 <main role="main">
+   <div id="main1"></div> 
   <article itemscope itemtype="https://schema.org/Article">
  
     <section itemprop="articleBody">
       <h1>MOTION + ANIMATION ENGINE LAYER (FULL ATLAS EDITION)</h1><p>This article presents a complete architecture of the Motion + Animation Engine Layer in modern web development. It covers timeline-based animation systems, physics-driven motion engines, scroll and viewport interactions, GPU/WebGL animation pipelines, procedural generative motion, and real-time interaction systems. The goal is to define motion as a full simulation layer inside the browser, not just visual decoration.</p><p><br></p><h2>1. Core Motion Engines</h2><p>Core motion engines provide timeline-based, keyframe-driven, and sequencing systems for UI and web animations. These engines define how elements move over time.</p><h3>Timeline &amp; Animation Engines</h3><p>GSAP (timeline + sequencing engine)</p><p> Anime.js (keyframe animation engine)</p><p> Motion One (Web Animations API wrapper)</p><p> Popmotion (physics + tween engine)</p><p> Velocity.js (high-performance DOM animation engine)</p><p> Framer Motion (React motion state engine)</p><p> Mo.js (motion graphics toolkit)</p><p> Web Animations API (native browser motion engine)</p><h2>2. Motion State + Declarative Animation Systems</h2><p>These systems bind application state directly to animation behavior, enabling reactive motion pipelines.</p><h3>State-Driven Engines</h3><p>Framer Motion (state-driven animation graph)</p><p> React Spring (spring physics animation)</p><p> AutoAnimate (zero-config transitions)</p><p> Motion One (declarative bindings)</p><p> XState + animation integration</p><p> Vue Transition system</p><p> Svelte transitions engine</p><p> Angular Animations system</p><h2>3. Scroll + Viewport Motion Systems</h2><p>Scroll-based systems control animation progress based on user viewport interaction and scroll position.</p><h3>Scroll Engines</h3><p>ScrollTrigger (GSAP plugin)</p><p> ScrollMagic (scroll timeline controller)</p><p> ScrollReveal (viewport trigger system)</p><p> Locomotive Scroll (smooth scrolling engine)</p><p> Lenis (modern scroll system)</p><p> Rellax.js (parallax engine)</p><p> Jarallax (background parallax system)</p><p> fullPage.js (section scroll engine)</p><h2>4. Motion Graphics + Production Runtime</h2><p>These tools are used for production-grade motion graphics and design-to-code animation workflows.</p><h3>Graphics Engines</h3><p>Lottie Web (After Effects JSON runtime)</p><p> Rive Runtime (interactive animation state machine)</p><p> Mo.js (motion graphics toolkit)</p><p> Haiku Animator (component animation system)</p><p> Adobe Bodymovin (Lottie exporter engine)</p><p> SVG.js animation system</p><p> GSAP MorphSVG plugin</p><p> Motion Canvas (programmatic motion graphics)</p><h2>5. Physics-Based Motion Systems</h2><p>Physics engines simulate real-world behavior such as gravity, inertia, collisions, and elasticity.</p><h3>Physics Engines</h3><p>Popmotion (spring + inertia physics)</p><p> Matter.js (2D physics engine)</p><p> Cannon-es (3D rigid body physics)</p><p> Ammo.js (Bullet physics port)</p><p> Rapier.js (WASM physics engine)</p><p> Planck.js (Box2D port)</p><p> Oimo.js (light physics engine)</p><p> Verlet.js (soft body simulation)</p><h2>6. WebGL / GPU Motion Engines</h2><p>GPU-based systems enable high-performance animation using shaders and parallel computation.</p><h3>GPU Engines</h3><p>Three.js animation system</p><p> Babylon.js animation engine</p><p> OGL (WebGL abstraction layer)</p><p> Regl (functional GPU motion layer)</p><p> PixiJS (2D GPU animation engine)</p><p> GLSL shader pipelines</p><p> WebGL vertex animation systems</p><p> WebGPU compute shaders</p><h2>7. Procedural + Generative Motion Systems</h2><p>These systems generate motion algorithmically using math, noise functions, and procedural rules.</p><h3>Procedural Engines</h3><p>p5.js (creative coding motion engine)</p><p> Processing.js</p><p> Canvas API procedural systems</p><p> Noise.js (Perlin noise motion)</p><p> Simplex noise systems</p><p> WebGL procedural shaders</p><p> Math-based animation functions</p><p> Houdini-style CSS motion concepts</p><h2>8. Game Engine Motion Systems</h2><p>Game engines provide real-time interactive motion systems for simulation and gameplay environments.</p><h3>Game Engines</h3><p>PlayCanvas Engine</p><p> Babylon.js (game-grade motion system)</p><p> Three.js animation system</p><p> Phaser (2D game engine)</p><p> Godot Web export runtime</p><p> Unity WebGL runtime (concept layer)</p><p> Cocos Creator engine</p><h2>9. UI Transition + Layout Motion Systems</h2><p>These systems handle layout-aware animation, transitions, and UI structure changes.</p><h3>Transition Systems</h3><p>FLIP animation technique</p><p> AutoAnimate</p><p> Framer layout animations</p><p> GSAP Flip plugin</p><p> React Transition Group</p><p> Vue Transition system</p><p> Svelte transition engine</p><p> Layout shift animation systems (CLS-safe motion)</p><h2>10. Audio-Reactive Motion Systems</h2><p>Audio-driven systems convert sound signals into visual motion and animation behavior.</p><h3>Audio Engines</h3><p>Web Audio API analyser</p><p> Tone.js motion sync engine</p><p> Howler.js + animation sync</p><p> Three.js audio visualizers</p><p> PixiJS audio shaders</p><p> P5.js sound reactive motion</p><p> FFT-based motion systems</p><p> Beat detection animation engines</p><h2>11. Interaction Motion Systems (Gesture + Input)</h2><p>These systems define how user interactions control animation behavior.</p><h3>Interaction Engines</h3><p>Hammer.js (gesture engine)</p><p> Pointer Events API</p><p> Touch gesture systems</p><p> Drag &amp; drop motion systems</p><p> React DnD animation layer</p><p> interact.js (drag physics engine)</p><p> Moveable.js (UI manipulation engine)</p><p> Framer drag physics system</p><h2>12. SVG + Vector Motion Systems</h2><p>Vector-based animation systems operate on paths, shapes, and scalable graphics.</p><h3>SVG Engines</h3><p>SVG SMIL animations</p><p> GSAP SVG plugin</p><p> Snap.svg animation engine</p><p> Vivus.js (stroke animation engine)</p><p> SVG.js animation system</p><p> Anime.js SVG morphing</p><p> GSAP MorphSVG plugin</p><p> Path animation systems</p><h2>FINAL MOTION ARCHITECTURE MODEL</h2><p>The Motion + Animation Layer is structured into four fundamental engines:</p><h3>1. TIME ENGINE</h3><p>(GSAP, Anime.js, Motion One)</p><h3>2. PHYSICS ENGINE</h3><p>(Popmotion, Rapier, Matter.js)</p><h3>3. RENDER ENGINE</h3><p>(Three.js, PixiJS, WebGL, WebGPU)</p><h3>4. INTERACTION ENGINE</h3><p>(Gesture, Scroll, UI State Systems)</p><p><br></p><h2>FINAL REALITY SHIFT</h2><p>Motion systems are no longer just animation tools.</p><p>They represent a:</p><p><strong>“Browser Motion Operating System”</strong></p><p>A full simulation layer combining time, physics, rendering, and interaction into one unified runtime.</p>
     </section>
 
-    <!-- YouTube Video (conditional) -->
-    
-  <!-- YouTube Playlist Link -->
   <div class="yt-link-container">
     <a href="https://www.youtube.com/playlist?list=PLeqxb0I-hlSUo6lySGW6cD-STUyl9-QHK" target="_blank" rel="noopener noreferrer" class="yt-play-button">
       <span class="play-icon">▶</span> View Playlist
     </a>
   </div>
-
-
-    <!-- Audio Resource (conditional) -->
-    
-
-  </article>
+ </article>
+   <div id="main2"></div> 
+<div id="main3"></div> 
 </main>
 
-<!-- ─── Footer ───────────────────────────────────── -->
+
+
+ 
+ 
+<script>
+fetch("https://okankaplanedu.github.io/main1.html")
+  .then(response => response.text())
+  .then(html => {
+    document.getElementById("main1").innerHTML = html;
+  })
+  .catch(err => console.error("main1", err));
+
+fetch("https://okankaplanedu.github.io/main2.html")
+  .then(response => response.text())
+  .then(html => {
+    document.getElementById("main2").innerHTML = html;
+  })
+  .catch(err => console.error("main2", err));
+
+fetch("https://okankaplanedu.github.io/main3.html")
+  .then(response => response.text())
+  .then(html => {
+    document.getElementById("main3").innerHTML = html;
+  })
+  .catch(err => console.error("main3", err));
+</script>
+  
 <div id="footer-wrap" role="contentinfo"></div>
 
 <!-- ─── Scripts ──────────────────────────────────── -->
