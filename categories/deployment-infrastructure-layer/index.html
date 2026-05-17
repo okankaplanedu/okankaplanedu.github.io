@@ -125,31 +125,53 @@ fetch("https://okankaplanedu.github.io/cat-header-container.html")
 <div class="offcanvas offcanvas-start" id="mL"><div class="offcanvas-body"><iframe src="https://okankaplanedu.github.io/archive.html" style="width:100%;height:100%;border:0;"></iframe></div></div>
 <div class="offcanvas offcanvas-end" id="mR"><div class="offcanvas-body"><iframe src="https://okankaplanedu.github.io/toc.html" style="width:100%;height:100%;border:0;"></iframe></div></div>
 
-<!-- ─── Main Content ──────────────────────────────── -->
 <main role="main">
+     <div id="main1"></div> 
   <article itemscope itemtype="https://schema.org/Article">
  
     <section itemprop="articleBody">
       <h1>DEPLOYMENT + INFRASTRUCTURE LAYER</h1><p>The Deployment + Infrastructure Layer represents the transition point where software stops being a theoretical system and becomes a living production ecosystem. At this level, all previous architectural, cognitive, and intelligence layers are operationalized into real-world distributed systems that run continuously, scale dynamically, and evolve in production environments.</p><p><br></p><h2>CI/CD Pipelines (Continuous Delivery Engine)</h2><p>This layer automates the lifecycle of software from code to production through continuous integration and deployment pipelines.</p><p>Automation platforms like github actions enable event-driven workflows, while systems such as gitlab ci and jenkins orchestrate multi-stage builds and deployments. Tools like CircleCI and vercel further streamline modern deployment pipelines.</p><p>The core model is: code → build → test → deploy → repeat.</p><p><br></p><h2>Cloud Architecture Layer</h2><p>This layer defines how systems live and operate in distributed cloud environments instead of single machines.</p><p>The aws sdk for javascript enables full cloud orchestration, while platforms like Vercel and Google Cloud Functions provide scalable runtime environments. Azure SDK and Kubernetes client libraries extend control over distributed infrastructure.</p><p>The principle is: software does not live on a server—it lives in an ecosystem.</p><p><br></p><h2>Edge Computing Systems</h2><p>This layer moves computation closer to the user to reduce latency and improve responsiveness.</p><p>Platforms like cloudflare workers and vercel edge functions allow JavaScript execution at the network edge. Deno Deploy and Fastly Compute@Edge further extend this model into globally distributed runtimes.</p><p>The idea is: computation should happen near the user, not in distant servers.</p><p><br></p><h2>Serverless Deployment Models</h2><p>This layer abstracts server management entirely, focusing on function-based execution.</p><p>Systems like aws lambda, Netlify Functions, Firebase Cloud Functions, and Azure Functions allow code to run only when needed, scaling automatically without infrastructure management.</p><p>The principle is: servers are no longer managed—they are abstracted.</p><p><br></p><h2>Infrastructure-as-Code Thinking (IaC)</h2><p>This layer treats infrastructure as programmable logic rather than manual configuration.</p><p>Tools like terraform and aws cdk allow infrastructure definition using code. pulumi extends this concept by using JavaScript and TypeScript directly for infrastructure programming.</p><p>The idea is: infrastructure is software.</p><p><br></p><h2>Deployment Lifecycle Orchestration</h2><p>This layer manages the runtime lifecycle of systems in production environments.</p><p>Containerization tools like Docker and orchestration platforms like kubernetes manage distributed workloads. Tools like pm2 handle Node.js process lifecycles, while blue-green and canary deployment strategies reduce production risk.</p><p>The principle is: systems are not deployed once—they are continuously orchestrated.</p><p><br></p><h2>Detail Note</h2><p>These layers form a complete production lifecycle:</p><p>CI/CD pipelines automate delivery → cloud infrastructure hosts execution → edge systems reduce latency → serverless abstracts servers → IaC defines infrastructure as code → orchestration systems manage runtime behavior.</p><p>Together, they transform software from static deployments into continuously running ecosystems.</p><p><br></p><h2>Conclusion</h2><p>The Deployment + Infrastructure Layer is where all architectural concepts become real systems.</p><p>Instead of asking:</p><ul><li>“How do I deploy this application?”</li></ul><p>You begin asking:</p><ul><li>“How does this system live, scale, and evolve in production?”</li></ul><p>This shift completes the transformation from software as a product into software as a living distributed ecosystem.</p>
     </section>
 
-    <!-- YouTube Video (conditional) -->
-    
-  <!-- YouTube Playlist Link -->
   <div class="yt-link-container">
     <a href="https://www.youtube.com/playlist?list=PLeqxb0I-hlSWXP1639AowunfJ9y5V5aQc" target="_blank" rel="noopener noreferrer" class="yt-play-button">
       <span class="play-icon">▶</span> View Playlist
     </a>
   </div>
 
-
-    <!-- Audio Resource (conditional) -->
-    
-
   </article>
+   <div id="main2"></div> 
+<div id="main3"></div> 
 </main>
 
-<!-- ─── Footer ───────────────────────────────────── -->
+
+
+ 
+ 
+<script>
+fetch("https://okankaplanedu.github.io/main1.html")
+  .then(response => response.text())
+  .then(html => {
+    document.getElementById("main1").innerHTML = html;
+  })
+  .catch(err => console.error("main1", err));
+
+fetch("https://okankaplanedu.github.io/main2.html")
+  .then(response => response.text())
+  .then(html => {
+    document.getElementById("main2").innerHTML = html;
+  })
+  .catch(err => console.error("main2", err));
+
+fetch("https://okankaplanedu.github.io/main3.html")
+  .then(response => response.text())
+  .then(html => {
+    document.getElementById("main3").innerHTML = html;
+  })
+  .catch(err => console.error("main3", err));
+</script>
+
+
 <div id="footer-wrap" role="contentinfo"></div>
 
 <!-- ─── Scripts ──────────────────────────────────── -->
