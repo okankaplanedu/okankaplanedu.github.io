@@ -126,8 +126,9 @@ fetch("https://okankaplanedu.github.io/cat-header-container.html")
 <div class="offcanvas offcanvas-start" id="mL"><div class="offcanvas-body"><iframe src="https://okankaplanedu.github.io/archive.html" style="width:100%;height:100%;border:0;"></iframe></div></div>
 <div class="offcanvas offcanvas-end" id="mR"><div class="offcanvas-body"><iframe src="https://okankaplanedu.github.io/toc.html" style="width:100%;height:100%;border:0;"></iframe></div></div>
 
-<!-- ─── Main Content ──────────────────────────────── -->
+
 <main role="main">
+   <div id="main1"></div> 
   <article itemscope itemtype="https://schema.org/Article">
 
  
@@ -135,23 +136,45 @@ fetch("https://okankaplanedu.github.io/cat-header-container.html")
       <h1>DATA VISUALIZATION ENGINE LAYER (FULL ATLAS EDITION)</h1><p>This article presents a complete architecture of the Data Visualization Engine Layer in modern frontend systems. It covers charting libraries, declarative visualization grammars, GPU-based rendering engines, geospatial mapping systems, real-time streaming dashboards, and scientific visualization tools. The goal is to define how raw data transforms into interactive visual intelligence across multiple rendering layers.</p><p><br></p><h2>1. High-Level Charting Systems</h2><p>High-level charting systems are used for dashboards, business analytics, and standard UI-based data visualization. They abstract complexity into ready-to-use chart components.</p><h3>Charting Libraries</h3><p>Chart.js</p><p> ApexCharts</p><p> Highcharts</p><p> Google Charts</p><p> ZingChart</p><p> Chartist.js</p><p> Billboard.js</p><p> Toast UI Chart</p><p> CanvasJS</p><p> uPlot</p><h2>2. Declarative Visualization Engines (JSON → Visual Pipeline)</h2><p>These systems define visualization through structured data models rather than manual rendering logic.</p><h3>Declarative Engines</h3><p>Vega</p><p> Vega-Lite</p><p> Observable Plot</p><p> Plotly.js (declarative mode)</p><p> Apache ECharts</p><p> G2 / AntV G2Plot</p><p> D3.js (hybrid model)</p><p> Visx (React primitives)</p><h2>3. Low-Level Graph / Render Engines</h2><p>This layer provides direct control over rendering pipelines, including Canvas, SVG, and GPU-based rendering.</p><h3>Core Engines</h3><p>D3.js (data binding core)</p><p> PixiJS (2D GPU rendering)</p><p> Three.js (3D rendering engine)</p><p> Regl (WebGL abstraction layer)</p><p> Babylon.js (3D rendering pipeline)</p><p> WebGL API (GPU core layer)</p><p> WebGPU API (next-gen rendering engine)</p><p> Paper.js (vector graphics engine)</p><p> Two.js (2D abstraction layer)</p><h2>4. 3D / Scientific / Volumetric Visualization</h2><p>This layer handles advanced spatial data, simulations, and scientific rendering systems.</p><h3>3D Engines</h3><p>Three.js</p><p> Babylon.js</p><p> CesiumJS</p><p> Deck.gl</p><p> Potree</p><p> X3DOM</p><p> vtk.js</p><p> PlayCanvas</p><p> A-Frame</p><h2>5. Geo-Spatial + Map Visualization Engines</h2><p>These systems visualize geographic, spatial, and geolocation-based datasets.</p><h3>Mapping Engines</h3><p>Leaflet</p><p> Mapbox GL JS</p><p> OpenLayers</p><p> Google Maps JavaScript API</p><p> CesiumJS</p><p> Turf.js</p><p> H3-js</p><p> Kepler.gl</p><p> Deck.gl</p><h2>6. Real-Time + Streaming Visualization Systems</h2><p>Real-time systems handle continuous data streams and live dashboards.</p><h3>Streaming Engines</h3><p>uPlot</p><p> Smoothie Charts</p><p> Epoch</p><p> Chart.js streaming plugins</p><p> Highcharts streaming modules</p><p> RxJS visualization bindings</p><p> WebSocket-based pipelines</p><p> Observable real-time notebooks</p><h2>7. Force / Graph / Network Visualization</h2><p>This layer visualizes relationships, networks, and connected data structures.</p><h3>Graph Engines</h3><p>Sigma.js</p><p> Cytoscape.js</p><p> Vis.js</p><p> KeyLines</p><p> D3-force</p><p> ForceGraph.js</p><p> Gephi Toolkit</p><p> Neo4j Bloom</p><h2>8. GPU / Shader / Compute Visualization Layer</h2><p>This layer uses GPU acceleration for high-performance visual computation.</p><h3>GPU Engines</h3><p>WebGL API</p><p> WebGPU API</p><p> Regl</p><p> Three.js shaders</p><p> Babylon.js materials system</p><p> GLSL pipelines</p><p> WGSL compute shaders</p><p> GPU.js</p><p> GPGPU.js</p><h2>9. Scientific / Mathematical Visualization</h2><p>These tools focus on math, engineering, and scientific data representation.</p><h3>Scientific Engines</h3><p>Plotly.js</p><p> MathBox.js</p><p> JSXGraph</p><p> Desmos API</p><p> GeoGebra</p><p> vtk.js</p><p> SciChart</p><p> NGL Viewer</p><h2>10. Media + Data Fusion Visualization</h2><p>This layer merges multimedia with data-driven visual systems.</p><h3>Media Engines</h3><p>Three.js video textures</p><p> WebGL video shaders</p><p> PixiJS media rendering</p><p> Lottie data-driven animations</p><p> Mapbox video overlays</p><p> Canvas video compositing</p><p> WebRTC overlays</p><p> Web Audio visualizers</p><h2>11. Canvas Orchestration Engines</h2><p>These systems manage multi-layer canvas rendering and scene graphs.</p><h3>Canvas Engines</h3><p>Konva.js</p><p> Fabric.js</p><p> Paper.js</p><p> P5.js</p><p> Two.js</p><p> ZRender</p><p> Skia Canvas</p><p> OffscreenCanvas API</p><h2>12. Data Exploration / Notebook Visualization</h2><p>These systems combine computation, exploration, and visualization in interactive environments.</p><h3>Notebook Systems</h3><p>ObservableHQ</p><p> Jupyter Notebook (JS kernels)</p><p> Vega Editor</p><p> Plotly Dash</p><p> Streamlit (JS layer)</p><p> Binder systems</p><p> Reactive Observable graphs</p><h2>FINAL REALITY MODEL</h2><p>Data Visualization Architecture operates in three core layers:</p><h3>1. PRESENTATION LAYER</h3><p>(charting libraries like Chart.js, ApexCharts, Highcharts)</p><h3>2. DECLARATIVE LAYER</h3><p>(Vega, ECharts, Plotly, Observable)</p><h3>3. GPU + SIMULATION LAYER</h3><p>(Three.js, WebGPU, Deck.gl, vtk.js)</p>
     </section>
 
-    <!-- YouTube Video (conditional) -->
-    
-  <!-- YouTube Playlist Link -->
   <div class="yt-link-container">
     <a href="https://www.youtube.com/playlist?list=PLeqxb0I-hlSU6IAv0KEQaH-lbx3kUZK9p" target="_blank" rel="noopener noreferrer" class="yt-play-button">
       <span class="play-icon">▶</span> View Playlist
     </a>
   </div>
 
-
-    <!-- Audio Resource (conditional) -->
-    
-
   </article>
+ <div id="main2"></div> 
+<div id="main3"></div> 
+  
 </main>
 
-<!-- ─── Footer ───────────────────────────────────── -->
+
+
+ 
+ 
+<script>
+fetch("https://okankaplanedu.github.io/main1.html")
+  .then(response => response.text())
+  .then(html => {
+    document.getElementById("main1").innerHTML = html;
+  })
+  .catch(err => console.error("main1", err));
+
+fetch("https://okankaplanedu.github.io/main2.html")
+  .then(response => response.text())
+  .then(html => {
+    document.getElementById("main2").innerHTML = html;
+  })
+  .catch(err => console.error("main2", err));
+
+fetch("https://okankaplanedu.github.io/main3.html")
+  .then(response => response.text())
+  .then(html => {
+    document.getElementById("main3").innerHTML = html;
+  })
+  .catch(err => console.error("main3", err));
+</script>
+  
 <div id="footer-wrap" role="contentinfo"></div>
 
 <!-- ─── Scripts ──────────────────────────────────── -->
