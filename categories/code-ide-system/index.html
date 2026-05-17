@@ -126,31 +126,53 @@ fetch("https://okankaplanedu.github.io/cat-header-container.html")
 <div class="offcanvas offcanvas-start" id="mL"><div class="offcanvas-body"><iframe src="https://okankaplanedu.github.io/archive.html" style="width:100%;height:100%;border:0;"></iframe></div></div>
 <div class="offcanvas offcanvas-end" id="mR"><div class="offcanvas-body"><iframe src="https://okankaplanedu.github.io/toc.html" style="width:100%;height:100%;border:0;"></iframe></div></div>
 
-<!-- ─── Main Content ──────────────────────────────── -->
+
 <main role="main">
+   <div id="main1"></div> 
   <article itemscope itemtype="https://schema.org/Article">
  
     <section itemprop="articleBody">
       <h1>Code + IDE System Layer (Browser IDE Architecture)</h1><p>This article explains the full architecture of modern browser-based IDE systems. From core text editing engines to cloud execution environments, sandboxed runtimes, and real-time collaboration layers, this guide breaks down how a browser becomes a complete software development environment. It is designed for developers who want to understand how tools like VS Code Web, StackBlitz, and Replit actually work under the hood.</p><h2>1. Core Editor Engine Layer (Text + Syntax Core)</h2><p>The core editor layer is responsible for handling structured text input, syntax highlighting, and code manipulation. It is the foundation of every IDE system.</p><h3>Main Editor Engines</h3><ul><li><strong>Monaco Editor</strong> – The core engine behind Visual Studio Code.</li><li><strong>CodeMirror</strong> – Lightweight and flexible syntax editor.</li><li><strong>Ace Editor</strong> – High-performance classic browser editor.</li></ul><h3>Conceptual Role</h3><p>This layer treats code as structured, programmable text and provides the base editing experience.</p><p><br></p><h2>2. Language Intelligence Layer (LSP System)</h2><p>This layer transforms a basic editor into an intelligent development environment.</p><h3>Core Components</h3><ul><li><strong>Language Server Protocol (LSP)</strong> – Connects editor to language intelligence services.</li><li>Syntax highlighting engines (Tree-sitter parsing systems)</li><li>Autocomplete and IntelliSense logic</li><li>Error diagnostics and linting engines</li><li>Refactoring systems (rename, extract, optimize)</li></ul><h3>Function</h3><p>This layer turns the IDE into a live coding assistant with contextual understanding of the code.</p><p><br></p><h2>3. Browser Runtime Execution Layer (Virtual Machine)</h2><p>This layer enables code execution directly inside the browser environment.</p><h3>Key Technologies</h3><ul><li><strong>StackBlitz WebContainers</strong> – Full Node.js runtime in the browser using WebAssembly</li><li>WebAssembly (WASM execution engine)</li><li>Sandboxed process simulation</li><li>Virtual filesystem (in-memory OS layer)</li><li>Dependency resolution systems (npm-like behavior)</li></ul><h3>Function</h3><p>It creates a “local development environment inside the browser.”</p><p><br></p><h2>4. Cloud IDE Execution Layer</h2><p>This layer enables remote code execution on cloud infrastructure.</p><h3>Examples</h3><ul><li><strong>Replit</strong> – Cloud-based collaborative IDE</li><li>Docker-based remote execution systems</li><li>WebSocket-based terminal streaming</li><li>Persistent cloud workspaces</li><li>Multi-user development environments</li></ul><h3>Function</h3><p>Acts as a cloud computer where code runs remotely but is controlled from the browser.</p><p><br></p><h2>5. Sandbox Execution Layer (Isolation System)</h2><p>This layer ensures security and execution isolation for untrusted code.</p><h3>Isolation Techniques</h3><ul><li>iframe sandbox environments</li><li>Web Worker execution threads</li><li>WASM sandbox isolation</li><li>Permission-based API control</li><li>Memory-limited execution contexts</li></ul><h3>Function</h3><p>Prevents unsafe or malicious code from affecting the host system.</p><p><br></p><h2>6. Module &amp; Dependency System Layer</h2><p>This layer manages how code dependencies are resolved and loaded.</p><h3>Key Systems</h3><ul><li>npm-like module resolution</li><li>ES module dynamic imports</li><li>Bundler pipelines (esbuild, webpack-style systems)</li><li>Dependency graph resolution</li><li>Hot Module Replacement (HMR)</li></ul><h2>7. File System + Project Model Layer</h2><p>This layer defines how projects are structured inside the IDE.</p><h3>Core Features</h3><ul><li>Virtual File System (VFS)</li><li>In-memory project tree</li><li>File watcher system</li><li>Auto-save and sync engine</li><li>Project snapshot and versioning system</li></ul><h2>8. UI + Editor Experience Layer</h2><p>This layer defines the visual and interactive experience of the IDE.</p><h3>UI Features</h3><ul><li>Split-pane editor layouts (VS Code style)</li><li>Minimap rendering system</li><li>Theme engine (dark/light/custom themes)</li><li>Tab management system</li><li>Drag-and-drop file explorer</li></ul><h2>9. Real-Time Collaboration Layer</h2><p>This layer enables multiple users to work on the same codebase simultaneously.</p><h3>Collaboration Systems</h3><ul><li>WebSocket synchronization engine</li><li>CRDT-based editing (Yjs integration)</li><li>Live cursors and presence indicators</li><li>Conflict resolution systems</li><li>Shared workspace sessions</li></ul><h2>10. Build + Runtime Pipeline Layer</h2><p>This layer handles the transformation of code into executable output.</p><h3>Core Processes</h3><ul><li>Bundling pipelines (Vite-like systems)</li><li>Transpilation (Babel, SWC logic)</li><li>Live preview and hot reload systems</li><li>Build caching engines</li><li>Output artifact generation</li></ul><h2>Final IDE Architecture Model</h2><h3>Editor Layer</h3><p>Monaco / CodeMirror / Ace</p><h3>Intelligence Layer</h3><p>LSP + Tree-sitter + autocomplete + diagnostics</p><h3>Runtime Layer</h3><p>WebContainers / WASM virtual machine</p><h3>Cloud Layer</h3><p>Replit-like remote execution systems</p><h3>Project Layer</h3><p>Virtual filesystem + dependency system</p><h3>Build Layer</h3><p>Bundler + transpiler + hot reload pipeline</p><p><br></p><h2>Key Architectural Insight</h2><p>Modern IDEs are not just editors. They are full-stack development environments combining:</p><ul><li>A <strong>code editor</strong></li><li>An <strong>intelligence engine</strong></li><li>A <strong>virtual runtime system</strong></li><li>A <strong>cloud execution layer</strong></li><li>A <strong>real-time collaboration network</strong></li></ul><h2>Final Reality</h2><p>A browser IDE is effectively:</p><p>A complete operating system for software development running inside the browser.</p><p>Examples:</p><ul><li>VS Code Web → Monaco + LSP + extensions</li><li>StackBlitz → WebContainers + full Node runtime</li><li>Replit → Cloud VM + collaboration + deployment</li><li>CodeMirror apps → Lightweight embedded IDE systems</li></ul><p><br></p>
     </section>
 
-    <!-- YouTube Video (conditional) -->
-    
-  <!-- YouTube Playlist Link -->
   <div class="yt-link-container">
     <a href="https://www.youtube.com/playlist?list=PLeqxb0I-hlSXW6JviaUFZ8zB_Klqu97Yj" target="_blank" rel="noopener noreferrer" class="yt-play-button">
       <span class="play-icon">▶</span> View Playlist
     </a>
   </div>
 
-
-    <!-- Audio Resource (conditional) -->
-    
-
   </article>
+   <div id="main2"></div> 
+<div id="main3"></div> 
 </main>
 
-<!-- ─── Footer ───────────────────────────────────── -->
+
+ 
+ 
+<script>
+fetch("https://okankaplanedu.github.io/main1.html")
+  .then(response => response.text())
+  .then(html => {
+    document.getElementById("main1").innerHTML = html;
+  })
+  .catch(err => console.error("main1", err));
+
+fetch("https://okankaplanedu.github.io/main2.html")
+  .then(response => response.text())
+  .then(html => {
+    document.getElementById("main2").innerHTML = html;
+  })
+  .catch(err => console.error("main2", err));
+
+fetch("https://okankaplanedu.github.io/main3.html")
+  .then(response => response.text())
+  .then(html => {
+    document.getElementById("main3").innerHTML = html;
+  })
+  .catch(err => console.error("main3", err));
+</script>
+
+  
 <div id="footer-wrap" role="contentinfo"></div>
 
 <!-- ─── Scripts ──────────────────────────────────── -->
