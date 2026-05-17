@@ -126,31 +126,52 @@ fetch("https://okankaplanedu.github.io/cat-header-container.html")
 <div class="offcanvas offcanvas-start" id="mL"><div class="offcanvas-body"><iframe src="https://okankaplanedu.github.io/archive.html" style="width:100%;height:100%;border:0;"></iframe></div></div>
 <div class="offcanvas offcanvas-end" id="mR"><div class="offcanvas-body"><iframe src="https://okankaplanedu.github.io/toc.html" style="width:100%;height:100%;border:0;"></iframe></div></div>
 
-<!-- ─── Main Content ──────────────────────────────── -->
+
 <main role="main">
+   <div id="main1"></div> 
   <article itemscope itemtype="https://schema.org/Article">
  
     <section itemprop="articleBody">
       <h1>HUMAN–COMPUTER INTERACTION + EXPERIENCE LAYER</h1><p>The Human–Computer Interaction + Experience Layer represents a shift from traditional UI design toward cognitive system design. Instead of focusing only on visual interfaces or user flows, this layer models how humans perceive, think, react, and make mistakes when interacting with digital systems. In modern JavaScript ecosystems, this transforms software into a cognitive extension of human behavior rather than just a tool for interaction.</p><p><br></p><h2>Cognitive UX Design Layer</h2><p>This layer focuses on aligning interfaces with human mental models rather than purely visual layouts. The goal is to design systems that feel intuitive because they match how the brain processes information.</p><p>Rendering systems like React and Vue handle UI composition, while animation libraries such as framer motion and gsap shape temporal perception and attention flow. Data visualization tools like d3.js and chart.js translate raw data into cognitive patterns.</p><p>The core idea is simple: UI is not visual design—it is mental model design.</p><p><br></p><h2>Behavioral Interaction Models</h2><p>This layer treats user interaction as a dynamic behavioral system rather than isolated events.</p><p>Reactive streams using rxjs model user behavior as continuous flows. State machines powered by xstate define interaction logic such as click, hover, and decision states. Tools like Redux middleware and event-driven Node.js architectures further structure behavioral tracking.</p><p>The principle is: users do not click buttons—they follow behavioral patterns.</p><p><br></p><h2>Attention-Aware UI Systems</h2><p>This layer focuses on how user attention is captured, measured, and guided within an interface.</p><p>Browser APIs like Intersection Observer and performance tracking tools such as Web Vitals help measure visibility and interaction timing. Animation systems using GSAP scroll triggers and requestAnimationFrame logic guide attention flow dynamically.</p><p>The idea is: UI is not static—it is an attention control system.</p><p><br></p><h2>Emotional Feedback Loops</h2><p>This layer introduces emotional awareness into system design, enabling interfaces to adapt based on user sentiment and behavior.</p><p>Sentiment analysis tools like natural and machine learning models in tensorflow.js detect emotional signals. Survey systems and A/B testing platforms like Optimizely provide structured feedback loops.</p><p>The goal is: systems respond not only to actions, but to feelings.</p><p><br></p><h2>Accessibility Engineering Layer</h2><p>This layer ensures that systems are usable by all users, regardless of ability or context.</p><p>Standards like ARIA guide semantic accessibility, while tools like axe-core validate compliance. ESLint plugins for accessibility and screen reader APIs ensure inclusive design across JavaScript frameworks.</p><p>The principle is: a strong system is one that everyone can use.</p><p><br></p><h2>Neuro-UX Patterns</h2><p>This layer aligns interface behavior with how the human brain processes information.</p><p>Techniques like predictive loading (React Suspense, SWR), lazy loading via intersection observers, and progressive disclosure patterns optimize cognitive load. Animation frameworks like Framer Motion and GSAP help synchronize UI behavior with perception speed.</p><p>The idea is: UI should match the brain’s processing rhythm.</p><p><br></p><h2>Human Feedback System Loop</h2><p>This layer continuously collects and integrates user behavior back into system evolution.</p><p>Analytics systems like Google Analytics, Segment, and Mixpanel track interaction patterns, while FullStory and OpenTelemetry capture behavioral replay data. RxJS-based systems can dynamically adapt UI behavior in real time.</p><p>The principle is: every user interaction is training data for system improvement.</p><p><br></p><h2>Detail Note</h2><p>These layers form a unified cognitive interaction system:</p><p>Perception → attention → behavior → emotion → accessibility → feedback → adaptation.</p><p>This transforms interfaces from static UI components into adaptive human-centered systems.</p><p><br></p><h2>Conclusion</h2><p>The Human–Computer Interaction + Experience Layer redefines software design as a cognitive partnership between humans and machines.</p><p>Instead of asking:</p><ul><li>“How should this interface look?”</li></ul><p>You begin asking:</p><ul><li>“How does this system think with the user?”</li></ul><p>This shift turns UI into a human cognition extension layer rather than just a visual interface.</p>
     </section>
 
-    <!-- YouTube Video (conditional) -->
-    
-  <!-- YouTube Playlist Link -->
   <div class="yt-link-container">
     <a href="https://www.youtube.com/playlist?list=PLeqxb0I-hlSU57hBU_cRqJIcYlVSAO3vU" target="_blank" rel="noopener noreferrer" class="yt-play-button">
       <span class="play-icon">▶</span> View Playlist
     </a>
   </div>
-
-
-    <!-- Audio Resource (conditional) -->
-    
-
   </article>
+   <div id="main2"></div> 
+<div id="main3"></div> 
 </main>
 
-<!-- ─── Footer ───────────────────────────────────── -->
+
+ 
+ 
+<script>
+fetch("https://okankaplanedu.github.io/main1.html")
+  .then(response => response.text())
+  .then(html => {
+    document.getElementById("main1").innerHTML = html;
+  })
+  .catch(err => console.error("main1", err));
+
+fetch("https://okankaplanedu.github.io/main2.html")
+  .then(response => response.text())
+  .then(html => {
+    document.getElementById("main2").innerHTML = html;
+  })
+  .catch(err => console.error("main2", err));
+
+fetch("https://okankaplanedu.github.io/main3.html")
+  .then(response => response.text())
+  .then(html => {
+    document.getElementById("main3").innerHTML = html;
+  })
+  .catch(err => console.error("main3", err));
+</script>
+
+  
 <div id="footer-wrap" role="contentinfo"></div>
 
 <!-- ─── Scripts ──────────────────────────────────── -->
