@@ -126,31 +126,53 @@ fetch("https://okankaplanedu.github.io/cat-header-container.html")
 <div class="offcanvas offcanvas-start" id="mL"><div class="offcanvas-body"><iframe src="https://okankaplanedu.github.io/archive.html" style="width:100%;height:100%;border:0;"></iframe></div></div>
 <div class="offcanvas offcanvas-end" id="mR"><div class="offcanvas-body"><iframe src="https://okankaplanedu.github.io/toc.html" style="width:100%;height:100%;border:0;"></iframe></div></div>
 
-<!-- ─── Main Content ──────────────────────────────── -->
 <main role="main">
+   <div id="main1"></div> 
   <article itemscope itemtype="https://schema.org/Article">
  
     <section itemprop="articleBody">
       <h1>System Design + Architecture Layer (JS Ecosystem)</h1><p>This article explores the system design and architecture layer in modern JavaScript ecosystems. It focuses on how distributed systems, microservice architectures, scalability models, performance analysis, and system thinking can be represented and simulated using JavaScript-based tools. This layer transforms software development into <strong>large-scale engineering design and infrastructure modeling</strong>.</p><p><br></p><h2>1. Distributed System Design Layer</h2><p>This layer models systems that operate across multiple machines and processes.</p><h3>Core Tools</h3><ul><li>Node.js cluster module (multi-process scaling)</li><li>PM2 (process orchestration system)</li><li>Redis Pub/Sub (distributed messaging backbone)</li><li>KafkaJS (event streaming architecture)</li><li>RabbitMQ clients (queue-based systems)</li><li>Socket.io (real-time distributed communication)</li></ul><h3>Conceptual Role</h3><p>Shifts thinking from <strong>single application → distributed network of systems</strong>.</p><p><br></p><h2>2. Microservice Architecture Thinking Layer</h2><p>This layer breaks applications into independent service units.</p><h3>Core Systems</h3><ul><li>Express / Fastify microservice patterns</li><li>NestJS microservice modules</li><li>grpc-js (service-to-service communication)</li><li>Axios / Fetch service clients</li><li>API Gateway patterns</li><li>Docker-based service orchestration</li></ul><h3>Conceptual Role</h3><p>Transforms software into a <strong>service ecosystem instead of a monolith</strong>.</p><p><br></p><h2>3. Scalability Modeling Layer</h2><p>This layer simulates system growth under increasing load.</p><h3>Core Tools</h3><ul><li>artillery.js (stress testing)</li><li>autocannon (HTTP benchmarking)</li><li>k6 (load simulation scripting)</li><li>Node cluster scaling models</li><li>horizontal vs vertical scaling simulations</li></ul><h3>Conceptual Role</h3><p>Models transition from <strong>single user systems to millions of concurrent users</strong>.</p><p><br></p><h2>4. Bottleneck Analysis Engine</h2><p>This layer identifies performance limits and system weaknesses.</p><h3>Core Tools</h3><ul><li>perf_hooks (Node.js performance tracking)</li><li>clinic.js (doctor, flame, bubbleprof analysis)</li><li>V8 profiling tools</li><li>event loop lag monitoring systems</li><li>winston / pino logging frameworks</li></ul><h3>Conceptual Role</h3><p>Detects <strong>where and why systems break under load</strong>.</p><p><br></p><h2>5. System Latency Optimization Layer</h2><p>This layer focuses on reducing response time and improving throughput.</p><h3>Core Systems</h3><ul><li>Redis caching layer</li><li>LRU cache systems</li><li>CDN and edge caching models</li><li>Node.js streaming APIs</li><li>compression middleware (gzip / brotli)</li><li>serverless edge computation patterns</li></ul><h3>Conceptual Role</h3><p>Optimizes <strong>how fast data flows through the system</strong>.</p><p><br></p><h2>6. CAP Theorem Reasoning Layer</h2><p>This layer models trade-offs in distributed systems.</p><h3>Core Concepts</h3><ul><li>consistency vs availability vs partition tolerance</li><li>eventual consistency models</li><li>CRDT-based systems</li><li>Raft consensus simulations</li><li>distributed database behavior modeling</li></ul><h3>Conceptual Role</h3><p>Highlights that <strong>no distributed system can optimize everything at once</strong>.</p><p><br></p><h2>7. System Thinking Visualization Layer</h2><p>This layer turns system architecture into visual models.</p><h3>Core Tools</h3><ul><li>d3.js (architecture graphs)</li><li>cytoscape.js (service dependency mapping)</li><li>mermaid.js (code-based diagrams)</li><li>plantuml integrations</li><li>Grafana dashboards</li><li>ELK stack visualization</li></ul><h3>Conceptual Role</h3><p>Enables <strong>visual reasoning of system behavior and structure</strong>.</p><p><br></p><h2>8. Full System Design Stack (Hybrid Engine)</h2><p>This layer integrates all system design components into one model.</p><h3>Core Architecture</h3><ul><li>Kafka + Redis → distributed backbone</li><li>NestJS / Fastify → service layer</li><li>Docker + PM2 → orchestration layer</li><li>Grafana + D3.js → observability layer</li><li>Clinic.js + perf_hooks → performance intelligence</li><li>k6 + autocannon → load simulation</li></ul><h2>System Design Mental Model</h2><p>This layer does not just build applications.</p><p>It simulates <strong>infrastructure-level thinking systems</strong>.</p><p><br></p><h2>Engineering Thinking Model</h2><ul><li>Distributed systems: no single machine assumption</li><li>Microservices: separated responsibilities</li><li>Scalability: growth is mandatory</li><li>Bottlenecks: failure point identification</li><li>Latency: speed of system flow</li><li>CAP theorem: unavoidable trade-offs</li></ul><h2>Final Reality</h2><p>This layer does not design applications.</p><p>It designs <strong>working system worlds</strong>.</p><p><br></p><h2>Conclusion</h2><p>The system design and architecture layer transforms JavaScript ecosystems into infrastructure-level thinking environments where developers simulate distributed systems, scalability challenges, and real-world engineering constraints at scale.</p><p><br></p>
     </section>
 
-    <!-- YouTube Video (conditional) -->
-    
-  <!-- YouTube Playlist Link -->
   <div class="yt-link-container">
     <a href="https://www.youtube.com/playlist?list=PLeqxb0I-hlSVMwoY57e15-oBwYJQRj8Te" target="_blank" rel="noopener noreferrer" class="yt-play-button">
       <span class="play-icon">▶</span> View Playlist
     </a>
   </div>
 
+</article>
 
-    <!-- Audio Resource (conditional) -->
-    
-
-  </article>
+   <div id="main2"></div> 
+<div id="main3"></div> 
 </main>
 
-<!-- ─── Footer ───────────────────────────────────── -->
+
+
+ 
+ 
+<script>
+fetch("https://okankaplanedu.github.io/main1.html")
+  .then(response => response.text())
+  .then(html => {
+    document.getElementById("main1").innerHTML = html;
+  })
+  .catch(err => console.error("main1", err));
+
+fetch("https://okankaplanedu.github.io/main2.html")
+  .then(response => response.text())
+  .then(html => {
+    document.getElementById("main2").innerHTML = html;
+  })
+  .catch(err => console.error("main2", err));
+
+fetch("https://okankaplanedu.github.io/main3.html")
+  .then(response => response.text())
+  .then(html => {
+    document.getElementById("main3").innerHTML = html;
+  })
+  .catch(err => console.error("main3", err));
+</script>
+  
 <div id="footer-wrap" role="contentinfo"></div>
 
 <!-- ─── Scripts ──────────────────────────────────── -->
