@@ -126,31 +126,52 @@ fetch("https://okankaplanedu.github.io/cat-header-container.html")
 <div class="offcanvas offcanvas-start" id="mL"><div class="offcanvas-body"><iframe src="https://okankaplanedu.github.io/archive.html" style="width:100%;height:100%;border:0;"></iframe></div></div>
 <div class="offcanvas offcanvas-end" id="mR"><div class="offcanvas-body"><iframe src="https://okankaplanedu.github.io/toc.html" style="width:100%;height:100%;border:0;"></iframe></div></div>
 
-<!-- ─── Main Content ──────────────────────────────── -->
 <main role="main">
+   <div id="main1"></div> 
   <article itemscope itemtype="https://schema.org/Article">
  
     <section itemprop="articleBody">
       <h1>Storage + Memory System Layer (Browser Memory Architecture)</h1><p>This article explores the full storage and memory architecture inside modern browsers. From basic key-value storage systems to structured databases, offline-first synchronization engines, caching layers, and virtual file systems, this layer represents the foundation of persistent data management in web applications.</p><p><br></p><h2>1. Core Browser Storage Foundation Layer</h2><p>This is the most basic storage layer provided directly by the browser. It handles simple persistent and session-based data storage.</p><h3>Key Storage Systems</h3><ul><li>LocalStorage (persistent key-value storage)</li><li>SessionStorage (tab-based temporary storage)</li><li>Cookies (legacy state and authentication storage)</li><li>Storage quota management APIs</li><li>Origin-based isolation model</li></ul><p>This layer acts as the <strong>basic memory system of the browser</strong>.</p><p><br></p><h2>2. Structured Database Storage Layer</h2><p>This layer provides advanced database capabilities inside the browser.</p><h3>Core System</h3><ul><li>IndexedDB (asynchronous NoSQL database)</li><li>Object store architecture (key-path indexing)</li><li>Transaction-based storage engine</li><li>Cursor-based query system</li><li>Binary data support (Blob / ArrayBuffer)</li></ul><h2>3. High-Level Storage Abstraction Layer</h2><p>This layer simplifies IndexedDB usage through modern abstractions.</p><h3>Key Libraries</h3><ul><li>Dexie.js (query engine + schema abstraction)</li><li>Schema versioning systems</li><li>Reactive database bindings</li><li>Live query subscriptions</li><li>Batch transaction operations</li></ul><h2>4. Offline-First Sync Database Layer</h2><p>This layer enables applications to work without internet connectivity.</p><h3>Core Systems</h3><ul><li>PouchDB (replication + sync engine)</li><li>Conflict resolution mechanisms</li><li>Offline write queue system</li><li>Incremental replication engine</li><li>Multi-device synchronization</li></ul><p>This layer enables <strong>cloud-like databases that work offline</strong>.</p><p><br></p><h2>5. Cache + Performance Storage Layer</h2><p>This layer improves application speed through intelligent caching.</p><h3>Core Systems</h3><ul><li>Cache API (HTTP response caching)</li><li>Service Worker cache layer</li><li>Request/response interception system</li><li>Cache-first / network-first strategies</li><li>Static asset caching (JS, CSS, images)</li></ul><h2>6. Virtual File System Layer (Browser OS Storage)</h2><p>This layer simulates a real file system inside the browser.</p><h3>Key Technologies</h3><ul><li>OPFS (Origin Private File System)</li><li>File Handle API (stream-based access)</li><li>Directory tree simulation</li><li>Large binary file support</li><li>Streaming read/write pipelines</li></ul><p>This creates a <strong>disk-like storage system inside the browser</strong>.</p><p><br></p><h2>7. Memory Hierarchy Model (Browser Memory Stack)</h2><p>The browser memory system behaves like a layered architecture.</p><h3>Hierarchy Levels</h3><ul><li>L1: JavaScript heap memory</li><li>L2: In-memory objects</li><li>L3: IndexedDB / OPFS storage</li><li>L4: LocalStorage / SessionStorage</li><li>L5: HTTP Cache API</li></ul><p>This structure mirrors traditional <strong>CPU cache hierarchies</strong>.</p><p><br></p><h2>8. Reactive Storage Layer</h2><p>This layer enables real-time synchronization between storage and UI.</p><h3>Core Features</h3><ul><li>Live database subscriptions</li><li>Reactive query systems</li><li>Observable storage bindings</li><li>State persistence synchronization</li><li>Event-driven storage updates</li></ul><h2>9. Data Serialization + Persistence Layer</h2><p>This layer manages how data is stored and restored.</p><h3>Core Processes</h3><ul><li>JSON serialization engine</li><li>Binary serialization (ArrayBuffer / Blob)</li><li>Structured cloning system</li><li>Compression pipelines (gzip, lz-string)</li><li>Schema migration systems</li></ul><h2>10. Security + Isolation Layer</h2><p>This layer ensures safe and controlled access to stored data.</p><h3>Security Features</h3><ul><li>Origin-based sandboxing</li><li>Storage quota enforcement</li><li>Permission-based access control</li><li>Encrypted storage (Web Crypto API)</li><li>Secure context isolation</li></ul><h2>Full Storage Architecture Model</h2><h3>Input Layer</h3><ul><li>User data</li><li>Application state</li><li>API responses</li><li>Files</li></ul><h3>Memory Layer</h3><ul><li>JavaScript heap</li><li>Runtime objects</li></ul><h3>Persistence Layer</h3><ul><li>IndexedDB / OPFS / LocalStorage</li></ul><h3>Abstraction Layer</h3><ul><li>Dexie.js / PouchDB</li></ul><h3>Performance Layer</h3><ul><li>Cache API / Service Workers</li></ul><h3>Output Layer</h3><ul><li>UI state</li><li>Offline sync</li><li>Cached rendering</li></ul><h2>Final Reality Check</h2><p>This system is not just storage.</p><p>It is a <strong>complete browser-based memory hierarchy, offline database system, and virtual filesystem architecture</strong>.</p><p><br></p><h2>Key Use Cases</h2><ul><li>Offline apps → PouchDB sync engine</li><li>State management → IndexedDB reactive bindings</li><li>Performance apps → Cache API + Service Workers</li><li>File systems → OPFS virtual disk layer</li></ul><p><br></p>
     </section>
 
-    <!-- YouTube Video (conditional) -->
-    
-  <!-- YouTube Playlist Link -->
   <div class="yt-link-container">
     <a href="https://www.youtube.com/playlist?list=PLeqxb0I-hlSXCPSzQG71epY-sSOTM86PM" target="_blank" rel="noopener noreferrer" class="yt-play-button">
       <span class="play-icon">▶</span> View Playlist
     </a>
   </div>
-
-
-    <!-- Audio Resource (conditional) -->
-    
-
-  </article>
+</article>
+   <div id="main2"></div> 
+<div id="main3"></div> 
 </main>
 
-<!-- ─── Footer ───────────────────────────────────── -->
+
+
+ 
+ 
+<script>
+fetch("https://okankaplanedu.github.io/main1.html")
+  .then(response => response.text())
+  .then(html => {
+    document.getElementById("main1").innerHTML = html;
+  })
+  .catch(err => console.error("main1", err));
+
+fetch("https://okankaplanedu.github.io/main2.html")
+  .then(response => response.text())
+  .then(html => {
+    document.getElementById("main2").innerHTML = html;
+  })
+  .catch(err => console.error("main2", err));
+
+fetch("https://okankaplanedu.github.io/main3.html")
+  .then(response => response.text())
+  .then(html => {
+    document.getElementById("main3").innerHTML = html;
+  })
+  .catch(err => console.error("main3", err));
+</script>
+
+  
 <div id="footer-wrap" role="contentinfo"></div>
 
 <!-- ─── Scripts ──────────────────────────────────── -->
