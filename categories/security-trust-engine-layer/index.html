@@ -126,31 +126,51 @@ fetch("https://okankaplanedu.github.io/cat-header-container.html")
 <div class="offcanvas offcanvas-start" id="mL"><div class="offcanvas-body"><iframe src="https://okankaplanedu.github.io/archive.html" style="width:100%;height:100%;border:0;"></iframe></div></div>
 <div class="offcanvas offcanvas-end" id="mR"><div class="offcanvas-body"><iframe src="https://okankaplanedu.github.io/toc.html" style="width:100%;height:100%;border:0;"></iframe></div></div>
 
-<!-- ─── Main Content ──────────────────────────────── -->
 <main role="main">
+   <div id="main1"></div> 
   <article itemscope itemtype="https://schema.org/Article">
  
     <section itemprop="articleBody">
       <p><br></p><h1>SECURITY + TRUST ENGINE LAYER</h1><p>The Security + Trust Engine Layer is a system-level architecture designed to ensure that software is not only functional, but fundamentally secure, verifiable, and trustworthy. In modern JavaScript ecosystems, this layer shifts the focus from “does it work?” to “can it be trusted under any condition?” It introduces zero-trust principles, adaptive identity systems, and continuous threat awareness into application design.</p><p><br></p><h2>Authentication / Authorization Thinking Layer</h2><p>This layer models identity and permissions as dynamic behavior rather than static data. Instead of assuming trust, every action is validated.</p><p>Libraries like jsonwebtoken enable stateless identity verification, while passport provides flexible authentication strategies. Modern frameworks such as next-auth simplify session-based identity systems.</p><p>For authorization logic, tools like casl and AccessControl.js manage role-based and attribute-based permissions.</p><p>The core shift is: identity is not static—it is continuously validated behavior.</p><p><br></p><h2>Zero Trust Architecture Layer</h2><p>This layer enforces the principle that no part of the system is inherently trusted, including internal services.</p><p>Token validation systems like JWT (JWS/JWE), OAuth2, and OpenID Connect form the foundation of distributed identity verification. API gateways and service mesh concepts are implemented through Node.js proxies and architectural patterns inspired by systems like Istio.</p><p>The principle is simple: being inside the system does not grant trust.</p><p><br></p><h2>Encryption Mindset Layer</h2><p>This layer ensures that data is protected at all stages: storage, transmission, and runtime.</p><p>Cryptographic operations are handled by Node.js’s built-in crypto and browser-based web crypto api. Password security is strengthened using tools like bcrypt and argon2.</p><p>Modern cryptographic libraries such as libsodium.js provide advanced primitives for secure systems.</p><p>The model is: data must always be protected—even in memory.</p><p><br></p><h2>Attack Surface Analysis Layer</h2><p>This layer identifies where systems are vulnerable before attackers do.</p><p>Tools like snyk and npm audit analyze dependency risks, while retire.js detects insecure libraries. Code-level security is reinforced with ESLint security plugins.</p><p>Dependency graphs and module analysis tools map the system’s attack surface visually and structurally.</p><p>The goal is to think like an attacker before building like a developer.</p><p><br></p><h2>Threat Modeling Engine</h2><p>This layer simulates potential attack scenarios to understand system weaknesses.</p><p>Models like STRIDE are implemented through custom JavaScript logic, while graph-based tools like cytoscape.js and graphlib help build attack trees. Risk scoring systems and statistical models evaluate potential impact.</p><p>Machine learning tools like TensorFlow.js can even simulate adversarial behaviors.</p><p>The principle is: every system contains hypothetical attack paths that must be analyzed.</p><p><br></p><h2>Sandbox Isolation Logic</h2><p>This layer isolates execution environments to prevent system-wide compromise.</p><p>Browser-based Web Workers, Node.js vm contexts, and iframe sandboxing ensure execution boundaries. Secure runtime concepts like SES (Secure ECMAScript) harden JavaScript environments.</p><p>Container-based isolation extends this model into infrastructure-level security.</p><p>The idea is simple: untrusted code must never run without boundaries.</p><p><br></p><h2>Trust Engine Layer</h2><p>This layer builds dynamic trust scores instead of static assumptions.</p><p>Behavioral analysis systems, anomaly detection models, and fraud detection engines continuously evaluate system interactions. Libraries like rxjs support real-time trust pipelines, while machine learning tools like Brain.js or ML5.js help detect abnormal patterns.</p><p>Reputation systems model trust as a continuously changing metric.</p><p>The key idea: trust is not given—it is calculated.</p><p><br></p><h2>Detail Note</h2><p>These security layers work together as a unified defense system:</p><p>Identity validation → zero trust verification → encryption enforcement → vulnerability scanning → threat simulation → sandbox isolation → dynamic trust scoring.</p><p>This creates a multi-layered security intelligence architecture rather than a single protective barrier.</p><p><br></p><h2>Conclusion</h2><p>The Security + Trust Engine Layer transforms software design from functional engineering into trust-aware architecture.</p><p>Instead of asking:</p><ul><li>“Does this system work?”</li></ul><p>You begin to ask:</p><ul><li>“Is this system safe, verifiable, and resilient under attack?”</li></ul><p>This shift ensures that as systems grow smarter, they also remain fundamentally secure.</p><p><br></p>
     </section>
 
-    <!-- YouTube Video (conditional) -->
-    
-  <!-- YouTube Playlist Link -->
   <div class="yt-link-container">
     <a href="https://www.youtube.com/playlist?list=PLeqxb0I-hlSWFqmi2Evr7ja5JAGRcl9nQ" target="_blank" rel="noopener noreferrer" class="yt-play-button">
       <span class="play-icon">▶</span> View Playlist
     </a>
   </div>
-
-
-    <!-- Audio Resource (conditional) -->
-    
-
-  </article>
+ </article>
+   <div id="main2"></div> 
+<div id="main3"></div> 
 </main>
 
-<!-- ─── Footer ───────────────────────────────────── -->
+
+
+ 
+ 
+<script>
+fetch("https://okankaplanedu.github.io/main1.html")
+  .then(response => response.text())
+  .then(html => {
+    document.getElementById("main1").innerHTML = html;
+  })
+  .catch(err => console.error("main1", err));
+
+fetch("https://okankaplanedu.github.io/main2.html")
+  .then(response => response.text())
+  .then(html => {
+    document.getElementById("main2").innerHTML = html;
+  })
+  .catch(err => console.error("main2", err));
+
+fetch("https://okankaplanedu.github.io/main3.html")
+  .then(response => response.text())
+  .then(html => {
+    document.getElementById("main3").innerHTML = html;
+  })
+  .catch(err => console.error("main3", err));
+</script>
+  
 <div id="footer-wrap" role="contentinfo"></div>
 
 <!-- ─── Scripts ──────────────────────────────────── -->
