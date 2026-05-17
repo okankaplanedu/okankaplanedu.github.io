@@ -126,8 +126,9 @@ fetch("https://okankaplanedu.github.io/cat-header-container.html")
 <div class="offcanvas offcanvas-start" id="mL"><div class="offcanvas-body"><iframe src="https://okankaplanedu.github.io/archive.html" style="width:100%;height:100%;border:0;"></iframe></div></div>
 <div class="offcanvas offcanvas-end" id="mR"><div class="offcanvas-body"><iframe src="https://okankaplanedu.github.io/toc.html" style="width:100%;height:100%;border:0;"></iframe></div></div>
 
-<!-- ─── Main Content ──────────────────────────────── -->
+
 <main role="main">
+   <div id="main1"></div> 
   <article itemscope itemtype="https://schema.org/Article">
 
  
@@ -135,23 +136,43 @@ fetch("https://okankaplanedu.github.io/cat-header-container.html")
       <h1>DATA + UTILITY CORE LAYER (FULL ATLAS EDITION)</h1><p>This article presents a complete architecture of the Data + Utility Core Layer in modern web systems. It defines how data flows through network requests, transformation utilities, state graphs, validation engines, serialization systems, and memory layers. This layer acts as the foundational “data operating system” of the browser, powering all higher-level UI, motion, and visualization systems.</p><p><br></p><h2>1. HTTP + Network Client Engine Layer</h2><p>Network client engines handle all API communication, request lifecycle management, and data transport between client and server.</p><h3>Network Engines</h3><p>Axios (XHR abstraction layer)</p><p> Fetch API (native browser engine)</p><p> Ky (modern fetch wrapper)</p><p> SuperAgent (request builder engine)</p><p> Ofetch (Nuxt fetch engine)</p><p> node-fetch (Node polyfill)</p><p> Got (Node HTTP client engine)</p><p> XMLHttpRequest (legacy transport layer)</p><h2>2. Data Transformation + Functional Core</h2><p>This layer provides functional utilities for shaping, mapping, filtering, and transforming data structures.</p><h3>Utility Engines</h3><p>Lodash / Lodash-es</p><p> Ramda (functional pipelines)</p><p> Underscore.js</p><p> Rambda</p><p> Remeda (TypeScript-first utilities)</p><p> Collect.js</p><p> RxJS operators</p><h2>3. Immutable + Structured Data Engine</h2><p>Immutable systems ensure predictable state by preventing direct mutation of data structures.</p><h3>Immutable Systems</h3><p>Immutable.js</p><p> Immer (proxy-based immutability)</p><p> Mori</p><p> Seamless-immutable</p><p> Structural sharing patterns</p><p> Redux immutable update patterns</p><p> Persistent Map/Set structures</p><h2>4. State + Data Graph Core Systems</h2><p>State graph engines manage application memory, reactivity, and global data flow.</p><h3>State Engines</h3><p>Redux / Redux Toolkit</p><p> Zustand</p><p> MobX</p><p> Recoil</p><p> Jotai</p><p> Valtio</p><p> Effector</p><p> XState</p><p> Hookstate</p><p> Pinia</p><h2>5. Search + Indexing Engine Layer</h2><p>Search engines provide fuzzy matching, full-text indexing, and fast data retrieval.</p><h3>Search Systems</h3><p>Fuse.js</p><p> FlexSearch</p><p> Lunr.js</p><p> Algolia InstantSearch</p><p> MiniSearch</p><p> ElasticSearch JS client</p><h2>6. Validation + Schema Engine Layer</h2><p>Validation engines ensure data integrity, correctness, and schema compliance.</p><h3>Validation Systems</h3><p>Zod</p><p> Yup</p><p> Joi</p><p> Ajv (JSON Schema)</p><p> Superstruct</p><p> Vest</p><p> io-ts</p><p> Validator.js</p><h2>7. Data Formatting + Parsing Engine</h2><p>This layer handles formatting, parsing, localization, and data normalization.</p><h3>Formatting Engines</h3><p>Numeral.js</p><p> Day.js</p><p> date-fns</p><p> Luxon</p><p> Moment.js (legacy)</p><p> Intl API</p><p> currency.js</p><p> accounting.js</p><h2>8. Identifier + Key Generation Systems</h2><p>Identity systems generate unique, collision-resistant identifiers for data entities.</p><h3>ID Systems</h3><p>Nanoid</p><p> UUID / crypto.randomUUID</p><p> cuid / cuid2</p><p> KSUID</p><p> shortid (legacy)</p><p> hash-based ID systems</p><h2>9. Performance + Optimization Utility Layer</h2><p>Performance utilities optimize execution, rendering, and computation efficiency.</p><h3>Optimization Tools</h3><p>debounce / throttle utilities</p><p> memoization engines (lodash memoize, memoize-one)</p><p> reselect (state caching)</p><p> web-vitals</p><p> requestIdleCallback</p><p> requestAnimationFrame (RAF)</p><p> lazy evaluation systems</p><h2>10. Serialization + Data Exchange Layer</h2><p>Serialization systems convert structured data into transportable formats.</p><h3>Data Formats</h3><p>JSON</p><p> BSON</p><p> MessagePack</p><p> Protobuf JS</p><p> YAML</p><p> CSV parsers</p><p> XML parsers</p><p> Avro</p><h2>11. Event + Async Data Flow Layer</h2><p>This layer controls asynchronous execution, event systems, and reactive data streams.</p><h3>Async Systems</h3><p>EventEmitter / EventEmitter3</p><p> mitt</p><p> RxJS</p><p> Promise system</p><p> async/await runtime</p><p> WebSocket API</p><p> Server-Sent Events (SSE)</p><p> Kafka JS client</p><h2>12. Compute + Data Processing Engine Layer</h2><p>Computation engines handle heavy processing, ML tasks, and parallel execution.</p><h3>Compute Engines</h3><p>Web Workers API</p><p> Comlink</p><p> TensorFlow.js</p><p> GPU.js</p><p> Math.js</p><p> Decimal.js</p><p> Big.js</p><p> Observable runtime</p><h2>13. Cache + Memory Management Layer</h2><p>Caching systems optimize memory usage, persistence, and offline-first behavior.</p><h3>Cache Systems</h3><p>localStorage / sessionStorage</p><p> IndexedDB</p><p> Dexie.js</p><p> PouchDB</p><p> LRU-cache systems</p><p> Service Worker cache API</p><p> React Query cache system</p><h2>FINAL ARCHITECTURE MODEL</h2><p>The Data + Utility Core Layer operates across five fundamental axes:</p><h3>1. NETWORK ENGINE</h3><p>(Axios, Fetch, Ky)</p><h3>2. DATA TRANSFORMATION ENGINE</h3><p>(Lodash, Ramda, functional pipelines)</p><h3>3. STATE GRAPH ENGINE</h3><p>(Redux, MobX, Zustand, XState)</p><h3>4. COMPUTE ENGINE</h3><p>(Web Workers, TensorFlow.js, GPU.js)</p><h3>5. MEMORY + CACHE ENGINE</h3><p>(IndexDB, SW Cache, reactive memory systems)</p><p><br></p><h2>FINAL REALITY SHIFT</h2><p>The Data + Utility Core Layer is no longer a utility collection.</p><p>It is a:</p><p><strong>“Browser Data Kernel Layer”</strong></p><p>A foundational runtime that governs:</p><ul><li>data flow</li><li>computation</li><li>memory</li><li>state</li><li>and system-wide logic execution</li></ul><p><br></p>
     </section>
 
-    <!-- YouTube Video (conditional) -->
-    
-  <!-- YouTube Playlist Link -->
   <div class="yt-link-container">
     <a href="https://www.youtube.com/playlist?list=PLeqxb0I-hlSWdrae6SrvN_q3bbwF0MUQp" target="_blank" rel="noopener noreferrer" class="yt-play-button">
       <span class="play-icon">▶</span> View Playlist
     </a>
   </div>
 
-
-    <!-- Audio Resource (conditional) -->
-    
-
   </article>
+   <div id="main2"></div> 
+<div id="main3"></div> 
 </main>
 
-<!-- ─── Footer ───────────────────────────────────── -->
+
+ 
+ 
+<script>
+fetch("https://okankaplanedu.github.io/main1.html")
+  .then(response => response.text())
+  .then(html => {
+    document.getElementById("main1").innerHTML = html;
+  })
+  .catch(err => console.error("main1", err));
+
+fetch("https://okankaplanedu.github.io/main2.html")
+  .then(response => response.text())
+  .then(html => {
+    document.getElementById("main2").innerHTML = html;
+  })
+  .catch(err => console.error("main2", err));
+
+fetch("https://okankaplanedu.github.io/main3.html")
+  .then(response => response.text())
+  .then(html => {
+    document.getElementById("main3").innerHTML = html;
+  })
+  .catch(err => console.error("main3", err));
+</script>
+  
 <div id="footer-wrap" role="contentinfo"></div>
 
 <!-- ─── Scripts ──────────────────────────────────── -->
