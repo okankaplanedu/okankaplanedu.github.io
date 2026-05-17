@@ -125,31 +125,52 @@ fetch("https://okankaplanedu.github.io/cat-header-container.html")
 <div class="offcanvas offcanvas-start" id="mL"><div class="offcanvas-body"><iframe src="https://okankaplanedu.github.io/archive.html" style="width:100%;height:100%;border:0;"></iframe></div></div>
 <div class="offcanvas offcanvas-end" id="mR"><div class="offcanvas-body"><iframe src="https://okankaplanedu.github.io/toc.html" style="width:100%;height:100%;border:0;"></iframe></div></div>
 
-<!-- ─── Main Content ──────────────────────────────── -->
+
 <main role="main">
+   <div id="main1"></div> 
   <article itemscope itemtype="https://schema.org/Article">
  
     <section itemprop="articleBody">
       <h1>Document + File System Layer (Full File Engine Stack)</h1><p>This article explains the full Document and File System Layer used in modern web applications. It covers browser-native file APIs, binary data processing, spreadsheet engines, PDF systems, document formats, virtual file systems, streaming pipelines, and export mechanisms. This layer represents the complete file operating system running inside the browser, enabling document editing, storage, conversion, and export capabilities.</p><p><br></p><h2>1. Core File System Foundation Layer (Browser Native)</h2><p>This layer provides the fundamental APIs for accessing and handling files directly in the browser.</p><h3>Core APIs</h3><p>File API — user file access system</p><p> Blob API — binary data container</p><p> FileReader API — file decoding engine</p><p> URL.createObjectURL — temporary file URL system</p><p> Drag &amp; Drop API — file input pipeline</p><h2>2. Binary Data &amp; Archive Layer</h2><p>This layer handles compression, packaging, and archive manipulation.</p><h3>Archive Systems</h3><p>JSZip — ZIP archive engine</p><p> tar.js — TAR file processing</p><p> pako — gzip compression engine</p><p> lz-string — string compression system</p><p> Base64 pipelines — encoding/decoding system</p><h2>3. Spreadsheet (Excel Engine Layer)</h2><p>This layer enables spreadsheet processing inside the browser.</p><h3>Spreadsheet Engines</h3><p>SheetJS — XLSX engine core</p><p> ExcelJS — advanced spreadsheet system</p><p> CSV parsers — tabular data processing</p><p> Formula engines — calculation system</p><p> Pivot table logic — data aggregation layer</p><h2>4. PDF Engine Layer (Render + Parse)</h2><p>This layer handles PDF rendering, creation, and manipulation.</p><h3>PDF Systems</h3><p>PDF.js — PDF viewer engine</p><p> PDF-lib — PDF generation system</p><p> PDFKit — server-side PDF engine</p><p> Annotation systems — highlight, comment tools</p><p> Text extraction pipelines — content parsing</p><h2>5. Document Processing Layer (Word / DOCX)</h2><p>This layer manages Word and rich text document formats.</p><h3>Document Engines</h3><p>Mammoth.js — DOCX parser</p><p> docx.js — document generator</p><p> Rich text extraction systems</p><p> Style mapping engines</p><p> Template-based document generation</p><h2>6. Virtual File System Layer (Browser OS Simulation)</h2><p>This layer simulates a file system inside the browser.</p><h3>Virtual Storage Systems</h3><p>OPFS — Origin Private File System</p><p> IndexedDB storage layer</p><p> In-memory filesystem</p><p> Sandboxed file containers</p><p> Streaming file access system</p><h2>7. Streaming File Processing Layer</h2><p>This layer processes large files efficiently using streaming techniques.</p><h3>Processing Systems</h3><p>Chunk-based file reading</p><p> Lazy loading file segments</p><p> Incremental parsing engines</p><p> Web Workers file processing</p><p> Parallel file pipelines</p><h2>8. Security + Sandbox Layer</h2><p>This layer ensures safe file handling and execution control.</p><h3>Security Systems</h3><p>Origin-based isolation</p><p> Sandboxed execution rules</p><p> MIME type validation</p><p> Client-side malware heuristics</p><p> Permission-based file access control</p><h2>9. Multi-Format Document Pipeline</h2><p>This layer enables conversion between different document formats.</p><h3>Conversion Systems</h3><p>PDF ↔ HTML pipelines</p><p> DOCX ↔ Markdown conversion</p><p> Excel ↔ JSON transformation</p><p> Image embedding systems</p><p> Metadata extraction engines</p><h2>10. File Compression + Export Layer</h2><p>This layer handles exporting and downloading processed files.</p><h3>Export Systems</h3><p>ZIP generation (JSZip)</p><p> Multi-file bundling systems</p><p> Blob download system</p><p> Streaming download API</p><p> Progressive export pipelines</p><h2>FULL FILE SYSTEM ARCHITECTURE</h2><h3>Input Layer</h3><p>File API, Drag &amp; Drop, Upload streams</p><h3>Processing Layer</h3><p>PDF.js, SheetJS, Mammoth.js, JSZip</p><h3>Storage Layer</h3><p>Blob API, IndexedDB, OPFS</p><h3>Output Layer</h3><p>Downloadable blobs, ZIP exports, streaming files</p><p><br></p><h2>FINAL REALITY CHECK</h2><p>The Document + File System Layer is not just file handling.</p><p>It is a <strong>browser-based operating system for documents</strong>, combining:</p><ul><li>File APIs and binary data systems</li><li>Office-style document engines</li><li>Virtual file storage layers</li><li>Streaming and compression pipelines</li><li>Export and conversion engines</li></ul><h2>CORE ARCHITECTURE SUMMARY</h2><h3>Core File Layer</h3><p>File API / Blob / FileReader</p><h3>Archive Layer</h3><p>JSZip / compression engines</p><h3>Document Layer</h3><p>PDF.js / SheetJS / Mammoth.js</p><h3>Virtual File System</h3><p>OPFS / IndexedDB</p><h3>Export Layer</h3><p>Blob / ZIP / streaming download system</p>
     </section>
 
-    <!-- YouTube Video (conditional) -->
-    
-  <!-- YouTube Playlist Link -->
   <div class="yt-link-container">
     <a href="https://www.youtube.com/playlist?list=PLeqxb0I-hlSVhL6EqYDfXAkPHnd9mA3IJ" target="_blank" rel="noopener noreferrer" class="yt-play-button">
       <span class="play-icon">▶</span> View Playlist
     </a>
   </div>
-
-
-    <!-- Audio Resource (conditional) -->
-    
-
-  </article>
+ </article>
+   <div id="main2"></div> 
+<div id="main3"></div> 
 </main>
 
-<!-- ─── Footer ───────────────────────────────────── -->
+
+ 
+ 
+<script>
+fetch("https://okankaplanedu.github.io/main1.html")
+  .then(response => response.text())
+  .then(html => {
+    document.getElementById("main1").innerHTML = html;
+  })
+  .catch(err => console.error("main1", err));
+
+fetch("https://okankaplanedu.github.io/main2.html")
+  .then(response => response.text())
+  .then(html => {
+    document.getElementById("main2").innerHTML = html;
+  })
+  .catch(err => console.error("main2", err));
+
+fetch("https://okankaplanedu.github.io/main3.html")
+  .then(response => response.text())
+  .then(html => {
+    document.getElementById("main3").innerHTML = html;
+  })
+  .catch(err => console.error("main3", err));
+</script>
+
+  
 <div id="footer-wrap" role="contentinfo"></div>
 
 <!-- ─── Scripts ──────────────────────────────────── -->
