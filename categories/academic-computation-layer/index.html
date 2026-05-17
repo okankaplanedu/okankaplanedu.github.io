@@ -128,16 +128,14 @@ fetch("https://okankaplanedu.github.io/cat-header-container.html")
 
 <!-- ─── Main Content ──────────────────────────────── -->
 <main role="main">
+
+  <div id="main1"></div> 
   <article itemscope itemtype="https://schema.org/Article">
 
-  
-    <section itemprop="articleBody">
+ <section itemprop="articleBody">
       <h1>Academic Computation Layer (JS Ecosystem)</h1><p>This article explores the academic computation layer in modern JavaScript ecosystems, focusing on how mathematical reasoning, graph theory, probability, information theory, and algorithmic complexity are implemented inside computational systems. This layer transforms JavaScript from a programming language into a <strong>formal reasoning and scientific computation environment</strong>.</p><p><br></p><h2>1. Linear Algebra / Matrix Thinking Engine</h2><p>This layer provides the mathematical foundation for vector and matrix-based computation systems.</p><h3>Core Libraries</h3><ul><li>mathjs (matrix + symbolic mathematics engine)</li><li>ml-matrix (machine learning focused linear algebra)</li><li>gl-matrix (high-performance WebGL vector/matrix operations)</li><li>numeric.js (numerical computation and matrix solving)</li><li>TensorFlow.js (tensor-based linear algebra system)</li></ul><h3>Conceptual Role</h3><p>This layer enables <strong>vector space reasoning, transformations, and geometric computation models</strong>.</p><p><br></p><h2>2. Discrete Mathematics Structure Layer</h2><p>This layer focuses on logical reasoning, sets, and symbolic structures.</p><h3>Core Systems</h3><ul><li>mathjs (set and logic modules)</li><li>algebra.js (symbolic algebra manipulation)</li><li>nerdamer (symbolic equation solving)</li><li>logic-solver (boolean logic and satisfiability)</li><li>custom graph and set structures</li></ul><h3>Conceptual Role</h3><p>Enables <strong>if-then logic systems and relational modeling</strong>.</p><p><br></p><h2>3. Graph Theory / Node-Based Reasoning Layer</h2><p>This layer models relationships and network-based reasoning.</p><h3>Core Libraries</h3><ul><li>graphlib (graph data structures and algorithms)</li><li>cytoscape.js (graph visualization and analysis)</li><li>vis-network (interactive network graphs)</li><li>sigma.js (large-scale graph rendering)</li><li>d3-force (force-directed graph simulation)</li></ul><h3>Conceptual Role</h3><p>Used for <strong>dependency graphs, knowledge maps, and neural-like reasoning structures</strong>.</p><p><br></p><h2>4. Probability &amp; Statistics Reasoning Layer</h2><p>This layer handles uncertainty, inference, and statistical modeling.</p><h3>Core Libraries</h3><ul><li>simple-statistics (basic statistical engine)</li><li>jstat (probability distributions and statistical functions)</li><li>mathjs statistics module</li><li>danfo.js (pandas-like data analysis engine)</li><li>probabilistic modeling libraries</li></ul><h3>Conceptual Role</h3><p>Supports <strong>risk analysis, prediction, and probabilistic reasoning systems</strong>.</p><p><br></p><h2>5. Information Theory Layer (Entropy / Compression Thinking)</h2><p>This layer measures information density, uncertainty, and compression cost.</p><h3>Core Tools</h3><ul><li>entropy calculation utilities</li><li>lz-string (compression-based entropy approximation)</li><li>pako (zlib compression pipeline)</li><li>custom Shannon entropy functions</li></ul><h3>Conceptual Role</h3><p>Enables <strong>information cost analysis and uncertainty modeling</strong>.</p><p><br></p><h2>6. Algorithm Complexity Thinking Layer</h2><p>This layer evaluates computational efficiency and performance cost.</p><h3>Core Tools</h3><ul><li>benchmark.js (performance measurement)</li><li>browser performance APIs</li><li>Big-O simulation models</li><li>jsPerf ecosystem tools</li></ul><h3>Conceptual Role</h3><p>Provides <strong>computational cost awareness and performance reasoning</strong>.</p><p><br></p><h2>7. Hybrid Mathematical Thinking Engines</h2><p>This layer combines multiple computational paradigms into unified systems.</p><h3>Core Systems</h3><ul><li>TensorFlow.js (ML + optimization + linear algebra)</li><li>mathjs (universal math engine)</li><li>danfo.js + tfjs (data + tensor fusion)</li><li>d3.js (visual mathematical reasoning)</li><li>Observable Plot (analytical visualization engine)</li></ul><h2>Mental Model of This Layer</h2><p>This system is not just computation—it is a <strong>thinking architecture</strong>:</p><ul><li>Linear Algebra → spatial reasoning</li><li>Graph Theory → relational reasoning</li><li>Probability → uncertainty reasoning</li><li>Information Theory → cost of information</li><li>Complexity Theory → computational cost awareness</li></ul><h2>Final Academic Computation Architecture</h2><h3>Core Math Engine</h3><ul><li>mathjs / ml-matrix</li></ul><h3>Graph Engine</h3><ul><li>graphlib / cytoscape</li></ul><h3>Statistical Engine</h3><ul><li>simple-statistics / jstat</li></ul><h3>Information Engine</h3><ul><li>entropy + compression systems</li></ul><h3>Complexity Engine</h3><ul><li>benchmark + performance models</li></ul><h2>Conclusion</h2><p>The academic computation layer transforms JavaScript into a <strong>scientific reasoning platform</strong>, enabling mathematical thinking, graph-based modeling, probabilistic inference, and computational complexity analysis directly in the browser and runtime environments.</p><p><br></p>
     </section>
 
-    <!-- YouTube Video (conditional) -->
-    
-  <!-- YouTube Playlist Link -->
   <div class="yt-link-container">
     <a href="https://www.youtube.com/playlist?list=hlSUvKgHqf3t0cbn78MNcF37I" target="_blank" rel="noopener noreferrer" class="yt-play-button">
       <span class="play-icon">▶</span> View Playlist
@@ -145,13 +143,41 @@ fetch("https://okankaplanedu.github.io/cat-header-container.html")
   </div>
 
 
-    <!-- Audio Resource (conditional) -->
     
-
-  </article>
+</article>
+   <div id="main2"></div> 
+<div id="main3"></div> 
 </main>
+ 
 
-<!-- ─── Footer ───────────────────────────────────── -->
+ 
+ 
+<script>
+fetch("https://okankaplanedu.github.io/main1.html")
+  .then(response => response.text())
+  .then(html => {
+    document.getElementById("main1").innerHTML = html;
+  })
+  .catch(err => console.error("main1", err));
+
+fetch("https://okankaplanedu.github.io/main2.html")
+  .then(response => response.text())
+  .then(html => {
+    document.getElementById("main2").innerHTML = html;
+  })
+  .catch(err => console.error("main2", err));
+
+fetch("https://okankaplanedu.github.io/main3.html")
+  .then(response => response.text())
+  .then(html => {
+    document.getElementById("main3").innerHTML = html;
+  })
+  .catch(err => console.error("main3", err));
+</script>
+  
+
+
+  
 <div id="footer-wrap" role="contentinfo"></div>
 
 <!-- ─── Scripts ──────────────────────────────────── -->
