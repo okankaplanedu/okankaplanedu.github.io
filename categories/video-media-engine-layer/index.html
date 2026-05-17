@@ -126,31 +126,52 @@ fetch("https://okankaplanedu.github.io/cat-header-container.html")
 <div class="offcanvas offcanvas-start" id="mL"><div class="offcanvas-body"><iframe src="https://okankaplanedu.github.io/archive.html" style="width:100%;height:100%;border:0;"></iframe></div></div>
 <div class="offcanvas offcanvas-end" id="mR"><div class="offcanvas-body"><iframe src="https://okankaplanedu.github.io/toc.html" style="width:100%;height:100%;border:0;"></iframe></div></div>
 
-<!-- ─── Main Content ──────────────────────────────── -->
 <main role="main">
+   <div id="main1"></div> 
   <article itemscope itemtype="https://schema.org/Article">
  
     <section itemprop="articleBody">
       <h1>VIDEO + MEDIA ENGINE LAYER</h1><p>This article presents a complete architecture of the Video + Media Engine Layer in modern web systems. It explains how video is captured, streamed, processed, protected, and rendered across the browser runtime. From native HTML5 video playback to WebRTC real-time communication and GPU-powered media processing, this layer forms the foundation of all modern digital media experiences.</p><p><br></p><h2>1. Core Video Foundation (Browser Native Layer)</h2><p>The core video layer is built directly into the browser and defines the fundamental APIs for media playback, buffering, and synchronization.</p><h3>Native Media Systems</h3><p>HTML5 Video API (native playback engine)</p><p> HTMLMediaElement (base media class)</p><p> MediaSource Extensions (MSE)</p><p> Encrypted Media Extensions (EME)</p><p> TimeRanges API (buffer management system)</p><h2>2. Streaming Engine Layer (Live + On-Demand)</h2><p>Streaming engines handle adaptive delivery of video content over the network using segmented and buffered playback models.</p><h3>Streaming Systems</h3><p>HLS.js (HTTP Live Streaming engine)</p><p> Dash.js (MPEG-DASH engine)</p><p> Media Source Extensions pipeline</p><p> CMAF streaming architecture</p><p> Adaptive bitrate (ABR) systems</p><h2>3. Media Capture &amp; Recording Layer</h2><p>This layer enables real-time capture of video, audio, and screen-based media streams.</p><h3>Capture Systems</h3><p>MediaRecorder API</p><p> getUserMedia API (camera/microphone access)</p><p> MediaStream API</p><p> ImageCapture API</p><p> Screen Capture API</p><h2>4. Real-Time Communication Layer</h2><p>Real-time systems enable peer-to-peer audio/video communication with ultra-low latency.</p><h3>Communication Engines</h3><p>WebRTC (real-time communication engine)</p><p> RTCPeerConnection (network core)</p><p> RTCDataChannel (data + media sync layer)</p><p> STUN / TURN infrastructure</p><h2>5. Video Player Framework Layer (UI Engine)</h2><p>Video player frameworks provide user interfaces and plugin-based media control systems.</p><h3>Player Systems</h3><p>Video.js</p><p> Plyr</p><p> JW Player</p><p> Clappr</p><p> MediaElement.js</p><h2>6. Video Processing &amp; Manipulation Layer</h2><p>This layer processes video frames in real time using CPU and GPU pipelines.</p><h3>Processing Engines</h3><p>Canvas API (frame manipulation)</p><p> WebGL video shaders</p><p> OffscreenCanvas</p><p> MediaStreamTrackProcessor</p><p> WebCodecs API</p><h2>7. 3D / Graphics Video Integration Layer</h2><p>This layer integrates video streams into 3D environments and GPU-rendered scenes.</p><h3>3D Video Systems</h3><p>Three.js VideoTexture</p><p> WebGL texture streaming</p><p> CSS 3D transforms</p><p> WebXR video environments</p><p> Shader-based video effects</p><h2>8. Adaptive Streaming Control Layer</h2><p>Adaptive systems monitor network conditions and adjust video quality dynamically.</p><h3>Adaptive Engines</h3><p>Bitrate adaptation (ABR logic)</p><p> Buffer health monitoring systems</p><p> Network condition detection</p><p> Resolution fallback systems</p><p> Preloading &amp; lazy streaming logic</p><h2>9. DRM &amp; Protected Content Layer</h2><p>This layer handles encryption and licensing for protected video content.</p><h3>DRM Systems</h3><p>Encrypted Media Extensions (EME)</p><p> Widevine DRM</p><p> PlayReady DRM</p><p> FairPlay DRM</p><h2>10. Video Delivery Infrastructure Layer</h2><p>This layer defines backend and CDN-based delivery systems for scalable video distribution.</p><h3>Delivery Systems</h3><p>HLS segment pipelines</p><p> MPEG-DASH manifests (MPD)</p><p> CDN-based chunk delivery</p><p> Edge caching systems</p><p> Cloud transcoding services</p><h2>FINAL STACK VIDEO ARCHITECTURE MODEL</h2><p>The Video + Media Engine Layer is structured into five core execution domains:</p><h3>1. INPUT (Capture)</h3><p>MediaRecorder API, getUserMedia, Screen Capture</p><h3>2. PROCESSING (Transform)</h3><p>WebCodecs, Canvas, WebGL pipelines</p><h3>3. TRANSMISSION (Stream)</h3><p>WebRTC, HLS, DASH, MSE</p><h3>4. PLAYBACK (Render)</h3><p>HTML5 Video API, Video.js, Plyr</p><h3>5. VISUAL EXTENSION (GPU Layer)</h3><p>Three.js VideoTexture, WebGL shaders</p><p><br></p><h2>FINAL REALITY SHIFT</h2><p>The Video + Media Engine Layer is no longer just a playback system.</p><p>It is a:</p><p><strong>“Browser Media Operating System Layer”</strong></p><p>A unified runtime that powers:</p><ul><li>streaming platforms (YouTube, Netflix)</li><li>real-time communication (Zoom, Meet)</li><li>interactive 3D media systems</li><li>GPU-based video processing pipelines</li></ul><p><br></p>
     </section>
 
-    <!-- YouTube Video (conditional) -->
-    
-  <!-- YouTube Playlist Link -->
   <div class="yt-link-container">
     <a href="https://www.youtube.com/playlist?list=PLeqxb0I-hlSV6GSmNq64XBKt9aWXmpHZ4" target="_blank" rel="noopener noreferrer" class="yt-play-button">
       <span class="play-icon">▶</span> View Playlist
     </a>
   </div>
-
-
-    <!-- Audio Resource (conditional) -->
-    
-
-  </article>
+</article>
+  <div id="main2"></div> 
+<div id="main3"></div> 
 </main>
 
-<!-- ─── Footer ───────────────────────────────────── -->
+
+ 
+ 
+ 
+<script>
+fetch("https://okankaplanedu.github.io/main1.html")
+  .then(response => response.text())
+  .then(html => {
+    document.getElementById("main1").innerHTML = html;
+  })
+  .catch(err => console.error("main1", err));
+
+fetch("https://okankaplanedu.github.io/main2.html")
+  .then(response => response.text())
+  .then(html => {
+    document.getElementById("main2").innerHTML = html;
+  })
+  .catch(err => console.error("main2", err));
+
+fetch("https://okankaplanedu.github.io/main3.html")
+  .then(response => response.text())
+  .then(html => {
+    document.getElementById("main3").innerHTML = html;
+  })
+  .catch(err => console.error("main3", err));
+</script>
+
+  
 <div id="footer-wrap" role="contentinfo"></div>
 
 <!-- ─── Scripts ──────────────────────────────────── -->
