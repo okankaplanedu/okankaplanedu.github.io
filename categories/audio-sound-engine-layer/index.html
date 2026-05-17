@@ -128,30 +128,50 @@ fetch("https://okankaplanedu.github.io/cat-header-container.html")
 
 <!-- ─── Main Content ──────────────────────────────── -->
 <main role="main">
+   <div id="main1"></div> 
   <article itemscope itemtype="https://schema.org/Article">
 
- 
     <section itemprop="articleBody">
       <h1>AUDIO / SOUND ENGINE LAYER (FULL ECOSYSTEM MAP)</h1><p>This article presents a complete architecture of the Audio / Sound Engine Layer in modern web systems. It defines how sound is generated, processed, analyzed, visualized, and streamed inside the browser. This layer spans from low-level Web Audio API primitives to high-level synthesis frameworks, real-time DSP pipelines, game audio systems, and network-based streaming architectures, forming a complete “audio runtime ecosystem” for the web.</p><p><br></p><h2>1. Core Audio Engine (Low-Level Foundation)</h2><p>The core audio engine is the foundation of all browser-based sound processing systems. It directly interacts with hardware-level audio pipelines.</p><h3>Core Audio APIs</h3><p>Web Audio API</p><p> AudioContext API</p><p> OfflineAudioContext</p><p> MediaStream Audio API</p><p> HTMLAudioElement (legacy fallback)</p><h2>2. High-Level Audio Frameworks (Abstraction Layer)</h2><p>These frameworks simplify audio control, playback, and synthesis on top of Web Audio API.</p><h3>Audio Frameworks</h3><p>Tone.js (synthesis + sequencing engine)</p><p> Howler.js (cross-browser playback engine)</p><p> Pizzicato.js (audio effects system)</p><p> SoundJS (CreateJS audio system)</p><p> buzz.js (lightweight audio controller)</p><h2>3. Audio Synthesis &amp; Music Generation</h2><p>This layer handles procedural sound generation and synthesizer-based audio creation.</p><h3>Synthesis Engines</h3><p>Tone.js Synth / PolySynth / FMSynth</p><p> Web Audio OscillatorNode</p><p> AudioWorklet DSP synthesis</p><p> Modular synth architectures</p><p> Oscillator-based generation systems</p><h2>4. Audio Analysis / DSP Layer</h2><p>Digital signal processing (DSP) systems analyze and transform audio signals in real time.</p><h3>DSP Engines</h3><p>AnalyserNode (FFT analysis)</p><p> WaveShaperNode (distortion)</p><p> BiquadFilterNode (EQ system)</p><p> ConvolverNode (reverb engine)</p><p> DynamicsCompressorNode</p><p> GainNode (volume control)</p><p> Real-time FFT pipelines</p><h2>5. Waveform / Visualization Engine</h2><p>This layer transforms audio signals into visual representations such as waveforms and frequency spectrums.</p><h3>Visualization Systems</h3><p>Wavesurfer.js</p><p> Peaks.js</p><p> Canvas-based waveform renderers</p><p> Three.js audio visualizers</p><p> Web Audio spectrum analyzers</p><p> FFT-based visualization pipelines</p><h2>6. Audio Playback Engine (Media Layer)</h2><p>This layer manages playback, buffering, and multi-format audio delivery.</p><h3>Playback Engines</h3><p>Howler.js (multi-format engine)</p><p> SoundJS (audio queue system)</p><p> HTMLAudioElement API</p><p> MediaSource Extensions (MSE)</p><p> HLS / DASH audio streaming</p><h2>7. Real-Time Audio Processing Layer</h2><p>This layer handles live audio streams and real-time digital signal processing.</p><h3>Real-Time Systems</h3><p>AudioWorklet (modern DSP engine)</p><p> MediaStreamTrackProcessor</p><p> WebRTC audio pipelines</p><p> Live microphone input processing</p><p> Streaming DSP architectures</p><h2>8. Effects &amp; Audio FX Stack</h2><p>This layer applies real-time effects such as filtering, reverb, distortion, and modulation.</p><h3>Audio Effects</h3><p>DelayNode (echo system)</p><p> ConvolverNode (reverb engine)</p><p> WaveShaperNode (distortion)</p><p> Chorus / Phaser (Tone.js effects)</p><p> BiquadFilterNode (EQ system)</p><p> Multi-band audio processing chains</p><h2>9. Game Audio Engine Integration Layer</h2><p>This layer integrates audio systems into game engines and interactive environments.</p><h3>Game Audio Systems</h3><p>Phaser Audio System</p><p> Howler.js game audio layer</p><p> Three.js positional audio system</p><p> Unity WebGL audio bridge</p><p> Godot Web audio backend</p><h2>10. Streaming / Network Audio Layer</h2><p>This layer handles real-time audio transmission over networks.</p><h3>Streaming Systems</h3><p>WebRTC audio streams</p><p> MediaStream API</p><p> HLS audio streaming</p><p> WebSocket audio pipelines</p><p> Audio chunk buffering systems</p><h2>11. Hybrid / Ecosystem Wrappers</h2><p>These systems combine multiple audio engines into unified pipelines.</p><h3>Hybrid Architectures</h3><p>Tone.js + Web Audio hybrid systems</p><p> Howler.js + Web Audio pipelines</p><p> Wavesurfer + AudioContext integration</p><p> Custom AudioWorklet DSP architectures</p><h2>FULL STACK AUDIO MODEL</h2><p>The Audio Engine Layer operates on four core pillars:</p><h3>1. SOUND GENERATION</h3><p>(Tone.js, Oscillators, Synths)</p><h3>2. AUDIO PLAYBACK</h3><p>(Howler.js, AudioElement, streaming engines)</p><h3>3. SIGNAL PROCESSING (DSP)</h3><p>(AnalyserNode, filters, AudioWorklet)</p><h3>4. VISUALIZATION + STREAMING</h3><p>(Wavesurfer, WebRTC, FFT visual engines)</p><p><br></p><h2>FINAL REALITY SHIFT</h2><p>The Audio / Sound Engine Layer is no longer just a media playback system.</p><p>It is a:</p><p><strong>“Real-Time Audio Computation Runtime”</strong></p><p>A full browser-based sound operating system that manages:</p><ul><li>synthesis</li><li>processing</li><li>analysis</li><li>visualization</li><li>and streaming&nbsp;</li></ul><p><br></p>
     </section>
-
-    <!-- YouTube Video (conditional) -->
-    
-  <!-- YouTube Playlist Link -->
-  <div class="yt-link-container">
+ <div class="yt-link-container">
     <a href="https://www.youtube.com/playlist?list=PLeqxb0I-hlSXg1Wplqvt-vL0wfiY9z6Qt" target="_blank" rel="noopener noreferrer" class="yt-play-button">
       <span class="play-icon">▶</span> View Playlist
     </a>
   </div>
 
-
-    <!-- Audio Resource (conditional) -->
-    
-
-  </article>
+ </article>
+ <div id="main2"></div> 
+<div id="main3"></div>   
 </main>
 
-<!-- ─── Footer ───────────────────────────────────── -->
+
+
+ 
+ 
+<script>
+fetch("https://okankaplanedu.github.io/main1.html")
+  .then(response => response.text())
+  .then(html => {
+    document.getElementById("main1").innerHTML = html;
+  })
+  .catch(err => console.error("main1", err));
+
+fetch("https://okankaplanedu.github.io/main2.html")
+  .then(response => response.text())
+  .then(html => {
+    document.getElementById("main2").innerHTML = html;
+  })
+  .catch(err => console.error("main2", err));
+
+fetch("https://okankaplanedu.github.io/main3.html")
+  .then(response => response.text())
+  .then(html => {
+    document.getElementById("main3").innerHTML = html;
+  })
+  .catch(err => console.error("main3", err));
+</script>
+  
 <div id="footer-wrap" role="contentinfo"></div>
 
 <!-- ─── Scripts ──────────────────────────────────── -->
