@@ -125,31 +125,51 @@ fetch("https://okankaplanedu.github.io/cat-header-container.html")
 <div class="offcanvas offcanvas-start" id="mL"><div class="offcanvas-body"><iframe src="https://okankaplanedu.github.io/archive.html" style="width:100%;height:100%;border:0;"></iframe></div></div>
 <div class="offcanvas offcanvas-end" id="mR"><div class="offcanvas-body"><iframe src="https://okankaplanedu.github.io/toc.html" style="width:100%;height:100%;border:0;"></iframe></div></div>
 
-<!-- ─── Main Content ──────────────────────────────── -->
 <main role="main">
+   <div id="main1"></div> 
   <article itemscope itemtype="https://schema.org/Article">
  
     <section itemprop="articleBody">
       <h1>Game + Interactive Engine Layer (Full Simulation Stack)</h1><p>This article explains the full Game and Interactive Engine Layer used in modern web-based game development. It covers everything from 2D and 3D game engines to physics simulation systems, rendering pipelines, real-time game loops, multiplayer networking, and advanced simulation techniques. This layer represents the complete architecture behind browser-based games, interactive simulations, and real-time virtual worlds.</p><p><br></p><h2>1. Core Game Rendering Engine Layer</h2><p>This layer defines how frames are generated and rendered in real time using GPU and browser APIs.</p><h3>Rendering Systems</h3><p>WebGL rendering pipeline — GPU-based graphics core</p><p> WebGPU — next-generation rendering and compute engine</p><p> Canvas 2D fallback system — CPU-based rendering support</p><p> requestAnimationFrame loop — frame synchronization system</p><p> Delta-time simulation clock — time-based movement consistency</p><h2>2. 2D Game Engine Layer</h2><p>This layer focuses on building lightweight and fast 2D games.</p><h3>2D Engines</h3><p>Phaser — full game engine (physics, scenes, input)</p><p> PixiJS — high-performance GPU renderer</p><p> Construct — visual game development engine</p><p> EaselJS — canvas-based rendering system</p><h2>3. 3D Game Engine Layer</h2><p>This layer handles real-time 3D worlds and complex simulations.</p><h3>3D Engines</h3><p>Three.js — scene graph and WebGL renderer</p><p> Babylon.js — advanced AAA-level game engine</p><p> PlayCanvas — browser-based game engine and editor</p><h2>4. Physics Simulation Engine Layer</h2><p>This layer simulates real-world physics behavior in games.</p><h3>Physics Systems</h3><p>Matter.js — 2D physics engine (gravity, collision)</p><p> cannon-es — WebGL-based physics engine</p><p> Ammo.js — advanced rigid body physics system</p><p> Verlet systems — soft-body simulation</p><p> Constraint solvers — joints, springs, and mechanics</p><h2>5. Rendering + Scene Graph Layer</h2><p>This layer manages how objects exist and behave in a game world.</p><h3>Scene Systems</h3><p>Scene graph architecture — hierarchical object structure</p><p> Entity Component System (ECS) — modular game logic design</p><p> Transform matrices — position, rotation, scaling system</p><p> Camera systems — perspective and orthographic views</p><p> Lighting systems — ambient, directional, and point lights</p><h2>6. Input + Interaction Layer</h2><p>This layer handles all user interactions in real time.</p><h3>Input Systems</h3><p>Keyboard, mouse, and touch input handling</p><p> Pointer Lock API — FPS-style control system</p><p> Gamepad API — console controller support</p><p> Gesture recognition systems — mobile interaction</p><p> Raycasting systems — object selection in 3D space</p><h2>7. Real-Time Simulation Loop Layer</h2><p>This layer controls the heartbeat of the game.</p><h3>Game Loop Systems</h3><p>Fixed timestep simulation — stable physics updates</p><p> Variable timestep rendering — smooth frame rendering</p><p> requestAnimationFrame loop — browser sync system</p><p> Physics update cycle — deterministic simulation</p><p> Interpolation systems — smooth movement transitions</p><h2>8. Game Rendering Optimization Layer</h2><p>This layer improves performance for large-scale games.</p><h3>Optimization Techniques</h3><p>Frustum culling — hide invisible objects</p><p> LOD (Level of Detail) — reduce geometry complexity</p><p> Batching — minimize draw calls</p><p> Texture atlas systems — efficient texture usage</p><p> GPU instancing — render thousands of objects</p><h2>9. Networked Game / Multiplayer Layer</h2><p>This layer enables real-time multiplayer experiences.</p><h3>Networking Systems</h3><p>WebSocket real-time sync — live communication</p><p> WebRTC peer-to-peer systems — direct connections</p><p> Authoritative server architecture — secure game logic</p><p> Client prediction systems — reduce lag perception</p><p> State reconciliation — sync correction system</p><h2>10. Advanced Simulation Systems</h2><p>This layer handles complex world behavior and AI-driven systems.</p><h3>Simulation Features</h3><p>Particle systems — fire, smoke, explosions</p><p> Fluid simulation — shader-based liquid physics</p><p> Cloth simulation — soft-body dynamics</p><p> Crowd simulation — AI-driven agents</p><p> Pathfinding systems — A* and Dijkstra algorithms</p><h2>FULL GAME ENGINE ARCHITECTURE</h2><h3>Input Layer</h3><p>Keyboard, mouse, touch, gamepad</p><h3>Simulation Layer</h3><p>Physics engines (Matter.js / Cannon-es / Ammo.js)</p><h3>Rendering Layer</h3><p>Three.js / Babylon.js / PixiJS</p><h3>Game Logic Layer</h3><p>Entity Component System (ECS) architecture</p><h3>Network Layer</h3><p>WebSocket / WebRTC multiplayer systems</p><h3>Output Layer</h3><p>WebGL / WebGPU frame rendering</p><p><br></p><h2>FINAL REALITY CHECK</h2><p>The Game + Interactive Engine Layer is not just game development.</p><p>It is a <strong>real-time simulation operating system</strong> combining:</p><ul><li>GPU rendering pipelines</li><li>Physics simulation engines</li><li>AI-driven world systems</li><li>Networked multiplayer synchronization</li><li>High-performance animation loops</li></ul><h2>CORE ARCHITECTURE SUMMARY</h2><h3>2D Engine Layer</h3><p>Phaser / PixiJS</p><h3>3D Engine Layer</h3><p>Three.js / Babylon.js / PlayCanvas</p><h3>Physics Layer</h3><p>Matter.js / Cannon-es / Ammo.js</p><h3>Render Layer</h3><p>WebGL / WebGPU</p><h3>Simulation Loop</h3><p>requestAnimationFrame system</p>
     </section>
 
-    <!-- YouTube Video (conditional) -->
-    
-  <!-- YouTube Playlist Link -->
   <div class="yt-link-container">
     <a href="https://www.youtube.com/playlist?list=PLeqxb0I-hlSWjzUhHkSNOXkQJPK6cRtLJ" target="_blank" rel="noopener noreferrer" class="yt-play-button">
       <span class="play-icon">▶</span> View Playlist
     </a>
   </div>
 
-
-    <!-- Audio Resource (conditional) -->
-    
-
   </article>
+   <div id="main2"></div> 
+<div id="main3"></div> 
 </main>
 
-<!-- ─── Footer ───────────────────────────────────── -->
+
+ 
+ 
+<script>
+fetch("https://okankaplanedu.github.io/main1.html")
+  .then(response => response.text())
+  .then(html => {
+    document.getElementById("main1").innerHTML = html;
+  })
+  .catch(err => console.error("main1", err));
+
+fetch("https://okankaplanedu.github.io/main2.html")
+  .then(response => response.text())
+  .then(html => {
+    document.getElementById("main2").innerHTML = html;
+  })
+  .catch(err => console.error("main2", err));
+
+fetch("https://okankaplanedu.github.io/main3.html")
+  .then(response => response.text())
+  .then(html => {
+    document.getElementById("main3").innerHTML = html;
+  })
+  .catch(err => console.error("main3", err));
+</script>
+  
 <div id="footer-wrap" role="contentinfo"></div>
 
 <!-- ─── Scripts ──────────────────────────────────── -->
