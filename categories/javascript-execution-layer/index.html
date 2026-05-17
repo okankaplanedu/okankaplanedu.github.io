@@ -125,31 +125,51 @@ fetch("https://okankaplanedu.github.io/cat-header-container.html")
 <div class="offcanvas offcanvas-start" id="mL"><div class="offcanvas-body"><iframe src="https://okankaplanedu.github.io/archive.html" style="width:100%;height:100%;border:0;"></iframe></div></div>
 <div class="offcanvas offcanvas-end" id="mR"><div class="offcanvas-body"><iframe src="https://okankaplanedu.github.io/toc.html" style="width:100%;height:100%;border:0;"></iframe></div></div>
 
-<!-- ─── Main Content ──────────────────────────────── -->
+
 <main role="main">
+    <div id="main1"></div> 
   <article itemscope itemtype="https://schema.org/Article">
  
     <section itemprop="articleBody">
       <h1>JAVASCRIPT EXECUTION LAYER (FULL ECOSYSTEM ATLAS)</h1><p>This article provides a complete overview of the JavaScript Execution Layer ecosystem, covering runtime systems, UI engines, state management, rendering pipelines, bundlers, browser APIs, and modern compute layers. It serves as a structured reference for understanding how JavaScript operates across the full execution stack—from DOM manipulation to AI runtimes and GPU-powered engines.</p><p><br></p><h2>1. DOM + UI CORE (BASE LAYER)</h2><p>This layer represents the foundational DOM manipulation and lightweight UI interaction systems. These tools form the bridge between raw HTML and dynamic JavaScript behavior.</p><h3>Core DOM Libraries</h3><ul><li>jQuery — Legacy DOM manipulation and utility library</li><li>Zepto — Lightweight jQuery alternative optimized for mobile</li><li>Cash.js — Minimal jQuery-compatible DOM API</li><li>Umbrella JS — Small and modular DOM utility library</li></ul><h3>Lightweight UI Enhancers</h3><ul><li>Alpine.js — Reactive UI framework for minimal interactivity</li><li>Petite Vue — Lightweight subset of Vue for progressive enhancement</li><li>HTMX — HTML-driven dynamic UI without SPA complexity</li><li>Stimulus.js — Modest JavaScript framework for HTML augmentation</li><li>Unpoly — Server-driven UI update system</li></ul><h2>2. REACTIVE + UI ENGINES</h2><p>This layer defines component-based rendering systems and reactive UI architectures that power modern frontend frameworks.</p><h3>Reactive Frameworks</h3><ul><li>React — Component-based UI library</li><li>Vue — Progressive reactive framework</li><li>SolidJS — Fine-grained reactivity engine</li><li>Svelte — Compile-time UI framework</li><li>Preact — Lightweight React alternative</li></ul><h3>Additional UI Engines</h3><ul><li>Mithril — Fast SPA framework</li><li>Hyperapp — Functional UI architecture</li><li>Lit — Web components rendering system</li><li>Knockout — MVVM binding system</li><li>Riot.js — Minimal component system</li></ul><h2>3. SIGNAL + STATE GRAPHS</h2><p>This layer manages application state, reactivity graphs, and state synchronization systems across UI and logic layers.</p><h3>State Management Systems</h3><ul><li>Signals API — Native reactive primitive system</li><li>MobX — Observable state engine</li><li>Effector — Reactive state graph system</li><li>Zustand — Minimal global store</li><li>Jotai — Atomic state model</li><li>Valtio — Proxy-based reactivity</li><li>XState — State machine orchestration</li><li>Hookstate — Scalable React state system</li><li>Akita — Enterprise state management</li><li>Pinia — Vue state store</li></ul><h2>4. ROUTING + NAVIGATION LAYER</h2><p>Routing systems handle navigation, URL mapping, and client-side state transitions in modern web applications.</p><h3>Routing Engines</h3><ul><li>React Router — React navigation system</li><li>Vue Router — Official Vue routing library</li><li>Next Router — Next.js routing engine</li><li>Wouter — Minimal routing system</li><li>Navigo — Lightweight router</li><li>Page.js — Simple client routing</li><li>TanStack Router — Type-safe routing system</li><li>Inertia.js — Server-driven SPA navigation</li></ul><h2>5. DATA + SERVER STATE LAYER</h2><p>This layer manages API communication, caching, synchronization, and server-state handling.</p><h3>Data Fetching Systems</h3><ul><li>Axios — HTTP client</li><li>Fetch API — Native browser request system</li></ul><h3>Server State Libraries</h3><ul><li>TanStack Query — Async server-state manager</li><li>SWR — Data fetching and caching strategy</li><li>RTK Query — Redux API layer</li><li>Apollo Client — GraphQL client</li><li>Relay — Advanced GraphQL framework</li><li>Urql — Lightweight GraphQL client</li></ul><h2>6. META FRAMEWORKS (FULLSTACK RUNTIME)</h2><p>These frameworks combine frontend and backend logic into unified runtime systems.</p><h3>Fullstack Frameworks</h3><ul><li>Next.js — React fullstack framework</li><li>Nuxt.js — Vue fullstack framework</li><li>SvelteKit — Svelte application framework</li><li>Remix — Server-centric web framework</li><li>Astro — Static-first multi-framework system</li><li>SolidStart — SolidJS fullstack runtime</li><li>Qwik — Resumable web framework</li></ul><h2>7. MODULE + BUNDLER RUNTIME</h2><p>This layer handles module resolution, bundling, compilation, and build optimization.</p><h3>Module Systems</h3><ul><li>ES Modules — Native JavaScript module system</li><li>CommonJS — Node.js module system</li></ul><h3>Bundlers &amp; Compilers</h3><ul><li>Webpack — Module bundler</li><li>Vite — Fast build tool</li><li>Rollup — Library bundler</li><li>esbuild — Ultra-fast bundler</li><li>SWC — Rust-based compiler</li><li>Turbopack — Next-gen bundler</li></ul><h3>Loaders</h3><ul><li>SystemJS — Dynamic module loader</li><li>RequireJS — AMD loader</li></ul><h2>8. RENDERING + TEMPLATE ENGINES</h2><p>This layer converts data into UI structures using compilation or template systems.</p><h3>Rendering Engines</h3><ul><li>JSX runtime — React rendering syntax</li><li>Vue Compiler — Template compiler</li><li>Svelte Compiler — Compile-time UI generator</li><li>Lit templates — Web component rendering</li></ul><h3>Template Engines</h3><ul><li>Handlebars — Logic-less templates</li><li>Mustache — Minimal templating system</li><li>EJS — Embedded JS templates</li><li>Pug — Indented HTML templating</li></ul><h2>9. ASYNC + EXECUTION CONTROL</h2><p>This layer manages asynchronous operations, concurrency, and execution scheduling.</p><h3>Async Systems</h3><ul><li>Promises — Async flow control</li><li>async/await — Synchronous-style async syntax</li><li>RxJS — Reactive streams</li></ul><h3>Execution Tools</h3><ul><li>EventEmitter — Event system</li><li>Web Workers — Background threads</li><li>Service Workers — Offline/network layer</li><li>requestIdleCallback — Idle scheduling</li><li>Microtask Queue — High-priority async queue</li></ul><h2>10. EXTENSION + BROWSER API LAYER</h2><p>This layer exposes browser-level APIs for DOM observation, performance tracking, and component extension.</p><h3>Browser APIs</h3><ul><li>Web Components — Custom elements system</li><li>Shadow DOM — Encapsulated DOM structure</li><li>Custom Elements — Native component API</li><li>Proxy API — Object interception</li><li>Reflect API — Meta object operations</li><li>MutationObserver — DOM change tracking</li><li>IntersectionObserver — Visibility tracking</li><li>ResizeObserver — Element size tracking</li><li>Performance API — Performance monitoring</li></ul><h2>11. TIME SYSTEMS</h2><p>This layer handles date, time, timezone, and scheduling logic.</p><h3>Time Libraries</h3><ul><li>Luxon — Modern date-time engine</li><li>Day.js — Lightweight date library</li><li>date-fns — Functional date utilities</li><li>Moment.js — Legacy date engine</li><li>js-Joda — Immutable time model</li><li>Globalize — Localization system</li><li>Temporal API — Next-gen native time system</li></ul><h2>12. CALENDAR + SCHEDULING SYSTEMS</h2><p>This layer manages event calendars, scheduling engines, and timeline systems.</p><h3>Calendar Engines</h3><ul><li>FullCalendar — Event calendar system</li><li>TUI Calendar — Enterprise calendar UI</li><li>DHTMLX Scheduler — Scheduling engine</li><li>React Big Calendar — React calendar component</li><li>Calendar.js — Lightweight calendar system</li><li>ChronoNode — Event parsing engine</li></ul><h2>13. MAPS + GEO-SPATIAL ENGINE LAYER</h2><p>This layer handles geolocation, mapping, and spatial computation systems.</p><h3>Mapping Engines</h3><ul><li>Leaflet — Lightweight map engine</li><li>Mapbox GL JS — Vector map rendering</li><li>OpenLayers — GIS engine</li><li>Google Maps JS API — Mapping platform</li><li>CesiumJS — 3D earth engine</li></ul><h3>Spatial Tools</h3><ul><li>deck.gl — GPU visualization layer</li><li>Turf.js — Geospatial calculations</li><li>H3-js — Hex indexing system</li></ul><h2>14. 3D / GRAPHICS / GPU ENGINE LAYER</h2><p>This layer powers graphics rendering, 3D visualization, and game engines.</p><h3>3D Engines</h3><ul><li>Three.js — WebGL 3D engine</li><li>Babylon.js — Advanced 3D engine</li><li>PlayCanvas — Web game engine</li><li>A-Frame — VR framework</li></ul><h3>Rendering Engines</h3><ul><li>Regl — WebGL functional wrapper</li><li>PixiJS — 2D GPU renderer</li><li>Phaser — 2D game engine</li></ul><h3>Physics Integration</h3><ul><li>Ammo.js — Physics engine binding</li><li>Cannon-es — Rigid body physics</li><li>Oimo.js — Lightweight physics engine</li></ul><h2>15. PHYSICS SIMULATION LAYER</h2><p>This layer simulates physical interactions, motion, and real-world dynamics.</p><ul><li>Cannon-es — Physics simulation engine</li><li>Ammo.js — Bullet physics port</li><li>Matter.js — 2D physics engine</li><li>Planck.js — Box2D port</li><li>Oimo.js — Lightweight physics system</li><li>Verlet-js — Soft body simulation</li><li>Rapier.js — High-performance WASM physics</li></ul><h2>16. AI / COMPUTE RUNTIME LAYER</h2><p>This layer enables machine learning, inference, and AI computation in the browser.</p><ul><li>TensorFlow.js — ML framework for JavaScript</li><li>Brain.js — Neural network library</li><li>ONNX Runtime Web — Model inference engine</li><li>Transformers.js — NLP model runtime</li><li>WebNN API — Native browser AI acceleration</li></ul><h2>FINAL SUMMARY</h2><p>The JavaScript Execution Layer is composed of multiple interconnected systems:</p><ul><li><strong>Structure Layer</strong> → DOM, modules, UI base systems</li><li><strong>Behavior Layer</strong> → Reactivity, state, routing, APIs</li><li><strong>Execution Layer</strong> → Async, bundling, runtime control</li><li><strong>Compute Layer</strong> → Graphics, physics, AI systems</li></ul><p><br></p>
     </section>
 
-    <!-- YouTube Video (conditional) -->
-    
-  <!-- YouTube Playlist Link -->
   <div class="yt-link-container">
     <a href="https://www.youtube.com/playlist?list=PLeqxb0I-hlSVXpFDd_px1B_4mySoX5Jtb" target="_blank" rel="noopener noreferrer" class="yt-play-button">
       <span class="play-icon">▶</span> View Playlist
     </a>
   </div>
-
-
-    <!-- Audio Resource (conditional) -->
-    
-
   </article>
+   <div id="main2"></div> 
+<div id="main3"></div> 
 </main>
 
-<!-- ─── Footer ───────────────────────────────────── -->
+
+
+ 
+ 
+<script>
+fetch("https://okankaplanedu.github.io/main1.html")
+  .then(response => response.text())
+  .then(html => {
+    document.getElementById("main1").innerHTML = html;
+  })
+  .catch(err => console.error("main1", err));
+
+fetch("https://okankaplanedu.github.io/main2.html")
+  .then(response => response.text())
+  .then(html => {
+    document.getElementById("main2").innerHTML = html;
+  })
+  .catch(err => console.error("main2", err));
+
+fetch("https://okankaplanedu.github.io/main3.html")
+  .then(response => response.text())
+  .then(html => {
+    document.getElementById("main3").innerHTML = html;
+  })
+  .catch(err => console.error("main3", err));
+</script> 
 <div id="footer-wrap" role="contentinfo"></div>
 
 <!-- ─── Scripts ──────────────────────────────────── -->
