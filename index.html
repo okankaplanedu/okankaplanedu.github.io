@@ -219,12 +219,9 @@ fetch("https://okankaplanedu.github.io/header.html")
 </div>
 
 <main class="container-fluid px-4" aria-live="polite">
-
-  <!-- Page heading (SEO + structure) -->
-  <h1 class="visually-hidden">Content Feed</h1>
-
-  <!-- Status / Loading Area -->
-  <div
+ <div id="main1"></div> 
+<h1 class="visually-hidden">Content Feed</h1>
+ <div
     class="text-center"
     id="status-container"
     style="display:none"
@@ -253,9 +250,41 @@ fetch("https://okankaplanedu.github.io/header.html")
     <div class="grid-sizer" aria-hidden="true"></div>
 
   </div>
-
+ <div id="main2"></div> 
+<div id="main3"></div> 
 </main>
 
+
+
+ 
+ 
+<script>
+fetch("https://okankaplanedu.github.io/main1.html")
+  .then(response => response.text())
+  .then(html => {
+    document.getElementById("main1").innerHTML = html;
+  })
+  .catch(err => console.error("main1", err));
+
+fetch("https://okankaplanedu.github.io/main2.html")
+  .then(response => response.text())
+  .then(html => {
+    document.getElementById("main2").innerHTML = html;
+  })
+  .catch(err => console.error("main2", err));
+
+fetch("https://okankaplanedu.github.io/main3.html")
+  .then(response => response.text())
+  .then(html => {
+    document.getElementById("main3").innerHTML = html;
+  })
+  .catch(err => console.error("main3", err));
+</script>
+
+
+
+
+ 
 <div id="footer-placeholder"></div>
 
 <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
