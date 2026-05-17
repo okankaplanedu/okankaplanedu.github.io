@@ -126,8 +126,8 @@ fetch("https://okankaplanedu.github.io/cat-header-container.html")
 <div class="offcanvas offcanvas-start" id="mL"><div class="offcanvas-body"><iframe src="https://okankaplanedu.github.io/archive.html" style="width:100%;height:100%;border:0;"></iframe></div></div>
 <div class="offcanvas offcanvas-end" id="mR"><div class="offcanvas-body"><iframe src="https://okankaplanedu.github.io/toc.html" style="width:100%;height:100%;border:0;"></iframe></div></div>
 
-<!-- ─── Main Content ──────────────────────────────── -->
 <main role="main">
+  <div id="main1"></div> 
   <article itemscope itemtype="https://schema.org/Article">
 
  
@@ -135,23 +135,42 @@ fetch("https://okankaplanedu.github.io/cat-header-container.html")
       <h1>EXPERIMENTAL + LEARNING ENGINE LAYER</h1><p>The Experimental + Learning Engine Layer is a system designed to optimize how software learns, adapts, and evolves over time. Instead of focusing on building a final “perfect” solution, this layer prioritizes rapid experimentation, feedback-driven improvement, and continuous learning cycles. It is widely used in modern JavaScript ecosystems, product engineering, and data-driven development workflows.</p><p><br></p><h2>Rapid Prototyping Mindset Layer</h2><p>This layer focuses on turning ideas into working prototypes as quickly as possible. The goal is not perfection but validation.</p><p>Tools like vite provide ultra-fast development environments, while esbuild enables extremely fast bundling for iterative testing. Browser-based platforms such as stackblitz and codesandbox allow instant execution of ideas without local setup.</p><p>The core principle is simple: build first, refine later.</p><p><br></p><h2>A/B Testing Logic Layer</h2><p>This layer compares multiple versions of a system to determine which performs better. It is essential for data-driven decision making.</p><p>Libraries like growthbook, launchdarkly, and split.io enable controlled experimentation in production environments.</p><p>The goal is to treat every feature as a hypothesis with measurable outcomes.</p><p><br></p><h2>Hypothesis-Driven Development Layer</h2><p>This layer treats development as a scientific process: define a hypothesis, test it, and validate the result.</p><p>Testing frameworks like jest and vitest are used for validation. For end-to-end behavioral testing, tools like cypress and playwright simulate real user interactions.</p><p>For API-level validation, supertest helps verify backend behavior.</p><p><br></p><h2>Feedback Loop Optimization Layer</h2><p>This layer ensures that systems continuously observe and improve themselves through real-time feedback.</p><p>Reactive programming tools like rxjs allow event-based data flows, while Node.js’s EventEmitter pattern supports lightweight feedback systems. Platforms like PostHog or Segment (via JS SDKs) integrate analytics into live systems.</p><p>The goal is to create systems that react to their own behavior.</p><p><br></p><h2>Iterative Improvement Cycles Layer</h2><p>This layer focuses on continuous deployment and evolutionary system design rather than one-time releases.</p><p>Version control systems and CI/CD pipelines such as github actions automate iteration cycles. Monorepo tools like nx and turborepo help manage large-scale iterative development.</p><p>Deployment strategies like canary and blue-green releases ensure safe experimentation in production.</p><p><br></p><h2>Error-Driven Learning Systems</h2><p>This layer treats errors not as failures, but as valuable data points for system improvement.</p><p>Error tracking tools like sentry capture runtime issues, while session replay tools like LogRocket provide behavioral insights. Logging systems such as Winston or Pino help structure diagnostic data. OpenTelemetry provides distributed tracing for complex systems.</p><p>The principle is: every error is a learning signal.</p><p><br></p><h2>Detail Note</h2><p>These layers work together as a closed learning loop:</p><p>Prototypes generate data → experiments compare outcomes → hypotheses are validated → feedback is collected → errors refine the system.</p><p>This creates a development model that continuously improves itself instead of aiming for a static “final version.”</p><p><br></p><h2>Conclusion</h2><p>The Experimental + Learning Engine Layer is not about building perfect systems—it is about building systems that learn faster than others.</p><p>Instead of asking:</p><ul><li>“What is the correct solution?”</li></ul><p>It asks:</p><ul><li>“How quickly can we discover a better one?”</li></ul><p>This mindset transforms software development into an adaptive, experimental learning engine.</p><p><br></p>
     </section>
 
-    <!-- YouTube Video (conditional) -->
-    
-  <!-- YouTube Playlist Link -->
   <div class="yt-link-container">
     <a href="https://www.youtube.com/playlist?list=PLeqxb0I-hlSVVNIcQKkF2Jo817sf1nOnS" target="_blank" rel="noopener noreferrer" class="yt-play-button">
       <span class="play-icon">▶</span> View Playlist
     </a>
   </div>
-
-
-    <!-- Audio Resource (conditional) -->
-    
-
-  </article>
+</article>
+   <div id="main2"></div> 
+<div id="main3"></div> 
 </main>
+ 
 
-<!-- ─── Footer ───────────────────────────────────── -->
+ 
+ 
+<script>
+fetch("https://okankaplanedu.github.io/main1.html")
+  .then(response => response.text())
+  .then(html => {
+    document.getElementById("main1").innerHTML = html;
+  })
+  .catch(err => console.error("main1", err));
+
+fetch("https://okankaplanedu.github.io/main2.html")
+  .then(response => response.text())
+  .then(html => {
+    document.getElementById("main2").innerHTML = html;
+  })
+  .catch(err => console.error("main2", err));
+
+fetch("https://okankaplanedu.github.io/main3.html")
+  .then(response => response.text())
+  .then(html => {
+    document.getElementById("main3").innerHTML = html;
+  })
+  .catch(err => console.error("main3", err));
+</script>
+  
 <div id="footer-wrap" role="contentinfo"></div>
 
 <!-- ─── Scripts ──────────────────────────────────── -->
