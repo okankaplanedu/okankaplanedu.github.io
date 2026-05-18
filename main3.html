@@ -1,6 +1,6 @@
 <article>
  
-<div style="text-align: center; margin-top: 50px;">
+<div style="text-align: center; margin-top: 50px; font-family: Arial, sans-serif;">
     <p style="color: #666; font-size: 14px; margin-bottom: 5px;">
         Views: <strong id="excel-sayac" style="color: #00FFCC; font-size: 18px;">...</strong>
     </p>
@@ -9,9 +9,12 @@
 <script>
     window.addEventListener('DOMContentLoaded', () => {
         
-        const googleScriptURL = 'https://script.google.com/macros/s/AKfycbxmH3VlIsvsX9_jwTEBp8yRO9Zj897ssBA76iux9NHr2VIWNgQFSvazOs_b0bCwHnnD8g/exec';
+        
+        const googleScriptURL = 'https://script.google.com/macros/s/AKfycbyi7csBC7863rT9Ynx3pv4qzjuz6v1jAEtFWX7NBYqWpvTKwYT9onDzZ44BjlOI9_-1MA/exec
+';
 
-        fetch(googleScriptURL)
+        // Google yönlendirmelerini (redirect) takip etmesi için redirect: 'follow' ekledik
+        fetch(googleScriptURL, { method: 'GET', redirect: 'follow' })
             .then(res => res.json())
             .then(data => {
                 document.getElementById('excel-sayac').innerText = data.count;
