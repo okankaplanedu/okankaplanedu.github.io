@@ -1,112 +1,96 @@
 <!DOCTYPE html>
-<html lang="tr">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Canlı Ziyaretçi Paneli</title>
+    <title>Counter</title>
     <style>
         body {
             margin: 0;
             padding: 0;
             background-color: #0b0f19;
-            color: #ffffff;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            color: #00FFCC;
+            font-family: Arial, sans-serif;
             display: flex;
             justify-content: center;
             align-items: center;
-            height: 100vvh;
+            height: 100vh;
             overflow: hidden;
+            user-select: none;
         }
-
-        .panel-kart {
-            background: rgba(255, 255, 255, 0.03);
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            backdrop-filter: blur(10px);
-            padding: 40px;
-            border-radius: 20px;
-            text-align: center;
-            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5);
-            max-width: 400px;
-            width: 100%;
-        }
-
-        h1 {
-            font-size: 20px;
-            text-transform: uppercase;
-            letter-spacing: 2px;
-            color: #8fa0dd;
-            margin-bottom: 30px;
-        }
-
-        .sayac-kutusu {
-            font-size: 64px;
+        #counter {
+            font-size: 120px;
             font-weight: bold;
-            color: #00FFCC;
-            text-shadow: 0 0 20px rgba(0, 255, 204, 0.4);
-            margin: 20px 0;
-            transition: all 0.3s ease;
-        }
-
-        .yenile-not {
-            font-size: 12px;
-            color: #56657a;
-            margin-top: 25px;
-        }
-
-        .durum-isigi {
-            display: inline-block;
-            width: 8px;
-            height: 8px;
-            background-color: #00FFCC;
-            border-radius: 50%;
-            margin-right: 8px;
-            box-shadow: 0 0 10px #00FFCC;
-            animation: kırpışma 1.5s infinite ease-in-out;
-        }
-
-        @keyframes kırpışma {
-            0%, 100% { opacity: 0.4; }
-            50% { opacity: 1; }
+            text-shadow: 0 0 30px rgba(0, 255, 204, 0.5);
+            cursor: pointer;
         }
     </style>
 </head>
 <body>
 
-    <div class="panel-kart">
-        <h1><span class="durum-isigi"></span>Toplam Ziyaretçi</h1>
-        
-        <div id="canli-sayi" class="sayac-kutusu">...</div>
-        
-        <div class="yenile-not">Veriler doğrudan Google Etablo'dan anlık çekilmektedir.</div>
-    </div>
+    <div id="counter">...</div>
 
     <script>
-        // Google'dan gelen veriyi yakalayıp ekrana basacak olan callback fonksiyonu
-        function sayaciGuncelle(data) {
-            if (data && data.count) {
-                document.getElementById('canli-sayi').innerText = data.count;
-            } else {
-                document.getElementById('canli-sayi').innerText = "Hata";
+        const googleScriptURL = 'https://script.google.com/macros/s/AKfycbycFwlIDvjqFE5_31IGzLb8X-wLSg4Fi8UEFNrSuvYtep5y8h210ts7C8XQuoAzB5qOzg/exec';
+        let lastCount = localStorage.getItem('last_visitor_count') ? parseInt(localStorage.getItem('last_visitor_count')) : null;
+        let audioCtx = null;
+
+        function playClickSound() {
+            try {
+                if (!audioCtx) {
+                    audioCtx = new (window.AudioContext || window.webkitAudioContext)();
+                }
+                const osc = audioCtx.createOscillator();
+                const gain = audioCtx.createGain();
+                osc.type = 'sine';
+                osc.frequency.setValueAtTime(1200, audioCtx.currentTime);
+                gain.gain.setValueAtTime(0.1, audioCtx.currentTime);
+                gain.gain.exponentialRampToValueAtTime(0.001, audioCtx.currentTime + 0.05);
+                osc.connect(gain);
+                gain.connect(audioCtx.destination);
+                osc.start();
+                osc.stop(audioCtx.currentTime + 0.05);
+            } catch (e) {
+                console.error(e);
             }
         }
 
-        // Sayfa açılır açılmaz çerez duvarına takılmayan JSONP (Script) isteğini fırlatıyoruz
-        window.addEventListener('DOMContentLoaded', () => {
-            const googleScriptURL = 'https://script.google.com/macros/s/AKfycbycFwlIDvjqFE5_31IGzLb8X-wLSg4Fi8UEFNrSuvYtep5y8h210ts7C8XQuoAzB5qOzg/exec';
-            
-            // Google'a fonksiyonumuzu bildiriyoruz
-            const jsonpURL = googleScriptURL + '?callback=sayaciGuncelle';
+        function sayaciGuncelle(data) {
+            if (data && data.count) {
+                const currentCount = parseInt(data.count);
+                document.getElementById('counter').innerText = currentCount;
+                
+                if (lastCount !== null && currentCount > lastCount) {
+                    playClickSound();
+                }
+                
+                lastCount = currentCount;
+                localStorage.setItem('last_visitor_count', currentCount);
+            }
+        }
+
+        function getData() {
+            const oldScript = document.getElementById('jsonp-script');
+            if (oldScript) oldScript.remove();
 
             const script = document.createElement('script');
-            script.src = jsonpURL;
-            
-            script.onerror = function() {
-                document.getElementById('canli-sayi').innerText = "Bağlantı Hatası";
-            };
-
+            script.id = 'jsonp-script';
+            script.src = googleScriptURL + '?callback=sayaciGuncelle&mod=izle&_=(REPLACE_WITH_TIMESTAMP)'.replace('(REPLACE_WITH_TIMESTAMP)', Date.now());
             document.head.appendChild(script);
+        }
+
+        document.getElementById('counter').addEventListener('click', () => {
+            if (!audioCtx) audioCtx = new (window.AudioContext || window.webkitAudioContext)();
+            getData();
+        });
+
+        window.addEventListener('DOMContentLoaded', () => {
+            if (lastCount !== null) {
+                document.getElementById('counter').innerText = lastCount;
+            }
+            getData();
+            setInterval(getData, 10000);
         });
     </script>
-
 </body>
 </html>
