@@ -1,26 +1,12 @@
 <article>
-<strong id="excel-sayac" style="color: #00FFCC; font-family: Arial, sans-serif; font-size: 18px;">...</strong>
-
-<script>
-   
-    function sayaciGuncelle(data) {
-        if (data && data.count) {
-            document.getElementById('excel-sayac').innerText = data.count;
-        }
-    }
-</script>
-
-<iframe srcdoc="
+ 
+ 
     <script>
        
         const googleScriptURL = 'https://script.google.com/macros/s/AKfycbycFwlIDvjqFE5_31IGzLb8X-wLSg4Fi8UEFNrSuvYtep5y8h210ts7C8XQuoAzB5qOzg/exec';
         
         
-        const jsonpURL = googleScriptURL + '?callback=parent.sayaciGuncelle';
-        
-        const script = document.createElement('script');
-        script.src = jsonpURL;
-        document.body.appendChild(script);
+    
     </script>
-" style="display: none; width: 0; height: 0; border: none;"></iframe>
+ 
 </article>
