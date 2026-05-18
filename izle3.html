@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Read Only Counter</title>
+<title>Live Counter</title>
 
 <style>
 body {
@@ -33,36 +33,31 @@ body {
 <script>
 const API = "https://script.google.com/macros/s/AKfycbycFwlIDvjqFE5_31IGzLb8X-wLSg4Fi8UEFNrSuvYtep5y8h210ts7C8XQuoAzB5qOzg/exec";
 
-// sadece UI cache (asla logic değil)
-let lastShown = null;
-
-// 📡 TEK GÖREV: OKU
-function updateUI(data) {
+// 🔵 SADECE OKUR
+function render(data) {
     if (!data || typeof data.count === "undefined") return;
 
-    const serverCount = parseInt(data.count);
-    document.getElementById("counter").innerText = serverCount;
-
-    lastShown = serverCount;
+    document.getElementById("counter").innerText = data.count;
 }
 
-// 📥 SADECE READ
-function fetchCount() {
+// 📡 SADECE VERİ ÇEKER (OKUMA MODU)
+function loadData() {
     const old = document.getElementById("req");
     if (old) old.remove();
 
-    const s = document.createElement("script");
-    s.id = "req";
+    const script = document.createElement("script");
+    script.id = "req";
 
-    s.src = API + "?callback=updateUI&mod=read&_=" + Date.now();
+    // sadece read
+    script.src = API + "?callback=render&mod=read&_=" + Date.now();
 
-    document.head.appendChild(s);
+    document.head.appendChild(script);
 }
 
 // 🚀 START
 window.addEventListener("DOMContentLoaded", () => {
-    fetchCount();
-    setInterval(fetchCount, 10000);
+    loadData();
+    setInterval(loadData, 10000);
 });
 </script>
 
