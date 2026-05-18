@@ -299,7 +299,6 @@ const CONFIG = {
     branch: "main",
     baseFolder: "categories",
     cacheKey: "ok_academy_cache_v24",
-    cacheTime: 3600000, 
     fetchDelay: 150
 };
 
@@ -315,20 +314,41 @@ function initMasonry() {
     });
 }
 
+/* ─────────────────────────────
+   PERMANENT CACHE (NO EXPIRY)
+───────────────────────────── */
 const Cache = {
     get: () => {
-        const data = localStorage.getItem(CONFIG.cacheKey);
-        if (!data) return null;
-        const parsed = JSON.parse(data);
-        if (Date.now() - parsed.timestamp > CONFIG.cacheTime) return null;
-        return parsed.articles;
+        try {
+            const data = localStorage.getItem(CONFIG.cacheKey);
+            if (!data) return null;
+
+            const parsed = JSON.parse(data);
+            return parsed.articles || null;
+
+        } catch (e) {
+            console.error("Cache get error:", e);
+            return null;
+        }
     },
+
     set: (articles) => {
-        const obj = { timestamp: Date.now(), articles: articles };
-        localStorage.setItem(CONFIG.cacheKey, JSON.stringify(obj));
+        try {
+            localStorage.setItem(
+                CONFIG.cacheKey,
+                JSON.stringify({
+                    articles
+                })
+            );
+        } catch (e) {
+            console.error("Cache set error:", e);
+        }
     }
 };
 
+/* ─────────────────────────────
+   CARD RENDER
+───────────────────────────── */
 function renderCard(article) {
 
     const plainText = `
@@ -337,59 +357,58 @@ function renderCard(article) {
         ${article.keywords}
     `.toLowerCase();
 
-const imageHTML = article.image
-    ? `<img 
-        src="${article.image}"
-        loading="lazy"
-        class="card-cover"
-        alt="${article.title ? article.title : 'Article image'}"
-        decoding="async"
-      >`
-    : "";
-const cardHTML = `
+    const imageHTML = article.image
+        ? `<img 
+            src="${article.image}"
+            loading="lazy"
+            class="card-cover"
+            alt="${article.title || 'Article image'}"
+            decoding="async"
+          >`
+        : "";
 
-<div class="grid-item" data-search="${plainText}" role="article">
+    const cardHTML = `
+    <div class="grid-item" data-search="${plainText}" role="article">
 
-    <div class="card-custom">
+        <div class="card-custom">
 
-        <div class="card-body-custom">
+            ${imageHTML}
 
-            <h2 class="card-title-custom">
-                <span itemprop="headline">${article.title}</span>
-            </h2>
+            <div class="card-body-custom">
 
-            <p class="card-desc-custom">
-                ${article.description || ""}
-            </p>
+                <h2 class="card-title-custom">
+                    <span itemprop="headline">${article.title}</span>
+                </h2>
 
-            <div class="card-keywords-custom" aria-label="Article keywords">
-                ${article.keywords}
+                <p class="card-desc-custom">
+                    ${article.description || ""}
+                </p>
+
+                <div class="card-keywords-custom">
+                    ${article.keywords || ""}
+                </div>
+
+                <a href="${article.url}"
+                   class="btn-open"
+                   target="_top"
+                   rel="noopener noreferrer">
+
+                   View Details →
+
+                </a>
+
             </div>
-
-            <a href="${article.url}"
-               class="btn-open"
-               target="_top"
-               rel="noopener noreferrer"
-               aria-label="View details for ${article.title}">
-
-               View Details →
-
-            </a>
 
         </div>
 
-    </div>
-
-</div>`;
+    </div>`;
 
     const $item = $(cardHTML);
 
     $('#masonry-container').append($item);
 
     $item.imagesLoaded(() => {
-
-        if(masonryGrid) {
-
+        if (masonryGrid) {
             masonryGrid
                 .masonry('appended', $item)
                 .masonry('layout');
@@ -397,13 +416,18 @@ const cardHTML = `
     });
 }
 
- 
+/* ─────────────────────────────
+   SEARCH
+───────────────────────────── */
 function applySearch(val) {
     val = (val || '').toLowerCase().trim();
 
     $('.grid-item').each(function () {
         const text = $(this).data('search') || '';
-        $(this).toggleClass('is-hidden', val !== '' && text.indexOf(val) === -1);
+        $(this).toggleClass(
+            'is-hidden',
+            val !== '' && text.indexOf(val) === -1
+        );
     });
 
     if (masonryGrid) {
@@ -411,28 +435,34 @@ function applySearch(val) {
     }
 }
 
- 
 $(document).on('input keyup', '#search-input', function () {
     applySearch($(this).val());
 });
- 
+
+/* header search sync */
 const headerObserver = new MutationObserver(function () {
     const $input = $('#search-input');
     if ($input.length) {
-        /* Restore any value that was typed before cards finished loading */
         applySearch($input.val());
     }
 });
-headerObserver.observe(document.getElementById('header-container'), {
-    childList: true,
-    subtree: true
-});
 
- 
+headerObserver.observe(
+    document.getElementById('header-container'),
+    { childList: true, subtree: true }
+);
+
+/* ─────────────────────────────
+   SCAN GITHUB (ONLY ONCE)
+───────────────────────────── */
 async function scanAndCache(path) {
     try {
-        const res = await fetch(`https://api.github.com/repos/${CONFIG.owner}/${CONFIG.repo}/contents/${path}`);
+        const res = await fetch(
+            `https://api.github.com/repos/${CONFIG.owner}/${CONFIG.repo}/contents/${path}`
+        );
+
         if (!res.ok) return;
+
         const items = await res.json();
 
         for (const item of items) {
@@ -446,11 +476,7 @@ async function scanAndCache(path) {
                 path !== CONFIG.baseFolder
             ) {
 
-                updateUIStatus(
-                    `Taranıyor: ${
-                        item.path.split('/').slice(-2,-1)
-                    }`
-                );
+                updateUIStatus(`Scanning: ${item.path}`);
 
                 const contentRes = await fetch(
                     `https://raw.githubusercontent.com/${CONFIG.owner}/${CONFIG.repo}/${CONFIG.branch}/${item.path}`
@@ -463,92 +489,86 @@ async function scanAndCache(path) {
                     const doc = new DOMParser()
                         .parseFromString(html, "text/html");
 
-                    const title =
-                        doc.querySelector("title")
-                        ?.innerText
-                        ?.trim() || "Untitled";
-
-                    const description =
-                        doc.querySelector(
-                            'meta[name="description"]'
-                        )
-                        ?.getAttribute("content")
-                        ?.trim() || "";
-
-                    const keywords =
-                        doc.querySelector(
-                            'meta[name="keywords"]'
-                        )
-                        ?.getAttribute("content")
-                        ?.trim() || "";
-
-                    const image =
-                        doc.querySelector(
-                            'meta[property="og:image"]'
-                        )
-                        ?.getAttribute("content")
-                        ?.trim() || "";
-
                     const data = {
-
-                        url:
-                            `https://${CONFIG.repo}/${
-                                item.path.replace(
-                                    'index.html',
-                                    ''
-                                )
-                            }`,
-
-                        title,
-                        description,
-                        keywords,
-                        image
-
+                        url: `https://${CONFIG.repo}/${item.path.replace('index.html', '')}`,
+                        title: doc.querySelector("title")?.innerText?.trim() || "Untitled",
+                        description: doc.querySelector('meta[name="description"]')?.getAttribute("content")?.trim() || "",
+                        keywords: doc.querySelector('meta[name="keywords"]')?.getAttribute("content")?.trim() || "",
+                        image: doc.querySelector('meta[property="og:image"]')?.getAttribute("content")?.trim() || ""
                     };
 
                     tempArchive.push(data);
                     renderCard(data);
-
                 }
 
-                await new Promise(
-                    r => setTimeout(r, CONFIG.fetchDelay)
-                );
+                await new Promise(r => setTimeout(r, CONFIG.fetchDelay));
             }
         }
-    } catch (e) { console.error("Tarama Hatası:", e); }
+
+    } catch (e) {
+        console.error("Scan error:", e);
+    }
 }
 
+/* ─────────────────────────────
+   UI STATUS
+───────────────────────────── */
 function updateUIStatus(msg) {
     const txt = document.getElementById("status-message");
-    if(txt) txt.innerText = msg;
+    if (txt) txt.innerText = msg;
 }
 
 function finalizeUI(isCache = false) {
     const spinner = document.getElementById("status-spinner");
     if (spinner) spinner.style.display = "none";
+
     const status = document.getElementById("status");
-    status.innerHTML = `<span style="color:#10b981">●</span> <span style="font-size:13px; font-weight:600;">${isCache ? 'Hızlı Yükleme' : 'Arşiv Güncel'}</span>`;
-    setTimeout(() => $('#status-container').fadeOut(), 3000);
+
+    status.innerHTML = `
+        <span style="color:#10b981">●</span>
+        <span style="font-size:13px; font-weight:600;">
+            ${isCache ? 'Cache Loaded' : 'Fresh Build'}
+        </span>
+    `;
+
+    setTimeout(() => {
+        $('#status-container').fadeOut();
+    }, 2500);
 }
 
+/* ─────────────────────────────
+   APP START
+   (NO API RECALL IF CACHE EXISTS)
+───────────────────────────── */
 async function startApp() {
-    initMasonry();
-    const cachedArticles = Cache.get();
 
-    if (cachedArticles) {
-        cachedArticles.forEach(art => renderCard(art));
+    initMasonry();
+
+    const cached = Cache.get();
+
+    if (cached && cached.length > 0) {
+
+        cached.forEach(renderCard);
         finalizeUI(true);
-    } else {
-        await scanAndCache(CONFIG.baseFolder);
-        if (tempArchive.length > 0) Cache.set(tempArchive);
-        finalizeUI(false);
+        return; // 🚫 API NEVER CALLED
+
     }
+
+    await scanAndCache(CONFIG.baseFolder);
+
+    if (tempArchive.length > 0) {
+        Cache.set(tempArchive);
+    }
+
+    finalizeUI(false);
 }
 
 $(document).ready(startApp);
 
-fetch('https://raw.githubusercontent.com/bandanee/root/main/import/footer.html').then(r => r.text()).then(h => document.getElementById('footer-placeholder').innerHTML = h);
+/* footer */
+fetch('https://raw.githubusercontent.com/bandanee/root/main/import/footer.html')
+    .then(r => r.text())
+    .then(h => document.getElementById('footer-placeholder').innerHTML = h);
 
 </script>
 </body>
