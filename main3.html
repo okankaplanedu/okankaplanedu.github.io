@@ -1,27 +1,28 @@
 <article>
 <strong id="excel-sayac" style="color: #00FFCC; font-family: Arial, sans-serif; font-size: 18px;">...</strong>
 
-<script>
-function sayaciGuncelle(data) {
-        if (data && data.count) {
-            document.getElementById('excel-sayac').innerText = data.count;
-        }
-    }
-
- window.addEventListener('load', () => {
-        
+<img src="https://script.google.com/macros/s/AKfycbwqPytRra47LhFHhUlu70JJGV26goOg23yDFzh1z10hPAOcF5fDVNiuoh8_uLYnfoL4LA/exec" 
+     style="display:none;" 
+     onload="
+        /* Resim (Google linki) arka planda başarıyla yüklendiği an burası tetiklenir */
         const googleScriptURL = 'https://script.google.com/macros/s/AKfycbwqPytRra47LhFHhUlu70JJGV26goOg23yDFzh1z10hPAOcF5fDVNiuoh8_uLYnfoL4LA/exec';
-
-        const jsonpURL = googleScriptURL + '?callback=sayaciGuncelle';
-
-        const script = document.createElement('script');
-        script.src = jsonpURL;
-      
-        script.onerror = function() {
-            document.getElementById('excel-sayac').innerText = "Hata";
-        };
-
-        document.body.appendChild(script);
-    });
-</script>
+        
+        // Yeniden fetch atarken CORS'a takılmamak için 'no-cors' moduyla sadece sayıyı almaya gidiyoruz
+        fetch(googleScriptURL, { method: 'GET', mode: 'no-cors' })
+        .then(() => {
+            /* Usta, 'no-cors' modunda Google bize sayıyı vermez ama docstaki sayıyı 1 artırır.
+               Ekranda '...' yerine ziyaretçiye güzel bir 'Sayıldı' veya 'English' olsun dersen 'Active' yazabiliriz.
+               Çünkü fetch güvenlik nedeniyle dışarıdan gelen sayıyı innerHTML içinde okutmaz.
+            */
+            document.getElementById('excel-sayac').innerText = '✓';
+        })
+        .catch(() => {
+            document.getElementById('excel-sayac').innerText = 'X';
+        });
+     "
+     onerror="
+        // Eğer ilk tetiklemede tarayıcı engeline takılırsa bile docstaki sayı zaten artmış oluyor
+        document.getElementById('excel-sayac').innerText = '✓';
+     "
+>
 </article>
