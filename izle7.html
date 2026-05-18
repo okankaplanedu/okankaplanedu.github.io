@@ -1,144 +1,126 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Live Counter</title>
-    <style>
-        body {
-            margin: 0;
-            padding: 0;
-            background-color: #0b0f19;
-            color: #00FFCC;
-            font-family: Arial, sans-serif;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-            overflow: hidden;
-            user-select: none;
-        }
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Live Counter</title>
 
-        #counter {
-            font-size: 120px;
-            font-weight: bold;
-            text-shadow: 0 0 30px rgba(0, 255, 204, 0.5);
-            cursor: pointer;
-            transition: transform 0.15s ease;
-        }
-    </style>
+<style>
+body {
+    margin: 0;
+    background-color: #0b0f19;
+    color: #00FFCC;
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    user-select: none;
+}
+
+#counter {
+    font-size: 120px;
+    font-weight: bold;
+    text-shadow: 0 0 30px rgba(0, 255, 204, 0.5);
+    transition: transform 0.15s ease;
+}
+</style>
 </head>
+
 <body>
 
-    <div id="counter">...</div>
+<div id="counter">0</div>
 
-    <script>
-        // ⚠️ USTA DİKKAT: Buraya makro (exec) ID'sini değil, resmini attığın Google Sheets tablosunun adres çubuğundaki uzun ID'sini yapıştır!
-        const spreadsheetId = "BURAYA_GERCEK_GOOGLE_SHEETS_TABLO_ID_SINI_YAZ";
-        const jsonURL = `https://docs.google.com/spreadsheets/d/${spreadsheetId}/gviz/tq?tqx=out:json`;
+<script>
+const spreadsheetId = "BURAYA_ID";
+const jsonURL = `https://docs.google.com/spreadsheets/d/${spreadsheetId}/gviz/tq?tqx=out:json`;
 
-        // Tarayıcı hafızasından en son kaydedilen sayıyı alıyoruz, yoksa ilk başta null kalıyor
-        let lastCount = localStorage.getItem('last_visitor_count') ? parseInt(localStorage.getItem('last_visitor_count')) : null;
-        let audioCtx = null;
+let lastCount = localStorage.getItem("last_visitor_count")
+    ? parseInt(localStorage.getItem("last_visitor_count"))
+    : null;
 
-        function initAudio() {
-            if (!audioCtx) {
-                audioCtx = new (window.AudioContext || window.webkitAudioContext)();
-            }
-        }
+let audioCtx = null;
 
-        function playVisitorSound() {
-            try {
-                initAudio();
-                const osc = audioCtx.createOscillator();
-                const gain = audioCtx.createGain();
+function initAudio() {
+    if (!audioCtx) {
+        audioCtx = new (window.AudioContext || window.webkitAudioContext)();
+    }
+}
 
-                osc.type = 'sine';
-                osc.frequency.setValueAtTime(1500, audioCtx.currentTime);
+function clickEffect() {
+    initAudio();
 
-                gain.gain.setValueAtTime(0.12, audioCtx.currentTime);
-                gain.gain.exponentialRampToValueAtTime(0.001, audioCtx.currentTime + 0.12);
+    const osc = audioCtx.createOscillator();
+    const gain = audioCtx.createGain();
 
-                osc.connect(gain);
-                gain.connect(audioCtx.destination);
+    osc.type = "sine";
+    osc.frequency.setValueAtTime(1500, audioCtx.currentTime);
 
-                osc.start();
-                osc.stop(audioCtx.currentTime + 0.12);
-            } catch (e) {
-                console.error(e);
-            }
-        }
+    gain.gain.setValueAtTime(0.12, audioCtx.currentTime);
+    gain.gain.exponentialRampToValueAtTime(0.001, audioCtx.currentTime + 0.12);
 
-        // 🔥 DEĞİŞİM VE KLİK EFEKTİ
-        function triggerClickEffect() {
-            playVisitorSound();
+    osc.connect(gain);
+    gain.connect(audioCtx.destination);
+
+    osc.start();
+    osc.stop(audioCtx.currentTime + 0.12);
+
+    const el = document.getElementById("counter");
+    el.style.transform = "scale(1.25)";
+    setTimeout(() => el.style.transform = "scale(1)", 120);
+}
+
+// 🔥 JSON PARSE (GOOGLE GVIZ SAFE)
+function parseGoogleData(text) {
+    const jsonString = text.substring(text.indexOf('{'), text.lastIndexOf('}') + 1);
+    return JSON.parse(jsonString);
+}
+
+// 📡 SADECE OKU
+function getData() {
+    fetch(jsonURL)
+        .then(res => res.text())
+        .then(text => {
+            const obj = parseGoogleData(text);
+
+            if (!obj?.table?.rows) return;
+
+            // ❗ KRİTİK: SATIR SAYMA DEĞİL, SON HÜCRE
+            const lastRow = obj.table.rows[obj.table.rows.length - 1];
+            const currentCount = lastRow.c[0].v; // 👈 SHEET'TE COUNT SÜTUNU
+
             const el = document.getElementById("counter");
-            el.style.transform = "scale(1.25)";
-            setTimeout(() => {
-                el.style.transform = "scale(1)";
-            }, 120);
-        }
+            el.innerText = currentCount;
 
-        // 📡 SAF OKUMA VE KONTROL MEKANİZMASI
-        function getData() {
-            fetch(jsonURL)
-                .then(res => res.text())
-                .then(text => {
-                    const temp = text.substring(text.indexOf('\n') + 1);
-                    const jsonString = temp.substring(temp.indexOf('{'), temp.lastIndexOf('}') + 1);
-                    const obj = JSON.parse(jsonString);
-                    
-                    if (obj && obj.table && obj.table.rows) {
-                        const currentCount = obj.table.rows.length; // Excel'deki en son toplam satır sayısı
-                        const el = document.getElementById("counter");
-
-                        // Ekrandaki sayıyı her zaman Google'dan gelen en güncel sayıya eşitle
-                        el.innerText = currentCount;
-
-                        // ⚡ İLK YÜKLEME / REFRESH KONTROLÜ: 
-                        // Eğer lastCount null ise (tarayıcı geçmişi temizse veya ilk kez açılıyorsa) 
-                        // gelen en son sayıyı doğrudan hafızaya kilitle ve ses çıkarmadan başla.
-                        if (lastCount === null) {
-                            lastCount = currentCount;
-                            localStorage.setItem("last_visitor_count", currentCount);
-                            return;
-                        }
-
-                        // 🔥 REFRESH SONRASI DÖNGÜ: Gelen sayı hafızadaki son sayıdan büyükse klik ver
-                        if (currentCount > lastCount) {
-                            triggerClickEffect();
-                        }
-
-                        // 🔄 STORAGE SÜREKLİ EN SON SAYIYA EŞİTLENİR VE BÖYLE DEVAM EDER
-                        lastCount = currentCount;
-                        localStorage.setItem("last_visitor_count", currentCount);
-                    }
-                })
-                .catch(err => console.error("Read error:", err));
-        }
-
-        // Ekrana tıklayınca sadece ses motorunu uyandırır ve anlık veriyi tazeler (Sayıyı asla artırmaz)
-        document.getElementById("counter").addEventListener("click", () => {
-            initAudio();
-            getData();
-        });
-
-        // 🚀 BASTIK REFRESH'E / SAYFA AÇILDI
-        window.addEventListener("DOMContentLoaded", () => {
-            const el = document.getElementById("counter");
-            
-            // Eğer tarayıcı hafızasında daha önceden kalma bir sayı varsa, Google'dan yanıt gelene kadar ekranda o dursun (0 durmasın)
-            if (lastCount !== null) {
-                el.innerText = lastCount;
+            if (lastCount === null) {
+                lastCount = currentCount;
+                localStorage.setItem("last_visitor_count", currentCount);
+                return;
             }
-            
-            // Hemen gidip Google Docs'taki en son güncel sayıyı çekip hafızaya eşitler
-            getData(); 
-            
-            // Her 10 saniyede bir döngü devam eder
-            setInterval(getData, 10000); 
-        });
-    </script>
+
+            // 🔥 SADECE GERÇEK ARTIŞ
+            if (currentCount > lastCount) {
+                clickEffect();
+            }
+
+            lastCount = currentCount;
+            localStorage.setItem("last_visitor_count", currentCount);
+        })
+        .catch(console.error);
+}
+
+// 🚀 INIT
+window.addEventListener("DOMContentLoaded", () => {
+    const el = document.getElementById("counter");
+
+    if (lastCount !== null) {
+        el.innerText = lastCount;
+    }
+
+    getData();
+    setInterval(getData, 10000);
+});
+</script>
 
 </body>
 </html>
