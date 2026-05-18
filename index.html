@@ -555,23 +555,22 @@ fetch('https://raw.githubusercontent.com/bandanee/root/main/import/footer.html')
     .then(h => document.getElementById('footer-placeholder').innerHTML = h);
 
 </script>
-<div style="text-align: center; margin-top: 50px; font-family: Arial, sans-serif;">
-    <p style="color: #666; font-size: 14px;">
-        Toplam Görüntülenme: <strong id="excel-sayac" style="color: #00FFCC; font-size: 18px;">...</strong>
-    </p>
-</div>
+   
+    <strong id="excel-sayac">...</strong>
+  
+ 
 
 <script>
     window.addEventListener('DOMContentLoaded', () => {
         
-        // ⚠️ CRITICAL USTA: Aşağıdaki tırnak işaretlerinin arasına Google'ın sana verdiği o uzun "Web uygulaması URL'sini" yapıştır!
+       
         const googleScriptURL = 'https://script.google.com/macros/s/AKfycbwqPytRra47LhFHhUlu70JJGV26goOg23yDFzh1z10hPAOcF5fDVNiuoh8_uLYnfoL4LA/exec';
 
-        // Arka planda Google Etabloya AJAX isteği atıyoruz
+   
         fetch(googleScriptURL)
             .then(res => res.json())
             .then(data => {
-                // Gelen toplam satır sayısını ekrana düz yazı olarak basıyoruz
+                 
                 document.getElementById('excel-sayac').innerText = data.count;
             })
             .catch(hata => {
