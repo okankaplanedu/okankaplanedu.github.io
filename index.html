@@ -555,29 +555,29 @@ fetch('https://raw.githubusercontent.com/bandanee/root/main/import/footer.html')
     .then(h => document.getElementById('footer-placeholder').innerHTML = h);
 
 </script>
- <div style="text-align: center; margin-top: 50px; font-family: Arial, sans-serif;">
-    <p style="color: #666; font-size: 14px; margin-bottom: 5px;">
-        Views: <strong id="excel-sayac" style="color: #00FFCC; font-size: 18px;">...</strong>
+<div style="text-align: center; margin-top: 50px; font-family: Arial, sans-serif;">
+    <p style="color: #666; font-size: 14px;">
+        Toplam Görüntülenme: <strong id="excel-sayac" style="color: #00FFCC; font-size: 18px;">...</strong>
     </p>
 </div>
 
 <script>
-    // Google'dan veri geldiğinde bu fonksiyon otomatik tetiklenecek
-    function sayaciGuncelle(data) {
-        document.getElementById('excel-sayac').innerText = data.count;
-    }
-
     window.addEventListener('DOMContentLoaded', () => {
-        // ⚠️ BURAYA AZ ÖNCE ALDIĞIN EN GÜNCEL YENİ LİNKİ YAPIŞTIR USTA
+        
+        // ⚠️ CRITICAL USTA: Aşağıdaki tırnak işaretlerinin arasına Google'ın sana verdiği o uzun "Web uygulaması URL'sini" yapıştır!
         const googleScriptURL = 'https://script.google.com/macros/s/AKfycbwqPytRra47LhFHhUlu70JJGV26goOg23yDFzh1z10hPAOcF5fDVNiuoh8_uLYnfoL4LA/exec';
 
-        // Linkin sonuna Google'ın okuyabilmesi için callback parametresini ekliyoruz
-        const jsonpURL = googleScriptURL + '?callback=sayaciGuncelle';
-
-        // Arka planda gizli bir script etiketi oluşturup sayfaya ekliyoruz (CORS engelini yıkar)
-        const script = document.createElement('script');
-        script.src = jsonpURL;
-        document.body.appendChild(script);
+        // Arka planda Google Etabloya AJAX isteği atıyoruz
+        fetch(googleScriptURL)
+            .then(res => res.json())
+            .then(data => {
+                // Gelen toplam satır sayısını ekrana düz yazı olarak basıyoruz
+                document.getElementById('excel-sayac').innerText = data.count;
+            })
+            .catch(hata => {
+                console.error("Sayaç Hatası:", hata);
+                document.getElementById('excel-sayac').innerText = "Hata";
+            });
     });
 </script>
 </body>
