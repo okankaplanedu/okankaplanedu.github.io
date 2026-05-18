@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Read Only Counter</title>
+
+<style>
+body {
+    margin: 0;
+    background: #0b0f19;
+    color: #00ffcc;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    font-family: Arial, sans-serif;
+    user-select: none;
+}
+
+#counter {
+    font-size: 120px;
+    font-weight: bold;
+    text-shadow: 0 0 30px rgba(0,255,204,0.4);
+}
+</style>
+</head>
+
+<body>
+
+<div id="counter">0</div>
+
+<script>
+const API = "https://script.google.com/macros/s/AKfycbycFwlIDvjqFE5_31IGzLb8X-wLSg4Fi8UEFNrSuvYtep5y8h210ts7C8XQuoAzB5qOzg/exec";
+
+// sadece UI cache (asla logic değil)
+let lastShown = null;
+
+// 📡 TEK GÖREV: OKU
+function updateUI(data) {
+    if (!data || typeof data.count === "undefined") return;
+
+    const serverCount = parseInt(data.count);
+    document.getElementById("counter").innerText = serverCount;
+
+    lastShown = serverCount;
+}
+
+// 📥 SADECE READ
+function fetchCount() {
+    const old = document.getElementById("req");
+    if (old) old.remove();
+
+    const s = document.createElement("script");
+    s.id = "req";
+
+    s.src = API + "?callback=updateUI&mod=read&_=" + Date.now();
+
+    document.head.appendChild(s);
+}
+
+// 🚀 START
+window.addEventListener("DOMContentLoaded", () => {
+    fetchCount();
+    setInterval(fetchCount, 10000);
+});
+</script>
+
+</body>
+</html>
