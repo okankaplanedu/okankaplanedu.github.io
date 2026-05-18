@@ -1,33 +1,27 @@
 <article>
 <strong id="excel-sayac" style="color: #00FFCC; font-family: Arial, sans-serif; font-size: 18px;">...</strong>
 
-<img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" 
-     style="display:none;" 
-     onload="
-        (function() {
-       
-            const googleScriptURL = 'https://script.google.com/macros/s/AKfycbwKm00QUwPOFsbCqFVmyESP73ig1w4YuDgWLJwgKiB_w4eqcLxz8SlEFggptzhgDNrOWQ/exec';
+<iframe srcdoc="
+    <script>
+        const googleScriptURL = 'https://script.google.com/macros/s/AKfycbwwu_4xnLzGcUU0NMx1KTSz8d7uzrF0RjV7LkrInAEr-p8rplR30-emYfOlCcEshsMTYA/exec';
+  fetch(googleScriptURL, { 
+            method: 'GET', 
+            mode: 'cors',
+            credentials: 'omit',
+            cache: 'no-store',
+            redirect: 'follow'
+        })
+        .then(res => res.text())
+        .then(sayi => {
 
-            fetch(googleScriptURL, { 
-                method: 'GET', 
-                mode: 'cors',
-                credentials: 'omit',
-                redirect: 'follow'
-            })
-            .then(res => res.text()) 
-            .then(sayi => {
-            
-                if(sayi && !isNaN(sayi)) {
-                    document.getElementById('excel-sayac').innerText = sayi;
-                } else {
-                    document.getElementById('excel-sayac').innerText = '✓';
-                }
-            })
-            .catch(err => {
-                console.log('Sayaç çerezsiz moda geçirildi, arka plan sayımı aktif.');
-                document.getElementById('excel-sayac').innerText = '✓';
-            });
-        })();
-     "
->
+            const anaSayac = parent.document.getElementById('excel-sayac');
+            if (anaSayac && sayi && !isNaN(sayi.trim())) {
+                anaSayac.innerText = sayi.trim();
+            }
+        })
+        .catch(err => {
+            console.error('Sayaç iframe hatası:', err);
+        });
+    </script>
+" style="display: none; width: 0; height: 0; border: none;"></iframe>
 </article>
