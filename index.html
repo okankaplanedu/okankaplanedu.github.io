@@ -315,7 +315,7 @@ function initMasonry() {
 }
 
 /* ─────────────────────────────
-   PERMANENT CACHE (NO EXPIRY)
+   PERMANENT CACHE (NO API RECALL)
 ───────────────────────────── */
 const Cache = {
     get: () => {
@@ -327,7 +327,7 @@ const Cache = {
             return parsed.articles || null;
 
         } catch (e) {
-            console.error("Cache get error:", e);
+            console.error("Cache error:", e);
             return null;
         }
     },
@@ -341,13 +341,13 @@ const Cache = {
                 })
             );
         } catch (e) {
-            console.error("Cache set error:", e);
+            console.error("Cache save error:", e);
         }
     }
 };
 
 /* ─────────────────────────────
-   CARD RENDER
+   CARD (NO IMAGE)
 ───────────────────────────── */
 function renderCard(article) {
 
@@ -357,15 +357,10 @@ function renderCard(article) {
         ${article.keywords}
     `.toLowerCase();
 
-    const imageHTML = article.image
-        ? ` `
-        : "";
-
     const cardHTML = `
     <div class="grid-item" data-search="${plainText}" role="article">
 
         <div class="card-custom">
- 
 
             <div class="card-body-custom">
 
@@ -432,7 +427,7 @@ $(document).on('input keyup', '#search-input', function () {
     applySearch($(this).val());
 });
 
-/* header search sync */
+/* header sync */
 const headerObserver = new MutationObserver(function () {
     const $input = $('#search-input');
     if ($input.length) {
@@ -446,7 +441,7 @@ headerObserver.observe(
 );
 
 /* ─────────────────────────────
-   SCAN GITHUB (ONLY ONCE)
+   GITHUB SCAN (ONLY FIRST TIME)
 ───────────────────────────── */
 async function scanAndCache(path) {
     try {
@@ -469,8 +464,6 @@ async function scanAndCache(path) {
                 path !== CONFIG.baseFolder
             ) {
 
-                updateUIStatus(`Scanning: ${item.path}`);
-
                 const contentRes = await fetch(
                     `https://raw.githubusercontent.com/${CONFIG.owner}/${CONFIG.repo}/${CONFIG.branch}/${item.path}`
                 );
@@ -486,8 +479,7 @@ async function scanAndCache(path) {
                         url: `https://${CONFIG.repo}/${item.path.replace('index.html', '')}`,
                         title: doc.querySelector("title")?.innerText?.trim() || "Untitled",
                         description: doc.querySelector('meta[name="description"]')?.getAttribute("content")?.trim() || "",
-                        keywords: doc.querySelector('meta[name="keywords"]')?.getAttribute("content")?.trim() || "",
-                        image: doc.querySelector('meta[property="og:image"]')?.getAttribute("content")?.trim() || ""
+                        keywords: doc.querySelector('meta[name="keywords"]')?.getAttribute("content")?.trim() || ""
                     };
 
                     tempArchive.push(data);
@@ -504,7 +496,7 @@ async function scanAndCache(path) {
 }
 
 /* ─────────────────────────────
-   UI STATUS
+   UI
 ───────────────────────────── */
 function updateUIStatus(msg) {
     const txt = document.getElementById("status-message");
@@ -530,8 +522,7 @@ function finalizeUI(isCache = false) {
 }
 
 /* ─────────────────────────────
-   APP START
-   (NO API RECALL IF CACHE EXISTS)
+   START
 ───────────────────────────── */
 async function startApp() {
 
@@ -543,7 +534,7 @@ async function startApp() {
 
         cached.forEach(renderCard);
         finalizeUI(true);
-        return; // 🚫 API NEVER CALLED
+        return; // ❌ API NEVER RUNS AGAIN
 
     }
 
