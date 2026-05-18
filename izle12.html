@@ -1,0 +1,168 @@
+ <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>A Sütunu Canlı Sayaç</title>
+
+    <style>
+        body {
+            margin: 0;
+            background: #0b0f19;
+            color: #00ff99;
+            font-family: Arial, sans-serif;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            user-select: none;
+        }
+
+        h1 {
+            font-size: 40px;
+            margin-bottom: 20px;
+            text-shadow: 0 0 10px rgba(0, 255, 153, 0.2);
+        }
+
+        #count {
+            font-size: 120px;
+            font-weight: bold;
+            transition: transform 0.15s ease;
+            color: #00ff99;
+            text-shadow: 0 0 30px rgba(0, 255, 153, 0.5);
+            cursor: pointer;
+        }
+
+        small {
+            margin-top: 20px;
+            color: #aaa;
+            letter-spacing: 1px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1>A Sütunu Kayıt Sayısı</h1>
+    <div id="count">...</div>
+    <small>3 saniyede bir güncellenir</small>
+
+    <script>
+        const SHEET_ID = "1YTNeqqpJ9PFUjwT_DFJ7vkX3KEFbsLWgc109cTEWfaM";
+        
+        // Hafızadaki son sayıyı tarayıcıdan alıyoruz (Refresh'te sıfırlanmaz, kalır)
+        let lastCount = localStorage.getItem('last_visitor_count') ? parseInt(localStorage.getItem('last_visitor_count')) : null;
+        let audioCtx = null;
+
+        // Tarayıcının ses motorunu uyandıran fonksiyon
+        function initAudio() {
+            if (!audioCtx) {
+                audioCtx = new (window.AudioContext || window.webkitAudioContext)();
+            }
+        }
+
+        // Ziyaretçi geldiğinde çalacak keskin "tık" sesi
+        function playClickSound() {
+            try {
+                initAudio();
+                const osc = audioCtx.createOscillator();
+                const gain = audioCtx.createGain();
+
+                osc.type = 'sine';
+                osc.frequency.setValueAtTime(1500, audioCtx.currentTime); // Keskin uyarı frekansı
+
+                gain.gain.setValueAtTime(0.12, audioCtx.currentTime);
+                gain.gain.exponentialRampToValueAtTime(0.001, audioCtx.currentTime + 0.12);
+
+                osc.connect(gain);
+                gain.connect(audioCtx.destination);
+
+                osc.start();
+                osc.stop(audioCtx.currentTime + 0.12);
+            } catch (e) {
+                console.error(e);
+            }
+        }
+
+        // 🔥 DEĞİŞİMDE TETİKLENECEK EFEKT VE SES
+        function triggerVisitorEffect() {
+            playClickSound();
+            const el = document.getElementById("count");
+            el.style.transform = "scale(1.25)";
+            setTimeout(() => {
+                el.style.transform = "scale(1)";
+            }, 120);
+        }
+
+        // 📡 SENİN YAZDIĞIN SIFIR RİSKLİ MUAZZAM CSV METODU
+        async function updateCount() {
+            try {
+                const url = `https://docs.google.com/spreadsheets/d/${SHEET_ID}/export?format=csv&range=A:A&_=${Date.now()}`;
+
+                const res = await fetch(url);
+                const text = await res.text();
+
+                // Satırlara böl
+                const rows = text.split("\n");
+                let currentCount = 0;
+
+                rows.forEach(row => {
+                    const value = row.replace("\r", "").trim();
+                    if (value !== "") {
+                        currentCount++;
+                    }
+                });
+
+                const el = document.getElementById("count");
+                el.innerText = currentCount;
+
+                // ⚡ REFRESH / İLK AÇILIŞ KONTROLÜ:
+                // Eğer sayfa ilk defa açılıyorsa veya refresh atıldıysa, gelen güncel sayıyı 
+                // doğrudan hafızaya kilitle, ses çıkarmadan ve zıplamadan sessizce başla.
+                if (lastCount === null) {
+                    lastCount = currentCount;
+                    localStorage.setItem("last_visitor_count", currentCount);
+                    return;
+                }
+
+                // 🔥 SÜREKLİ DEVAM EDEN KONTROL: 
+                // Eğer gelen sayı hafızadaki son sayıdan büyükse (yeni ziyaretçi geldiyse) klik ver!
+                if (currentCount > lastCount) {
+                    triggerVisitorEffect();
+                }
+
+                // 🔄 Hafızayı (Storage) her başarılı kontrolde en son sayıya eşitle ve devam et
+                lastCount = currentCount;
+                localStorage.setItem("last_visitor_count", currentCount);
+
+            } catch (err) {
+                console.log("Hata:", err);
+            }
+        }
+
+        // Ekrana tıklandığında ses motorunu manuel uyandırır ve anlık taze veri çeker (Asla satır eklemez)
+        document.getElementById("count").addEventListener("click", () => {
+            initAudio();
+            updateCount();
+        });
+
+        // 🚀 SAYFA İLK AÇILDIĞINDA (REFRESH)
+        window.addEventListener("DOMContentLoaded", () => {
+            const el = document.getElementById("count");
+            
+            // Eğer tarayıcıda eski sayı varsa Google'dan yanıt gelene kadar ekranda o dursun, boş kalmasın
+            if (lastCount !== null) {
+                el.innerText = lastCount;
+            }
+
+            // İlk veriyi çek ve storage senkronizasyonunu kur
+            updateCount();
+
+            // 3 saniyede bir sadece okuyarak döngüye devam et
+            setInterval(updateCount, 3000);
+        });
+    </script>
+
+</body>
+</html>
