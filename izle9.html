@@ -1,138 +1,143 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Live Counter</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Live Counter</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background-color: #0b0f19;
+            color: #00FFCC;
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            overflow: hidden;
+            user-select: none;
+        }
 
-<style>
-body {
-    margin: 0;
-    background-color: #0b0f19;
-    color: #00FFCC;
-    font-family: Arial, sans-serif;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    user-select: none;
-    overflow: hidden;
-}
-
-#counter {
-    font-size: 120px;
-    font-weight: bold;
-    text-shadow: 0 0 30px rgba(0, 255, 204, 0.5);
-    transition: transform 0.15s ease;
-}
-</style>
+        #counter {
+            font-size: 120px;
+            font-weight: bold;
+            text-shadow: 0 0 30px rgba(0, 255, 204, 0.5);
+            cursor: pointer;
+            transition: transform 0.15s ease;
+        }
+    </style>
 </head>
-
 <body>
 
-<div id="counter">0</div>
+    <div id="counter">...</div>
 
-<script>
-const spreadsheetId = "AKfycbycFwlIDvjqFE5_31IGzLb8X-wLSg4Fi8UEFNrSuvYtep5y8h210ts7C8XQuoAzB5qOzg";
-const jsonURL = `https://docs.google.com/spreadsheets/d/${spreadsheetId}/gviz/tq?tqx=out:json`;
+    <script>
+        // 🚀 Senin gerçek Google Sheets ID'ni tam yerine yerleştirdik usta!
+        const spreadsheetId = "1YTNeqqpJ9PFUjwT_DFJ7vkX3KEFbsLWgc109cTEWfaM";
+        
+        // Bu sorgu doğrudan A sütunundaki verileri (satırları) saf okuma modunda çeker.
+        const jsonURL = `https://docs.google.com/spreadsheets/d/${spreadsheetId}/gviz/tq?tqx=out:json&tq=select+A`;
 
-let lastCount = localStorage.getItem("last_visitor_count")
-    ? parseInt(localStorage.getItem("last_visitor_count"))
-    : null;
+        // Hafızadaki son sayı (Sayfa yenilendiğinde burası baştan güncellenecek)
+        let lastCount = localStorage.getItem('last_visitor_count') ? parseInt(localStorage.getItem('last_visitor_count')) : null;
+        let audioCtx = null;
 
-let audioCtx = null;
+        function initAudio() {
+            if (!audioCtx) {
+                audioCtx = new (window.AudioContext || window.webkitAudioContext)();
+            }
+        }
 
-// 🔊 SES
-function initAudio() {
-    if (!audioCtx) {
-        audioCtx = new (window.AudioContext || window.webkitAudioContext)();
-    }
-}
+        function playVisitorSound() {
+            try {
+                initAudio();
+                const osc = audioCtx.createOscillator();
+                const gain = audioCtx.createGain();
 
-function playSound() {
-    initAudio();
+                osc.type = 'sine';
+                osc.frequency.setValueAtTime(1500, audioCtx.currentTime);
 
-    const osc = audioCtx.createOscillator();
-    const gain = audioCtx.createGain();
+                gain.gain.setValueAtTime(0.12, audioCtx.currentTime);
+                gain.gain.exponentialRampToValueAtTime(0.001, audioCtx.currentTime + 0.12);
 
-    osc.type = "sine";
-    osc.frequency.setValueAtTime(1500, audioCtx.currentTime);
+                osc.connect(gain);
+                gain.connect(audioCtx.destination);
 
-    gain.gain.setValueAtTime(0.12, audioCtx.currentTime);
-    gain.gain.exponentialRampToValueAtTime(0.001, audioCtx.currentTime + 0.12);
+                osc.start();
+                osc.stop(audioCtx.currentTime + 0.12);
+            } catch (e) {
+                console.error(e);
+            }
+        }
 
-    osc.connect(gain);
-    gain.connect(audioCtx.destination);
-
-    osc.start();
-    osc.stop(audioCtx.currentTime + 0.12);
-}
-
-// ✨ ANİMASYON
-function clickEffect() {
-    playSound();
-
-    const el = document.getElementById("counter");
-    el.style.transform = "scale(1.25)";
-
-    setTimeout(() => {
-        el.style.transform = "scale(1)";
-    }, 120);
-}
-
-// 📦 GVIZ PARSER
-function parseGVIZ(text) {
-    const jsonString = text.substring(text.indexOf('{'), text.lastIndexOf('}') + 1);
-    return JSON.parse(jsonString);
-}
-
-// 📡 SADECE OKU
-function getData() {
-    fetch(jsonURL)
-        .then(res => res.text())
-        .then(text => {
-            const obj = parseGVIZ(text);
-
-            if (!obj?.table?.rows) return;
-
-            // 🔥 A SÜTUNUNDAKİ DOLU SATIRLARI SAY
-            const currentCount = obj.table.rows.filter(row =>
-                row.c && row.c[0] && row.c[0].v !== null && row.c[0].v !== ""
-            ).length;
-
+        function triggerClickEffect() {
+            playVisitorSound();
             const el = document.getElementById("counter");
-            el.innerText = currentCount;
+            el.style.transform = "scale(1.25)";
+            setTimeout(() => {
+                el.style.transform = "scale(1)";
+            }, 120);
+        }
 
-            // 🧠 ilk yükleme
-            if (lastCount === null) {
-                lastCount = currentCount;
-                localStorage.setItem("last_visitor_count", currentCount);
-                return;
+        // 📡 GÜVENLİ VE SAF OKUMA MEKANİZMASI (.exec YOK!)
+        function getData() {
+            fetch(jsonURL)
+                .then(res => res.text())
+                .then(text => {
+                    // Google'ın gviz formatındaki ham veriyi temiz JSON'a çevirme
+                    const temp = text.substring(text.indexOf('\n') + 1);
+                    const jsonString = temp.substring(temp.indexOf('{'), temp.lastIndexOf('}') + 1);
+                    const obj = JSON.parse(jsonString);
+                    
+                    if (obj && obj.table && obj.table.rows) {
+                        // A sütunundaki toplam satır sayısını (üretim miktarını) net olarak sayıyoruz
+                        const currentCount = obj.table.rows.length; 
+                        const el = document.getElementById("counter");
+
+                        // Ekranı her zaman en son güncel sayıyla eşitle
+                        el.innerText = currentCount;
+
+                        // REFRESH / İLK AÇILIŞ KONTROLÜ:
+                        // Eğer hafıza boşsa, gelen güncel sayıyı hafızaya kilitle ve ses çıkarmadan başla
+                        if (lastCount === null) {
+                            lastCount = currentCount;
+                            localStorage.setItem("last_visitor_count", currentCount);
+                            return;
+                        }
+
+                        // 🔔 Sadece sayfa açıkken yeni bir satır eklenirse (currentCount > lastCount) ses ver
+                        if (currentCount > lastCount) {
+                            triggerClickEffect();
+                        }
+
+                        // Hafızayı en son sayıya eşitle ve devam et
+                        lastCount = currentCount;
+                        localStorage.setItem("last_visitor_count", currentCount);
+                    }
+                })
+                .catch(err => console.error("Salt okuma hatası:", err));
+        }
+
+        // Tıklayınca sadece ses motorunu uyandırır ve veriyi yeniler (Asla satır eklemez)
+        document.getElementById("counter").addEventListener("click", () => {
+            initAudio();
+            getData();
+        });
+
+        // REFRESH YAPILDIĞINDA TETİKLENEN ALAN
+        window.addEventListener("DOMContentLoaded", () => {
+            const el = document.getElementById("counter");
+            
+            // Eğer tarayıcıda eski sayı kayıtlıysa, Google'dan cevap gelene kadar ekranda o dursun
+            if (lastCount !== null) {
+                el.innerText = lastCount;
             }
-
-            // 🔥 SADECE ARTIŞTA TETİKLE
-            if (currentCount > lastCount) {
-                clickEffect();
-            }
-
-            lastCount = currentCount;
-            localStorage.setItem("last_visitor_count", currentCount);
-        })
-        .catch(console.error);
-}
-
-// 🚀 START
-window.addEventListener("DOMContentLoaded", () => {
-    const el = document.getElementById("counter");
-
-    if (lastCount !== null) {
-        el.innerText = lastCount;
-    }
-
-    getData();
-    setInterval(getData, 10000);
-});
-</script>
+            
+            getData(); // Gidip A sütununu sayar ve storage'a en son sayıyı eşitler
+            setInterval(getData, 10000); // 10 saniyede bir salt okunur döngüye devam eder
+        });
+    </script>
 
 </body>
 </html>
