@@ -358,21 +358,14 @@ function renderCard(article) {
     `.toLowerCase();
 
     const imageHTML = article.image
-        ? `<img 
-            src="${article.image}"
-            loading="lazy"
-            class="card-cover"
-            alt="${article.title || 'Article image'}"
-            decoding="async"
-          >`
+        ? ` `
         : "";
 
     const cardHTML = `
     <div class="grid-item" data-search="${plainText}" role="article">
 
         <div class="card-custom">
-
-            ${imageHTML}
+ 
 
             <div class="card-body-custom">
 
