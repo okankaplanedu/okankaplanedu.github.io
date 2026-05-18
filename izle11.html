@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Live A Column Counter</title>
+
+<style>
+body{
+    background:#111;
+    color:#00ff99;
+    font-family:Arial;
+    text-align:center;
+    padding-top:100px;
+}
+
+h1{
+    font-size:40px;
+}
+
+#count{
+    font-size:80px;
+    font-weight:bold;
+    margin-top:20px;
+    color:#00ff99;
+    transition:0.3s;
+}
+</style>
+</head>
+
+<body>
+
+<h1>A Sütunu Kayıt Sayısı</h1>
+<div id="count">0</div>
+
+<script>
+
+const SHEET_ID = "1YTNeqqpJ9PFUjwT_DFJ7vkX3KEFbsLWgc109cTEWfaM";
+const RANGE = "A:A";
+
+async function getCount() {
+    try {
+        const url = `https://docs.google.com/spreadsheets/d/${SHEET_ID}/gviz/tq?tqx=out:json&range=${RANGE}`;
+
+        const res = await fetch(url);
+        const text = await res.text();
+
+        // JSONP temizleme
+        const json = JSON.parse(text.substring(47).slice(0, -2));
+
+        const rows = json.table.rows;
+
+        // boşları sayma
+        let count = 0;
+
+        rows.forEach(r => {
+            if (r.c[0] != null && r.c[0] !== "") {
+                count++;
+            }
+        });
+
+        document.getElementById("count").innerText = count;
+
+    } catch (err) {
+        console.log("Hata:", err);
+    }
+}
+
+// ilk çalıştır
+getCount();
+
+// 3 saniyede bir güncelle
+setInterval(getCount, 3000);
+
+</script>
+
+</body>
+</html>
