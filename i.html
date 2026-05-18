@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Counter</title>
+    <title>Live Counter</title>
     <style>
         body {
             margin: 0;
@@ -18,11 +18,13 @@
             overflow: hidden;
             user-select: none;
         }
+
         #counter {
             font-size: 120px;
             font-weight: bold;
             text-shadow: 0 0 30px rgba(0, 255, 204, 0.5);
             cursor: pointer;
+            transition: transform 0.15s ease;
         }
     </style>
 </head>
@@ -31,31 +33,35 @@
     <div id="counter">...</div>
 
     <script>
-        // ⚠️ USTA: Google Apps Script linkin (mod=izle parametresiyle güvene alındı)
-        const googleScriptURL = 'https://script.google.com/macros/s/AKfycbycFwlIDvjqFE5_31IGzLb8X-wLSg4Fi8UEFNrSuvYtep5y8h210ts7C8XQuoAzB5qOzg/exec';
-        
-        let lastCount = localStorage.getItem('last_visitor_count') ? parseInt(localStorage.getItem('last_visitor_count')) : null;
+        const googleScriptURL = "https://script.google.com/macros/s/AKfycbycFwlIDvjqFE5_31IGzLb8X-wLSg4Fi8UEFNrSuvYtep5y8h210ts7C8XQuoAzB5qOzg/exec";
+
+        let lastCount = localStorage.getItem('last_visitor_count')
+            ? parseInt(localStorage.getItem('last_visitor_count'))
+            : null;
+
         let audioCtx = null;
 
-        // Tarayıcının ses motorunu uyandıran fonksiyon
         function initAudio() {
             if (!audioCtx) {
                 audioCtx = new (window.AudioContext || window.webkitAudioContext)();
             }
         }
 
-        // 🔔 DIŞARIDAN ZİYARETÇİ GELDİĞİNDE ÇALACAK İNCE/KESKİN SES
         function playVisitorSound() {
             try {
                 initAudio();
                 const osc = audioCtx.createOscillator();
                 const gain = audioCtx.createGain();
+
                 osc.type = 'sine';
-                osc.frequency.setValueAtTime(1500, audioCtx.currentTime); // İnce keskin uyarı sesi
+                osc.frequency.setValueAtTime(1500, audioCtx.currentTime);
+
                 gain.gain.setValueAtTime(0.12, audioCtx.currentTime);
                 gain.gain.exponentialRampToValueAtTime(0.001, audioCtx.currentTime + 0.12);
+
                 osc.connect(gain);
                 gain.connect(audioCtx.destination);
+
                 osc.start();
                 osc.stop(audioCtx.currentTime + 0.12);
             } catch (e) {
@@ -63,52 +69,70 @@
             }
         }
 
-        // Google'dan sadece okuma yapıp dönen callback fonksiyonu
-        function sayaciGuncelle(data) {
-            if (data && data.count) {
-                const currentCount = parseInt(data.count);
-                document.getElementById('counter').innerText = currentCount;
-                
-                // Eğer sayfada beklerken sayı dışarıdan bir ziyaretçiyle artarsa ses çal
-                if (lastCount !== null && currentCount > lastCount) {
-                    playVisitorSound();
-                }
-                
-                lastCount = currentCount;
-                localStorage.setItem('last_visitor_count', currentCount);
-            }
+        // 🔥 GERÇEK DEĞİŞİM EFEKTİ
+        function fakeClickAction() {
+            playVisitorSound();
+            const el = document.getElementById("counter");
+            el.style.transform = "scale(1.25)";
+            setTimeout(() => {
+                el.style.transform = "scale(1)";
+            }, 120);
         }
 
-        // Tablodaki toplam sayıyı çeken ana fonksiyon (Asla artırmaz, mod=izle taşır)
-        function getData() {
-            const oldScript = document.getElementById('jsonp-script');
-            if (oldScript) oldScript.remove();
+        // 📡 GOOGLE CALLBACK
+        function sayaciGuncelle(data) {
+            if (!data || typeof data.count === "undefined") return;
 
-            const script = document.createElement('script');
-            script.id = 'jsonp-script';
-            // Google tarafında yazdığımız akıllı if şartına çarpar ve asla satır eklemez usta!
-            script.src = googleScriptURL + '?callback=sayaciGuncelle&mod=izle&_=' + Date.now();
+            const currentCount = parseInt(data.count);
+            const el = document.getElementById("counter");
+
+            // Ekranı her zaman en taze veriyle güncelle
+            el.innerText = currentCount;
+
+            // Eğer hafıza boşsa, ilk kez yükleniyorsa sadece kaydet ve çık (Ses çalma)
+            if (lastCount === null) {
+                lastCount = currentCount;
+                localStorage.setItem("last_visitor_count", currentCount);
+                return;
+            }
+
+            // 🔥 SADECE SAYI BÜYÜDÜYSE (YENİ ZİYARETÇİ GELDİYSE) TETİKLE
+            if (currentCount > lastCount) {
+                fakeClickAction();
+            }
+
+            // Hafızayı sadece başarılı veri geldiyse güncelle
+            lastCount = currentCount;
+            localStorage.setItem("last_visitor_count", currentCount);
+        }
+
+        // 📥 SADECE OKUMA YAPAR
+        function getData() {
+            const old = document.getElementById("jsonp-script");
+            if (old) old.remove();
+
+            const script = document.createElement("script");
+            script.id = "jsonp-script";
+            script.src = googleScriptURL + "?callback=sayaciGuncelle&mod=izle&_=" + Date.now();
             document.head.appendChild(script);
         }
 
-        // Sayıya tıklandığında sayı ARTMAZ, sadece ses motorunu aktifleştirir ve anlık sorgu atar
-        document.getElementById('counter').addEventListener('click', () => {
+        // 🟢 CLICK SADECE SES AKTİF ETMEK İÇİN
+        document.getElementById("counter").addEventListener("click", () => {
             initAudio();
             getData();
         });
 
-        // Sayfa ilk açıldığında veya Manuel REFRESH atıldığında
-        window.addEventListener('DOMContentLoaded', () => {
+        // 🚀 START
+        window.addEventListener("DOMContentLoaded", () => {
+            const el = document.getElementById("counter");
             if (lastCount !== null) {
-                document.getElementById('counter').innerText = lastCount;
+                el.innerText = lastCount;
             }
-            
-            // Sadece mevcut sayıyı çeker, artırma yapmaz
             getData();
-            
-            // Her 10 saniyede bir sessizce veriyi günceller
-            setInterval(getData, 10000);
+            setInterval(getData, 10000); // 10 saniyede bir sessiz kontrol
         });
     </script>
+
 </body>
 </html>
