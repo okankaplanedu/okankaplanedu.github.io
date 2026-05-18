@@ -16,6 +16,7 @@ body {
     align-items: center;
     height: 100vh;
     user-select: none;
+    overflow: hidden;
 }
 
 #counter {
@@ -41,13 +42,14 @@ let lastCount = localStorage.getItem("last_visitor_count")
 
 let audioCtx = null;
 
+// 🔊 SES
 function initAudio() {
     if (!audioCtx) {
         audioCtx = new (window.AudioContext || window.webkitAudioContext)();
     }
 }
 
-function clickEffect() {
+function playSound() {
     initAudio();
 
     const osc = audioCtx.createOscillator();
@@ -64,14 +66,22 @@ function clickEffect() {
 
     osc.start();
     osc.stop(audioCtx.currentTime + 0.12);
+}
+
+// ✨ ANİMASYON
+function clickEffect() {
+    playSound();
 
     const el = document.getElementById("counter");
     el.style.transform = "scale(1.25)";
-    setTimeout(() => el.style.transform = "scale(1)", 120);
+
+    setTimeout(() => {
+        el.style.transform = "scale(1)";
+    }, 120);
 }
 
-// 🔥 JSON PARSE (GOOGLE GVIZ SAFE)
-function parseGoogleData(text) {
+// 📦 GVIZ PARSER
+function parseGVIZ(text) {
     const jsonString = text.substring(text.indexOf('{'), text.lastIndexOf('}') + 1);
     return JSON.parse(jsonString);
 }
@@ -81,24 +91,26 @@ function getData() {
     fetch(jsonURL)
         .then(res => res.text())
         .then(text => {
-            const obj = parseGoogleData(text);
+            const obj = parseGVIZ(text);
 
             if (!obj?.table?.rows) return;
 
-            // ❗ KRİTİK: SATIR SAYMA DEĞİL, SON HÜCRE
-            const lastRow = obj.table.rows[obj.table.rows.length - 1];
-            const currentCount = lastRow.c[0].v; // 👈 SHEET'TE COUNT SÜTUNU
+            // 🔥 A SÜTUNUNDAKİ DOLU SATIRLARI SAY
+            const currentCount = obj.table.rows.filter(row =>
+                row.c && row.c[0] && row.c[0].v !== null && row.c[0].v !== ""
+            ).length;
 
             const el = document.getElementById("counter");
             el.innerText = currentCount;
 
+            // 🧠 ilk yükleme
             if (lastCount === null) {
                 lastCount = currentCount;
                 localStorage.setItem("last_visitor_count", currentCount);
                 return;
             }
 
-            // 🔥 SADECE GERÇEK ARTIŞ
+            // 🔥 SADECE ARTIŞTA TETİKLE
             if (currentCount > lastCount) {
                 clickEffect();
             }
@@ -109,7 +121,7 @@ function getData() {
         .catch(console.error);
 }
 
-// 🚀 INIT
+// 🚀 START
 window.addEventListener("DOMContentLoaded", () => {
     const el = document.getElementById("counter");
 
