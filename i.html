@@ -31,37 +31,47 @@
     <div id="counter">...</div>
 
     <script>
+        // ⚠️ USTA: Google Apps Script linkin (mod=izle parametresiyle güvene alındı)
         const googleScriptURL = 'https://script.google.com/macros/s/AKfycbycFwlIDvjqFE5_31IGzLb8X-wLSg4Fi8UEFNrSuvYtep5y8h210ts7C8XQuoAzB5qOzg/exec';
+        
         let lastCount = localStorage.getItem('last_visitor_count') ? parseInt(localStorage.getItem('last_visitor_count')) : null;
         let audioCtx = null;
 
-        function playClickSound() {
+        // Tarayıcının ses motorunu uyandıran fonksiyon
+        function initAudio() {
+            if (!audioCtx) {
+                audioCtx = new (window.AudioContext || window.webkitAudioContext)();
+            }
+        }
+
+        // 🔔 DIŞARIDAN ZİYARETÇİ GELDİĞİNDE ÇALACAK İNCE/KESKİN SES
+        function playVisitorSound() {
             try {
-                if (!audioCtx) {
-                    audioCtx = new (window.AudioContext || window.webkitAudioContext)();
-                }
+                initAudio();
                 const osc = audioCtx.createOscillator();
                 const gain = audioCtx.createGain();
                 osc.type = 'sine';
-                osc.frequency.setValueAtTime(1200, audioCtx.currentTime);
-                gain.gain.setValueAtTime(0.1, audioCtx.currentTime);
-                gain.gain.exponentialRampToValueAtTime(0.001, audioCtx.currentTime + 0.05);
+                osc.frequency.setValueAtTime(1500, audioCtx.currentTime); // İnce keskin uyarı sesi
+                gain.gain.setValueAtTime(0.12, audioCtx.currentTime);
+                gain.gain.exponentialRampToValueAtTime(0.001, audioCtx.currentTime + 0.12);
                 osc.connect(gain);
                 gain.connect(audioCtx.destination);
                 osc.start();
-                osc.stop(audioCtx.currentTime + 0.05);
+                osc.stop(audioCtx.currentTime + 0.12);
             } catch (e) {
                 console.error(e);
             }
         }
 
+        // Google'dan sadece okuma yapıp dönen callback fonksiyonu
         function sayaciGuncelle(data) {
             if (data && data.count) {
                 const currentCount = parseInt(data.count);
                 document.getElementById('counter').innerText = currentCount;
                 
+                // Eğer sayfada beklerken sayı dışarıdan bir ziyaretçiyle artarsa ses çal
                 if (lastCount !== null && currentCount > lastCount) {
-                    playClickSound();
+                    playVisitorSound();
                 }
                 
                 lastCount = currentCount;
@@ -69,26 +79,34 @@
             }
         }
 
+        // Tablodaki toplam sayıyı çeken ana fonksiyon (Asla artırmaz, mod=izle taşır)
         function getData() {
             const oldScript = document.getElementById('jsonp-script');
             if (oldScript) oldScript.remove();
 
             const script = document.createElement('script');
             script.id = 'jsonp-script';
-            script.src = googleScriptURL + '?callback=sayaciGuncelle&mod=izle&_=(REPLACE_WITH_TIMESTAMP)'.replace('(REPLACE_WITH_TIMESTAMP)', Date.now());
+            // Google tarafında yazdığımız akıllı if şartına çarpar ve asla satır eklemez usta!
+            script.src = googleScriptURL + '?callback=sayaciGuncelle&mod=izle&_=' + Date.now();
             document.head.appendChild(script);
         }
 
+        // Sayıya tıklandığında sayı ARTMAZ, sadece ses motorunu aktifleştirir ve anlık sorgu atar
         document.getElementById('counter').addEventListener('click', () => {
-            if (!audioCtx) audioCtx = new (window.AudioContext || window.webkitAudioContext)();
+            initAudio();
             getData();
         });
 
+        // Sayfa ilk açıldığında veya Manuel REFRESH atıldığında
         window.addEventListener('DOMContentLoaded', () => {
             if (lastCount !== null) {
                 document.getElementById('counter').innerText = lastCount;
             }
+            
+            // Sadece mevcut sayıyı çeker, artırma yapmaz
             getData();
+            
+            // Her 10 saniyede bir sessizce veriyi günceller
             setInterval(getData, 10000);
         });
     </script>
