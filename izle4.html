@@ -30,19 +30,15 @@
 </head>
 <body>
 
-    <div id="counter">...</div>
+    <div id="counter">0</div>
 
     <script>
-        // ⚠️ USTA SİHİR BURADA: .exec linkini tamamen çöpe attık!
-        // Aşağıdaki linke senin Excel Tablonun ID'sini yazacağız. 
-        // Bu link sadece tablodaki "A" sütununun en son satır numarasını (yani toplam sayıyı) JSON olarak okur. Tıklasan da doğrusal olarak ARTTIRAMAZ.
-        const spreadsheetId = "AKfycbycFwlIDvjqFE5_31IGzLb8X-wLSg4Fi8UEFNrSuvYtep5y8h210ts7C8XQuoAzB5qOzg";
+        // ⚠️ USTA: Excel Tablonun uzun ID'sini buraya yapıştır
+        const spreadsheetId = "BURAYA_EXCEL_TABLONUN_UZUN_ID_SINI_YAZ";
         const jsonURL = `https://docs.google.com/spreadsheets/d/${spreadsheetId}/gviz/tq?tqx=out:json`;
 
-        let lastCount = localStorage.getItem('last_visitor_count')
-            ? parseInt(localStorage.getItem('last_visitor_count'))
-            : null;
-
+        // 🚀 İLK STORAGE 0 İLE BAŞLAR: Sayfa her yenilendiğinde hafızayı sıfırlıyoruz
+        let lastCount = 0; 
         let audioCtx = null;
 
         function initAudio() {
@@ -73,8 +69,8 @@
             }
         }
 
-        // 🔥 GERÇEK DEĞİŞİM EFEKTİ
-        function fakeClickAction() {
+        // 🔥 DEĞİŞİM VE KLİK EFEKTİ
+        function triggerClickEffect() {
             playVisitorSound();
             const el = document.getElementById("counter");
             el.style.transform = "scale(1.25)";
@@ -83,54 +79,50 @@
             }, 120);
         }
 
-        // 📥 SADECE TEMİZ OKUMA YAPAR (FETCH ENGELİNE TAKILMAZ)
+        // 📡 SAF OKUMA VE KONTROL MEKANİZMASI
         function getData() {
             fetch(jsonURL)
                 .then(res => res.text())
                 .then(text => {
-                    // Google'dan gelen ham JSON verisini temizleme (gviz formatı temizliği)
                     const temp = text.substring(text.indexOf('\n') + 1);
                     const jsonString = temp.substring(temp.indexOf('{'), temp.lastIndexOf('}') + 1);
                     const obj = JSON.parse(jsonString);
                     
-                    // Excel'deki toplam satır sayısını buluyoruz
                     if (obj && obj.table && obj.table.rows) {
-                        const currentCount = obj.table.rows.length;
+                        const currentCount = obj.table.rows.length; // Docs'taki güncel sayı
                         const el = document.getElementById("counter");
 
+                        // Ekrana güncel docs sayısını yaz
                         el.innerText = currentCount;
 
-                        if (lastCount === null) {
-                            lastCount = currentCount;
-                            localStorage.setItem("last_visitor_count", currentCount);
-                            return;
-                        }
-
+                        // ⚡ REFRESTE VEYA OTOMATİKTE: Eğer gelen sayı hafızadaki son sayıdan büyükse (ilk açılışta 0'dan büyükse) klik tetikle
                         if (currentCount > lastCount) {
-                            fakeClickAction();
+                            triggerClickEffect();
                         }
 
+                        // 🔄 STORAGE SON SAYIYA EŞİTLENİR VE BÖYLE DEVAM EDER
                         lastCount = currentCount;
-                        localStorage.setItem("last_visitor_count", currentCount);
                     }
                 })
-                .catch(err => console.error("Reading error:", err));
+                .catch(err => console.error("Read error:", err));
         }
 
-        // 🟢 CLICK SADECE SES AKTİF ETMEK VE ANLIK OKUMAK İÇİN
+        // Ekrana tıklayınca ses motorunu uyandırıp anlık kontrol yapar (Sayıyı artırmaz)
         document.getElementById("counter").addEventListener("click", () => {
             initAudio();
             getData();
         });
 
-        // 🚀 START
+        // 🚀 BASTIK REFRESH'E / SAYFA AÇILDI
         window.addEventListener("DOMContentLoaded", () => {
-            const el = document.getElementById("counter");
-            if (lastCount !== null) {
-                el.innerText = lastCount;
-            }
-            getData();
-            setInterval(getData, 10000); // 10 saniyede bir salt okunur kontrol
+            // İlk başta ekranda 0 yazar (Hafıza da 0)
+            document.getElementById("counter").innerText = "0"; 
+            
+            // Hemen Docs sayısını almaya gider, sayı > 0 olduğu için klik sesiyle canlanır
+            getData(); 
+            
+            // Her 10 saniyede bir döngü devam eder
+            setInterval(getData, 10000); 
         });
     </script>
 
