@@ -127,7 +127,7 @@
  
 <script>
     if (!sessionStorage.getItem('auto_refreshed')) {
-        localStorage.removeItem("ok_academy_cache");
+        localStorage.removeItem("ok_academy_cache_v24");
         sessionStorage.setItem('auto_refreshed', 'true');
         window.location.reload();
     }
@@ -397,11 +397,7 @@ const cardHTML = `
     });
 }
 
-/* ─────────────────────────────────────────────────────────────
-   SEARCH — delegated event binding on document so it works
-   regardless of when #search-input appears in the DOM
-   (header.html is fetched asynchronously after page load)
-───────────────────────────────────────────────────────────── */
+ 
 function applySearch(val) {
     val = (val || '').toLowerCase().trim();
 
@@ -415,12 +411,11 @@ function applySearch(val) {
     }
 }
 
-/* Bind once on document — catches #search-input even after async header inject */
+ 
 $(document).on('input keyup', '#search-input', function () {
     applySearch($(this).val());
 });
-
-/* Also watch for the header iframe / HTML being injected and re-attach if needed */
+ 
 const headerObserver = new MutationObserver(function () {
     const $input = $('#search-input');
     if ($input.length) {
@@ -433,9 +428,7 @@ headerObserver.observe(document.getElementById('header-container'), {
     subtree: true
 });
 
-/* ─────────────────────────────────────────────────────────────
-   SCAN & CACHE
-───────────────────────────────────────────────────────────── */
+ 
 async function scanAndCache(path) {
     try {
         const res = await fetch(`https://api.github.com/repos/${CONFIG.owner}/${CONFIG.repo}/contents/${path}`);
