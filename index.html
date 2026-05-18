@@ -556,21 +556,19 @@ fetch('https://raw.githubusercontent.com/bandanee/root/main/import/footer.html')
 
 </script>
    
-    <strong id="excel-sayac">...</strong>
-  
- 
+<strong id="excel-sayac" style="color: #00FFCC; font-family: Arial, sans-serif; font-size: 18px;">...</strong>
 
 <script>
-    window.addEventListener('DOMContentLoaded', () => {
+     
+    window.addEventListener('load', () => {
         
-       
         const googleScriptURL = 'https://script.google.com/macros/s/AKfycbwqPytRra47LhFHhUlu70JJGV26goOg23yDFzh1z10hPAOcF5fDVNiuoh8_uLYnfoL4LA/exec';
 
-   
-        fetch(googleScriptURL)
+       
+        fetch(googleScriptURL, { method: 'GET', redirect: 'follow' })
             .then(res => res.json())
             .then(data => {
-                 
+           
                 document.getElementById('excel-sayac').innerText = data.count;
             })
             .catch(hata => {
