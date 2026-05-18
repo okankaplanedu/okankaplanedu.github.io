@@ -1,27 +1,3 @@
 <article>
-<div style="text-align: center; margin-top: 50px; font-family: Arial, sans-serif;">
-    <p style="color: #666; font-size: 14px; margin-bottom: 5px;">
-        Views: <strong id="excel-sayac" style="color: #00FFCC; font-size: 18px;">...</strong>
-    </p>
-</div>
 
-<script>
-    // Google'dan veri geldiğinde bu fonksiyon otomatik tetiklenecek
-    function sayaciGuncelle(data) {
-        document.getElementById('excel-sayac').innerText = data.count;
-    }
-
-    window.addEventListener('DOMContentLoaded', () => {
-      
-        const googleScriptURL = 'https://script.google.com/macros/s/AKfycbwqPytRra47LhFHhUlu70JJGV26goOg23yDFzh1z10hPAOcF5fDVNiuoh8_uLYnfoL4LA/exec';
-
-        // Linkin sonuna Google'ın okuyabilmesi için callback parametresini ekliyoruz
-        const jsonpURL = googleScriptURL + '?callback=sayaciGuncelle';
-
-        // Arka planda gizli bir script etiketi oluşturup sayfaya ekliyoruz (CORS engelini yıkar)
-        const script = document.createElement('script');
-        script.src = jsonpURL;
-        document.body.appendChild(script);
-    });
-</script>
 </article>
