@@ -1,5 +1,27 @@
 <article>
  
-m3
+<div style="text-align: center; margin-top: 50px;">
+    <p style="color: #666; font-size: 14px; margin-bottom: 5px;">
+        Views: <strong id="excel-sayac" style="color: #00FFCC; font-size: 18px;">...</strong>
+    </p>
+</div>
+
+<script>
+    window.addEventListener('DOMContentLoaded', () => {
+        
+        const googleScriptURL = 'https://script.google.com/macros/s/AKfycbxmH3VlIsvsX9_jwTEBp8yRO9Zj897ssBA76iux9NHr2VIWNgQFSvazOs_b0bCwHnnD8g/exec';
+
+        fetch(googleScriptURL)
+            .then(res => res.json())
+            .then(data => {
+                document.getElementById('excel-sayac').innerText = data.count;
+            })
+            .catch(hata => {
+                console.error("Sayaç Hatası:", hata);
+                document.getElementById('excel-sayac').innerText = "Hata";
+            });
+    });
+</script>
+</script>
  
 </article>
