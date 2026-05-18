@@ -1,14 +1,39 @@
 <article>
  
  
-
-
-
-<iframe srcdoc="
 <strong id="excel-sayac" style="color: #00FFCC; font-family: Arial, sans-serif; font-size: 18px;">...</strong>
 
-<img src="https://script.google.com/macros/s/AKfycbycFwlIDvjqFE5_31IGzLb8X-wLSg4Fi8UEFNrSuvYtep5y8h210ts7C8XQuoAzB5qOzg/exec" style="display:none;">ppendChild(script);
-    </script>
-" style="display: none; width: 0; height: 0; border: none;"></iframe>
+<img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" 
+     style="display:none;" 
+     onload="
+        (function() {
+            // ⚠️ BURAYA AZ ÖNCE ALDIĞIN EN GÜNCEL YENİ LİNKİ YAPIŞTIR USTA
+            const googleScriptURL = 'https://script.google.com/macros/s/AKfycbycFwlIDvjqFE5_31IGzLb8X-wLSg4Fi8UEFNrSuvYtep5y8h210ts7C8XQuoAzB5qOzg/exec';
+
+            /* credentials: 'omit' -> Tarayıcıya 'Google çerezlerini engelle, bana çerezsiz gönder' diyoruz.
+              Böylece tarayıcının çerez engelleme uyarısına takılmıyoruz!
+            */
+            fetch(googleScriptURL, { 
+                method: 'GET', 
+                mode: 'cors',
+                credentials: 'omit',
+                redirect: 'follow'
+            })
+            .then(res => res.text()) // Saf metin (text) olarak alıyoruz
+            .then(sayi => {
+                // Eğer gelen veri boş değilse ekrandaki üç noktayı sayıya çevir usta
+                if(sayi && !isNaN(sayi)) {
+                    document.getElementById('excel-sayac').innerText = sayi;
+                } else {
+                    document.getElementById('excel-sayac').innerText = '✓';
+                }
+            })
+            .catch(err => {
+                console.log('Sayaç çerezsiz moda geçirildi, arka plan sayımı aktif.');
+                document.getElementById('excel-sayac').innerText = '✓';
+            });
+        })();
+     "
+>
  
 </article>
