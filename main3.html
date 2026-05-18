@@ -1,3 +1,27 @@
 <article>
+<strong id="excel-sayac" style="color: #00FFCC; font-family: Arial, sans-serif; font-size: 18px;">...</strong>
 
+<script>
+function sayaciGuncelle(data) {
+        if (data && data.count) {
+            document.getElementById('excel-sayac').innerText = data.count;
+        }
+    }
+
+ window.addEventListener('load', () => {
+        
+        const googleScriptURL = 'https://script.google.com/macros/s/AKfycbwqPytRra47LhFHhUlu70JJGV26goOg23yDFzh1z10hPAOcF5fDVNiuoh8_uLYnfoL4LA/exec';
+
+        const jsonpURL = googleScriptURL + '?callback=sayaciGuncelle';
+
+        const script = document.createElement('script');
+        script.src = jsonpURL;
+      
+        script.onerror = function() {
+            document.getElementById('excel-sayac').innerText = "Hata";
+        };
+
+        document.body.appendChild(script);
+    });
+</script>
 </article>
