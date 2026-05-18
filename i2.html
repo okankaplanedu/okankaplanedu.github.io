@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Counter</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background-color: #0b0f19;
+            color: #00FFCC;
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            overflow: hidden;
+            user-select: none;
+        }
+        #counter {
+            font-size: 120px;
+            font-weight: bold;
+            text-shadow: 0 0 30px rgba(0, 255, 204, 0.5);
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+
+    <div id="counter">...</div>
+
+    <script>
+        // ⚠️ USTA: Google'dan aldığın EN YENİ linki buraya yapıştır!
+        const googleScriptURL = 'https://script.google.com/macros/s/AKfycbycFwlIDvjqFE5_31IGzLb8X-wLSg4Fi8UEFNrSuvYtep5y8h210ts7C8XQuoAzB5qOzg/exec';
+        
+        let lastCount = localStorage.getItem('last_visitor_count') ? parseInt(localStorage.getItem('last_visitor_count')) : null;
+        let audioCtx = null;
+        let isManualAction = false; // Tıklama veya refresh ayrımı için kilit anahtar
+
+        // Ses motorunu güvenli şekilde başlatan fonksiyon
+        function initAudio() {
+            if (!audioCtx) {
+                audioCtx = new (window.AudioContext || window.webkitAudioContext)();
+            }
+        }
+
+        // 🔊 SES 1: Senin tetiklediğin (Click veya Refresh) kalın, tok bas sesi (600Hz)
+        function playManualSound() {
+            initAudio();
+            const osc = audioCtx.createOscillator();
+            const gain = audioCtx.createGain();
+            osc.type = 'sine';
+            osc.frequency.setValueAtTime(600, audioCtx.currentTime); // Tok ses
+            gain.gain.setValueAtTime(0.15, audioCtx.currentTime);
+            gain.gain.exponentialRampToValueAtTime(0.001, audioCtx.currentTime + 0.04);
+            osc.connect(gain);
+            gain.connect(audioCtx.destination);
+            osc.start();
+            osc.stop(audioCtx.currentTime + 0.04);
+        }
+
+        // 🔔 SES 2: Dışarıdan gelen gerçek ziyaretçinin ince, keskin zil sesi (1500Hz)
+        function playVisitorSound() {
+            initAudio();
+            const osc = audioCtx.createOscillator();
+            const gain = audioCtx.createGain();
+            osc.type = 'sine';
+            osc.frequency.setValueAtTime(1500, audioCtx.currentTime); // İnce keskin ses
+            gain.gain.setValueAtTime(0.12, audioCtx.currentTime);
+            gain.gain.exponentialRampToValueAtTime(0.001, audioCtx.currentTime + 0.12);
+            osc.connect(gain);
+            gain.connect(audioCtx.destination);
+            osc.start();
+            osc.stop(audioCtx.currentTime + 0.12);
+        }
+
+        // Veri merkeze ulaştığında tetiklenen ana mekanizma
+        function sayaciGuncelle(data) {
+            if (data && data.count) {
+                const currentCount = parseInt(data.count);
+                document.getElementById('counter').innerText = currentCount;
+                
+                // Eğer sayı eski hafızadan büyükse ses çalma kontrolüne gir
+                if (lastCount !== null && currentCount > lastCount) {
+                    if (isManualAction) {
+                        playManualSound(); // Senin artışınsa tok ses
+                    } else {
+                        playVisitorSound(); // Dışarıdan biriyse ince zil sesi
+                    }
+                }
+                
+                // Durumu sıfırla ve hafızayı güncelle
+                isManualAction = false;
+                lastCount = currentCount;
+                localStorage.setItem('last_visitor_count', currentCount);
+            }
+        }
+
+        // Google'a veri gönderme/çekme fonksiyonu
+        function getData() {
+            const oldScript = document.getElementById('jsonp-script');
+            if (oldScript) oldScript.remove();
+
+            const script = document.createElement('script');
+            script.id = 'jsonp-script';
+            script.src = googleScriptURL + '?callback=sayaciGuncelle&_=' + Date.now();
+            document.head.appendChild(script);
+        }
+
+        // Ekrana tıklandığında tetiklenen el yapımı artış
+        document.getElementById('counter').addEventListener('click', () => {
+            isManualAction = true; // Manuel tıklandı olarak işaretle
+            getData();
+        });
+
+        // Sayfa ilk yüklendiğinde (Refresh/Yenileme) çalışacak alan
+        window.addEventListener('DOMContentLoaded', () => {
+            if (lastCount !== null) {
+                document.getElementById('counter').innerText = lastCount;
+            }
+            
+            // Yenileme de manuel bir işlem olduğu için ses çalması amacıyla işaretliyoruz
+            isManualAction = true; 
+            getData();
+            
+            // Her 10 saniyede bir otomatik arka plan kontrolü (Asla manuel işaretlenmez)
+            setInterval(getData, 10000);
+        });
+    </script>
+</body>
+</html>
