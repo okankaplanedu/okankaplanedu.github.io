@@ -556,35 +556,6 @@ fetch('https://raw.githubusercontent.com/bandanee/root/main/import/footer.html')
 
 </script>
    
-<strong id="excel-sayac" style="color: #00FFCC; font-family: Arial, sans-serif; font-size: 18px;">...</strong>
 
-<script>
-    // 1. Google'dan veri başarıyla geldiğinde bu fonksiyon otomatik tetiklenecek
-    function sayaciGuncelle(data) {
-        if (data && data.count) {
-            document.getElementById('excel-sayac').innerText = data.count;
-        }
-    }
-
-    // 2. Sayfa yüklenmesi tamamen bittikten sonra çalışır
-    window.addEventListener('load', () => {
-        // Senin şu an aktif olan canavar gibi çalışan Google linkin
-        const googleScriptURL = 'https://script.google.com/macros/s/AKfycbwqPytRra47LhFHhUlu70JJGV26goOg23yDFzh1z10hPAOcF5fDVNiuoh8_uLYnfoL4LA/exec';
-
-        // Linkin sonuna 'callback=sayaciGuncelle' parametresini ekliyoruz
-        const jsonpURL = googleScriptURL + '?callback=sayaciGuncelle';
-
-        // Arka planda gizli bir <script> etiketi oluşturup sayfaya takıyoruz
-        const script = document.createElement('script');
-        script.src = jsonpURL;
-        
-        // Eğer yüklenirken bir sorun olursa ekrana hata bassın diye önlem alıyoruz
-        script.onerror = function() {
-            document.getElementById('excel-sayac').innerText = "Hata";
-        };
-
-        document.body.appendChild(script);
-    });
-</script>
 </body>
 </html>
