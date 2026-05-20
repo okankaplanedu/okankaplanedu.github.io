@@ -1,5 +1,22 @@
 User-agent: *
+
 Allow: /
 
-# Site Haritasının Yerini Arama Motorlarına Bildir
+# Sitemap
 Sitemap: https://okankaplanedu.github.io/sitemap.xml
+
+# Crawl delay (bazı botlar destekler)
+Crawl-delay: 1
+
+# Gereksiz sistem dosyaları
+Disallow: /.git/
+Disallow: /.github/
+
+# Cache / temp / build
+Disallow: /tmp/
+Disallow: /cache/
+Disallow: /dist/
+Disallow: /build/
+
+# Arama veya filtre parametreleri varsa
+Disallow: /*?*
