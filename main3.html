@@ -1,6 +1,6 @@
 <script>
 function fixYouTubePlaylist(url) {
- 
+  // URL içindeki en son playlist ID'yi yakala
   const matches = [...url.matchAll(/list=([a-zA-Z0-9_-]+)/g)];
 
   if (matches.length === 0) return url;
