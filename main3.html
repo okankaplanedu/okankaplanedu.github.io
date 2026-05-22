@@ -1,26 +1,21 @@
 <script>
-function fixPlaylistUrl(url) {
-  try {
-    // URL gibi parse etmeye çalış
-    const decoded = decodeURIComponent(url);
+function fixYouTubePlaylist(url) {
+ 
+  const matches = [...url.matchAll(/list=([a-zA-Z0-9_-]+)/g)];
 
-    // en son gerçek playlist ID'yi yakala
-    const matches = [...decoded.matchAll(/list=([a-zA-Z0-9_-]+)/g)];
+  if (matches.length === 0) return url;
 
-    if (matches.length === 0) return url;
+  const playlistId = matches[matches.length - 1][1];
 
-    const lastValid = matches[matches.length - 1][1];
-
-    return `https://www.youtube.com/playlist?list=${lastValid}`;
-  } catch (e) {
-    return url;
-  }
+  return `https://www.youtube.com/playlist?list=${playlistId}`;
 }
 
 document.addEventListener("DOMContentLoaded", () => {
-  document.querySelectorAll("a.yt-play-button").forEach(a => {
-    const fixed = fixPlaylistUrl(a.href);
-    a.href = fixed;
+  document.querySelectorAll(".yt-play-button").forEach(a => {
+    const original = a.getAttribute("href");
+    const fixed = fixYouTubePlaylist(original);
+
+    a.setAttribute("href", fixed);
   });
 });
 </script>
