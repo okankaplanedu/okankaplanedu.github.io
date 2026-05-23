@@ -1,61 +1,286 @@
 <!DOCTYPE html>
-<html lang="tr">
+<html lang="en">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
 
-<title>Klasik Edebiyat Kursları | Okan Kaplan Edu</title>
+<title>Okan Kaplan Academy – IoT Real-World Projects & Courses</title>
 
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css">
+<meta name="title" content="Okan Kaplan Academy – IoT Real-World Projects & Courses">
+<meta name="description" content="Learn IoT through hands-on real-world projects. Okan Kaplan Academy provides practical training in Internet of Things, embedded systems, sensors, microcontrollers, and smart device development.">
+<meta name="keywords" content="IoT courses, Internet of Things, IoT projects, embedded systems, microcontrollers, Arduino, Raspberry Pi, smart devices, online learning, Okan Kaplan Academy">
 
-<style>
-body { background:#f8f9fa; }
+<meta name="author" content="Okan Kaplan">
+<meta name="creator" content="Okan Kaplan">
+<meta name="publisher" content="Okan Kaplan Academy">
 
-.grid {
-  width:100%;
+<meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
+<meta name="googlebot" content="index, follow">
+<meta name="bingbot" content="index, follow">
+
+<meta name="theme-color" content="#0d6efd">
+
+<link rel="canonical" href="https://okankaplanedu.github.io/courses/">
+
+<meta name="language" content="en">
+
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Okan Kaplan Academy">
+<meta property="og:locale" content="en_US">
+
+<meta property="og:title" content="Okan Kaplan Academy – IoT Real-World Projects & Courses">
+<meta property="og:description" content="Learn IoT through hands-on real-world projects. Okan Kaplan Academy offers expert-led training in Internet of Things, embedded systems, and smart device development.">
+<meta property="og:url" content="https://okankaplanedu.github.io/courses/">
+<meta property="og:image" content="https://okankaplanedu.github.io/assets/courses-cover.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Okan Kaplan Academy Courses Cover">
+
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Okan Kaplan Academy – IoT Real-World Projects & Courses">
+<meta name="twitter:description" content="Learn IoT through real-world projects. Expert-led courses in embedded systems, sensors, and smart devices.">
+<meta name="twitter:image" content="https://okankaplanedu.github.io/assets/courses-cover.jpg">
+
+<link rel="manifest" href="/manifest.json">
+
+<link href="https://okankaplanedu.github.io/assets/css/style.css" rel="stylesheet">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link rel="dns-prefetch" href="//cdn.jsdelivr.net">
+<link rel="dns-prefetch" href="//cdnjs.cloudflare.com">
+<link rel="dns-prefetch" href="//raw.githubusercontent.com">
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600&display=swap" rel="stylesheet">
+
+<link rel="preload"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+      as="style"
+      onload="this.onload=null;this.rel='stylesheet'">
+
+<noscript>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css">
+</noscript>
+
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebSite",
+      "@id": "https://okankaplanedu.github.io/#website",
+      "url": "https://okankaplanedu.github.io/",
+      "name": "Okan Kaplan Academy",
+      "description": "Okan Kaplan Academy offers expert-led IoT courses and real-world projects covering Internet of Things, embedded systems, microcontrollers, and smart device development.",
+      "publisher": {
+        "@id": "https://okankaplanedu.github.io/#organization"
+      }
+    },
+    {
+      "@type": "Organization",
+      "@id": "https://okankaplanedu.github.io/#organization",
+      "name": "Okan Kaplan Academy",
+      "url": "https://okankaplanedu.github.io/",
+      "logo": "https://okankaplanedu.github.io/assets/logo.png",
+      "sameAs": [
+        "https://github.com/okankaplanedu",
+        "https://github.com/bandanee"
+      ],
+      "founder": {
+        "@id": "https://okankaplanedu.github.io/#person"
+      }
+    },
+    {
+      "@type": "Person",
+      "@id": "https://okankaplanedu.github.io/#person",
+      "name": "Okan Kaplan",
+      "url": "https://okankaplanedu.github.io/",
+      "jobTitle": "Web Developer & Digital Content Creator",
+      "sameAs": [
+        "https://linkedin.com/in/canvasor",
+        "https://www.youtube.com/@Ki%C5%9FiselGeli%C5%9Fim-Video-Pdf-img",
+        "https://www.udemy.com/user/okan-kaplan-7",
+        "https://www.behance.net/okankaplan1",
+        "https://github.com/okankaplanedu"
+      ]
+    }
+  ]
 }
+</script>
+ 
+<script>
+    if (!sessionStorage.getItem('auto_refreshed')) {
+        localStorage.removeItem("ok_academy_cache_v26");
+        sessionStorage.setItem('auto_refreshed', 'true');
+        window.location.reload();
+    }
 
-.grid-item {
-  width: 33.333%;
-  padding:10px;
-}
-
-.card-custom {
-  background:#fff;
-  border-radius:12px;
-  padding:15px;
-  box-shadow:0 2px 10px rgba(0,0,0,0.08);
-}
-
-.is-hidden { display:none !important; }
-
-@media(max-width:900px){
-  .grid-item { width:50%; }
-}
-
-@media(max-width:600px){
-  .grid-item { width:100%; }
-}
-</style>
+    fetch("https://raw.githubusercontent.com/bandanee/root/main/import/head.html")
+        .then(r => r.text())
+        .then(t => document.head.insertAdjacentHTML("beforeend", t))
+        .catch(e => console.error(e));
+</script>
 </head>
-
 <body>
 
-<div class="container py-4">
+<div id="header-container"></div> 
 
-  <h2 class="mb-3">Klasik Edebiyat Kursları</h2>
+<script>
+fetch("https://okankaplanedu.github.io/header.html")
+  .then(response => response.text())
+  .then(html => {
+    document.getElementById("header-container").innerHTML = html;
+  })
+  .catch(err => console.error("Header load error:", err));
+</script>
 
-  <input id="search-input" class="form-control mb-3" placeholder="Ara...">
+<div
+  class="offcanvas offcanvas-start"
+  tabindex="-1"
+  id="offcanvasLeft"
+  aria-labelledby="offcanvasLeftLabel"
+  aria-hidden="true"
+>
 
-  <div id="grid" class="grid">
-    <div class="grid-sizer"></div>
+  <div class="offcanvas-header border-bottom">
+    <h5 class="offcanvas-title" id="offcanvasLeftLabel">
+      Navigation Menu
+    </h5>
+
+    <button
+      type="button"
+      class="btn-close"
+      data-bs-dismiss="offcanvas"
+      aria-label="Close navigation menu"
+    ></button>
+  </div>
+
+  <div class="offcanvas-body p-0 h-100">
+    <iframe
+      src="https://okankaplanedu.github.io/archive.html"
+      class="w-100 h-100 border-0"
+      title="Archive navigation content"
+      loading="lazy"
+    ></iframe>
   </div>
 
 </div>
 
+
+<div
+  class="offcanvas offcanvas-end"
+  tabindex="-1"
+  id="offcanvasRight"
+  aria-labelledby="offcanvasRightLabel"
+  aria-hidden="true"
+>
+
+  <div class="offcanvas-header border-bottom">
+    <h5 class="offcanvas-title" id="offcanvasRightLabel">
+      Table of Contents
+    </h5>
+
+    <button
+      type="button"
+      class="btn-close"
+      data-bs-dismiss="offcanvas"
+      aria-label="Close table of contents"
+    ></button>
+  </div>
+
+  <div class="offcanvas-body p-0" style="min-height: 500px;">
+    <iframe
+      src="https://okankaplanedu.github.io/toc.html"
+      id="toc-iframe"
+      class="w-100 border-0"
+      style="height: 600px; overflow: hidden;"
+      title="Table of Contents navigation"
+      loading="lazy"
+    ></iframe>
+  </div>
+
+</div>
+
+<main class="container-fluid px-4" aria-live="polite">
+ <div id="main1"></div> 
+<h1 class="visually-hidden">Content Feed</h1>
+ <div
+    class="text-center"
+    id="status-container"
+    style="display:none"
+    aria-live="polite"
+    aria-busy="true"
+  >
+    <div id="status" role="status" aria-live="polite">
+
+      <div
+        class="spinner-border spinner-border-sm text-primary"
+        role="img"
+        aria-label="Loading content"
+        id="status-spinner"
+      ></div>
+
+      <span id="status-message">
+        Preparing system...
+      </span>
+
+    </div>
+  </div>
+
+ 
+  <div class="grid" id="masonry-container">
+
+    <div class="grid-sizer" aria-hidden="true"></div>
+
+  </div>
+ <div id="main2"></div> 
+<div id="main3"></div> 
+</main>
+
+
+
+ 
+ 
+<script>
+fetch("https://okankaplanedu.github.io/main1.html")
+  .then(response => response.text())
+  .then(html => {
+    document.getElementById("main1").innerHTML = html;
+  })
+  .catch(err => console.error("main1", err));
+
+fetch("https://okankaplanedu.github.io/main2.html")
+  .then(response => response.text())
+  .then(html => {
+    document.getElementById("main2").innerHTML = html;
+  })
+  .catch(err => console.error("main2", err));
+
+fetch("https://okankaplanedu.github.io/main3.html")
+  .then(response => response.text())
+  .then(html => {
+    document.getElementById("main3").innerHTML = html;
+  })
+  .catch(err => console.error("main3", err));
+</script>
+
+
+
+
+ 
+<div id="footer-placeholder"></div>
+
 <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
 <script src="https://unpkg.com/masonry-layout@4/dist/masonry.pkgd.min.js"></script>
 <script src="https://unpkg.com/imagesloaded@5/imagesloaded.pkgd.min.js"></script>
+
 
 <script>
 
@@ -64,160 +289,421 @@ const CONFIG = {
   repo: "okankaplanedu.github.io",
   branch: "main",
   baseFolder: "tr/kurslar/edebiyat/klasik-edebiyati-derinlemesine-anlamak-yorumlamak/",
-  cacheKey: "ok_course_cache_v10",
+  cacheKey: "ok_course_cache_v16",
   cacheTime: 1000 * 60 * 60
 };
 
-let grid;
-let items = [];
-let seen = new Set();
+let masonryGrid;
 
-/* ---------------- MASONRY ---------------- */
+let tempArchive = [];
 
-function initGrid() {
-  grid = $('#grid').masonry({
-    itemSelector: '.grid-item',
-    columnWidth: '.grid-sizer',
-    percentPosition: true
-  });
+function initMasonry(){
+
+    masonryGrid = $('#masonry-container').masonry({
+
+        itemSelector: '.grid-item',
+
+        columnWidth: '.grid-sizer',
+
+        percentPosition: true,
+
+        transitionDuration: '0.3s'
+    });
 }
-
-/* ---------------- CACHE ---------------- */
 
 const Cache = {
-  get() {
-    try {
-      const raw = localStorage.getItem(CONFIG.cacheKey);
-      if (!raw) return null;
 
-      const data = JSON.parse(raw);
-      if (Date.now() - data.time > CONFIG.cacheTime) return null;
+    get: () => {
 
-      return data.items;
-    } catch {
-      return null;
+        const data = localStorage.getItem(
+            CONFIG.cacheKey
+        );
+
+        if(!data) return null;
+
+        const parsed = JSON.parse(data);
+
+        if(
+            Date.now() - parsed.timestamp >
+            CONFIG.cacheTime
+        ){
+            return null;
+        }
+
+        return parsed.articles;
+    },
+
+    set: (articles) => {
+
+        localStorage.setItem(
+            CONFIG.cacheKey,
+
+            JSON.stringify({
+
+                timestamp: Date.now(),
+
+                articles: articles
+
+            })
+        );
     }
-  },
-
-  set(items) {
-    localStorage.setItem(CONFIG.cacheKey, JSON.stringify({
-      time: Date.now(),
-      items
-    }));
-  }
 };
 
-/* ---------------- CARD ---------------- */
+function renderCard(article){
 
-function addCard(article) {
+    const plainText = `
+        ${article.title}
+        ${article.description}
+        ${article.keywords}
+    `.toLowerCase();
 
-  if (seen.has(article.url)) return;
-  seen.add(article.url);
+    const imageHTML = article.image
+    ? `
+       
+    `
+    : "";
 
-  const html = `
-    <div class="grid-item" data-search="${(article.title + article.description).toLowerCase()}">
-      <div class="card-custom">
-        <h5>${article.title}</h5>
-        <p>${article.description}</p>
-        <small>${article.keywords}</small><br><br>
-        <a href="${article.url}" class="btn btn-primary btn-sm">Aç</a>
-      </div>
+    const cardHTML = `
+
+    <div
+        class="grid-item"
+        data-search="${plainText}"
+    >
+
+        <div class="card-custom">
+
+      
+
+            <div class="card-body-custom">
+
+                <h2 class="card-title-custom">
+                    ${article.title}
+                </h2>
+
+                <p class="card-desc-custom">
+                    ${article.description}
+                </p>
+
+                <div class="card-keywords-custom">
+                    ${article.keywords}
+                </div>
+
+                <a
+                    href="${article.url}"
+                    class="btn-open"
+                    target="_top"
+                    rel="noopener noreferrer"
+                >
+
+                    Open Course →
+
+                </a>
+
+            </div>
+
+        </div>
+
     </div>
-  `;
+    `;
 
-  const $el = $(html);
+    const $item = $(cardHTML);
 
-  $('#grid').append($el);
+    $('#masonry-container').append($item);
 
-  grid.appended($el);
+    $item.imagesLoaded(() => {
 
-  $el.imagesLoaded(() => {
-    grid.layout();
-  });
+        masonryGrid
+        .masonry('appended', $item)
+        .masonry('layout');
+
+    });
 }
 
-/* ---------------- SEARCH ---------------- */
+function applySearch(val){
 
-$('#search-input').on('input', function () {
+    val = (val || '')
+    .toLowerCase()
+    .trim();
 
-  const val = this.value.toLowerCase();
+    $('.grid-item').each(function(){
 
-  $('.grid-item').each(function () {
+        const text = $(this)
+        .data('search') || '';
 
-    const text = $(this).data('search');
+        $(this).toggleClass(
 
-    $(this).toggle(
-      !val || text.includes(val)
-    );
+            'is-hidden',
 
-  });
+            val !== '' &&
+            text.indexOf(val) === -1
 
-  setTimeout(() => grid.layout(), 100);
+        );
+    });
+
+    if(masonryGrid){
+
+        masonryGrid.masonry('layout');
+    }
+}
+
+$(document).on(
+    'input keyup',
+    '#search-input',
+
+    function(){
+
+        applySearch($(this).val());
+
+    }
+);
+
+const headerObserver = new MutationObserver(function(){
+
+    const $input = $('#search-input');
+
+    if($input.length){
+
+        applySearch($input.val());
+
+    }
 });
 
-/* ---------------- FETCH RECURSIVE SAFE ---------------- */
+headerObserver.observe(
 
-async function scan(path) {
+    document.getElementById(
+        'header-container'
+    ),
 
-  const url = `https://api.github.com/repos/${CONFIG.owner}/${CONFIG.repo}/contents/${path}`;
-
-  const res = await fetch(url);
-  const data = await res.json();
-
-  for (const item of data) {
-
-    if (item.type === "dir") {
-      await scan(item.path);
+    {
+        childList:true,
+        subtree:true
     }
+);
 
-    if (
-      item.name === "index.html" &&
-      item.path.includes(CONFIG.baseFolder)
-    ) {
+function updateUIStatus(msg){
 
-      const raw = await fetch(item.download_url);
-      const html = await raw.text();
+    const txt = document.getElementById(
+        "status-message"
+    );
 
-      const doc = new DOMParser().parseFromString(html, "text/html");
+    if(txt){
 
-      const article = {
-        url: `https://${CONFIG.owner}.github.io/${item.path.replace("index.html","")}`,
-        title: doc.querySelector("title")?.innerText || "No Title",
-        description: doc.querySelector('meta[name="description"]')?.content || "",
-        keywords: doc.querySelector('meta[name="keywords"]')?.content || ""
-      };
-
-      items.push(article);
-      addCard(article);
+        txt.innerText = msg;
     }
-  }
 }
 
-/* ---------------- START ---------------- */
+function finalizeUI(isCache=false){
 
-async function start() {
+    const spinner = document.getElementById(
+        "status-spinner"
+    );
 
-  initGrid();
+    if(spinner){
 
-  const cached = Cache.get();
+        spinner.style.display = "none";
+    }
 
-  if (cached) {
+    document.getElementById(
+        "status"
+    ).innerHTML = `
 
-    cached.forEach(addCard);
+        <span style="color:#10b981">●</span>
 
-    setTimeout(() => grid.layout(), 300);
+        <span
+            style="
+                font-size:13px;
+                font-weight:600;
+            "
+        >
 
-    return;
-  }
+            ${
+                isCache
+                ? 'Fast Cache Load'
+                : 'Courses Updated'
+            }
 
-  await scan(CONFIG.baseFolder);
+        </span>
 
-  Cache.set(items);
+    `;
 
-  setTimeout(() => grid.layout(), 300);
+    setTimeout(() => {
+
+        $('#status-container').fadeOut();
+
+    }, 2500);
 }
 
-$(document).ready(start);
+async function scanAndCache(path){
+
+    try{
+
+        const res = await fetch(
+
+            `https://api.github.com/repos/${CONFIG.owner}/${CONFIG.repo}/contents/${path}`
+
+        );
+
+        if(!res.ok) return;
+
+        const items = await res.json();
+
+        for(const item of items){
+
+            if(item.type === "dir"){
+
+                await scanAndCache(item.path);
+
+            }
+
+            else if(
+
+                item.name === "index.html" &&
+                path !== CONFIG.baseFolder
+
+            ){
+
+                updateUIStatus(
+
+                    `Scanning: ${
+                        item.path
+                        .split('/')
+                        .slice(-2,-1)
+                    }`
+
+                );
+
+                const contentRes = await fetch(
+
+                    `https://raw.githubusercontent.com/${CONFIG.owner}/${CONFIG.repo}/${CONFIG.branch}/${item.path}`
+
+                );
+
+                if(contentRes.ok){
+
+                    const html =
+                    await contentRes.text();
+
+                    const doc = new DOMParser()
+                    .parseFromString(
+                        html,
+                        "text/html"
+                    );
+
+                    const title =
+                    doc.querySelector("title")
+                    ?.innerText
+                    ?.trim()
+                    || "Untitled";
+
+                    const description =
+                    doc.querySelector(
+                        'meta[name="description"]'
+                    )
+                    ?.getAttribute("content")
+                    ?.trim()
+                    || "";
+
+                    const keywords =
+                    doc.querySelector(
+                        'meta[name="keywords"]'
+                    )
+                    ?.getAttribute("content")
+                    ?.trim()
+                    || "";
+
+                    const image =
+                    doc.querySelector(
+                        'meta[property="og:image"]'
+                    )
+                    ?.getAttribute("content")
+                    ?.trim()
+                    || "";
+
+                    const data = {
+
+                        url:
+                        `https://${CONFIG.repo}/${
+                            item.path.replace(
+                                'index.html',
+                                ''
+                            )
+                        }`,
+
+                        title,
+                        description,
+                        keywords,
+                        image
+                    };
+
+                    tempArchive.push(data);
+
+                    renderCard(data);
+                }
+
+                await new Promise(
+
+                    r => setTimeout(
+                        r,
+                        CONFIG.fetchDelay
+                    )
+
+                );
+            }
+        }
+
+    }catch(e){
+
+        console.error(
+            "Scan Error:",
+            e
+        );
+    }
+}
+
+async function startApp(){
+
+    $('#status-container').show();
+
+    initMasonry();
+
+    const cachedArticles = Cache.get();
+
+    if(cachedArticles){
+
+        cachedArticles.forEach(
+            art => renderCard(art)
+        );
+
+        finalizeUI(true);
+
+    }else{
+
+        await scanAndCache(
+            CONFIG.baseFolder
+        );
+
+        if(tempArchive.length > 0){
+
+            Cache.set(tempArchive);
+        }
+
+        finalizeUI(false);
+    }
+}
+
+$(document).ready(startApp);
+
+fetch(
+'https://raw.githubusercontent.com/bandanee/root/main/import/footer.html'
+)
+.then(r => r.text())
+.then(h => {
+
+    document.getElementById(
+        'footer-placeholder'
+    ).innerHTML = h;
+
+});
 
 </script>
 
