@@ -267,14 +267,13 @@ function renderCard(article) {
     `.toLowerCase().replace(/\s+/g, ' ');
 
     const imageHTML = article.image
-        ? `<img src="${article.image}" class="card-img-top" loading="lazy">`
+        ? ``
         : "";
 
     const cardHTML = `
     <div class="grid-item" data-search="${plainText}">
         <div class="card-custom">
-            ${imageHTML}
-
+          
             <div class="card-body-custom">
                 <h2>${article.title}</h2>
                 <p>${article.description}</p>
