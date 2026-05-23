@@ -399,7 +399,15 @@ function renderCard(article){
                     KURSU İNCELE →
 
                 </a>
-
+<a href="${location.origin}/pub/${article.url
+      .split('/')
+      .filter(Boolean)
+      .pop()}.pdf"
+   class="btn-pdf"
+   target="_blank"
+   rel="noopener noreferrer">
+   View PDF →
+</a>
             </div>
 
         </div>
