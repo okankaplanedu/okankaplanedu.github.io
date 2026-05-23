@@ -220,14 +220,14 @@ let tempArchive = [];
 /* ---------------- MASONRY ---------------- */
 
 function initMasonry() {
+
     masonryGrid = $('#masonry-container').masonry({
-        itemSelector: '.grid-item',
+        itemSelector: '.grid-item:not(.is-hidden)',
         columnWidth: '.grid-sizer',
         percentPosition: true,
         transitionDuration: '0.3s'
     });
 }
-
 /* ---------------- CACHE ---------------- */
 
 const Cache = {
@@ -273,30 +273,16 @@ function renderCard(article) {
     const cardHTML = `
     <div class="grid-item" data-search="${plainText}">
         <div class="card-custom">
-
             ${imageHTML}
 
             <div class="card-body-custom">
+                <h2>${article.title}</h2>
+                <p>${article.description}</p>
+                <div>${article.keywords}</div>
 
-                <h2 class="card-title-custom">
-                    ${article.title}
-                </h2>
-
-                <p class="card-desc-custom">
-                    ${article.description}
-                </p>
-
-                <div class="card-keywords-custom">
-                    ${article.keywords}
-                </div>
-
-                <a href="${article.url}"
-                   class="btn-open"
-                   target="_top"
-                   rel="noopener noreferrer">
+                <a href="${article.url}" target="_top">
                     Open Course →
                 </a>
-
             </div>
         </div>
     </div>`;
@@ -305,8 +291,13 @@ function renderCard(article) {
 
     $('#masonry-container').append($item);
 
+    // 🔥 CRITICAL FIX: delay + layout guarantee
+    if (!masonryGrid) return;
+
+    masonryGrid.appended($item);
+
     $item.imagesLoaded(() => {
-        masonryGrid.masonry('appended', $item).masonry('layout');
+        masonryGrid.layout();
     });
 }
 
@@ -320,14 +311,14 @@ function applySearch(val) {
 
         const text = $(this).data('search') || '';
 
-        $(this).toggleClass(
-            'is-hidden',
-            val !== '' && text.indexOf(val) === -1
-        );
+        const hide = val !== '' && text.indexOf(val) === -1;
+
+        $(this).toggleClass('is-hidden', hide);
     });
 
+    // 🔥 CRITICAL FIX
     if (masonryGrid) {
-        masonryGrid.masonry('layout');
+        masonryGrid.layout();
     }
 }
 
@@ -462,15 +453,19 @@ async function startApp() {
 
     const cached = Cache.get();
 
-    if (cached) {
+if (cached) {
 
-        clearGrid();
+    clearGrid();
 
-        cached.forEach(renderCard);
+    cached.forEach(renderCard);
 
-        finalizeUI(true);
+    // 🔥 FORCE layout after DOM paint
+    setTimeout(() => {
+        masonryGrid.layout();
+    }, 200);
 
-    } else {
+    finalizeUI(true);
+} else {
 
         await scanAndCache();
 
