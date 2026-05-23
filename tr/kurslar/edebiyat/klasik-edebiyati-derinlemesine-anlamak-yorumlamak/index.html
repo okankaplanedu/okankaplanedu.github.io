@@ -199,243 +199,438 @@
 <script src="https://unpkg.com/imagesloaded@5/imagesloaded.pkgd.min.js"></script>
 
 <script>
- 
-var CONFIG = {
-  owner:      "okankaplanedu",
-  repo:       "okankaplanedu.github.io",
-  branch:     "main",
-  baseFolder: "klasik-edebiyati-derinlemesine-anlamak-yorumlamak",
-  cacheKey:   "ok_edebiyat1_cache_v6",   
-  cacheTime:  3600000,                   
-  fetchDelay: 120                        
+
+const CONFIG = {
+
+    owner: "okankaplanedu",
+
+    repo: "okankaplanedu.github.io",
+
+    branch: "main",
+
+    baseFolder: "tr/kurslar/edebiyat/klasik-edebiyati-derinlemesine-anlamak-yorumlamak",
+
+    cacheKey: "ok_klasik-edebiyat_cache_v2",
+
+    cacheTime: 3600000,
+
+    fetchDelay: 120
 };
 
-var masonryGrid;
-var tempArchive = [];
+let masonryGrid;
 
- 
-function initMasonry() {
-  masonryGrid = $("#masonry-container").masonry({
-    itemSelector:      ".grid-item",
-    columnWidth:       ".grid-sizer",
-    percentPosition:   true,
-    transitionDuration:"0.3s"
-  });
-}
- 
-var Cache = {
-  get: function() {
-    try {
-      var raw = localStorage.getItem(CONFIG.cacheKey);
-      if (!raw) return null;
-      var parsed = JSON.parse(raw);
-      if (Date.now() - parsed.timestamp > CONFIG.cacheTime) return null;
-      return parsed.articles;
-    } catch (e) { return null; }
-  },
-  set: function(articles) {
-    try {
-      localStorage.setItem(CONFIG.cacheKey, JSON.stringify({
-        timestamp: Date.now(),
-        articles:  articles
-      }));
-    } catch (e) { console.warn("Cache yazma hatası:", e); }
-  }
-};
- 
-function renderCard(article) {
- 
-  var searchText = [
-    article.title       || "",
-    article.description || "",
-    article.keywords    || ""
-  ].join(" ").toLowerCase();
- 
-  var imageHTML = article.image
-    ? '<img src="' + article.image + '" alt="' + (article.title || "") +
-      '" class="card-img-top" loading="lazy" style="width:100%;display:block;">'
-    : "";
+let tempArchive = [];
 
-  var cardHTML =
-    '<div class="grid-item" data-search="' + escAttr(searchText) + '">' +
-      '<div class="card-custom">' +
-         
-        '<div class="card-body-custom">' +
-          
-          '<p class="card-desc-custom">' + article.description + '</p>' +
-          '<div class="card-keywords-custom">' + article.keywords + '</div>' +
-          '<a href="' + article.url + '" class="btn-open"' +
-             ' target="_top" rel="noopener noreferrer">Kursu Aç →</a>' +
-        '</div>' +
-      '</div>' +
-    '</div>';
+function initMasonry(){
 
-  var $item = $(cardHTML);
-  $("#masonry-container").append($item);
+    masonryGrid = $('#masonry-container').masonry({
 
-  $item.imagesLoaded(function() {
-    masonryGrid.masonry("appended", $item).masonry("layout");
-  });
-}
- 
-function escAttr(str) {
-  return str.replace(/"/g, "&quot;").replace(/'/g, "&#39;");
+        itemSelector: '.grid-item',
+
+        columnWidth: '.grid-sizer',
+
+        percentPosition: true,
+
+        transitionDuration: '0.3s'
+    });
 }
 
- 
-function applySearch(val) {
-  val = (val || "").toLowerCase().trim();
+const Cache = {
 
-  $(".grid-item").each(function() {
-    var text = $(this).attr("data-search") || "";
-    $(this).toggleClass("is-hidden", val !== "" && text.indexOf(val) === -1);
-  });
+    get: () => {
 
-  if (masonryGrid) masonryGrid.masonry("layout");
-}
-
- 
-$(document).on("input keyup", "#search-input", function() {
-  applySearch($(this).val());
-});
- 
-var headerObserver = new MutationObserver(function() {
-  var $input = $("#search-input");
-  if ($input.length) {
-    applySearch($input.val());
-  }
-});
-
-var headerContainer = document.getElementById("header-container");
-if (headerContainer) {
-  headerObserver.observe(headerContainer, { childList: true, subtree: true });
-}
- 
-function updateUIStatus(msg) {
-  var el = document.getElementById("status-message");
-  if (el) el.innerText = msg;
-}
-
- 
-function finalizeUI(isCache) {
-  var spinner = document.getElementById("status-spinner");
-  if (spinner) spinner.style.display = "none";
-
-  var statusEl = document.getElementById("status");
-  if (statusEl) {
-    statusEl.innerHTML =
-      '<span style="color:#10b981">●</span> ' +
-      '<span style="font-size:13px;font-weight:600;">' +
-        (isCache ? "Hızlı Önbellek Yükü" : "Kurslar Güncellendi") +
-      "</span>";
-  }
-
-  setTimeout(function() {
-    $("#status-container").fadeOut();
-  }, 2500);
-}
- 
-async function scanAndCache(path) {
-  try {
-    var res = await fetch(
-      "https://api.github.com/repos/" + CONFIG.owner + "/" +
-      CONFIG.repo + "/contents/" + path
-    );
-    if (!res.ok) return;
-
-    var items = await res.json();
-
-    for (var i = 0; i < items.length; i++) {
-      var item = items[i];
-
-      if (item.type === "dir") {
-        await scanAndCache(item.path);
-
-      } else if (
-        item.name === "index.html" &&
-        item.path !== CONFIG.baseFolder + "index.html"
-      ) {
-
-        updateUIStatus(
-          "Taranıyor: " + (item.path.split("/").slice(-2, -1)[0] || item.path)
+        const data = localStorage.getItem(
+            CONFIG.cacheKey
         );
 
-        var contentRes = await fetch(
-          "https://raw.githubusercontent.com/" +
-          CONFIG.owner + "/" + CONFIG.repo + "/" +
-          CONFIG.branch + "/" + item.path
-        );
+        if(!data) return null;
 
-        if (contentRes.ok) {
-          var html = await contentRes.text();
-          var doc  = new DOMParser().parseFromString(html, "text/html");
+        const parsed = JSON.parse(data);
 
-          var getMeta = function(name) {
-            var el = doc.querySelector('meta[name="' + name + '"]');
-            return el ? (el.getAttribute("content") || "").trim() : "";
-          };
-          var getOg = function(prop) {
-            var el = doc.querySelector('meta[property="' + prop + '"]');
-            return el ? (el.getAttribute("content") || "").trim() : "";
-          };
-
-          var title       = (doc.querySelector("title") || {}).innerText || "";
-          title           = title.trim() || "Başlıksız";
-          var description = getMeta("description");
-          var keywords    = getMeta("keywords");
-          var image       = getOg("og:image");
-
-          var data = {
-            url:         "https://" + CONFIG.repo + "/" +
-                          item.path.replace("index.html", ""),
-            title:       title,
-            description: description,
-            keywords:    keywords,
-            image:       image
-          };
-
-          tempArchive.push(data);
-          renderCard(data);
+        if(
+            Date.now() - parsed.timestamp >
+            CONFIG.cacheTime
+        ){
+            return null;
         }
 
-        await new Promise(function(resolve) {
-          setTimeout(resolve, CONFIG.fetchDelay);
-        });
-      }
-    }
+        return parsed.articles;
+    },
 
-  } catch (e) {
-    console.error("Tarama hatası:", e);
-  }
+    set: (articles) => {
+
+        localStorage.setItem(
+            CONFIG.cacheKey,
+
+            JSON.stringify({
+
+                timestamp: Date.now(),
+
+                articles: articles
+
+            })
+        );
+    }
+};
+
+function renderCard(article){
+
+    const plainText = `
+        ${article.title}
+        ${article.description}
+        ${article.keywords}
+    `.toLowerCase();
+
+    const imageHTML = article.image
+    ? `
+       
+    `
+    : "";
+
+    const cardHTML = `
+
+    <div
+        class="grid-item"
+        data-search="${plainText}"
+    >
+
+        <div class="card-custom">
+
+            ${imageHTML}
+
+            <div class="card-body-custom">
+
+                <h2 class="card-title-custom">
+                    ${article.title}
+                </h2>
+
+                <p class="card-desc-custom">
+                    ${article.description}
+                </p>
+
+                <div class="card-keywords-custom">
+                    ${article.keywords}
+                </div>
+
+                <a
+                    href="${article.url}"
+                    class="btn-open"
+                    target="_top"
+                    rel="noopener noreferrer"
+                >
+
+                    Open Course →
+
+                </a>
+
+            </div>
+
+        </div>
+
+    </div>
+    `;
+
+    const $item = $(cardHTML);
+
+    $('#masonry-container').append($item);
+
+    $item.imagesLoaded(() => {
+
+        masonryGrid
+        .masonry('appended', $item)
+        .masonry('layout');
+
+    });
 }
 
- 
-async function startApp() {
-  $("#status-container").show();
-  initMasonry();
+function applySearch(val){
 
-  var cachedArticles = Cache.get();
+    val = (val || '')
+    .toLowerCase()
+    .trim();
 
-  if (cachedArticles && cachedArticles.length > 0) {
-    cachedArticles.forEach(function(art) { renderCard(art); });
-    finalizeUI(true);
-  } else {
-    await scanAndCache(CONFIG.baseFolder);
-    if (tempArchive.length > 0) Cache.set(tempArchive);
-    finalizeUI(false);
-  }
+    $('.grid-item').each(function(){
+
+        const text = $(this)
+        .data('search') || '';
+
+        $(this).toggleClass(
+
+            'is-hidden',
+
+            val !== '' &&
+            text.indexOf(val) === -1
+
+        );
+    });
+
+    if(masonryGrid){
+
+        masonryGrid.masonry('layout');
+    }
+}
+
+$(document).on(
+    'input keyup',
+    '#search-input',
+
+    function(){
+
+        applySearch($(this).val());
+
+    }
+);
+
+const headerObserver = new MutationObserver(function(){
+
+    const $input = $('#search-input');
+
+    if($input.length){
+
+        applySearch($input.val());
+
+    }
+});
+
+headerObserver.observe(
+
+    document.getElementById(
+        'header-container'
+    ),
+
+    {
+        childList:true,
+        subtree:true
+    }
+);
+
+function updateUIStatus(msg){
+
+    const txt = document.getElementById(
+        "status-message"
+    );
+
+    if(txt){
+
+        txt.innerText = msg;
+    }
+}
+
+function finalizeUI(isCache=false){
+
+    const spinner = document.getElementById(
+        "status-spinner"
+    );
+
+    if(spinner){
+
+        spinner.style.display = "none";
+    }
+
+    document.getElementById(
+        "status"
+    ).innerHTML = `
+
+        <span style="color:#10b981">●</span>
+
+        <span
+            style="
+                font-size:13px;
+                font-weight:600;
+            "
+        >
+
+            ${
+                isCache
+                ? 'Fast Cache Load'
+                : 'Courses Updated'
+            }
+
+        </span>
+
+    `;
+
+    setTimeout(() => {
+
+        $('#status-container').fadeOut();
+
+    }, 2500);
+}
+
+async function scanAndCache(path){
+
+    try{
+
+        const res = await fetch(
+
+            `https://api.github.com/repos/${CONFIG.owner}/${CONFIG.repo}/contents/${path}`
+
+        );
+
+        if(!res.ok) return;
+
+        const items = await res.json();
+
+        for(const item of items){
+
+            if(item.type === "dir"){
+
+                await scanAndCache(item.path);
+
+            }
+
+            else if(
+
+                item.name === "index.html" &&
+                path !== CONFIG.baseFolder
+
+            ){
+
+                updateUIStatus(
+
+                    `Scanning: ${
+                        item.path
+                        .split('/')
+                        .slice(-2,-1)
+                    }`
+
+                );
+
+                const contentRes = await fetch(
+
+                    `https://raw.githubusercontent.com/${CONFIG.owner}/${CONFIG.repo}/${CONFIG.branch}/${item.path}`
+
+                );
+
+                if(contentRes.ok){
+
+                    const html =
+                    await contentRes.text();
+
+                    const doc = new DOMParser()
+                    .parseFromString(
+                        html,
+                        "text/html"
+                    );
+
+                    const title =
+                    doc.querySelector("title")
+                    ?.innerText
+                    ?.trim()
+                    || "Untitled";
+
+                    const description =
+                    doc.querySelector(
+                        'meta[name="description"]'
+                    )
+                    ?.getAttribute("content")
+                    ?.trim()
+                    || "";
+
+                    const keywords =
+                    doc.querySelector(
+                        'meta[name="keywords"]'
+                    )
+                    ?.getAttribute("content")
+                    ?.trim()
+                    || "";
+
+                    const image =
+                    doc.querySelector(
+                        'meta[property="og:image"]'
+                    )
+                    ?.getAttribute("content")
+                    ?.trim()
+                    || "";
+
+                    const data = {
+
+                        url:
+                        `https://${CONFIG.repo}/${
+                            item.path.replace(
+                                'index.html',
+                                ''
+                            )
+                        }`,
+
+                        title,
+                        description,
+                        keywords,
+                        image
+                    };
+
+                    tempArchive.push(data);
+
+                    renderCard(data);
+                }
+
+                await new Promise(
+
+                    r => setTimeout(
+                        r,
+                        CONFIG.fetchDelay
+                    )
+
+                );
+            }
+        }
+
+    }catch(e){
+
+        console.error(
+            "Scan Error:",
+            e
+        );
+    }
+}
+
+async function startApp(){
+
+    $('#status-container').show();
+
+    initMasonry();
+
+    const cachedArticles = Cache.get();
+
+    if(cachedArticles){
+
+        cachedArticles.forEach(
+            art => renderCard(art)
+        );
+
+        finalizeUI(true);
+
+    }else{
+
+        await scanAndCache(
+            CONFIG.baseFolder
+        );
+
+        if(tempArchive.length > 0){
+
+            Cache.set(tempArchive);
+        }
+
+        finalizeUI(false);
+    }
 }
 
 $(document).ready(startApp);
 
- 
-fetch("https://raw.githubusercontent.com/bandanee/root/main/import/footer.html")
-  .then(function(r) { return r.text(); })
-  .then(function(h) {
-    document.getElementById("footer-placeholder").innerHTML = h;
-  })
-  .catch(function(e) { console.error("Footer load error:", e); });
+fetch(
+'https://raw.githubusercontent.com/bandanee/root/main/import/footer.html'
+)
+.then(r => r.text())
+.then(h => {
+
+    document.getElementById(
+        'footer-placeholder'
+    ).innerHTML = h;
+
+});
+
 </script>
 
 </body>
 </html>
+
