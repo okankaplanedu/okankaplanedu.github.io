@@ -457,130 +457,59 @@ function finalizeUI(isCache=false){
     }, 2500);
 }
 
-async function scanAndCache(path){
+async function scanAndCache() {
+    try {
+        const url = `https://api.github.com/repos/${CONFIG.owner}/${CONFIG.repo}/git/trees/${CONFIG.branch}?recursive=1`;
 
-    try{
+        const res = await fetch(url);
+        if (!res.ok) throw new Error("Tree API failed");
 
-        const res = await fetch(
+        const data = await res.json();
 
-            `https://api.github.com/repos/${CONFIG.owner}/${CONFIG.repo}/contents/${path}`
+        const files = data.tree
+            .filter(item =>
+                item.path.startsWith(CONFIG.baseFolder) &&
+                item.path.endsWith("index.html") &&
+                item.type === "blob"
+            );
 
-        );
+        for (const file of files) {
 
-        if(!res.ok) return;
+            updateUIStatus(`Scanning: ${file.path}`);
 
-        const items = await res.json();
+            const contentRes = await fetch(
+                `https://raw.githubusercontent.com/${CONFIG.owner}/${CONFIG.repo}/${CONFIG.branch}/${file.path}`
+            );
 
-        for(const item of items){
+            if (!contentRes.ok) continue;
 
-            if(item.type === "dir"){
+            const html = await contentRes.text();
 
-                await scanAndCache(item.path);
+            const doc = new DOMParser().parseFromString(html, "text/html");
 
-            }
+            const title = doc.querySelector("title")?.innerText?.trim() || "Untitled";
+            const description = doc.querySelector('meta[name="description"]')?.content?.trim() || "";
+            const keywords = doc.querySelector('meta[name="keywords"]')?.content?.trim() || "";
+            const image = doc.querySelector('meta[property="og:image"]')?.content?.trim() || "";
 
-            else if(
+            const urlPath = file.path.replace(/index\.html$/, "");
 
-                item.name === "index.html" &&
-                path !== CONFIG.baseFolder
+            const data = {
+                url: `https://${CONFIG.repo}/${urlPath}`,
+                title,
+                description,
+                keywords,
+                image
+            };
 
-            ){
+            tempArchive.push(data);
+            renderCard(data);
 
-                updateUIStatus(
-
-                    `Scanning: ${
-                        item.path
-                        .split('/')
-                        .slice(-2,-1)
-                    }`
-
-                );
-
-                const contentRes = await fetch(
-
-                    `https://raw.githubusercontent.com/${CONFIG.owner}/${CONFIG.repo}/${CONFIG.branch}/${item.path}`
-
-                );
-
-                if(contentRes.ok){
-
-                    const html =
-                    await contentRes.text();
-
-                    const doc = new DOMParser()
-                    .parseFromString(
-                        html,
-                        "text/html"
-                    );
-
-                    const title =
-                    doc.querySelector("title")
-                    ?.innerText
-                    ?.trim()
-                    || "Untitled";
-
-                    const description =
-                    doc.querySelector(
-                        'meta[name="description"]'
-                    )
-                    ?.getAttribute("content")
-                    ?.trim()
-                    || "";
-
-                    const keywords =
-                    doc.querySelector(
-                        'meta[name="keywords"]'
-                    )
-                    ?.getAttribute("content")
-                    ?.trim()
-                    || "";
-
-                    const image =
-                    doc.querySelector(
-                        'meta[property="og:image"]'
-                    )
-                    ?.getAttribute("content")
-                    ?.trim()
-                    || "";
-
-                    const data = {
-
-                        url:
-                        `https://${CONFIG.repo}/${
-                            item.path.replace(
-                                'index.html',
-                                ''
-                            )
-                        }`,
-
-                        title,
-                        description,
-                        keywords,
-                        image
-                    };
-
-                    tempArchive.push(data);
-
-                    renderCard(data);
-                }
-
-                await new Promise(
-
-                    r => setTimeout(
-                        r,
-                        CONFIG.fetchDelay
-                    )
-
-                );
-            }
+            await new Promise(r => setTimeout(r, CONFIG.fetchDelay));
         }
 
-    }catch(e){
-
-        console.error(
-            "Scan Error:",
-            e
-        );
+    } catch (e) {
+        console.error("Scan Error:", e);
     }
 }
 
