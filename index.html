@@ -380,18 +380,14 @@ function renderCard(article) {
    class="btn-open"
    target="_top"
    rel="noopener noreferrer">
-
    View Details →
-
 </a>
 
-<a href="${'/pub' + article.url.replace(/\/$/, '') + '.pdf'}"
+<a href="${new URL('/pub' + new URL(article.url).pathname.replace(/\/$/, '') + '.pdf', location.origin).href}"
    class="btn-pdf"
    target="_blank"
    rel="noopener noreferrer">
-
    View PDF →
-
 </a>
 
             </div>
