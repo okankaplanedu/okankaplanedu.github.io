@@ -1,6 +1,5 @@
 <!DOCTYPE html>
-<html lang="tr">
-<head>
+ <html lang="tr"><head>
 <meta charset="UTF-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
@@ -52,17 +51,14 @@
 <link href="https://okankaplanedu.github.io/assets/css/style.css" rel="stylesheet">
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
 
 <link rel="dns-prefetch" href="//cdn.jsdelivr.net">
 <link rel="dns-prefetch" href="//cdnjs.cloudflare.com">
 <link rel="dns-prefetch" href="//raw.githubusercontent.com">
-<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600&amp;display=swap" rel="stylesheet">
 
-<link rel="preload"
-      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
-      as="style"
-      onload="this.onload=null;this.rel='stylesheet'">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
 
 <noscript>
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css">
@@ -127,10 +123,228 @@
         .then(t => document.head.insertAdjacentHTML("beforeend", t))
         .catch(e => console.error(e));
 </script>
+
 </head>
 <body>
 
-<div id="header-container"></div> 
+<div id="header-container"><style>
+
+  :root{
+    --nav-height: 64px;
+  }
+
+  *,
+  *::before,
+  *::after{
+    box-sizing:border-box;
+  }
+
+  html{
+    -webkit-text-size-adjust:100%;
+    scroll-behavior:smooth;
+  }
+
+  body{
+    margin:0;
+    padding-top:var(--nav-height);
+    text-rendering:optimizeLegibility;
+    -webkit-font-smoothing:antialiased;
+    -moz-osx-font-smoothing:grayscale;
+  }
+
+  /* Accessibility */
+
+  .visually-hidden{
+    position:absolute !important;
+    width:1px !important;
+    height:1px !important;
+    padding:0 !important;
+    margin:-1px !important;
+    overflow:hidden !important;
+    clip:rect(0,0,0,0) !important;
+    white-space:nowrap !important;
+    border:0 !important;
+  }
+
+  a:focus-visible,
+  button:focus-visible,
+  input:focus-visible{
+    outline:3px solid rgba(255,255,255,.45);
+    outline-offset:2px;
+  }
+
+  /* Navbar */
+
+  .navbar{
+    min-height:var(--nav-height);
+    backdrop-filter:blur(10px);
+    -webkit-backdrop-filter:blur(10px);
+  }
+
+  .navbar-brand{
+    font-size:1rem;
+    line-height:1.2;
+    letter-spacing:.2px;
+  }
+
+  /* Toggle Buttons */
+
+  #offcanvasLeftToggle,
+  #offcanvasRightToggle{
+    position:relative !important;
+    left:auto !important;
+    right:auto !important;
+    top:auto !important;
+    transform:none !important;
+
+    display:inline-flex !important;
+    align-items:center;
+    justify-content:center;
+
+    width:42px;
+    height:42px;
+
+    z-index:1030;
+    flex-shrink:0;
+
+    border-radius:10px;
+    transition:
+      transform .15s ease,
+      opacity .2s ease,
+      box-shadow .2s ease;
+  }
+
+  #offcanvasLeftToggle:hover,
+  #offcanvasRightToggle:hover{
+    opacity:.95;
+  }
+
+  #offcanvasLeftToggle:active,
+  #offcanvasRightToggle:active{
+    transform:scale(.97);
+  }
+
+  /* Search */
+
+  .search-container{
+    min-width:0;
+  }
+
+  .search-container input{
+    max-width:140px;
+    min-width:90px;
+
+    border-radius:10px;
+
+    transition:
+      width .2s ease,
+      border-color .2s ease,
+      box-shadow .2s ease;
+  }
+
+  .search-container input:focus{
+    width:180px;
+  }
+
+  /* CLS protection */
+
+  .btn,
+  .form-control{
+    min-height:38px;
+  }
+
+  /* Mobile */
+
+  @media (max-width:768px){
+
+    .navbar-brand{
+      max-width:120px;
+      overflow:hidden;
+      text-overflow:ellipsis;
+      white-space:nowrap;
+    }
+
+    .search-container input{
+      max-width:100px;
+    }
+
+    .search-container input:focus{
+      width:120px;
+    }
+
+  }
+
+  /* Reduced Motion */
+
+  @media (prefers-reduced-motion:reduce){
+
+    *,
+    *::before,
+    *::after{
+      animation-duration:.01ms !important;
+      animation-iteration-count:1 !important;
+      transition-duration:.01ms !important;
+      scroll-behavior:auto !important;
+    }
+
+  }
+
+</style>
+
+<header>
+
+  <nav class="navbar navbar-dark fixed-top shadow py-2" aria-label="Main navigation">
+
+    <div class="container-fluid d-flex align-items-center justify-content-between flex-nowrap">
+
+      <!-- Left Area -->
+      <div class="d-flex align-items-center min-w-0">
+
+        <button type="button" class="btn btn-light shadow-sm" id="offcanvasLeftToggle" data-bs-toggle="offcanvas" data-bs-target="#offcanvasLeft" aria-controls="offcanvasLeft" aria-expanded="false" aria-label="Open main navigation menu">
+          <span aria-hidden="true">☰</span>
+          <span class="visually-hidden">Menu</span>
+        </button>
+
+        <a class="navbar-brand fw-bold ms-2 mb-0 text-truncate" href="/" aria-label="Go to homepage - Okan Kaplan">
+          Okan Kaplan
+        </a>
+
+      </div>
+
+      <!-- Right Area -->
+      <div class="d-flex gap-2 align-items-center">
+
+        <a href="https://okankaplanedu.github.io/courses/" class="btn btn-sm btn-outline-light" aria-label="View courses">
+          Courses
+        </a>
+
+        <a href="https://okankaplanedu.github.io/lab/" class="btn btn-sm btn-outline-light" aria-label="Open laboratory projects">
+          Lab
+        </a>
+
+        <button type="button" class="btn btn-light shadow-sm" id="offcanvasRightToggle" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight" aria-expanded="false" aria-label="Open chat panel">
+          <i class="fas fa-comment-dots" aria-hidden="true"></i>
+          <span class="visually-hidden">Chat</span>
+        </button>
+
+        <form class="search-container ms-1" role="search" action="/search" method="GET" aria-label="Site search form">
+
+          <label for="search-input" class="visually-hidden">
+            Search
+          </label>
+
+          <input type="search" id="search-input" name="q" class="form-control form-control-sm" placeholder="Search..." aria-label="Search site content" autocomplete="off" enterkeyhint="search" inputmode="search">
+
+        </form>
+
+      </div>
+
+    </div>
+
+  </nav>
+
+</header>
+</div> 
 
 <script>
 fetch("https://okankaplanedu.github.io/header.html")
@@ -141,107 +355,1372 @@ fetch("https://okankaplanedu.github.io/header.html")
   .catch(err => console.error("Header load error:", err));
 </script>
 
-<div
-  class="offcanvas offcanvas-start"
-  tabindex="-1"
-  id="offcanvasLeft"
-  aria-labelledby="offcanvasLeftLabel"
-  aria-hidden="true"
->
+<div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasLeft" aria-labelledby="offcanvasLeftLabel" aria-hidden="true">
 
   <div class="offcanvas-header border-bottom">
     <h5 class="offcanvas-title" id="offcanvasLeftLabel">
       Navigation Menu
     </h5>
 
-    <button
-      type="button"
-      class="btn-close"
-      data-bs-dismiss="offcanvas"
-      aria-label="Close navigation menu"
-    ></button>
+    <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close navigation menu"></button>
   </div>
 
   <div class="offcanvas-body p-0 h-100">
-    <iframe
-      src="https://okankaplanedu.github.io/archive.html"
-      class="w-100 h-100 border-0"
-      title="Archive navigation content"
-      loading="lazy"
-    ></iframe>
+    <iframe src="https://okankaplanedu.github.io/archive.html" class="w-100 h-100 border-0" title="Archive navigation content" loading="lazy"></iframe>
   </div>
 
 </div>
 
 
-<div
-  class="offcanvas offcanvas-end"
-  tabindex="-1"
-  id="offcanvasRight"
-  aria-labelledby="offcanvasRightLabel"
-  aria-hidden="true"
->
+<div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasRight" aria-labelledby="offcanvasRightLabel" aria-hidden="true">
 
   <div class="offcanvas-header border-bottom">
     <h5 class="offcanvas-title" id="offcanvasRightLabel">
       Table of Contents
     </h5>
 
-    <button
-      type="button"
-      class="btn-close"
-      data-bs-dismiss="offcanvas"
-      aria-label="Close table of contents"
-    ></button>
+    <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close table of contents"></button>
   </div>
 
   <div class="offcanvas-body p-0" style="min-height: 500px;">
-    <iframe
-      src="https://okankaplanedu.github.io/toc.html"
-      id="toc-iframe"
-      class="w-100 border-0"
-      style="height: 600px; overflow: hidden;"
-      title="Table of Contents navigation"
-      loading="lazy"
-    ></iframe>
+    <iframe src="https://okankaplanedu.github.io/toc.html" id="toc-iframe" class="w-100 border-0" style="height: 600px; overflow: hidden;" title="Table of Contents navigation" loading="lazy"></iframe>
   </div>
 
 </div>
 
 <main class="container-fluid px-4" aria-live="polite">
- <div id="main1"></div> 
+ <div id="main1"><article>
+m1
+</article>
+</div> 
 <h1 class="visually-hidden">Content Feed</h1>
- <div
-    class="text-center"
-    id="status-container"
-    style="display:none"
-    aria-live="polite"
-    aria-busy="true"
-  >
+ <div class="text-center" id="status-container" style="display: none;" aria-live="polite" aria-busy="true">
     <div id="status" role="status" aria-live="polite">
 
-      <div
-        class="spinner-border spinner-border-sm text-primary"
-        role="img"
-        aria-label="Loading content"
-        id="status-spinner"
-      ></div>
+        <span style="color:#10b981">●</span>
 
-      <span id="status-message">
-        Preparing system...
-      </span>
+        <span style="
+                font-size:13px;
+                font-weight:600;
+            ">
+
+            Fast Cache Load
+
+        </span>
 
     </div>
   </div>
 
  
-  <div class="grid" id="masonry-container">
+  <div class="grid" id="masonry-container" style="position: relative; height: 3608.8px;">
 
     <div class="grid-sizer" aria-hidden="true"></div>
 
-  </div>
- <div id="main2"></div> 
-<div id="main3"></div> 
+  <div class="grid-item" data-search="
+        ahlak merkezli metinler: orta çağ edebiyatında etik ve toplumsal düzen | okan kaplan edu
+        orta çağ edebiyatında ahlak merkezli metinlerin rolünü keşfedin. didaktik anlatılar, dini değerler ve toplumsal düzen arasındaki ilişkiyi analiz ederek edebi düşüncenizi derinleştirin.
+        ahlak merkezli metinler, orta çağ edebiyatı, didaktik edebiyat, ahlaki anlatılar, edebiyat ve etik, dini metinler, toplumsal düzen, klasik edebiyat dersleri, ahlak öğretisi, sembolik anlatım
+    " style="position: absolute; left: 0%; top: 0px;">
+
+        <div class="card-custom">
+
+      
+
+            <div class="card-body-custom">
+
+                <h2 class="card-title-custom">
+                    Ahlak Merkezli Metinler: Orta Çağ Edebiyatında Etik ve Toplumsal Düzen | Okan Kaplan Edu
+                </h2>
+
+                <p class="card-desc-custom">
+                    Orta Çağ edebiyatında ahlak merkezli metinlerin rolünü keşfedin. Didaktik anlatılar, dini değerler ve toplumsal düzen arasındaki ilişkiyi analiz ederek edebi düşüncenizi derinleştirin.
+                </p>
+
+                <div class="card-keywords-custom">
+                    ahlak merkezli metinler, orta çağ edebiyatı, didaktik edebiyat, ahlaki anlatılar, edebiyat ve etik, dini metinler, toplumsal düzen, klasik edebiyat dersleri, ahlak öğretisi, sembolik anlatım
+                </div>
+
+                <a href="https://okankaplanedu.github.io/tr/kurslar/edebiyat/klasik-edebiyati-derinlemesine-anlamak-yorumlamak/ahlak-merkezli-metinler/" class="btn-open" target="_top" rel="noopener noreferrer">
+
+                    KURSU İNCELE →
+
+                </a>
+<a href="https://okankaplanedu.github.io/pub/ahlak-merkezli-metinler.pdf" class="btn-pdf" target="_blank" rel="noopener noreferrer">
+   View PDF →
+</a>
+            </div>
+
+        </div>
+
+    </div><div class="grid-item" data-search="
+        akıl, mantık ve eleştiri: aydınlanma düşüncesinin edebiyata etkisi | okan kaplan edu
+        aydınlanma dönemi’nde akıl, mantık ve eleştiri kavramlarının edebiyata etkisini öğrenin. orta çağ’dan kopuşu, modern düşüncenin ve eleştirel yazının temellerini keşfedin.
+        akıl, mantık, eleştiri, aydınlanma dönemi, voltaire, rousseau, diderot, eleştirel düşünce, edebiyat analizi, modern düşünce, felsefi edebiyat, klasik edebiyat dersleri
+    " style="position: absolute; left: 24.2778%; top: 0px;">
+
+        <div class="card-custom">
+
+      
+
+            <div class="card-body-custom">
+
+                <h2 class="card-title-custom">
+                    Akıl, Mantık ve Eleştiri: Aydınlanma Düşüncesinin Edebiyata Etkisi | Okan Kaplan Edu
+                </h2>
+
+                <p class="card-desc-custom">
+                    Aydınlanma Dönemi’nde akıl, mantık ve eleştiri kavramlarının edebiyata etkisini öğrenin. Orta Çağ’dan kopuşu, modern düşüncenin ve eleştirel yazının temellerini keşfedin.
+                </p>
+
+                <div class="card-keywords-custom">
+                    akıl, mantık, eleştiri, Aydınlanma Dönemi, Voltaire, Rousseau, Diderot, eleştirel düşünce, edebiyat analizi, modern düşünce, felsefi edebiyat, klasik edebiyat dersleri
+                </div>
+
+                <a href="https://okankaplanedu.github.io/tr/kurslar/edebiyat/klasik-edebiyati-derinlemesine-anlamak-yorumlamak/akil-mantik-ve-elestiri/" class="btn-open" target="_top" rel="noopener noreferrer">
+
+                    KURSU İNCELE →
+
+                </a>
+<a href="https://okankaplanedu.github.io/pub/akil-mantik-ve-elestiri.pdf" class="btn-pdf" target="_blank" rel="noopener noreferrer">
+   View PDF →
+</a>
+            </div>
+
+        </div>
+
+    </div><div class="grid-item" data-search="
+        alegori ve dini anlatı: orta çağ edebiyatında anlam ve i̇nanç | okan kaplan edu
+        orta çağ edebiyatında alegori ve dini anlatıların nasıl şekillendiğini öğrenin. cennet, cehennem, günah ve kurtuluş kavramlarının edebi temsillerini keşfederek alegorik düşünceyi derinlemesine analiz edin.
+        alegori, dini anlatı, orta çağ edebiyatı, alegorik anlatım, kutsal metinler, cennet cehennem, günah kefaret, edebiyat analizi, sembolik anlatım, klasik edebiyat dersleri
+    " style="position: absolute; left: 48.5556%; top: 0px;">
+
+        <div class="card-custom">
+
+      
+
+            <div class="card-body-custom">
+
+                <h2 class="card-title-custom">
+                    Alegori ve Dini Anlatı: Orta Çağ Edebiyatında Anlam ve İnanç | Okan Kaplan Edu
+                </h2>
+
+                <p class="card-desc-custom">
+                    Orta Çağ edebiyatında alegori ve dini anlatıların nasıl şekillendiğini öğrenin. Cennet, cehennem, günah ve kurtuluş kavramlarının edebi temsillerini keşfederek alegorik düşünceyi derinlemesine analiz edin.
+                </p>
+
+                <div class="card-keywords-custom">
+                    alegori, dini anlatı, orta çağ edebiyatı, alegorik anlatım, kutsal metinler, cennet cehennem, günah kefaret, edebiyat analizi, sembolik anlatım, klasik edebiyat dersleri
+                </div>
+
+                <a href="https://okankaplanedu.github.io/tr/kurslar/edebiyat/klasik-edebiyati-derinlemesine-anlamak-yorumlamak/alegori-ve-dini-anlati/" class="btn-open" target="_top" rel="noopener noreferrer">
+
+                    KURSU İNCELE →
+
+                </a>
+<a href="https://okankaplanedu.github.io/pub/alegori-ve-dini-anlati.pdf" class="btn-pdf" target="_blank" rel="noopener noreferrer">
+   View PDF →
+</a>
+            </div>
+
+        </div>
+
+    </div><div class="grid-item" data-search="
+        antik dönem edebiyatı | klasik edebiyatın kurucu metinleri ve düşünsel temelleri | okan kaplan edu
+        antik yunan ve roma edebiyatını, destan, tragedya ve felsefi metinler üzerinden öğrenin. klasik edebiyatın kurucu dönemine derinlemesine giriş yapın.
+        antik dönem edebiyatı, homeros, sofokles, aristoteles, klasik edebiyat, tragedya, komedya, destan, batı edebiyatı tarihi, felsefi metinler
+    " style="position: absolute; left: 72.8334%; top: 0px;">
+
+        <div class="card-custom">
+
+      
+
+            <div class="card-body-custom">
+
+                <h2 class="card-title-custom">
+                    Antik Dönem Edebiyatı | Klasik Edebiyatın Kurucu Metinleri ve Düşünsel Temelleri | Okan Kaplan Edu
+                </h2>
+
+                <p class="card-desc-custom">
+                    Antik Yunan ve Roma edebiyatını, destan, tragedya ve felsefi metinler üzerinden öğrenin. Klasik edebiyatın kurucu dönemine derinlemesine giriş yapın.
+                </p>
+
+                <div class="card-keywords-custom">
+                    antik dönem edebiyatı, homeros, sofokles, aristoteles, klasik edebiyat, tragedya, komedya, destan, batı edebiyatı tarihi, felsefi metinler
+                </div>
+
+                <a href="https://okankaplanedu.github.io/tr/kurslar/edebiyat/klasik-edebiyati-derinlemesine-anlamak-yorumlamak/antik-donem-edebiyati-klasik-edebiyat-kursu/" class="btn-open" target="_top" rel="noopener noreferrer">
+
+                    KURSU İNCELE →
+
+                </a>
+<a href="https://okankaplanedu.github.io/pub/antik-donem-edebiyati-klasik-edebiyat-kursu.pdf" class="btn-pdf" target="_blank" rel="noopener noreferrer">
+   View PDF →
+</a>
+            </div>
+
+        </div>
+
+    </div><div class="grid-item" data-search="
+        aşk teması (3.2) | klasik edebiyatta aşkın dönüştürücü gücü | okan kaplan edu
+        klasik edebiyatta aşk temasını ilahi, platonik, tutkulu ve yasak yönleriyle keşfedin. aşkın karakter gelişimi, çatışma ve insan doğası üzerindeki etkilerini öğrenin.
+        aşk teması, klasik edebiyat, ilahi aşk, platonik aşk, tutkulu aşk, yasak aşk, edebi temalar, karakter gelişimi, romantizm, realizm, edebiyat dersi
+    " style="position: absolute; left: 24.2778%; top: 387.2px;">
+
+        <div class="card-custom">
+
+      
+
+            <div class="card-body-custom">
+
+                <h2 class="card-title-custom">
+                    Aşk Teması (3.2) | Klasik Edebiyatta Aşkın Dönüştürücü Gücü | Okan Kaplan Edu
+                </h2>
+
+                <p class="card-desc-custom">
+                    Klasik edebiyatta aşk temasını ilahi, platonik, tutkulu ve yasak yönleriyle keşfedin. Aşkın karakter gelişimi, çatışma ve insan doğası üzerindeki etkilerini öğrenin.
+                </p>
+
+                <div class="card-keywords-custom">
+                    aşk teması, klasik edebiyat, ilahi aşk, platonik aşk, tutkulu aşk, yasak aşk, edebi temalar, karakter gelişimi, romantizm, realizm, edebiyat dersi
+                </div>
+
+                <a href="https://okankaplanedu.github.io/tr/kurslar/edebiyat/klasik-edebiyati-derinlemesine-anlamak-yorumlamak/ask-temasi-3-2/" class="btn-open" target="_top" rel="noopener noreferrer">
+
+                    KURSU İNCELE →
+
+                </a>
+<a href="https://okankaplanedu.github.io/pub/ask-temasi-3-2.pdf" class="btn-pdf" target="_blank" rel="noopener noreferrer">
+   View PDF →
+</a>
+            </div>
+
+        </div>
+
+    </div><div class="grid-item" data-search="
+        atmosfer kurulumu ve dikkat toplama: klasik edebiyatın i̇lk katmanını okumak | okan kaplan edu
+        klasik edebiyatta atmosfer kurulumunu, dikkat toplama tekniklerini ve metnin ilk sayfalarının derin anlamını keşfedin. okuma odağı, anlatıcı sesi, zaman ve mekân ilişkisini analiz ederek klasik eserleri bilinçli okumayı öğrenin.
+        klasik edebiyat, atmosfer kurulumu, dikkat toplama, derin okuma, klasik eser analizi, anlatıcı sesi, edebi atmosfer, okuma teknikleri, metin analizi, klasik roman okuma, eleştirel okuma, anlatım teknikleri
+    " style="position: absolute; left: 48.5556%; top: 387.2px;">
+
+        <div class="card-custom">
+
+      
+
+            <div class="card-body-custom">
+
+                <h2 class="card-title-custom">
+                    Atmosfer Kurulumu ve Dikkat Toplama: Klasik Edebiyatın İlk Katmanını Okumak | Okan Kaplan Edu
+                </h2>
+
+                <p class="card-desc-custom">
+                    Klasik edebiyatta atmosfer kurulumunu, dikkat toplama tekniklerini ve metnin ilk sayfalarının derin anlamını keşfedin. Okuma odağı, anlatıcı sesi, zaman ve mekân ilişkisini analiz ederek klasik eserleri bilinçli okumayı öğrenin.
+                </p>
+
+                <div class="card-keywords-custom">
+                    klasik edebiyat, atmosfer kurulumu, dikkat toplama, derin okuma, klasik eser analizi, anlatıcı sesi, edebi atmosfer, okuma teknikleri, metin analizi, klasik roman okuma, eleştirel okuma, anlatım teknikleri
+                </div>
+
+                <a href="https://okankaplanedu.github.io/tr/kurslar/edebiyat/klasik-edebiyati-derinlemesine-anlamak-yorumlamak/atmosfer-kurulumu-ve-dikkat-toplama-klasik-edebiyat/" class="btn-open" target="_top" rel="noopener noreferrer">
+
+                    KURSU İNCELE →
+
+                </a>
+<a href="https://okankaplanedu.github.io/pub/atmosfer-kurulumu-ve-dikkat-toplama-klasik-edebiyat.pdf" class="btn-pdf" target="_blank" rel="noopener noreferrer">
+   View PDF →
+</a>
+            </div>
+
+        </div>
+
+    </div><div class="grid-item" data-search="
+        aydınlanma dönemi ve klasik düşünce: akıl, eleştiri ve modern edebiyatın doğuşu | okan kaplan edu
+        aydınlanma dönemi’nin klasik edebiyata etkisini keşfedin. akıl, özgürlük, eşitlik ve eleştirel düşüncenin edebiyata nasıl yön verdiğini öğrenerek modern düşüncenin temellerini analiz edin.
+        aydınlanma dönemi, klasik düşünce, voltaire, rousseau, diderot, akıl çağı, edebiyat tarihi, eleştirel düşünce, felsefi edebiyat, modern düşünce, klasik edebiyat dersleri
+    " style="position: absolute; left: 0%; top: 405.2px;">
+
+        <div class="card-custom">
+
+      
+
+            <div class="card-body-custom">
+
+                <h2 class="card-title-custom">
+                    Aydınlanma Dönemi ve Klasik Düşünce: Akıl, Eleştiri ve Modern Edebiyatın Doğuşu | Okan Kaplan Edu
+                </h2>
+
+                <p class="card-desc-custom">
+                    Aydınlanma Dönemi’nin klasik edebiyata etkisini keşfedin. Akıl, özgürlük, eşitlik ve eleştirel düşüncenin edebiyata nasıl yön verdiğini öğrenerek modern düşüncenin temellerini analiz edin.
+                </p>
+
+                <div class="card-keywords-custom">
+                    Aydınlanma Dönemi, klasik düşünce, Voltaire, Rousseau, Diderot, akıl çağı, edebiyat tarihi, eleştirel düşünce, felsefi edebiyat, modern düşünce, klasik edebiyat dersleri
+                </div>
+
+                <a href="https://okankaplanedu.github.io/tr/kurslar/edebiyat/klasik-edebiyati-derinlemesine-anlamak-yorumlamak/aydinlanma-donemi-ve-klasik-dusunce/" class="btn-open" target="_top" rel="noopener noreferrer">
+
+                    KURSU İNCELE →
+
+                </a>
+<a href="https://okankaplanedu.github.io/pub/aydinlanma-donemi-ve-klasik-dusunce.pdf" class="btn-pdf" target="_blank" rel="noopener noreferrer">
+   View PDF →
+</a>
+            </div>
+
+        </div>
+
+    </div><div class="grid-item" data-search="
+        bireyin keşfi: rönesans edebiyatında i̇nsan merkezli dönüşüm | okan kaplan edu
+        rönesans edebiyatında bireyin keşfini, insanın duyguları ve çelişkileriyle edebiyata nasıl merkez olduğunu öğrenin. shakespeare üzerinden modern psikolojik anlatının temellerini keşfedin.
+        bireyin keşfi, rönesans edebiyatı, hümanizm, shakespeare karakterleri, iç monolog, psikolojik anlatı, klasik edebiyat, insan merkezli edebiyat, modern romanın temelleri, edebiyat tarihi
+    " style="position: absolute; left: 72.8334%; top: 413.2px;">
+
+        <div class="card-custom">
+
+      
+
+            <div class="card-body-custom">
+
+                <h2 class="card-title-custom">
+                    Bireyin Keşfi: Rönesans Edebiyatında İnsan Merkezli Dönüşüm | Okan Kaplan Edu
+                </h2>
+
+                <p class="card-desc-custom">
+                    Rönesans edebiyatında bireyin keşfini, insanın duyguları ve çelişkileriyle edebiyata nasıl merkez olduğunu öğrenin. Shakespeare üzerinden modern psikolojik anlatının temellerini keşfedin.
+                </p>
+
+                <div class="card-keywords-custom">
+                    bireyin keşfi, rönesans edebiyatı, hümanizm, Shakespeare karakterleri, iç monolog, psikolojik anlatı, klasik edebiyat, insan merkezli edebiyat, modern romanın temelleri, edebiyat tarihi
+                </div>
+
+                <a href="https://okankaplanedu.github.io/tr/kurslar/edebiyat/klasik-edebiyati-derinlemesine-anlamak-yorumlamak/bireyin-kesfi/" class="btn-open" target="_top" rel="noopener noreferrer">
+
+                    KURSU İNCELE →
+
+                </a>
+<a href="https://okankaplanedu.github.io/pub/bireyin-kesfi.pdf" class="btn-pdf" target="_blank" rel="noopener noreferrer">
+   View PDF →
+</a>
+            </div>
+
+        </div>
+
+    </div><div class="grid-item" data-search="
+        duygu–akıl çatışması (2.6.1) | romantizm ve realizmin doğuşu | okan kaplan edu
+        edebiyatta duygu–akıl çatışmasını öğrenin. romantizm ve realizmin doğuşunu, aydınlanma etkisini ve edebi anlatılarda insan algısının dönüşümünü keşfedin.
+        duygu akıl çatışması, romantizm, realizm, aydınlanma dönemi, edebiyat akımları, romantik edebiyat, realist edebiyat, edebi analiz, metin çözümleme, klasik edebiyat, anlatı biçimleri, karakter analizi
+    " style="position: absolute; left: 24.2778%; top: 752px;">
+
+        <div class="card-custom">
+
+      
+
+            <div class="card-body-custom">
+
+                <h2 class="card-title-custom">
+                    Duygu–Akıl Çatışması (2.6.1) | Romantizm ve Realizmin Doğuşu | Okan Kaplan Edu
+                </h2>
+
+                <p class="card-desc-custom">
+                    Edebiyatta duygu–akıl çatışmasını öğrenin. Romantizm ve Realizmin doğuşunu, Aydınlanma etkisini ve edebi anlatılarda insan algısının dönüşümünü keşfedin.
+                </p>
+
+                <div class="card-keywords-custom">
+                    duygu akıl çatışması, romantizm, realizm, aydınlanma dönemi, edebiyat akımları, romantik edebiyat, realist edebiyat, edebi analiz, metin çözümleme, klasik edebiyat, anlatı biçimleri, karakter analizi
+                </div>
+
+                <a href="https://okankaplanedu.github.io/tr/kurslar/edebiyat/klasik-edebiyati-derinlemesine-anlamak-yorumlamak/duygu-akil-catisma-romantizm-realizm/" class="btn-open" target="_top" rel="noopener noreferrer">
+
+                    KURSU İNCELE →
+
+                </a>
+<a href="https://okankaplanedu.github.io/pub/duygu-akil-catisma-romantizm-realizm.pdf" class="btn-pdf" target="_blank" rel="noopener noreferrer">
+   View PDF →
+</a>
+            </div>
+
+        </div>
+
+    </div><div class="grid-item" data-search="
+        dönemlerin birbirini etkilemesi | klasik edebiyatta süreklilik (2.1.2) | okan kaplan edu
+        klasik edebiyat dönemlerinin birbirini nasıl etkilediğini öğrenin. antik çağ’dan romantizme uzanan düşünsel ve estetik dönüşümü keşfedin.
+        edebi dönemler etkileşim, klasik edebiyat süreklilik, antik çağ romantizm ilişkisi, edebiyat tarihi dönüşüm, edebi akımlar bağlantı, klasisizm romantizm farkı
+    " style="position: absolute; left: 0%; top: 818.4px;">
+
+        <div class="card-custom">
+
+      
+
+            <div class="card-body-custom">
+
+                <h2 class="card-title-custom">
+                    Dönemlerin Birbirini Etkilemesi | Klasik Edebiyatta Süreklilik (2.1.2) | Okan Kaplan Edu
+                </h2>
+
+                <p class="card-desc-custom">
+                    Klasik edebiyat dönemlerinin birbirini nasıl etkilediğini öğrenin. Antik Çağ’dan Romantizme uzanan düşünsel ve estetik dönüşümü keşfedin.
+                </p>
+
+                <div class="card-keywords-custom">
+                    edebi dönemler etkileşim, klasik edebiyat süreklilik, antik çağ romantizm ilişkisi, edebiyat tarihi dönüşüm, edebi akımlar bağlantı, klasisizm romantizm farkı
+                </div>
+
+                <a href="https://okankaplanedu.github.io/tr/kurslar/edebiyat/klasik-edebiyati-derinlemesine-anlamak-yorumlamak/edebi-donemlerin-birbirini-etkilemesi/" class="btn-open" target="_top" rel="noopener noreferrer">
+
+                    KURSU İNCELE →
+
+                </a>
+<a href="https://okankaplanedu.github.io/pub/edebi-donemlerin-birbirini-etkilemesi.pdf" class="btn-pdf" target="_blank" rel="noopener noreferrer">
+   View PDF →
+</a>
+            </div>
+
+        </div>
+
+    </div><div class="grid-item" data-search="
+        evrensellik – yerellik gerilimi: klasik edebiyatta anlamın i̇ki yüzü | okan kaplan edu
+        klasik edebiyatta evrensellik ve yerellik arasındaki gerilimi keşfedin. yerel kültürlerden doğup evrensel anlamlara ulaşan metinlerin nasıl oluştuğunu öğrenin.
+        evrensellik yerellik, klasik edebiyat analizi, kültürel bağlam, edebi evrensellik, yerel kültür edebiyat, metin analizi, edebiyat teorisi, klasik eserler, kültürel kodlar, karşılaştırmalı edebiyat
+    " style="position: absolute; left: 72.8334%; top: 818.4px;">
+
+        <div class="card-custom">
+
+      
+
+            <div class="card-body-custom">
+
+                <h2 class="card-title-custom">
+                    Evrensellik – Yerellik Gerilimi: Klasik Edebiyatta Anlamın İki Yüzü | Okan Kaplan Edu
+                </h2>
+
+                <p class="card-desc-custom">
+                    Klasik edebiyatta evrensellik ve yerellik arasındaki gerilimi keşfedin. Yerel kültürlerden doğup evrensel anlamlara ulaşan metinlerin nasıl oluştuğunu öğrenin.
+                </p>
+
+                <div class="card-keywords-custom">
+                    evrensellik yerellik, klasik edebiyat analizi, kültürel bağlam, edebi evrensellik, yerel kültür edebiyat, metin analizi, edebiyat teorisi, klasik eserler, kültürel kodlar, karşılaştırmalı edebiyat
+                </div>
+
+                <a href="https://okankaplanedu.github.io/tr/kurslar/edebiyat/klasik-edebiyati-derinlemesine-anlamak-yorumlamak/evrensellik-yerellik-gerilimi/" class="btn-open" target="_top" rel="noopener noreferrer">
+
+                    KURSU İNCELE →
+
+                </a>
+<a href="https://okankaplanedu.github.io/pub/evrensellik-yerellik-gerilimi.pdf" class="btn-pdf" target="_blank" rel="noopener noreferrer">
+   View PDF →
+</a>
+            </div>
+
+        </div>
+
+    </div><div class="grid-item" data-search="
+        giriş: klasik edebiyatı derinlemesine anlamak ve yorumlamak | okan kaplan edu
+        klasik edebiyatı derinlemesine anlamayı öğrenin. temalar, karakter psikolojisi, metafor, alegori, bilinç akışı ve eleştirel okuma teknikleriyle klasik eserleri çok katmanlı biçimde analiz edin.
+        klasik edebiyat, klasik eser analizi, derin okuma, edebiyat çözümleme, metafor, alegori, bilinç akışı, karakter çözümlemesi, akademik okuma, klasik romanlar, edebi teknikler, eleştirel düşünme, klasik metin yorumlama
+    " style="position: absolute; left: 48.5556%; top: 840.8px;">
+
+        <div class="card-custom">
+
+      
+
+            <div class="card-body-custom">
+
+                <h2 class="card-title-custom">
+                    Giriş: Klasik Edebiyatı Derinlemesine Anlamak ve Yorumlamak | Okan Kaplan Edu
+                </h2>
+
+                <p class="card-desc-custom">
+                    Klasik edebiyatı derinlemesine anlamayı öğrenin. Temalar, karakter psikolojisi, metafor, alegori, bilinç akışı ve eleştirel okuma teknikleriyle klasik eserleri çok katmanlı biçimde analiz edin.
+                </p>
+
+                <div class="card-keywords-custom">
+                    klasik edebiyat, klasik eser analizi, derin okuma, edebiyat çözümleme, metafor, alegori, bilinç akışı, karakter çözümlemesi, akademik okuma, klasik romanlar, edebi teknikler, eleştirel düşünme, klasik metin yorumlama
+                </div>
+
+                <a href="https://okankaplanedu.github.io/tr/kurslar/edebiyat/klasik-edebiyati-derinlemesine-anlamak-yorumlamak/giris-klasik-edebiyati-derinlemesine-anlamak-ve-yorumlamak/" class="btn-open" target="_top" rel="noopener noreferrer">
+
+                    KURSU İNCELE →
+
+                </a>
+<a href="https://okankaplanedu.github.io/pub/giris-klasik-edebiyati-derinlemesine-anlamak-ve-yorumlamak.pdf" class="btn-pdf" target="_blank" rel="noopener noreferrer">
+   View PDF →
+</a>
+            </div>
+
+        </div>
+
+    </div><div class="grid-item" data-search="
+        i̇nsan merkezli anlatı: rönesans edebiyatında anlatının dönüşümü | okan kaplan edu
+        rönesans edebiyatında insan merkezli anlatının doğuşunu keşfedin. tanrı merkezli yapıdan bireysel bakışa geçişi, shakespeare ve modern anlatı teknikleri üzerinden öğrenin.
+        insan merkezli anlatı, rönesans edebiyatı, klasik edebiyat, shakespeare, iç monolog, anlatı teknikleri, modern roman, edebiyat tarihi, hümanizm, bireysel bakış açısı
+    " style="position: absolute; left: 24.2778%; top: 1157.2px;">
+
+        <div class="card-custom">
+
+      
+
+            <div class="card-body-custom">
+
+                <h2 class="card-title-custom">
+                    İnsan Merkezli Anlatı: Rönesans Edebiyatında Anlatının Dönüşümü | Okan Kaplan Edu
+                </h2>
+
+                <p class="card-desc-custom">
+                    Rönesans edebiyatında insan merkezli anlatının doğuşunu keşfedin. Tanrı merkezli yapıdan bireysel bakışa geçişi, Shakespeare ve modern anlatı teknikleri üzerinden öğrenin.
+                </p>
+
+                <div class="card-keywords-custom">
+                    insan merkezli anlatı, rönesans edebiyatı, klasik edebiyat, Shakespeare, iç monolog, anlatı teknikleri, modern roman, edebiyat tarihi, hümanizm, bireysel bakış açısı
+                </div>
+
+                <a href="https://okankaplanedu.github.io/tr/kurslar/edebiyat/klasik-edebiyati-derinlemesine-anlamak-yorumlamak/insan-merkezli-anlati/" class="btn-open" target="_top" rel="noopener noreferrer">
+
+                    KURSU İNCELE →
+
+                </a>
+<a href="https://okankaplanedu.github.io/pub/insan-merkezli-anlati.pdf" class="btn-pdf" target="_blank" rel="noopener noreferrer">
+   View PDF →
+</a>
+            </div>
+
+        </div>
+
+    </div><div class="grid-item" data-search="
+        klasik edebiyatta i̇nsan psikolojisinin derin temsili | karakter analizi eğitimi | okan kaplan edu
+        klasik edebiyatta insan psikolojisinin nasıl derinlemesine temsil edildiğini öğrenin. karakter analizi, iç çatışma ve bilinçdışı süreçleri keşfedin.
+        klasik edebiyat, insan psikolojisi, karakter analizi, edebi psikoloji, iç çatışma, bilinç akışı, dostoyevski analiz, shakespeare karakterleri, edebiyat kursu
+    " style="position: absolute; left: 0%; top: 1183.2px;">
+
+        <div class="card-custom">
+
+      
+
+            <div class="card-body-custom">
+
+                <h2 class="card-title-custom">
+                    Klasik Edebiyatta İnsan Psikolojisinin Derin Temsili | Karakter Analizi Eğitimi | Okan Kaplan Edu
+                </h2>
+
+                <p class="card-desc-custom">
+                    Klasik edebiyatta insan psikolojisinin nasıl derinlemesine temsil edildiğini öğrenin. Karakter analizi, iç çatışma ve bilinçdışı süreçleri keşfedin.
+                </p>
+
+                <div class="card-keywords-custom">
+                    klasik edebiyat, insan psikolojisi, karakter analizi, edebi psikoloji, iç çatışma, bilinç akışı, Dostoyevski analiz, Shakespeare karakterleri, edebiyat kursu
+                </div>
+
+                <a href="https://okankaplanedu.github.io/tr/kurslar/edebiyat/klasik-edebiyati-derinlemesine-anlamak-yorumlamak/insan-psikolojisi-klasik-edebiyat/" class="btn-open" target="_top" rel="noopener noreferrer">
+
+                    KURSU İNCELE →
+
+                </a>
+<a href="https://okankaplanedu.github.io/pub/insan-psikolojisi-klasik-edebiyat.pdf" class="btn-pdf" target="_blank" rel="noopener noreferrer">
+   View PDF →
+</a>
+            </div>
+
+        </div>
+
+    </div><div class="grid-item" data-search="
+        kahraman arketipleri | antik edebiyattan modern anlatılara evrensel kahraman figürü | okan kaplan edu
+        kahraman arketiplerini antik edebiyattan modern anlatılara kadar inceleyin. mitolojik ve psikolojik temelleriyle evrensel kahraman figürünü keşfedin.
+        kahraman arketipi, mitoloji, homeros, antik edebiyat, kahraman yolculuğu, jung arketipler, tragedya kahramanı, epik kahraman, edebi karakter analizi
+    " style="position: absolute; left: 72.8334%; top: 1205.6px;">
+
+        <div class="card-custom">
+
+      
+
+            <div class="card-body-custom">
+
+                <h2 class="card-title-custom">
+                    Kahraman Arketipleri | Antik Edebiyattan Modern Anlatılara Evrensel Kahraman Figürü | Okan Kaplan Edu
+                </h2>
+
+                <p class="card-desc-custom">
+                    Kahraman arketiplerini Antik edebiyattan modern anlatılara kadar inceleyin. Mitolojik ve psikolojik temelleriyle evrensel kahraman figürünü keşfedin.
+                </p>
+
+                <div class="card-keywords-custom">
+                    kahraman arketipi, mitoloji, homeros, antik edebiyat, kahraman yolculuğu, jung arketipler, tragedya kahramanı, epik kahraman, edebi karakter analizi
+                </div>
+
+                <a href="https://okankaplanedu.github.io/tr/kurslar/edebiyat/klasik-edebiyati-derinlemesine-anlamak-yorumlamak/kahraman-arketipleri-antik-edebiyat/" class="btn-open" target="_top" rel="noopener noreferrer">
+
+                    KURSU İNCELE →
+
+                </a>
+<a href="https://okankaplanedu.github.io/pub/kahraman-arketipleri-antik-edebiyat.pdf" class="btn-pdf" target="_blank" rel="noopener noreferrer">
+   View PDF →
+</a>
+            </div>
+
+        </div>
+
+    </div><div class="grid-item" data-search="
+        kanon nedir, kim belirler? klasik edebiyatın görünmeyen gücü | okan kaplan edu
+        edebiyat kanonu nedir, kim tarafından belirlenir? klasik eserlerin nasıl seçildiğini, akademi ve kültür kurumlarının etkisini ve kanonun eleştirel yapısını öğrenin.
+        edebiyat kanonu, kanon nedir, klasik eserler listesi, edebiyat eleştirisi, kültürel otorite, akademik kanon, edebiyat tarihi, seçilmiş eserler, edebi güç ilişkileri, kültürel üretim
+    " style="position: absolute; left: 48.5556%; top: 1246px;">
+
+        <div class="card-custom">
+
+      
+
+            <div class="card-body-custom">
+
+                <h2 class="card-title-custom">
+                    Kanon Nedir, Kim Belirler? Klasik Edebiyatın Görünmeyen Gücü | Okan Kaplan Edu
+                </h2>
+
+                <p class="card-desc-custom">
+                    Edebiyat kanonu nedir, kim tarafından belirlenir? Klasik eserlerin nasıl seçildiğini, akademi ve kültür kurumlarının etkisini ve kanonun eleştirel yapısını öğrenin.
+                </p>
+
+                <div class="card-keywords-custom">
+                    edebiyat kanonu, kanon nedir, klasik eserler listesi, edebiyat eleştirisi, kültürel otorite, akademik kanon, edebiyat tarihi, seçilmiş eserler, edebi güç ilişkileri, kültürel üretim
+                </div>
+
+                <a href="https://okankaplanedu.github.io/tr/kurslar/edebiyat/klasik-edebiyati-derinlemesine-anlamak-yorumlamak/kanon-nedir-kim-belirler/" class="btn-open" target="_top" rel="noopener noreferrer">
+
+                    KURSU İNCELE →
+
+                </a>
+<a href="https://okankaplanedu.github.io/pub/kanon-nedir-kim-belirler.pdf" class="btn-pdf" target="_blank" rel="noopener noreferrer">
+   View PDF →
+</a>
+            </div>
+
+        </div>
+
+    </div><div class="grid-item" data-search="
+        klasik algısının günümüzdeki yanlış temsili: klasik edebiyata yeni bir bakış | okan kaplan edu
+        klasik edebiyatın günümüzde neden yanlış algılandığını keşfedin. “zor”, “sıkıcı” ve “eskimiş” imajlarının nasıl oluştuğunu öğrenerek klasik eserleri yeniden ve doğru şekilde okumayı deneyimleyin.
+        klasik edebiyat algısı, yanlış klasik algısı, edebiyat eleştirisi, klasik eserler, modern okuma alışkanlıkları, dijital çağ edebiyat, klasik metin yorumlama, edebiyat önyargıları, derin okuma, eleştirel düşünme
+    " style="position: absolute; left: 24.2778%; top: 1544.4px;">
+
+        <div class="card-custom">
+
+      
+
+            <div class="card-body-custom">
+
+                <h2 class="card-title-custom">
+                    Klasik Algısının Günümüzdeki Yanlış Temsili: Klasik Edebiyata Yeni Bir Bakış | Okan Kaplan Edu
+                </h2>
+
+                <p class="card-desc-custom">
+                    Klasik edebiyatın günümüzde neden yanlış algılandığını keşfedin. “Zor”, “sıkıcı” ve “eskimiş” imajlarının nasıl oluştuğunu öğrenerek klasik eserleri yeniden ve doğru şekilde okumayı deneyimleyin.
+                </p>
+
+                <div class="card-keywords-custom">
+                    klasik edebiyat algısı, yanlış klasik algısı, edebiyat eleştirisi, klasik eserler, modern okuma alışkanlıkları, dijital çağ edebiyat, klasik metin yorumlama, edebiyat önyargıları, derin okuma, eleştirel düşünme
+                </div>
+
+                <a href="https://okankaplanedu.github.io/tr/kurslar/edebiyat/klasik-edebiyati-derinlemesine-anlamak-yorumlamak/klasik-algisinin-gunumuzdeki-yanlis-temsili/" class="btn-open" target="_top" rel="noopener noreferrer">
+
+                    KURSU İNCELE →
+
+                </a>
+<a href="https://okankaplanedu.github.io/pub/klasik-algisinin-gunumuzdeki-yanlis-temsili.pdf" class="btn-pdf" target="_blank" rel="noopener noreferrer">
+   View PDF →
+</a>
+            </div>
+
+        </div>
+
+    </div><div class="grid-item" data-search="
+        klasik edebiyatı derinlemesine anlamak ve yorumlamak | kapsamlı online eğitim | okan kaplan edu
+        klasik edebiyatı yüzeysel okumadan çıkarın. zaman, hafıza, kanon, evrensellik ve çok katmanlı okuma teknikleriyle derin analiz yapmayı öğrenin.
+        klasik edebiyat, edebiyat analizi, derin okuma, metin çözümleme, kanon, evrensellik, zamana direnç, edebi analiz kursu, klasik metin okuma, yorumlama teknikleri
+    " style="position: absolute; left: 0%; top: 1574px;">
+
+        <div class="card-custom">
+
+      
+
+            <div class="card-body-custom">
+
+                <h2 class="card-title-custom">
+                    Klasik Edebiyatı Derinlemesine Anlamak ve Yorumlamak | Kapsamlı Online Eğitim | Okan Kaplan Edu
+                </h2>
+
+                <p class="card-desc-custom">
+                    Klasik edebiyatı yüzeysel okumadan çıkarın. Zaman, hafıza, kanon, evrensellik ve çok katmanlı okuma teknikleriyle derin analiz yapmayı öğrenin.
+                </p>
+
+                <div class="card-keywords-custom">
+                    klasik edebiyat, edebiyat analizi, derin okuma, metin çözümleme, kanon, evrensellik, zamana direnç, edebi analiz kursu, klasik metin okuma, yorumlama teknikleri
+                </div>
+
+                <a href="https://okankaplanedu.github.io/tr/kurslar/edebiyat/klasik-edebiyati-derinlemesine-anlamak-yorumlamak/klasik-edebiyat-derin-okuma-kursu/" class="btn-open" target="_top" rel="noopener noreferrer">
+
+                    KURSU İNCELE →
+
+                </a>
+<a href="https://okankaplanedu.github.io/pub/klasik-edebiyat-derin-okuma-kursu.pdf" class="btn-pdf" target="_blank" rel="noopener noreferrer">
+   View PDF →
+</a>
+            </div>
+
+        </div>
+
+    </div><div class="grid-item" data-search="
+        klasik edebiyatın dönemleri | antik çağ’dan romantizme kapsamlı yolculuk | okan kaplan edu
+        klasik edebiyatın antik çağ’dan romantizme uzanan dönemlerini öğrenin. edebi akımlar, tarihsel dönüşüm ve düşünsel sürekliliği keşfedin.
+        klasik edebiyat dönemleri, antik çağ edebiyatı, romantizm akımı, edebi dönemler, rönesans edebiyatı, klasisizm, edebiyat tarihi, edebi akımlar kursu
+    " style="position: absolute; left: 72.8334%; top: 1596.4px;">
+
+        <div class="card-custom">
+
+      
+
+            <div class="card-body-custom">
+
+                <h2 class="card-title-custom">
+                    Klasik Edebiyatın Dönemleri | Antik Çağ’dan Romantizme Kapsamlı Yolculuk | Okan Kaplan Edu
+                </h2>
+
+                <p class="card-desc-custom">
+                    Klasik edebiyatın Antik Çağ’dan Romantizme uzanan dönemlerini öğrenin. Edebi akımlar, tarihsel dönüşüm ve düşünsel sürekliliği keşfedin.
+                </p>
+
+                <div class="card-keywords-custom">
+                    klasik edebiyat dönemleri, antik çağ edebiyatı, romantizm akımı, edebi dönemler, rönesans edebiyatı, klasisizm, edebiyat tarihi, edebi akımlar kursu
+                </div>
+
+                <a href="https://okankaplanedu.github.io/tr/kurslar/edebiyat/klasik-edebiyati-derinlemesine-anlamak-yorumlamak/klasik-edebiyat-donemleri-antik-cag-romantizm/" class="btn-open" target="_top" rel="noopener noreferrer">
+
+                    KURSU İNCELE →
+
+                </a>
+<a href="https://okankaplanedu.github.io/pub/klasik-edebiyat-donemleri-antik-cag-romantizm.pdf" class="btn-pdf" target="_blank" rel="noopener noreferrer">
+   View PDF →
+</a>
+            </div>
+
+        </div>
+
+    </div><div class="grid-item" data-search="
+        klasik edebiyatı okumayı gerçekten öğrenin | derin okuma ve edebi analiz kursu | okan kaplan edu
+        klasik edebiyatı yüzeysel okumaların ötesinde analiz edin. temalar, karakter psikolojisi, metafor, alegori, bilinç akışı ve eleştirel okuma teknikleriyle klasik eserleri derinlemesine yorumlamayı öğrenin.
+        klasik edebiyat, klasik eser analizi, derin okuma, edebi analiz, karakter çözümleme, metafor, alegori, bilinç akışı, akademik okuma, klasik romanlar, edebi teknikler, eleştirel düşünme, klasik metin yorumlama
+    " style="position: absolute; left: 48.5556%; top: 1633.2px;">
+
+        <div class="card-custom">
+
+      
+
+            <div class="card-body-custom">
+
+                <h2 class="card-title-custom">
+                    Klasik Edebiyatı Okumayı Gerçekten Öğrenin | Derin Okuma ve Edebi Analiz Kursu | Okan Kaplan Edu
+                </h2>
+
+                <p class="card-desc-custom">
+                    Klasik edebiyatı yüzeysel okumaların ötesinde analiz edin. Temalar, karakter psikolojisi, metafor, alegori, bilinç akışı ve eleştirel okuma teknikleriyle klasik eserleri derinlemesine yorumlamayı öğrenin.
+                </p>
+
+                <div class="card-keywords-custom">
+                    klasik edebiyat, klasik eser analizi, derin okuma, edebi analiz, karakter çözümleme, metafor, alegori, bilinç akışı, akademik okuma, klasik romanlar, edebi teknikler, eleştirel düşünme, klasik metin yorumlama
+                </div>
+
+                <a href="https://okankaplanedu.github.io/tr/kurslar/edebiyat/klasik-edebiyati-derinlemesine-anlamak-yorumlamak/klasik-edebiyati-okumayi-gercekten-ogrenin-derin-okuma-ve-edebi-analiz/" class="btn-open" target="_top" rel="noopener noreferrer">
+
+                    KURSU İNCELE →
+
+                </a>
+<a href="https://okankaplanedu.github.io/pub/klasik-edebiyati-okumayi-gercekten-ogrenin-derin-okuma-ve-edebi-analiz.pdf" class="btn-pdf" target="_blank" rel="noopener noreferrer">
+   View PDF →
+</a>
+            </div>
+
+        </div>
+
+    </div><div class="grid-item" data-search="
+        klasik edebiyatın derin yapısını okumak: yüzeyden anlama, metinden düşünceye | okan kaplan edu
+        klasik edebiyatı derinlemesine analiz edin. temalar, karakter çözümlemeleri, metafor, alegori, bilinç akışı ve edebi tekniklerle klasik eserleri eleştirel bir bakış açısıyla yorumlamayı öğrenin.
+        klasik edebiyat, klasik eser analizi, edebiyat çözümleme, karakter analizi, metafor, alegori, bilinç akışı, edebi teknikler, klasik romanlar, akademik okuma, eleştirel düşünme, klasik metinler, edebi üslup, psikolojik çözümleme
+    " style="position: absolute; left: 24.2778%; top: 1949.6px;">
+
+        <div class="card-custom">
+
+      
+
+            <div class="card-body-custom">
+
+                <h2 class="card-title-custom">
+                    Klasik Edebiyatın Derin Yapısını Okumak: Yüzeyden Anlama, Metinden Düşünceye | Okan Kaplan Edu
+                </h2>
+
+                <p class="card-desc-custom">
+                    Klasik edebiyatı derinlemesine analiz edin. Temalar, karakter çözümlemeleri, metafor, alegori, bilinç akışı ve edebi tekniklerle klasik eserleri eleştirel bir bakış açısıyla yorumlamayı öğrenin.
+                </p>
+
+                <div class="card-keywords-custom">
+                    klasik edebiyat, klasik eser analizi, edebiyat çözümleme, karakter analizi, metafor, alegori, bilinç akışı, edebi teknikler, klasik romanlar, akademik okuma, eleştirel düşünme, klasik metinler, edebi üslup, psikolojik çözümleme
+                </div>
+
+                <a href="https://okankaplanedu.github.io/tr/kurslar/edebiyat/klasik-edebiyati-derinlemesine-anlamak-yorumlamak/klasik-edebiyatin-derin-yapisini-okumak-yuzeyden-anlama-metinden-dusunceye/" class="btn-open" target="_top" rel="noopener noreferrer">
+
+                    KURSU İNCELE →
+
+                </a>
+<a href="https://okankaplanedu.github.io/pub/klasik-edebiyatin-derin-yapisini-okumak-yuzeyden-anlama-metinden-dusunceye.pdf" class="btn-pdf" target="_blank" rel="noopener noreferrer">
+   View PDF →
+</a>
+            </div>
+
+        </div>
+
+    </div><div class="grid-item" data-search="
+        klasik edebiyatın kavramsal tanımı: “klasik” ne anlama gelir? | okan kaplan edu
+        klasik edebiyat kavramının neyi ifade ettiğini, “eski” ile “klasik” arasındaki farkı ve zamana dirençli metinlerin temel özelliklerini öğrenin. kapsamlı ve derinlemesine bir edebiyat analizi dersi.
+        klasik edebiyat tanımı, klasik nedir, klasik eserler, edebiyat kavramları, eski ve klasik farkı, evrensel edebiyat, edebiyat teorisi, metin analizi, edebi ölçütler, klasik metinler
+    " style="position: absolute; left: 0%; top: 1964.8px;">
+
+        <div class="card-custom">
+
+      
+
+            <div class="card-body-custom">
+
+                <h2 class="card-title-custom">
+                    Klasik Edebiyatın Kavramsal Tanımı: “Klasik” Ne Anlama Gelir? | Okan Kaplan Edu
+                </h2>
+
+                <p class="card-desc-custom">
+                    Klasik edebiyat kavramının neyi ifade ettiğini, “eski” ile “klasik” arasındaki farkı ve zamana dirençli metinlerin temel özelliklerini öğrenin. Kapsamlı ve derinlemesine bir edebiyat analizi dersi.
+                </p>
+
+                <div class="card-keywords-custom">
+                    klasik edebiyat tanımı, klasik nedir, klasik eserler, edebiyat kavramları, eski ve klasik farkı, evrensel edebiyat, edebiyat teorisi, metin analizi, edebi ölçütler, klasik metinler
+                </div>
+
+                <a href="https://okankaplanedu.github.io/tr/kurslar/edebiyat/klasik-edebiyati-derinlemesine-anlamak-yorumlamak/klasik-edebiyatin-kavramsal-tanimi/" class="btn-open" target="_top" rel="noopener noreferrer">
+
+                    KURSU İNCELE →
+
+                </a>
+<a href="https://okankaplanedu.github.io/pub/klasik-edebiyatin-kavramsal-tanimi.pdf" class="btn-pdf" target="_blank" rel="noopener noreferrer">
+   View PDF →
+</a>
+            </div>
+
+        </div>
+
+    </div><div class="grid-item" data-search="
+        klasik edebiyatın temel özellikleri: metinleri klasik yapan nedir? | okan kaplan edu
+        klasik edebiyatı diğer metinlerden ayıran temel özellikleri keşfedin. tematik derinlik, evrensellik ve çok katmanlı anlam yapısı üzerinden klasik eserleri analiz etmeyi öğrenin.
+        klasik edebiyat özellikleri, klasik metinler, edebiyat analizi, tematik derinlik, evrensel edebiyat, çok katmanlı anlam, edebi özellikler, klasik eserler, metin çözümleme, edebiyat teorisi
+    " style="position: absolute; left: 72.8334%; top: 1987.2px;">
+
+        <div class="card-custom">
+
+      
+
+            <div class="card-body-custom">
+
+                <h2 class="card-title-custom">
+                    Klasik Edebiyatın Temel Özellikleri: Metinleri Klasik Yapan Nedir? | Okan Kaplan Edu
+                </h2>
+
+                <p class="card-desc-custom">
+                    Klasik edebiyatı diğer metinlerden ayıran temel özellikleri keşfedin. Tematik derinlik, evrensellik ve çok katmanlı anlam yapısı üzerinden klasik eserleri analiz etmeyi öğrenin.
+                </p>
+
+                <div class="card-keywords-custom">
+                    klasik edebiyat özellikleri, klasik metinler, edebiyat analizi, tematik derinlik, evrensel edebiyat, çok katmanlı anlam, edebi özellikler, klasik eserler, metin çözümleme, edebiyat teorisi
+                </div>
+
+                <a href="https://okankaplanedu.github.io/tr/kurslar/edebiyat/klasik-edebiyati-derinlemesine-anlamak-yorumlamak/klasik-edebiyatin-temel-ozellikleri/" class="btn-open" target="_top" rel="noopener noreferrer">
+
+                    KURSU İNCELE →
+
+                </a>
+<a href="https://okankaplanedu.github.io/pub/klasik-edebiyatin-temel-ozellikleri.pdf" class="btn-pdf" target="_blank" rel="noopener noreferrer">
+   View PDF →
+</a>
+            </div>
+
+        </div>
+
+    </div><div class="grid-item" data-search="
+        “klasik” kavramının tarihsel kökeni: antik roma’dan günümüze | okan kaplan edu
+        “klasik” kavramının tarihsel kökenini, antik roma’daki anlamından günümüz edebiyat anlayışına uzanan dönüşümünü keşfedin. klasik edebiyatın estetik ve tarihsel temelini öğrenin.
+        klasik kavramı, klasik edebiyat kökeni, classicus anlamı, edebiyat tarihi, antik roma edebiyatı, rönesans edebiyatı, aydınlanma dönemi, klasik tanımı, edebi kavramlar, edebiyat teorisi
+    " style="position: absolute; left: 48.5556%; top: 2064.4px;">
+
+        <div class="card-custom">
+
+      
+
+            <div class="card-body-custom">
+
+                <h2 class="card-title-custom">
+                    “Klasik” Kavramının Tarihsel Kökeni: Antik Roma’dan Günümüze | Okan Kaplan Edu
+                </h2>
+
+                <p class="card-desc-custom">
+                    “Klasik” kavramının tarihsel kökenini, Antik Roma’daki anlamından günümüz edebiyat anlayışına uzanan dönüşümünü keşfedin. Klasik edebiyatın estetik ve tarihsel temelini öğrenin.
+                </p>
+
+                <div class="card-keywords-custom">
+                    klasik kavramı, klasik edebiyat kökeni, classicus anlamı, edebiyat tarihi, antik roma edebiyatı, rönesans edebiyatı, aydınlanma dönemi, klasik tanımı, edebi kavramlar, edebiyat teorisi
+                </div>
+
+                <a href="https://okankaplanedu.github.io/tr/kurslar/edebiyat/klasik-edebiyati-derinlemesine-anlamak-yorumlamak/klasik-kavraminin-tarihsel-kokeni/" class="btn-open" target="_top" rel="noopener noreferrer">
+
+                    KURSU İNCELE →
+
+                </a>
+<a href="https://okankaplanedu.github.io/pub/klasik-kavraminin-tarihsel-kokeni.pdf" class="btn-pdf" target="_blank" rel="noopener noreferrer">
+   View PDF →
+</a>
+            </div>
+
+        </div>
+
+    </div><div class="grid-item" data-search="
+        mit, destan ve tragedya | antik edebiyatın kurucu anlatı biçimleri | okan kaplan edu
+        mit, destan ve tragedya kavramlarını antik edebiyat bağlamında öğrenin. i̇nsanlık düşüncesinin ilk anlatı biçimlerini ve edebi dönüşümünü keşfedin.
+        mit nedir, destan nedir, tragedya nedir, antik edebiyat, homeros, sofokles, klasik edebiyat, mitoloji, tragedya analizi, edebi türler
+    " style="position: absolute; left: 0%; top: 2352px;">
+
+        <div class="card-custom">
+
+      
+
+            <div class="card-body-custom">
+
+                <h2 class="card-title-custom">
+                    Mit, Destan ve Tragedya | Antik Edebiyatın Kurucu Anlatı Biçimleri | Okan Kaplan Edu
+                </h2>
+
+                <p class="card-desc-custom">
+                    Mit, destan ve tragedya kavramlarını Antik edebiyat bağlamında öğrenin. İnsanlık düşüncesinin ilk anlatı biçimlerini ve edebi dönüşümünü keşfedin.
+                </p>
+
+                <div class="card-keywords-custom">
+                    mit nedir, destan nedir, tragedya nedir, antik edebiyat, homeros, sofokles, klasik edebiyat, mitoloji, tragedya analizi, edebi türler
+                </div>
+
+                <a href="https://okankaplanedu.github.io/tr/kurslar/edebiyat/klasik-edebiyati-derinlemesine-anlamak-yorumlamak/mit-destan-tragedya-antik-edebiyat/" class="btn-open" target="_top" rel="noopener noreferrer">
+
+                    KURSU İNCELE →
+
+                </a>
+<a href="https://okankaplanedu.github.io/pub/mit-destan-tragedya-antik-edebiyat.pdf" class="btn-pdf" target="_blank" rel="noopener noreferrer">
+   View PDF →
+</a>
+            </div>
+
+        </div>
+
+    </div><div class="grid-item" data-search="
+        orta çağ klasik edebiyatı | i̇nanç, ahlak ve anlatı dönüşümü | okan kaplan edu
+        orta çağ edebiyatının inanç temelli yapısını, alegorik anlatılarını ve antik dönemden modern edebiyata geçişteki rolünü açıklayan kapsamlı ders.
+        orta çağ edebiyatı, klasik edebiyat, alegori, şövalye romansları, dini metinler, edebiyat tarihi
+    " style="position: absolute; left: 72.8334%; top: 2374.4px;">
+
+        <div class="card-custom">
+
+      
+
+            <div class="card-body-custom">
+
+                <h2 class="card-title-custom">
+                    Orta Çağ Klasik Edebiyatı | İnanç, Ahlak ve Anlatı Dönüşümü | Okan Kaplan Edu
+                </h2>
+
+                <p class="card-desc-custom">
+                    Orta Çağ edebiyatının inanç temelli yapısını, alegorik anlatılarını ve Antik dönemden modern edebiyata geçişteki rolünü açıklayan kapsamlı ders.
+                </p>
+
+                <div class="card-keywords-custom">
+                    Orta Çağ edebiyatı, klasik edebiyat, alegori, şövalye romansları, dini metinler, edebiyat tarihi
+                </div>
+
+                <a href="https://okankaplanedu.github.io/tr/kurslar/edebiyat/klasik-edebiyati-derinlemesine-anlamak-yorumlamak/orta-cag-klasik-edebiyati/" class="btn-open" target="_top" rel="noopener noreferrer">
+
+                    KURSU İNCELE →
+
+                </a>
+<a href="https://okankaplanedu.github.io/pub/orta-cag-klasik-edebiyati.pdf" class="btn-pdf" target="_blank" rel="noopener noreferrer">
+   View PDF →
+</a>
+            </div>
+
+        </div>
+
+    </div><div class="grid-item" data-search="
+        romanın yükselişi: aydınlanma döneminde modern anlatının doğuşu | okan kaplan edu
+        aydınlanma dönemi’nde roman türünün yükselişini öğrenin. birey, toplum ve gerçeklik ilişkisini yeniden kuran modern romanın edebi ve düşünsel temellerini keşfedin.
+        romanın yükselişi, aydınlanma romanı, defoe, fielding, richardson, roman türü, edebiyat tarihi, modern roman, gerçekçilik, birey ve toplum, klasik edebiyat dersleri
+    " style="position: absolute; left: 24.2778%; top: 2380.8px;">
+
+        <div class="card-custom">
+
+      
+
+            <div class="card-body-custom">
+
+                <h2 class="card-title-custom">
+                    Romanın Yükselişi: Aydınlanma Döneminde Modern Anlatının Doğuşu | Okan Kaplan Edu
+                </h2>
+
+                <p class="card-desc-custom">
+                    Aydınlanma Dönemi’nde roman türünün yükselişini öğrenin. Birey, toplum ve gerçeklik ilişkisini yeniden kuran modern romanın edebi ve düşünsel temellerini keşfedin.
+                </p>
+
+                <div class="card-keywords-custom">
+                    romanın yükselişi, Aydınlanma romanı, Defoe, Fielding, Richardson, roman türü, edebiyat tarihi, modern roman, gerçekçilik, birey ve toplum, klasik edebiyat dersleri
+                </div>
+
+                <a href="https://okankaplanedu.github.io/tr/kurslar/edebiyat/klasik-edebiyati-derinlemesine-anlamak-yorumlamak/romanin-yukselisi/" class="btn-open" target="_top" rel="noopener noreferrer">
+
+                    KURSU İNCELE →
+
+                </a>
+<a href="https://okankaplanedu.github.io/pub/romanin-yukselisi.pdf" class="btn-pdf" target="_blank" rel="noopener noreferrer">
+   View PDF →
+</a>
+            </div>
+
+        </div>
+
+    </div><div class="grid-item" data-search="
+        romantizm ve realizme geçiş: duygudan gerçeğe edebiyatın dönüşümü | okan kaplan edu
+        romantizmden realizme geçiş sürecini keşfedin. akıl merkezli aydınlanma’dan duygu, birey ve gerçeklik odaklı modern edebiyata uzanan dönüşümü analiz edin.
+        romantizm, realizm, edebiyat akımları, romantik edebiyat, realist edebiyat, aydınlanma sonrası edebiyat, edebiyat tarihi, klasik edebiyat dersleri, birey ve toplum, modern edebiyat
+    " style="position: absolute; left: 48.5556%; top: 2469.6px;">
+
+        <div class="card-custom">
+
+      
+
+            <div class="card-body-custom">
+
+                <h2 class="card-title-custom">
+                    Romantizm ve Realizme Geçiş: Duygudan Gerçeğe Edebiyatın Dönüşümü | Okan Kaplan Edu
+                </h2>
+
+                <p class="card-desc-custom">
+                    Romantizmden Realizme geçiş sürecini keşfedin. Akıl merkezli Aydınlanma’dan duygu, birey ve gerçeklik odaklı modern edebiyata uzanan dönüşümü analiz edin.
+                </p>
+
+                <div class="card-keywords-custom">
+                    Romantizm, Realizm, edebiyat akımları, romantik edebiyat, realist edebiyat, Aydınlanma sonrası edebiyat, edebiyat tarihi, klasik edebiyat dersleri, birey ve toplum, modern edebiyat
+                </div>
+
+                <a href="https://okankaplanedu.github.io/tr/kurslar/edebiyat/klasik-edebiyati-derinlemesine-anlamak-yorumlamak/romantizm-ve-realizme-gecis/" class="btn-open" target="_top" rel="noopener noreferrer">
+
+                    KURSU İNCELE →
+
+                </a>
+<a href="https://okankaplanedu.github.io/pub/romantizm-ve-realizme-gecis.pdf" class="btn-pdf" target="_blank" rel="noopener noreferrer">
+   View PDF →
+</a>
+            </div>
+
+        </div>
+
+    </div><div class="grid-item" data-search="
+        rönesans dönemi klasik edebiyatı: i̇nsan merkezli düşüncenin doğuşu | okan kaplan edu
+        rönesans edebiyatının doğuşunu, insan merkezli düşünceyi ve orta çağ’dan kopuş sürecini keşfedin. hümanizm, birey, shakespeare ve cervantes üzerinden klasik edebiyatın dönüşümünü öğrenin.
+        rönesans edebiyatı, hümanizm, klasik edebiyat, shakespeare, cervantes, dante, insan merkezli düşünce, orta çağ ve rönesans, edebiyat tarihi, modern edebiyatın temelleri
+    " style="position: absolute; left: 0%; top: 2716.8px;">
+
+        <div class="card-custom">
+
+      
+
+            <div class="card-body-custom">
+
+                <h2 class="card-title-custom">
+                    Rönesans Dönemi Klasik Edebiyatı: İnsan Merkezli Düşüncenin Doğuşu | Okan Kaplan Edu
+                </h2>
+
+                <p class="card-desc-custom">
+                    Rönesans edebiyatının doğuşunu, insan merkezli düşünceyi ve Orta Çağ’dan kopuş sürecini keşfedin. Hümanizm, birey, Shakespeare ve Cervantes üzerinden klasik edebiyatın dönüşümünü öğrenin.
+                </p>
+
+                <div class="card-keywords-custom">
+                    Rönesans edebiyatı, hümanizm, klasik edebiyat, Shakespeare, Cervantes, Dante, insan merkezli düşünce, Orta Çağ ve Rönesans, edebiyat tarihi, modern edebiyatın temelleri
+                </div>
+
+                <a href="https://okankaplanedu.github.io/tr/kurslar/edebiyat/klasik-edebiyati-derinlemesine-anlamak-yorumlamak/ronesans-donemi-klasik-edebiyati/" class="btn-open" target="_top" rel="noopener noreferrer">
+
+                    KURSU İNCELE →
+
+                </a>
+<a href="https://okankaplanedu.github.io/pub/ronesans-donemi-klasik-edebiyati.pdf" class="btn-pdf" target="_blank" rel="noopener noreferrer">
+   View PDF →
+</a>
+            </div>
+
+        </div>
+
+    </div><div class="grid-item" data-search="
+        tarihsel kırılma anları | klasik edebiyatın dönüşüm noktaları (2.1.1) | okan kaplan edu
+        klasik edebiyat tarihindeki kırılma anlarını keşfedin. siyasal, toplumsal ve düşünsel dönüşümlerin edebi anlatıyı nasıl değiştirdiğini öğrenin.
+        klasik edebiyat kırılma anları, edebiyat tarihi dönüşüm, antik çağ orta çağ geçişi, rönesans edebiyatı, edebi dönüşümler, tarihsel değişim ve edebiyat
+    " style="position: absolute; left: 72.8334%; top: 2721.2px;">
+
+        <div class="card-custom">
+
+      
+
+            <div class="card-body-custom">
+
+                <h2 class="card-title-custom">
+                    Tarihsel Kırılma Anları | Klasik Edebiyatın Dönüşüm Noktaları (2.1.1) | Okan Kaplan Edu
+                </h2>
+
+                <p class="card-desc-custom">
+                    Klasik edebiyat tarihindeki kırılma anlarını keşfedin. Siyasal, toplumsal ve düşünsel dönüşümlerin edebi anlatıyı nasıl değiştirdiğini öğrenin.
+                </p>
+
+                <div class="card-keywords-custom">
+                    klasik edebiyat kırılma anları, edebiyat tarihi dönüşüm, antik çağ orta çağ geçişi, rönesans edebiyatı, edebi dönüşümler, tarihsel değişim ve edebiyat
+                </div>
+
+                <a href="https://okankaplanedu.github.io/tr/kurslar/edebiyat/klasik-edebiyati-derinlemesine-anlamak-yorumlamak/tarihsel-kirilma-anlari-edebiyat-tarihi/" class="btn-open" target="_top" rel="noopener noreferrer">
+
+                    KURSU İNCELE →
+
+                </a>
+<a href="https://okankaplanedu.github.io/pub/tarihsel-kirilma-anlari-edebiyat-tarihi.pdf" class="btn-pdf" target="_blank" rel="noopener noreferrer">
+   View PDF →
+</a>
+            </div>
+
+        </div>
+
+    </div><div class="grid-item" data-search="
+        temalara giriş – neden aynı konular? (3.1) | klasik edebiyatta evrensel temalar | okan kaplan edu
+        klasik edebiyatta aşk, ölüm, güç ve adalet gibi temaların neden tekrar ettiğini öğrenin. evrensel insan deneyiminin edebi yansımalarını keşfedin.
+        klasik edebiyat temaları, neden aynı konular, evrensel temalar, aşk ölüm güç adalet, edebiyat analizi, tema kavramı, insan doğası, edebi yorumlama, tematik okuma, klasik metinler
+    " style="position: absolute; left: 24.2778%; top: 2768px;">
+
+        <div class="card-custom">
+
+      
+
+            <div class="card-body-custom">
+
+                <h2 class="card-title-custom">
+                    Temalara Giriş – Neden Aynı Konular? (3.1) | Klasik Edebiyatta Evrensel Temalar | Okan Kaplan Edu
+                </h2>
+
+                <p class="card-desc-custom">
+                    Klasik edebiyatta aşk, ölüm, güç ve adalet gibi temaların neden tekrar ettiğini öğrenin. Evrensel insan deneyiminin edebi yansımalarını keşfedin.
+                </p>
+
+                <div class="card-keywords-custom">
+                    klasik edebiyat temaları, neden aynı konular, evrensel temalar, aşk ölüm güç adalet, edebiyat analizi, tema kavramı, insan doğası, edebi yorumlama, tematik okuma, klasik metinler
+                </div>
+
+                <a href="https://okankaplanedu.github.io/tr/kurslar/edebiyat/klasik-edebiyati-derinlemesine-anlamak-yorumlamak/temalara-giris-neden-ayni-konular/" class="btn-open" target="_top" rel="noopener noreferrer">
+
+                    KURSU İNCELE →
+
+                </a>
+<a href="https://okankaplanedu.github.io/pub/temalara-giris-neden-ayni-konular.pdf" class="btn-pdf" target="_blank" rel="noopener noreferrer">
+   View PDF →
+</a>
+            </div>
+
+        </div>
+
+    </div><div class="grid-item" data-search="
+        tematik derinlik | klasik edebiyatta anlam katmanları ve tema analizi | okan kaplan edu
+        klasik edebiyatta tematik derinliği öğrenin. aşk, ölüm, güç, vicdan ve adalet gibi temaların metinlerde nasıl anlam ağı oluşturduğunu keşfedin.
+        tematik derinlik, edebiyat temaları, klasik edebiyat analizi, aşk teması, ölüm teması, vicdan, adalet, güç, özgürlük, metin analizi, edebi yorumlama, tema ve konu farkı
+    " style="position: absolute; left: 48.5556%; top: 2856.8px;">
+
+        <div class="card-custom">
+
+      
+
+            <div class="card-body-custom">
+
+                <h2 class="card-title-custom">
+                    Tematik Derinlik | Klasik Edebiyatta Anlam Katmanları ve Tema Analizi | Okan Kaplan Edu
+                </h2>
+
+                <p class="card-desc-custom">
+                    Klasik edebiyatta tematik derinliği öğrenin. Aşk, ölüm, güç, vicdan ve adalet gibi temaların metinlerde nasıl anlam ağı oluşturduğunu keşfedin.
+                </p>
+
+                <div class="card-keywords-custom">
+                    tematik derinlik, edebiyat temaları, klasik edebiyat analizi, aşk teması, ölüm teması, vicdan, adalet, güç, özgürlük, metin analizi, edebi yorumlama, tema ve konu farkı
+                </div>
+
+                <a href="https://okankaplanedu.github.io/tr/kurslar/edebiyat/klasik-edebiyati-derinlemesine-anlamak-yorumlamak/tematik-derinlik-klasik-edebiyat-analiz/" class="btn-open" target="_top" rel="noopener noreferrer">
+
+                    KURSU İNCELE →
+
+                </a>
+<a href="https://okankaplanedu.github.io/pub/tematik-derinlik-klasik-edebiyat-analiz.pdf" class="btn-pdf" target="_blank" rel="noopener noreferrer">
+   View PDF →
+</a>
+            </div>
+
+        </div>
+
+    </div><div class="grid-item" data-search="
+        toplumsal gerçekçilik (2.6.2) | realizm ve edebiyatta toplum analizi | okan kaplan edu
+        toplumsal gerçekçilik anlayışını öğrenin. realizm sonrası edebiyatta sınıf, ekonomi, sanayileşme ve toplum yapısının metinlere nasıl yansıdığını keşfedin.
+        toplumsal gerçekçilik, realizm, edebi akımlar, sanayileşme, sınıf çatışması, balzac, dickens, zola, edebiyat analizi, toplumsal eleştiri, gerçekçi edebiyat, modern edebiyat, anlatı teknikleri
+    " style="position: absolute; left: 72.8334%; top: 3086px;">
+
+        <div class="card-custom">
+
+      
+
+            <div class="card-body-custom">
+
+                <h2 class="card-title-custom">
+                    Toplumsal Gerçekçilik (2.6.2) | Realizm ve Edebiyatta Toplum Analizi | Okan Kaplan Edu
+                </h2>
+
+                <p class="card-desc-custom">
+                    Toplumsal Gerçekçilik anlayışını öğrenin. Realizm sonrası edebiyatta sınıf, ekonomi, sanayileşme ve toplum yapısının metinlere nasıl yansıdığını keşfedin.
+                </p>
+
+                <div class="card-keywords-custom">
+                    toplumsal gerçekçilik, realizm, edebi akımlar, sanayileşme, sınıf çatışması, Balzac, Dickens, Zola, edebiyat analizi, toplumsal eleştiri, gerçekçi edebiyat, modern edebiyat, anlatı teknikleri
+                </div>
+
+                <a href="https://okankaplanedu.github.io/tr/kurslar/edebiyat/klasik-edebiyati-derinlemesine-anlamak-yorumlamak/toplumsal-gercekcilik-realizm-edebiyat/" class="btn-open" target="_top" rel="noopener noreferrer">
+
+                    KURSU İNCELE →
+
+                </a>
+<a href="https://okankaplanedu.github.io/pub/toplumsal-gercekcilik-realizm-edebiyat.pdf" class="btn-pdf" target="_blank" rel="noopener noreferrer">
+   View PDF →
+</a>
+            </div>
+
+        </div>
+
+    </div><div class="grid-item" data-search="
+        zaman, hafıza ve metin i̇lişkisi: klasik edebiyatta derin anlam katmanları | okan kaplan edu
+        klasik edebiyatta zaman, hafıza ve anlatı ilişkisini keşfedin. geri dönüşler, bilinç akışı, hatırlama ve anlatı zamanı üzerinden klasik metinleri derinlemesine analiz etmeyi öğrenin.
+        zaman ve hafıza, klasik edebiyat, anlatı zamanı, bilinç akışı, geri dönüş tekniği, klasik eser analizi, hafıza ve metin ilişkisi, edebi zaman, anlatı teknikleri, derin okuma, karakter psikolojisi, metin çözümleme
+    " style="position: absolute; left: 0%; top: 3104px;">
+
+        <div class="card-custom">
+
+      
+
+            <div class="card-body-custom">
+
+                <h2 class="card-title-custom">
+                    Zaman, Hafıza ve Metin İlişkisi: Klasik Edebiyatta Derin Anlam Katmanları | Okan Kaplan Edu
+                </h2>
+
+                <p class="card-desc-custom">
+                    Klasik edebiyatta zaman, hafıza ve anlatı ilişkisini keşfedin. Geri dönüşler, bilinç akışı, hatırlama ve anlatı zamanı üzerinden klasik metinleri derinlemesine analiz etmeyi öğrenin.
+                </p>
+
+                <div class="card-keywords-custom">
+                    zaman ve hafıza, klasik edebiyat, anlatı zamanı, bilinç akışı, geri dönüş tekniği, klasik eser analizi, hafıza ve metin ilişkisi, edebi zaman, anlatı teknikleri, derin okuma, karakter psikolojisi, metin çözümleme
+                </div>
+
+                <a href="https://okankaplanedu.github.io/tr/kurslar/edebiyat/klasik-edebiyati-derinlemesine-anlamak-yorumlamak/zaman-hafiza-ve-metin-iliskisi-klasik-edebiyat/" class="btn-open" target="_top" rel="noopener noreferrer">
+
+                    KURSU İNCELE →
+
+                </a>
+<a href="https://okankaplanedu.github.io/pub/zaman-hafiza-ve-metin-iliskisi-klasik-edebiyat.pdf" class="btn-pdf" target="_blank" rel="noopener noreferrer">
+   View PDF →
+</a>
+            </div>
+
+        </div>
+
+    </div><div class="grid-item" data-search="
+        zaman yolculuğu | klasik edebiyat dönemlerine genel bakış (2.1) | okan kaplan edu
+        klasik edebiyat dönemlerine zaman yolculuğu yaklaşımıyla genel bakış. antik çağ’dan romantizm’e edebi dönüşüm ve düşünsel sürekliliği öğrenin.
+        klasik edebiyat dönemleri, zaman yolculuğu edebiyat, antik çağ romantizm, edebi tarih, dönemler arası ilişki, edebiyat tarihi ders, edebi akımlar genel bakış
+    " style="position: absolute; left: 24.2778%; top: 3158.8px;">
+
+        <div class="card-custom">
+
+      
+
+            <div class="card-body-custom">
+
+                <h2 class="card-title-custom">
+                    Zaman Yolculuğu | Klasik Edebiyat Dönemlerine Genel Bakış (2.1) | Okan Kaplan Edu
+                </h2>
+
+                <p class="card-desc-custom">
+                    Klasik edebiyat dönemlerine zaman yolculuğu yaklaşımıyla genel bakış. Antik Çağ’dan Romantizm’e edebi dönüşüm ve düşünsel sürekliliği öğrenin.
+                </p>
+
+                <div class="card-keywords-custom">
+                    klasik edebiyat dönemleri, zaman yolculuğu edebiyat, antik çağ romantizm, edebi tarih, dönemler arası ilişki, edebiyat tarihi ders, edebi akımlar genel bakış
+                </div>
+
+                <a href="https://okankaplanedu.github.io/tr/kurslar/edebiyat/klasik-edebiyati-derinlemesine-anlamak-yorumlamak/zaman-yolculugu-edebi-donemler-genel-bakis/" class="btn-open" target="_top" rel="noopener noreferrer">
+
+                    KURSU İNCELE →
+
+                </a>
+<a href="https://okankaplanedu.github.io/pub/zaman-yolculugu-edebi-donemler-genel-bakis.pdf" class="btn-pdf" target="_blank" rel="noopener noreferrer">
+   View PDF →
+</a>
+            </div>
+
+        </div>
+
+    </div><div class="grid-item" data-search="
+        zamana direnç: klasik edebiyatın neden eskimediği | okan kaplan edu
+        klasik edebiyatın zamana nasıl direnç gösterdiğini keşfedin. evrensel temalar, estetik yapı ve düşünsel derinlik sayesinde metinlerin neden yüzyıllar boyunca okunmaya devam ettiğini öğrenin.
+        zamana direnç, klasik edebiyat, evrensel temalar, edebiyat analizi, metin çözümleme, klasik eserler, insan doğası, edebi süreklilik, estetik yapı, düşünsel derinlik
+    " style="position: absolute; left: 48.5556%; top: 3221.6px;">
+
+        <div class="card-custom">
+
+      
+
+            <div class="card-body-custom">
+
+                <h2 class="card-title-custom">
+                    Zamana Direnç: Klasik Edebiyatın Neden Eskimediği | Okan Kaplan Edu
+                </h2>
+
+                <p class="card-desc-custom">
+                    Klasik edebiyatın zamana nasıl direnç gösterdiğini keşfedin. Evrensel temalar, estetik yapı ve düşünsel derinlik sayesinde metinlerin neden yüzyıllar boyunca okunmaya devam ettiğini öğrenin.
+                </p>
+
+                <div class="card-keywords-custom">
+                    zamana direnç, klasik edebiyat, evrensel temalar, edebiyat analizi, metin çözümleme, klasik eserler, insan doğası, edebi süreklilik, estetik yapı, düşünsel derinlik
+                </div>
+
+                <a href="https://okankaplanedu.github.io/tr/kurslar/edebiyat/klasik-edebiyati-derinlemesine-anlamak-yorumlamak/zamana-direnç-klasik-edebiyat/" class="btn-open" target="_top" rel="noopener noreferrer">
+
+                    KURSU İNCELE →
+
+                </a>
+<a href="https://okankaplanedu.github.io/pub/zamana-direnç-klasik-edebiyat.pdf" class="btn-pdf" target="_blank" rel="noopener noreferrer">
+   View PDF →
+</a>
+            </div>
+
+        </div>
+
+    </div></div>
+ <div id="main2">
+<article>
+m2
+</article>
+
+</div> 
+<div id="main3">
+</div> 
 </main>
 
 
@@ -275,7 +1754,139 @@ fetch("https://okankaplanedu.github.io/main3.html")
 
 
  
-<div id="footer-placeholder"></div>
+<div id="footer-placeholder"><!-- FontAwesome CDN (ikonlar için gerekli) -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" integrity="sha512-v2v..." crossorigin="anonymous" referrerpolicy="no-referrer">
+
+<style>
+.footer-github {
+  border-top: 1px solid #e5e7eb;
+  padding: 20px 0;
+  font-size: 14px;
+  color: #57606a;
+  background: #fff;
+}
+
+.footer-inner {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.footer-copy {
+  white-space: nowrap;
+}
+
+.footer-links {
+  display: flex;
+  gap: 16px;
+}
+
+.footer-links a {
+  color: #57606a;
+  text-decoration: none;
+  transition: color 0.2s ease;
+  font-size: 16px;
+}
+
+.footer-links a:hover {
+  color: #0969da; /* GitHub blue */
+}
+
+#scrollTopBtn {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  border: none;
+  background: #24292f; /* GitHub tonu */
+  color: #fff;
+  font-size: 18px;
+  cursor: pointer;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 8px 24px rgba(0,0,0,.2);
+  transition: all .3s ease;
+  z-index: 999;
+}
+
+#scrollTopBtn:hover {
+  background: #000;
+  transform: translateY(-4px);
+}
+</style>
+
+<footer class="footer-github">
+  <div class="container">
+    <div class="footer-inner">
+      <!-- Lisans ve Copyright -->
+      <span class="footer-copy">
+        © 2026 Okan Kaplan – MIT License 
+        <a href="LICENSE" target="_blank" rel="noopener noreferrer" aria-label="Read full MIT license">Read full license</a>
+      </span>
+
+      <!-- Sosyal ikonlar -->
+      <div class="footer-links">
+        <a href="https://www.youtube.com/@Ki%C5%9FiselGeli%C5%9Fim-Video-Pdf-img" target="_blank" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+        <a href="https://github.com" target="_blank" aria-label="GitHub"><i class="fab fa-github"></i></a>
+        <a href="https://www.udemy.com/user/okan-kaplan-7" target="_blank" aria-label="Udemy"><i class="fas fa-graduation-cap"></i></a>
+        <a href="https://linkedin.com/in/canvasor" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+        <a href="https://medium.com/@livehtml" target="_blank" aria-label="Medium"><i class="fab fa-medium"></i></a>
+        <a href="https://dev.to/okan_kaplan_livehtml" target="_blank" aria-label="Dev.to"><i class="fab fa-dev"></i></a>
+        <a href="https://gitlab.com/bandanee/" target="_blank" aria-label="GitLab"><i class="fab fa-gitlab"></i></a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Scroll To Top Button -->
+  <button id="scrollTopBtn" aria-label="Yukarı Çık">
+    <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" fill="currentColor" class="bi bi-arrow-up-circle-fill" viewBox="0 0 16 16">
+      <path d="M16 8A8 8 0 1 0 0 8a8 8 0 0 0 16 0m-7.5 3.5a.5.5 0 0 1-1 0V5.707L5.354 7.854a.5.5 0 1 1-.708-.708l3-3a.5.5 0 0 1 .708 0l3 3a.5.5 0 0 1-.708.708L8.5 5.707z"></path>
+    </svg>
+  </button>
+</footer>
+
+
+
+
+document.addEventListener("DOMContentLoaded", () => {
+  document.querySelectorAll(".yt-play-button").forEach(a => {
+    const original = a.getAttribute("href");
+    const fixed = fixYouTubePlaylist(original);
+
+    a.setAttribute("href", fixed);
+  });
+});
+</script>
+
+<!-- MIT Lisans Comment -->
+<!--
+MIT License
+Copyright (c) 2026 Okan Kaplan
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.
+-->
+</div>
 
 <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
@@ -285,14 +1896,7 @@ fetch("https://okankaplanedu.github.io/main3.html")
 
 <script>
 
-const CONFIG = {
-  owner: "okankaplanedu",
-  repo: "okankaplanedu.github.io",
-  branch: "main",
-  baseFolder: "tr/kurslar/edebiyat/klasik-edebiyati-derinlemesine-anlamak-yorumlamak/",
-  cacheKey: "ok_course_cache_v16",
-  cacheTime: 1000 * 60 * 60
-};
+
 
 let masonryGrid;
 
@@ -312,121 +1916,8 @@ function initMasonry(){
     });
 }
 
-const Cache = {
 
-    get: () => {
 
-        const data = localStorage.getItem(
-            CONFIG.cacheKey
-        );
-
-        if(!data) return null;
-
-        const parsed = JSON.parse(data);
-
-        if(
-            Date.now() - parsed.timestamp >
-            CONFIG.cacheTime
-        ){
-            return null;
-        }
-
-        return parsed.articles;
-    },
-
-    set: (articles) => {
-
-        localStorage.setItem(
-            CONFIG.cacheKey,
-
-            JSON.stringify({
-
-                timestamp: Date.now(),
-
-                articles: articles
-
-            })
-        );
-    }
-};
-
-function renderCard(article){
-
-    const plainText = `
-        ${article.title}
-        ${article.description}
-        ${article.keywords}
-    `.toLowerCase();
-
-    const imageHTML = article.image
-    ? `
-       
-    `
-    : "";
-
-    const cardHTML = `
-
-    <div
-        class="grid-item"
-        data-search="${plainText}"
-    >
-
-        <div class="card-custom">
-
-      
-
-            <div class="card-body-custom">
-
-                <h2 class="card-title-custom">
-                    ${article.title}
-                </h2>
-
-                <p class="card-desc-custom">
-                    ${article.description}
-                </p>
-
-                <div class="card-keywords-custom">
-                    ${article.keywords}
-                </div>
-
-                <a
-                    href="${article.url}"
-                    class="btn-open"
-                    target="_top"
-                    rel="noopener noreferrer"
-                >
-
-                    KURSU İNCELE →
-
-                </a>
-<a href="${location.origin}/pub/${article.url
-      .split('/')
-      .filter(Boolean)
-      .pop()}.pdf"
-   class="btn-pdf"
-   target="_blank"
-   rel="noopener noreferrer">
-   View PDF →
-</a>
-            </div>
-
-        </div>
-
-    </div>
-    `;
-
-    const $item = $(cardHTML);
-
-    $('#masonry-container').append($item);
-
-    $item.imagesLoaded(() => {
-
-        masonryGrid
-        .masonry('appended', $item)
-        .masonry('layout');
-
-    });
-}
 
 function applySearch(val){
 
@@ -542,162 +2033,15 @@ function finalizeUI(isCache=false){
     }, 2500);
 }
 
-async function scanAndCache(path){
 
-    try{
-
-        const res = await fetch(
-
-            `https://api.github.com/repos/${CONFIG.owner}/${CONFIG.repo}/contents/${path}`
-
-        );
-
-        if(!res.ok) return;
-
-        const items = await res.json();
-
-        for(const item of items){
-
-            if(item.type === "dir"){
-
-                await scanAndCache(item.path);
-
-            }
-
-            else if(
-
-                item.name === "index.html" &&
-                path !== CONFIG.baseFolder
-
-            ){
-
-                updateUIStatus(
-
-                    `Scanning: ${
-                        item.path
-                        .split('/')
-                        .slice(-2,-1)
-                    }`
-
-                );
-
-                const contentRes = await fetch(
-
-                    `https://raw.githubusercontent.com/${CONFIG.owner}/${CONFIG.repo}/${CONFIG.branch}/${item.path}`
-
-                );
-
-                if(contentRes.ok){
-
-                    const html =
-                    await contentRes.text();
-
-                    const doc = new DOMParser()
-                    .parseFromString(
-                        html,
-                        "text/html"
-                    );
-
-                    const title =
-                    doc.querySelector("title")
-                    ?.innerText
-                    ?.trim()
-                    || "Untitled";
-
-                    const description =
-                    doc.querySelector(
-                        'meta[name="description"]'
-                    )
-                    ?.getAttribute("content")
-                    ?.trim()
-                    || "";
-
-                    const keywords =
-                    doc.querySelector(
-                        'meta[name="keywords"]'
-                    )
-                    ?.getAttribute("content")
-                    ?.trim()
-                    || "";
-
-                    const image =
-                    doc.querySelector(
-                        'meta[property="og:image"]'
-                    )
-                    ?.getAttribute("content")
-                    ?.trim()
-                    || "";
-
-                    const data = {
-
-                        url:
-                        `https://${CONFIG.repo}/${
-                            item.path.replace(
-                                'index.html',
-                                ''
-                            )
-                        }`,
-
-                        title,
-                        description,
-                        keywords,
-                        image
-                    };
-
-                    tempArchive.push(data);
-
-                    renderCard(data);
-                }
-
-                await new Promise(
-
-                    r => setTimeout(
-                        r,
-                        CONFIG.fetchDelay
-                    )
-
-                );
-            }
-        }
-
-    }catch(e){
-
-        console.error(
-            "Scan Error:",
-            e
-        );
-    }
-}
 
 async function startApp(){
 
-    $('#status-container').show();
+
 
     initMasonry();
 
-    const cachedArticles = Cache.get();
 
-    if(cachedArticles){
-
-        cachedArticles.forEach(
-            art => renderCard(art)
-        );
-
-        finalizeUI(true);
-
-    }else{
-
-        await scanAndCache(
-            CONFIG.baseFolder
-        );
-
-        if(tempArchive.length > 0){
-
-            Cache.set(tempArchive);
-        }
-
-        finalizeUI(false);
-    }
 }
 
 $(document).ready(startApp);
@@ -716,6 +2060,7 @@ fetch(
 
 </script>
 
-</body>
-</html>
 
+
+
+</body></html>
