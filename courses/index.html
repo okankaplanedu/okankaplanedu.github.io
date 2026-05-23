@@ -406,7 +406,10 @@ function renderCard(article){
                     Open Course →
 
                 </a>
-<a href="${location.origin}/pub/${article.url.split('/').slice(-2, -1)[0]}/${article.url.split('/').pop()}.pdf"
+<a href="${location.origin}/pub/${article.url
+      .split('/')
+      .filter(Boolean)
+      .pop()}.pdf"
    class="btn-pdf"
    target="_blank"
    rel="noopener noreferrer">
