@@ -1,38 +1,92 @@
 <header>
   <nav class="navbar navbar-dark fixed-top shadow-sm" aria-label="Main navigation">
     <div class="container-fluid">
-      
-      <a class="navbar-brand fw-bold ms-5" href="/" aria-label="Okan Kaplan Edu Home">
+
+      <!-- Left Offcanvas Trigger -->
+      <button
+        class="btn btn-light shadow"
+        id="btnL"
+        type="button"
+        data-bs-toggle="offcanvas"
+        data-bs-target="#mL"
+        aria-controls="mL"
+        aria-label="Open course navigation menu"
+      >
+        <span aria-hidden="true">☰</span>
+      </button>
+
+      <!-- Brand -->
+      <a
+        class="navbar-brand fw-bold ms-3"
+        href="/"
+        target="_top"
+        rel="home"
+        aria-label="Go to Okan Kaplan Edu homepage"
+        title="Okan Kaplan Edu"
+      >
         Okan Kaplan Edu
       </a>
+
+      <!-- Courses Dropdown -->
+      <div class="dropdown ms-auto me-2">
+
+        <button
+          class="btn btn-secondary dropdown-toggle"
+          type="button"
+          data-bs-toggle="dropdown"
+          aria-expanded="false"
+          aria-label="Open courses menu"
+        >
+          Courses
+        </button>
+
+        <ul class="dropdown-menu dropdown-menu-end">
+
+          <li>
+            <a
+              href="https://okankaplanedu.github.io/courses/"
+              class="dropdown-item"
+              target="_top"
+              rel="noopener"
+              aria-label="Open Three.js Terrain Engineering course page"
+              title="Three.js Terrain Engineering Course"
+            >
+              Three.js Terrain Engineering
+            </a>
+          </li>
+
+          <li>
+            <a
+              href="https://okankaplanedu.github.io/tr/kurslar/edebiyat/klasik-edebiyati-derinlemesine-anlamak-yorumlamak/"
+              class="dropdown-item"
+              lang="tr"
+              hreflang="tr"
+              target="_top"
+              rel="noopener"
+              aria-label="Klasik Edebiyatı Derinlemesine Anlamak ve Yorumlamak kurs sayfasını aç"
+              title="Klasik Edebiyatı Derinlemesine Anlamak ve Yorumlamak"
+            >
+              Klasik Edebiyatı Derinlemesine Anlamak ve Yorumlamak
+            </a>
+          </li>
+
+        </ul>
+      </div>
+
+      <!-- Right Offcanvas Trigger -->
+      <button
+        class="btn btn-light shadow"
+        id="btnR"
+        type="button"
+        data-bs-toggle="offcanvas"
+        data-bs-target="#mR"
+        aria-controls="mR"
+        aria-label="Open chat panel"
+      >
+        <i class="fas fa-comment-dots" aria-hidden="true"></i>
+        <span class="visually-hidden">Chat</span>
+      </button>
 
     </div>
   </nav>
 </header>
-
-<!-- Left Offcanvas Trigger -->
-<button
-  class="btn btn-light shadow"
-  id="btnL"
-  type="button"
-  data-bs-toggle="offcanvas"
-  data-bs-target="#mL"
-  aria-controls="mL"
-  aria-label="Open menu"
->
-  <span aria-hidden="true">☰</span>
-</button>
-
-<!-- Right Offcanvas Trigger -->
-<button
-  class="btn btn-light shadow"
-  id="btnR"
-  type="button"
-  data-bs-toggle="offcanvas"
-  data-bs-target="#mR"
-  aria-controls="mR"
-  aria-label="Open chat panel"
->
-  <i class="fas fa-comment-dots" aria-hidden="true"></i>
-  <span class="visually-hidden">Chat</span>
-</button>
