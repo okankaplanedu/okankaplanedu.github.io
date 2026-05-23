@@ -200,124 +200,141 @@
 <script>
 
 const CONFIG = {
-
     owner: "okankaplanedu",
     repo: "okankaplanedu.github.io",
     branch: "main",
-
     baseFolder: "tr/kurslar/edebiyat/klasik-edebiyati-derinlemesine-anlamak-yorumlamak/",
-
     cacheKey: "ok_klasik-edebiyat_cache_v3",
     cacheTime: 3600000,
-
     fetchDelay: 80,
     concurrency: 6
 };
 
-let masonryGrid;
+let masonryGrid = null;
 let tempArchive = [];
 
-/* ---------------- MASONRY ---------------- */
+/* -------------------------------------------------- */
+/* MASONRY                                            */
+/* -------------------------------------------------- */
 
+/*
+ * FIX 1 — initMasonry artık her zaman önce mevcut instance'ı destroy eder.
+ * Böylece clearGrid() → initMasonry() → renderCard() zincirinde
+ * eski referans asla kalmaz.
+ */
 function initMasonry() {
+    var $container = $('#masonry-container');
 
-    masonryGrid = $('#masonry-container').masonry({
-        itemSelector: '.grid-item:not(.is-hidden)',
+    // Var olan instance'ı temizle
+    if (masonryGrid) {
+        $container.masonry('destroy');
+        masonryGrid = null;
+    }
+
+    masonryGrid = $container.masonry({
+        itemSelector: '.grid-item:not(.grid-sizer)',
         columnWidth: '.grid-sizer',
         percentPosition: true,
-        transitionDuration: '0.3s'
+        transitionDuration: '0.3s',
+        initLayout: false   // FIX 2 — ilk layout'u biz tetikleyeceğiz
     });
 }
-/* ---------------- CACHE ---------------- */
 
-const Cache = {
-
-    get: () => {
-        const data = localStorage.getItem(CONFIG.cacheKey);
-        if (!data) return null;
-
-        const parsed = JSON.parse(data);
-
-        if (Date.now() - parsed.timestamp > CONFIG.cacheTime) {
-            return null;
+/*
+ * FIX 3 — Global layout debounce.
+ * Peş peşe gelen renderCard çağrıları layout'u sürekli tetiklemek yerine
+ * son çağrıdan 150 ms sonra tek seferde layout yapar.
+ */
+var layoutTimer = null;
+function scheduleLayout() {
+    clearTimeout(layoutTimer);
+    layoutTimer = setTimeout(function () {
+        if (masonryGrid) {
+            masonryGrid.masonry('layout');
         }
+    }, 150);
+}
 
+/* -------------------------------------------------- */
+/* CACHE                                              */
+/* -------------------------------------------------- */
+
+var Cache = {
+    get: function () {
+        var data = localStorage.getItem(CONFIG.cacheKey);
+        if (!data) return null;
+        var parsed = JSON.parse(data);
+        if (Date.now() - parsed.timestamp > CONFIG.cacheTime) return null;
         return parsed.articles;
     },
-
-    set: (articles) => {
+    set: function (articles) {
         localStorage.setItem(
             CONFIG.cacheKey,
-            JSON.stringify({
-                timestamp: Date.now(),
-                articles
-            })
+            JSON.stringify({ timestamp: Date.now(), articles: articles })
         );
     }
 };
 
-/* ---------------- CARD ---------------- */
+/* -------------------------------------------------- */
+/* CARD                                               */
+/* -------------------------------------------------- */
 
+/*
+ * FIX 4 — renderCard artık:
+ *   a) DOM'a append yapar
+ *   b) Masonry'ye .masonry('appended', $item) ile bildirir
+ *   c) scheduleLayout() çağırır (debounce ile)
+ *   Görüntü yoksa imagesLoaded beklemeye gerek yok; doğrudan layout tetiklenir.
+ */
 function renderCard(article) {
 
-    const plainText = `
-        ${article.title}
-        ${article.description}
-        ${article.keywords}
-    `.toLowerCase().replace(/\s+/g, ' ');
-
-    const imageHTML = article.image
-        ? ``
-        : "";
-
-    const cardHTML = `
-    <div class="grid-item" data-search="${plainText}">
-        <div class="card-custom">
-          
-            <div class="card-body-custom">
-                <h2>${article.title}</h2>
-                <p>${article.description}</p>
-                <div>${article.keywords}</div>
-
-                <a href="${article.url}" target="_top">
-                    Open Course →
-                </a>
-            </div>
-        </div>
-    </div>`;
-
-    const $item = $(cardHTML);
-
-    $('#masonry-container').append($item);
-
-    // 🔥 CRITICAL FIX: delay + layout guarantee
     if (!masonryGrid) return;
 
-    masonryGrid.appended($item);
+    var plainText = (article.title + ' ' + article.description + ' ' + article.keywords)
+        .toLowerCase().replace(/\s+/g, ' ');
 
-    $item.imagesLoaded(() => {
-        masonryGrid.layout();
-    });
+    var cardHTML = '<div class="grid-item" data-search="' + plainText + '">' +
+        '<div class="card-custom">' +
+          '<div class="card-body-custom">' +
+            '<h2>' + article.title + '</h2>' +
+            '<p>' + article.description + '</p>' +
+            '<div>' + article.keywords + '</div>' +
+            '<a href="' + article.url + '" target="_top">Open Course →</a>' +
+          '</div>' +
+        '</div>' +
+      '</div>';
+
+    var $item = $(cardHTML);
+
+    // FIX 5 — önce append, sonra masonry'ye bildir
+    $('#masonry-container').append($item);
+    masonryGrid.masonry('appended', $item);
+
+    // Resim varsa imagesLoaded bekle, yoksa direkt layout planla
+    if (article.image) {
+        $item.imagesLoaded(function () {
+            scheduleLayout();
+        });
+    } else {
+        scheduleLayout();
+    }
 }
 
-/* ---------------- SEARCH ---------------- */
+/* -------------------------------------------------- */
+/* SEARCH                                             */
+/* -------------------------------------------------- */
 
 function applySearch(val) {
-
     val = (val || '').toLowerCase().trim();
-
     $('.grid-item').each(function () {
-
-        const text = $(this).data('search') || '';
-
-        const hide = val !== '' && text.indexOf(val) === -1;
-
+        var text = $(this).data('search') || '';
+        var hide = val !== '' && text.indexOf(val) === -1;
         $(this).toggleClass('is-hidden', hide);
     });
-
-    // 🔥 CRITICAL FIX
     if (masonryGrid) {
-        masonryGrid.layout();
+        // FIX 6 — itemSelector'ı güncelle, sonra layout yap
+        masonryGrid.masonry({ itemSelector: '.grid-item:not(.is-hidden):not(.grid-sizer)' });
+        masonryGrid.masonry('layout');
     }
 }
 
@@ -325,83 +342,76 @@ $(document).on('input keyup', '#search-input', function () {
     applySearch($(this).val());
 });
 
-/* ---------------- UI STATUS ---------------- */
+/* -------------------------------------------------- */
+/* UI STATUS                                          */
+/* -------------------------------------------------- */
 
 function updateUIStatus(msg) {
-    const txt = document.getElementById("status-message");
+    var txt = document.getElementById('status-message');
     if (txt) txt.innerText = msg;
 }
 
-function finalizeUI(isCache = false) {
+function finalizeUI(isCache) {
+    var spinner = document.getElementById('status-spinner');
+    if (spinner) spinner.style.display = 'none';
+    document.getElementById('status').innerHTML =
+        '<span style="color:#10b981">●</span>' +
+        '<span style="font-size:13px;font-weight:600;">' +
+            (isCache ? 'Fast Cache Load' : 'Courses Updated') +
+        '</span>';
 
-    const spinner = document.getElementById("status-spinner");
-    if (spinner) spinner.style.display = "none";
+    // FIX 7 — finalizeUI sırasında bir kez daha layout tetikle
+    // (tüm kartlar DOM'a eklenmiş, font/CSS yüklenmiş olabilir)
+    if (masonryGrid) {
+        masonryGrid.masonry('layout');
+    }
 
-    document.getElementById("status").innerHTML = `
-        <span style="color:#10b981">●</span>
-        <span style="font-size:13px;font-weight:600;">
-            ${isCache ? 'Fast Cache Load' : 'Courses Updated'}
-        </span>
-    `;
-
-    setTimeout(() => {
+    setTimeout(function () {
         $('#status-container').fadeOut();
     }, 2000);
 }
 
-/* ---------------- FILE PROCESSOR (PARALLEL) ---------------- */
+/* -------------------------------------------------- */
+/* FILE PROCESSOR (PARALLEL)                         */
+/* -------------------------------------------------- */
 
 async function processFiles(files) {
-
-    let index = 0;
+    var index = 0;
 
     async function worker() {
-
         while (index < files.length) {
-
-            const file = files[index++];
-
-            updateUIStatus(`Scanning: ${file.path}`);
-
+            var file = files[index++];
+            updateUIStatus('Scanning: ' + file.path);
             try {
-
-                const res = await fetch(
-                    `https://raw.githubusercontent.com/${CONFIG.owner}/${CONFIG.repo}/${CONFIG.branch}/${file.path}`
+                var res = await fetch(
+                    'https://raw.githubusercontent.com/' +
+                    CONFIG.owner + '/' + CONFIG.repo + '/' +
+                    CONFIG.branch + '/' + file.path
                 );
-
                 if (!res.ok) continue;
 
-                const html = await res.text();
+                var html = await res.text();
+                var doc = new DOMParser().parseFromString(html, 'text/html');
 
-                const doc = new DOMParser().parseFromString(html, "text/html");
+                var title       = (doc.querySelector('title')?.innerText || 'Untitled').trim();
+                var description = (doc.querySelector('meta[name="description"]')?.content || '').trim();
+                var keywords    = (doc.querySelector('meta[name="keywords"]')?.content || '').trim();
+                var image       = (doc.querySelector('meta[property="og:image"]')?.content || '').trim();
+                var urlPath     = file.path.replace(/index\.html$/, '');
 
-                const title =
-                    doc.querySelector("title")?.innerText?.trim() || "Untitled";
-
-                const description =
-                    doc.querySelector('meta[name="description"]')?.content?.trim() || "";
-
-                const keywords =
-                    doc.querySelector('meta[name="keywords"]')?.content?.trim() || "";
-
-                const image =
-                    doc.querySelector('meta[property="og:image"]')?.content?.trim() || "";
-
-                const urlPath = file.path.replace(/index\.html$/, "");
-
-                const data = {
-                    url: `https://${CONFIG.owner}.github.io/${urlPath}`,
-                    title,
-                    description,
-                    keywords,
-                    image
+                var data = {
+                    url: 'https://' + CONFIG.owner + '.github.io/' + urlPath,
+                    title: title,
+                    description: description,
+                    keywords: keywords,
+                    image: image
                 };
 
                 tempArchive.push(data);
                 renderCard(data);
 
             } catch (e) {
-                console.error("File error:", file.path, e);
+                console.error('File error:', file.path, e);
             }
         }
     }
@@ -411,78 +421,103 @@ async function processFiles(files) {
     );
 }
 
-/* ---------------- SCANNER ---------------- */
+/* -------------------------------------------------- */
+/* SCANNER                                            */
+/* -------------------------------------------------- */
 
 async function scanAndCache() {
-
     try {
+        var url = 'https://api.github.com/repos/' +
+            CONFIG.owner + '/' + CONFIG.repo +
+            '/git/trees/' + CONFIG.branch + '?recursive=1';
 
-        const url = `https://api.github.com/repos/${CONFIG.owner}/${CONFIG.repo}/git/trees/${CONFIG.branch}?recursive=1`;
+        var res = await fetch(url);
+        if (!res.ok) throw new Error('Git tree failed');
 
-        const res = await fetch(url);
-        if (!res.ok) throw new Error("Git tree failed");
-
-        const data = await res.json();
-
-        const files = data.tree.filter(item =>
-            item.type === "blob" &&
-            item.path.startsWith(CONFIG.baseFolder) &&
-            item.path.endsWith("index.html")
-        );
+        var data = await res.json();
+        var files = data.tree.filter(function (item) {
+            return item.type === 'blob' &&
+                item.path.startsWith(CONFIG.baseFolder) &&
+                item.path.endsWith('index.html');
+        });
 
         await processFiles(files);
 
     } catch (e) {
-        console.error("Scan Error:", e);
+        console.error('Scan Error:', e);
     }
 }
 
-/* ---------------- START ---------------- */
+/* -------------------------------------------------- */
+/* GRID CLEAR                                         */
+/* -------------------------------------------------- */
 
+/*
+ * FIX 8 — clearGrid, grid-sizer'ı koruyarak sadece kartları temizler,
+ * sonra initMasonry'yi çağırır. Bu sayede grid-sizer her zaman
+ * Masonry'nin sütun ölçümü için yerinde olur.
+ */
 function clearGrid() {
-    $('#masonry-container').empty();
+    $('#masonry-container .grid-item').remove();
     initMasonry();
 }
 
-async function startApp() {
+/* -------------------------------------------------- */
+/* START                                              */
+/* -------------------------------------------------- */
 
+async function startApp() {
     $('#status-container').show();
 
+    // İlk başlatma
     initMasonry();
 
-    const cached = Cache.get();
+    var cached = Cache.get();
 
-if (cached) {
+    if (cached) {
+        clearGrid();
 
-    clearGrid();
+        cached.forEach(function (article) {
+            renderCard(article);
+        });
 
-    cached.forEach(renderCard);
+        // FIX 9 — Tüm batch append bittikten sonra requestAnimationFrame
+        // ile bir render döngüsü bekle, ardından layout'u zorla.
+        requestAnimationFrame(function () {
+            requestAnimationFrame(function () {
+                if (masonryGrid) {
+                    masonryGrid.masonry('layout');
+                }
+                finalizeUI(true);
+            });
+        });
 
-    // 🔥 FORCE layout after DOM paint
-    setTimeout(() => {
-        masonryGrid.layout();
-    }, 200);
-
-    finalizeUI(true);
-} else {
-
+    } else {
         await scanAndCache();
 
         if (tempArchive.length > 0) {
             Cache.set(tempArchive);
         }
 
-        finalizeUI(false);
+        // FIX 10 — canlı taramada da son bir layout garantisi
+        requestAnimationFrame(function () {
+            if (masonryGrid) {
+                masonryGrid.masonry('layout');
+            }
+            finalizeUI(false);
+        });
     }
 }
 
 $(document).ready(startApp);
 
-/* ---------------- FOOTER ---------------- */
+/* -------------------------------------------------- */
+/* FOOTER                                             */
+/* -------------------------------------------------- */
 
 fetch('https://raw.githubusercontent.com/bandanee/root/main/import/footer.html')
-    .then(r => r.text())
-    .then(h => {
+    .then(function (r) { return r.text(); })
+    .then(function (h) {
         document.getElementById('footer-placeholder').innerHTML = h;
     });
 
@@ -490,4 +525,3 @@ fetch('https://raw.githubusercontent.com/bandanee/root/main/import/footer.html')
 
 </body>
 </html>
-
