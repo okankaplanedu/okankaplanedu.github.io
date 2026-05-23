@@ -376,14 +376,23 @@ function renderCard(article) {
                     ${article.keywords || ""}
                 </div>
 
-                <a href="${article.url}"
-                   class="btn-open"
-                   target="_top"
-                   rel="noopener noreferrer">
+<a href="${article.url}"
+   class="btn-open"
+   target="_top"
+   rel="noopener noreferrer">
 
-                   View Details →
+   View Details →
 
-                </a>
+</a>
+
+<a href="${'/pub' + article.url.replace(/\/$/, '') + '.pdf'}"
+   class="btn-pdf"
+   target="_blank"
+   rel="noopener noreferrer">
+
+   View PDF →
+
+</a>
 
             </div>
 
