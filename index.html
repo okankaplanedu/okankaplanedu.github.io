@@ -383,7 +383,10 @@ function renderCard(article) {
    View Details →
 </a>
 
-<a href="${new URL('/pub' + new URL(article.url).pathname.replace(/\/$/, '') + '.pdf', location.origin).href}"
+<a href="${location.origin}/pub/${article.url
+      .split('/')
+      .filter(Boolean)
+      .pop()}.pdf"
    class="btn-pdf"
    target="_blank"
    rel="noopener noreferrer">
