@@ -1,15 +1,979 @@
-<sitemapindex xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Okan IDE v6 — Sitemap Builder -->
+<!-- Proje: final-matbaa____ -->
+<!-- Üretim tarihi: 2026-05-25 -->
+<!-- Toplam sayfa: 138 -->
 
-  <sitemap>
-    <loc>https://okankaplanedu.github.io/sitemaps/categories.xml</loc>
-  </sitemap>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9
+                            http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
 
-  <sitemap>
-    <loc>https://okankaplanedu.github.io/sitemaps/courses.xml</loc>
-  </sitemap>
+  <!-- /index.html -->
+  <url>
+    <loc>https://okankaplanedu.github.io/</loc>
+    <lastmod>2026-05-25</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>1.0</priority>
+  </url>
+  <!-- /courses/index.html -->
+  <url>
+    <loc>https://okankaplanedu.github.io/courses/</loc>
+    <lastmod>2026-05-25</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <!-- /categories/abstract-thinking-logic-engine-layer/index.html -->
+  <url>
+    <loc>https://okankaplanedu.github.io/categories/abstract-thinking-logic-engine-layer/</loc>
+    <lastmod>2026-05-25</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <!-- /categories/academic-computation-layer/index.html -->
+  <url>
+    <loc>https://okankaplanedu.github.io/categories/academic-computation-layer/</loc>
+    <lastmod>2026-05-25</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <!-- /categories/audio-sound-engine-layer/index.html -->
+  <url>
+    <loc>https://okankaplanedu.github.io/categories/audio-sound-engine-layer/</loc>
+    <lastmod>2026-05-25</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <!-- /categories/code-ide-system/index.html -->
+  <url>
+    <loc>https://okankaplanedu.github.io/categories/code-ide-system/</loc>
+    <lastmod>2026-05-25</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <!-- /categories/cognitive-mind-engineering-layer/index.html -->
+  <url>
+    <loc>https://okankaplanedu.github.io/categories/cognitive-mind-engineering-layer/</loc>
+    <lastmod>2026-05-25</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <!-- /categories/compute-ai-scientific-layer/index.html -->
+  <url>
+    <loc>https://okankaplanedu.github.io/categories/compute-ai-scientific-layer/</loc>
+    <lastmod>2026-05-25</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <!-- /categories/data-science-pattern-engine-layer/index.html -->
+  <url>
+    <loc>https://okankaplanedu.github.io/categories/data-science-pattern-engine-layer/</loc>
+    <lastmod>2026-05-25</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <!-- /categories/data-utility-core-layer/index.html -->
+  <url>
+    <loc>https://okankaplanedu.github.io/categories/data-utility-core-layer/</loc>
+    <lastmod>2026-05-25</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <!-- /categories/data-visualization-engine-layer/index.html -->
+  <url>
+    <loc>https://okankaplanedu.github.io/categories/data-visualization-engine-layer/</loc>
+    <lastmod>2026-05-25</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <!-- /categories/deployment-infrastructure-layer/index.html -->
+  <url>
+    <loc>https://okankaplanedu.github.io/categories/deployment-infrastructure-layer/</loc>
+    <lastmod>2026-05-25</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <!-- /categories/digital-ecosystem-thinking-layer/index.html -->
+  <url>
+    <loc>https://okankaplanedu.github.io/categories/digital-ecosystem-thinking-layer/</loc>
+    <lastmod>2026-05-25</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <!-- /categories/document-file-system-layer/index.html -->
+  <url>
+    <loc>https://okankaplanedu.github.io/categories/document-file-system-layer/</loc>
+    <lastmod>2026-05-25</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <!-- /categories/experimental-learning-engine-layer/index.html -->
+  <url>
+    <loc>https://okankaplanedu.github.io/categories/experimental-learning-engine-layer/</loc>
+    <lastmod>2026-05-25</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <!-- /categories/form-input-atomic-layer/index.html -->
+  <url>
+    <loc>https://okankaplanedu.github.io/categories/form-input-atomic-layer/</loc>
+    <lastmod>2026-05-25</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <!-- /categories/game-interactive-engine-layer/index.html -->
+  <url>
+    <loc>https://okankaplanedu.github.io/categories/game-interactive-engine-layer/</loc>
+    <lastmod>2026-05-25</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <!-- /categories/human-computer-interaction-experience-layer/index.html -->
+  <url>
+    <loc>https://okankaplanedu.github.io/categories/human-computer-interaction-experience-layer/</loc>
+    <lastmod>2026-05-25</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <!-- /categories/image-graphic-processing/index.html -->
+  <url>
+    <loc>https://okankaplanedu.github.io/categories/image-graphic-processing/</loc>
+    <lastmod>2026-05-25</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <!-- /categories/javascript-execution-layer/index.html -->
+  <url>
+    <loc>https://okankaplanedu.github.io/categories/javascript-execution-layer/</loc>
+    <lastmod>2026-05-25</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <!-- /categories/map-geo/index.html -->
+  <url>
+    <loc>https://okankaplanedu.github.io/categories/map-geo/</loc>
+    <lastmod>2026-05-25</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <!-- /categories/meta-architecture-self-evolving-system-layer/index.html -->
+  <url>
+    <loc>https://okankaplanedu.github.io/categories/meta-architecture-self-evolving-system-layer/</loc>
+    <lastmod>2026-05-25</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <!-- /categories/meta-learning-self-improvement-layer/index.html -->
+  <url>
+    <loc>https://okankaplanedu.github.io/categories/meta-learning-self-improvement-layer/</loc>
+    <lastmod>2026-05-25</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <!-- /categories/motion-animation-engine-layer/index.html -->
+  <url>
+    <loc>https://okankaplanedu.github.io/categories/motion-animation-engine-layer/</loc>
+    <lastmod>2026-05-25</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <!-- /categories/observability-system-intelligence-layer/index.html -->
+  <url>
+    <loc>https://okankaplanedu.github.io/categories/observability-system-intelligence-layer/</loc>
+    <lastmod>2026-05-25</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <!-- /categories/performance-optimization-engine-layer/index.html -->
+  <url>
+    <loc>https://okankaplanedu.github.io/categories/performance-optimization-engine-layer/</loc>
+    <lastmod>2026-05-25</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <!-- /categories/realtime-stream-event-system/index.html -->
+  <url>
+    <loc>https://okankaplanedu.github.io/categories/realtime-stream-event-system/</loc>
+    <lastmod>2026-05-25</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <!-- /categories/rich-text-editor-system/index.html -->
+  <url>
+    <loc>https://okankaplanedu.github.io/categories/rich-text-editor-system/</loc>
+    <lastmod>2026-05-25</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <!-- /categories/security-trust-engine-layer/index.html -->
+  <url>
+    <loc>https://okankaplanedu.github.io/categories/security-trust-engine-layer/</loc>
+    <lastmod>2026-05-25</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <!-- /categories/storage-memory-system/index.html -->
+  <url>
+    <loc>https://okankaplanedu.github.io/categories/storage-memory-system/</loc>
+    <lastmod>2026-05-25</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <!-- /categories/strategy-game-theory-layer/index.html -->
+  <url>
+    <loc>https://okankaplanedu.github.io/categories/strategy-game-theory-layer/</loc>
+    <lastmod>2026-05-25</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <!-- /categories/system-design-architecture-layer/index.html -->
+  <url>
+    <loc>https://okankaplanedu.github.io/categories/system-design-architecture-layer/</loc>
+    <lastmod>2026-05-25</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <!-- /categories/ui-foundation/index.html -->
+  <url>
+    <loc>https://okankaplanedu.github.io/categories/ui-foundation/</loc>
+    <lastmod>2026-05-25</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <!-- /categories/video-media-engine-layer/index.html -->
+  <url>
+    <loc>https://okankaplanedu.github.io/categories/video-media-engine-layer/</loc>
+    <lastmod>2026-05-25</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <!-- /courses/web-based-3d-terrain-industrial-printing-engine-mastery/index.html -->
+  <url>
+    <loc>https://okankaplanedu.github.io/courses/web-based-3d-terrain-industrial-printing-engine-mastery/</loc>
+    <lastmod>2026-05-25</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <!-- /tr/kurslar/index.html -->
+  <url>
+    <loc>https://okankaplanedu.github.io/tr/kurslar/</loc>
+    <lastmod>2026-05-25</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <!-- /courses/web-based-3d-terrain-industrial-printing-engine-mastery/3d-map-builder-optimization-scaling-modular-engine-performance/index.html -->
+  <url>
+    <loc>https://okankaplanedu.github.io/courses/web-based-3d-terrain-industrial-printing-engine-mastery/3d-map-builder-optimization-scaling-modular-engine-performance/</loc>
+    <lastmod>2026-05-25</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <!-- /courses/web-based-3d-terrain-industrial-printing-engine-mastery/3d-web-map-builder-procedural-terrain-instanced-ecosystem-stl-export/index.html -->
+  <url>
+    <loc>https://okankaplanedu.github.io/courses/web-based-3d-terrain-industrial-printing-engine-mastery/3d-web-map-builder-procedural-terrain-instanced-ecosystem-stl-export/</loc>
+    <lastmod>2026-05-25</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <!-- /courses/web-based-3d-terrain-industrial-printing-engine-mastery/advanced-terrain-interaction-ecosystem-world-editor-stl-pipeline/index.html -->
+  <url>
+    <loc>https://okankaplanedu.github.io/courses/web-based-3d-terrain-industrial-printing-engine-mastery/advanced-terrain-interaction-ecosystem-world-editor-stl-pipeline/</loc>
+    <lastmod>2026-05-25</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <!-- /courses/web-based-3d-terrain-industrial-printing-engine-mastery/advanced-terrain-system-terrasculpt-ultra-3d-world-engine-review/index.html -->
+  <url>
+    <loc>https://okankaplanedu.github.io/courses/web-based-3d-terrain-industrial-printing-engine-mastery/advanced-terrain-system-terrasculpt-ultra-3d-world-engine-review/</loc>
+    <lastmod>2026-05-25</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <!-- /courses/web-based-3d-terrain-industrial-printing-engine-mastery/browser-offline-learning-pdf-runtime-engine/index.html -->
+  <url>
+    <loc>https://okankaplanedu.github.io/courses/web-based-3d-terrain-industrial-printing-engine-mastery/browser-offline-learning-pdf-runtime-engine/</loc>
+    <lastmod>2026-05-25</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <!-- /courses/web-based-3d-terrain-industrial-printing-engine-mastery/cinematic-camera-engine-web-3d-terrain-gpu-simulation-course-lesson-6-4/index.html -->
+  <url>
+    <loc>https://okankaplanedu.github.io/courses/web-based-3d-terrain-industrial-printing-engine-mastery/cinematic-camera-engine-web-3d-terrain-gpu-simulation-course-lesson-6-4/</loc>
+    <lastmod>2026-05-25</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <!-- /courses/web-based-3d-terrain-industrial-printing-engine-mastery/cloud-system-volumetric-atmospheric-simulation-gpu-raymarching-engine/index.html -->
+  <url>
+    <loc>https://okankaplanedu.github.io/courses/web-based-3d-terrain-industrial-printing-engine-mastery/cloud-system-volumetric-atmospheric-simulation-gpu-raymarching-engine/</loc>
+    <lastmod>2026-05-25</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <!-- /courses/web-based-3d-terrain-industrial-printing-engine-mastery/ecosystem-dynamics-procedural-world-engine-terrasculpt-v10/index.html -->
+  <url>
+    <loc>https://okankaplanedu.github.io/courses/web-based-3d-terrain-industrial-printing-engine-mastery/ecosystem-dynamics-procedural-world-engine-terrasculpt-v10/</loc>
+    <lastmod>2026-05-25</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <!-- /courses/web-based-3d-terrain-industrial-printing-engine-mastery/generate-world-button-procedural-terrain-threejs/index.html -->
+  <url>
+    <loc>https://okankaplanedu.github.io/courses/web-based-3d-terrain-industrial-printing-engine-mastery/generate-world-button-procedural-terrain-threejs/</loc>
+    <lastmod>2026-05-25</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <!-- /courses/web-based-3d-terrain-industrial-printing-engine-mastery/gpu-instanced-mesh-rendering-core-procedural-world-engine/index.html -->
+  <url>
+    <loc>https://okankaplanedu.github.io/courses/web-based-3d-terrain-industrial-printing-engine-mastery/gpu-instanced-mesh-rendering-core-procedural-world-engine/</loc>
+    <lastmod>2026-05-25</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <!-- /courses/web-based-3d-terrain-industrial-printing-engine-mastery/hydraulic-erosion-engine-procedural-terrain-simulation-system/index.html -->
+  <url>
+    <loc>https://okankaplanedu.github.io/courses/web-based-3d-terrain-industrial-printing-engine-mastery/hydraulic-erosion-engine-procedural-terrain-simulation-system/</loc>
+    <lastmod>2026-05-25</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <!-- /courses/web-based-3d-terrain-industrial-printing-engine-mastery/hydrology-systems-in-3d-sea-level-waves-coastal-simulation/index.html -->
+  <url>
+    <loc>https://okankaplanedu.github.io/courses/web-based-3d-terrain-industrial-printing-engine-mastery/hydrology-systems-in-3d-sea-level-waves-coastal-simulation/</loc>
+    <lastmod>2026-05-25</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <!-- /courses/web-based-3d-terrain-industrial-printing-engine-mastery/interactive-3d-map-builder-engine-world-editor-terrain-simulation/index.html -->
+  <url>
+    <loc>https://okankaplanedu.github.io/courses/web-based-3d-terrain-industrial-printing-engine-mastery/interactive-3d-map-builder-engine-world-editor-terrain-simulation/</loc>
+    <lastmod>2026-05-25</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <!-- /courses/web-based-3d-terrain-industrial-printing-engine-mastery/laplacian-smoothing-buffergeometry-lerp-thermal-erosion/index.html -->
+  <url>
+    <loc>https://okankaplanedu.github.io/courses/web-based-3d-terrain-industrial-printing-engine-mastery/laplacian-smoothing-buffergeometry-lerp-thermal-erosion/</loc>
+    <lastmod>2026-05-25</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <!-- /courses/web-based-3d-terrain-industrial-printing-engine-mastery/multi-layer-terrain-system-procedural-world-threejs/index.html -->
+  <url>
+    <loc>https://okankaplanedu.github.io/courses/web-based-3d-terrain-industrial-printing-engine-mastery/multi-layer-terrain-system-procedural-world-threejs/</loc>
+    <lastmod>2026-05-25</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <!-- /courses/web-based-3d-terrain-industrial-printing-engine-mastery/noise-based-terrain-procedural-generation-threejs/index.html -->
+  <url>
+    <loc>https://okankaplanedu.github.io/courses/web-based-3d-terrain-industrial-printing-engine-mastery/noise-based-terrain-procedural-generation-threejs/</loc>
+    <lastmod>2026-05-25</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <!-- /courses/web-based-3d-terrain-industrial-printing-engine-mastery/procedural-terrain-carving-rivers-lakes-hydraulic-erosion-system/index.html -->
+  <url>
+    <loc>https://okankaplanedu.github.io/courses/web-based-3d-terrain-industrial-printing-engine-mastery/procedural-terrain-carving-rivers-lakes-hydraulic-erosion-system/</loc>
+    <lastmod>2026-05-25</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <!-- /courses/web-based-3d-terrain-industrial-printing-engine-mastery/procedural-terrain-engine-hydrology-basin-detection-system/index.html -->
+  <url>
+    <loc>https://okankaplanedu.github.io/courses/web-based-3d-terrain-industrial-printing-engine-mastery/procedural-terrain-engine-hydrology-basin-detection-system/</loc>
+    <lastmod>2026-05-25</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <!-- /courses/web-based-3d-terrain-industrial-printing-engine-mastery/procedural-terrain-generator-fbm-noise-world-synthesis-engine/index.html -->
+  <url>
+    <loc>https://okankaplanedu.github.io/courses/web-based-3d-terrain-industrial-printing-engine-mastery/procedural-terrain-generator-fbm-noise-world-synthesis-engine/</loc>
+    <lastmod>2026-05-25</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <!-- /courses/web-based-3d-terrain-industrial-printing-engine-mastery/procedural-world-engine-biomes-ecosystems-weather-stl-export/index.html -->
+  <url>
+    <loc>https://okankaplanedu.github.io/courses/web-based-3d-terrain-industrial-printing-engine-mastery/procedural-world-engine-biomes-ecosystems-weather-stl-export/</loc>
+    <lastmod>2026-05-25</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <!-- /courses/web-based-3d-terrain-industrial-printing-engine-mastery/terrain-clouds-stl-export-terrasculpt-pro-world-engine/index.html -->
+  <url>
+    <loc>https://okankaplanedu.github.io/courses/web-based-3d-terrain-industrial-printing-engine-mastery/terrain-clouds-stl-export-terrasculpt-pro-world-engine/</loc>
+    <lastmod>2026-05-25</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <!-- /courses/web-based-3d-terrain-industrial-printing-engine-mastery/terrain-data-model-chunk-streaming-gpu-world-engine-architecture/index.html -->
+  <url>
+    <loc>https://okankaplanedu.github.io/courses/web-based-3d-terrain-industrial-printing-engine-mastery/terrain-data-model-chunk-streaming-gpu-world-engine-architecture/</loc>
+    <lastmod>2026-05-25</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <!-- /courses/web-based-3d-terrain-industrial-printing-engine-mastery/terrain-undo-redo-history-stack-buffergeometry-state-management/index.html -->
+  <url>
+    <loc>https://okankaplanedu.github.io/courses/web-based-3d-terrain-industrial-printing-engine-mastery/terrain-undo-redo-history-stack-buffergeometry-state-management/</loc>
+    <lastmod>2026-05-25</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <!-- /courses/web-based-3d-terrain-industrial-printing-engine-mastery/threejs-plane-terrain-grid-sculpting-engine/index.html -->
+  <url>
+    <loc>https://okankaplanedu.github.io/courses/web-based-3d-terrain-industrial-printing-engine-mastery/threejs-plane-terrain-grid-sculpting-engine/</loc>
+    <lastmod>2026-05-25</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <!-- /courses/web-based-3d-terrain-industrial-printing-engine-mastery/threejs-terrain-grid-system-vertex-buffer-procedural-fantasy-map-engine/index.html -->
+  <url>
+    <loc>https://okankaplanedu.github.io/courses/web-based-3d-terrain-industrial-printing-engine-mastery/threejs-terrain-grid-system-vertex-buffer-procedural-fantasy-map-engine/</loc>
+    <lastmod>2026-05-25</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <!-- /courses/web-based-3d-terrain-industrial-printing-engine-mastery/threejs-terrain-sculpting-brush-smooth-dynamic-color-reset-props-system/index.html -->
+  <url>
+    <loc>https://okankaplanedu.github.io/courses/web-based-3d-terrain-industrial-printing-engine-mastery/threejs-terrain-sculpting-brush-smooth-dynamic-color-reset-props-system/</loc>
+    <lastmod>2026-05-25</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <!-- /courses/web-based-3d-terrain-industrial-printing-engine-mastery/threejs-terrain-sculpting-engine-level-flatten-grid-wireframe-constraints/index.html -->
+  <url>
+    <loc>https://okankaplanedu.github.io/courses/web-based-3d-terrain-industrial-printing-engine-mastery/threejs-terrain-sculpting-engine-level-flatten-grid-wireframe-constraints/</loc>
+    <lastmod>2026-05-25</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <!-- /courses/web-based-3d-terrain-industrial-printing-engine-mastery/unified-3d-world-simulation-engine-biome-water-ecosystem-integration/index.html -->
+  <url>
+    <loc>https://okankaplanedu.github.io/courses/web-based-3d-terrain-industrial-printing-engine-mastery/unified-3d-world-simulation-engine-biome-water-ecosystem-integration/</loc>
+    <lastmod>2026-05-25</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <!-- /courses/web-based-3d-terrain-industrial-printing-engine-mastery/vertex-painting-engine-terrasculpt-gpu-biome-terrain-system/index.html -->
+  <url>
+    <loc>https://okankaplanedu.github.io/courses/web-based-3d-terrain-industrial-printing-engine-mastery/vertex-painting-engine-terrasculpt-gpu-biome-terrain-system/</loc>
+    <lastmod>2026-05-25</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <!-- /courses/web-based-3d-terrain-industrial-printing-engine-mastery/water-wave-simulation-gpu-fluid-vertex-shader-ocean-engine/index.html -->
+  <url>
+    <loc>https://okankaplanedu.github.io/courses/web-based-3d-terrain-industrial-printing-engine-mastery/water-wave-simulation-gpu-fluid-vertex-shader-ocean-engine/</loc>
+    <lastmod>2026-05-25</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <!-- /courses/web-based-3d-terrain-industrial-printing-engine-mastery/web-procedural-terrain-engine/index.html -->
+  <url>
+    <loc>https://okankaplanedu.github.io/courses/web-based-3d-terrain-industrial-printing-engine-mastery/web-procedural-terrain-engine/</loc>
+    <lastmod>2026-05-25</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <!-- /tr/kurslar/edebiyat/index.html -->
+  <url>
+    <loc>https://okankaplanedu.github.io/tr/kurslar/edebiyat/</loc>
+    <lastmod>2026-05-25</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <!-- /tr/kurslar/edebiyat/klasik-edebiyati-derinlemesine-anlamak-yorumlamak/index.html -->
+  <url>
+    <loc>https://okankaplanedu.github.io/tr/kurslar/edebiyat/klasik-edebiyati-derinlemesine-anlamak-yorumlamak/</loc>
+    <lastmod>2026-05-25</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <!-- /tr/kurslar/edebiyat/zihinsel-matris-gorsel-dusunme-ve-hikaye-uretimi/index.html -->
+  <url>
+    <loc>https://okankaplanedu.github.io/tr/kurslar/edebiyat/zihinsel-matris-gorsel-dusunme-ve-hikaye-uretimi/</loc>
+    <lastmod>2026-05-25</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <!-- /tr/kurslar/edebiyat/klasik-edebiyati-derinlemesine-anlamak-yorumlamak/ahlak-merkezli-metinler/index.html -->
+  <url>
+    <loc>https://okankaplanedu.github.io/tr/kurslar/edebiyat/klasik-edebiyati-derinlemesine-anlamak-yorumlamak/ahlak-merkezli-metinler/</loc>
+    <lastmod>2026-05-25</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <!-- /tr/kurslar/edebiyat/klasik-edebiyati-derinlemesine-anlamak-yorumlamak/akil-mantik-ve-elestiri/index.html -->
+  <url>
+    <loc>https://okankaplanedu.github.io/tr/kurslar/edebiyat/klasik-edebiyati-derinlemesine-anlamak-yorumlamak/akil-mantik-ve-elestiri/</loc>
+    <lastmod>2026-05-25</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <!-- /tr/kurslar/edebiyat/klasik-edebiyati-derinlemesine-anlamak-yorumlamak/alegori-ve-dini-anlati/index.html -->
+  <url>
+    <loc>https://okankaplanedu.github.io/tr/kurslar/edebiyat/klasik-edebiyati-derinlemesine-anlamak-yorumlamak/alegori-ve-dini-anlati/</loc>
+    <lastmod>2026-05-25</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <!-- /tr/kurslar/edebiyat/klasik-edebiyati-derinlemesine-anlamak-yorumlamak/antik-donem-edebiyati-klasik-edebiyat-kursu/index.html -->
+  <url>
+    <loc>https://okankaplanedu.github.io/tr/kurslar/edebiyat/klasik-edebiyati-derinlemesine-anlamak-yorumlamak/antik-donem-edebiyati-klasik-edebiyat-kursu/</loc>
+    <lastmod>2026-05-25</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <!-- /tr/kurslar/edebiyat/klasik-edebiyati-derinlemesine-anlamak-yorumlamak/ask-temasi-3-2/index.html -->
+  <url>
+    <loc>https://okankaplanedu.github.io/tr/kurslar/edebiyat/klasik-edebiyati-derinlemesine-anlamak-yorumlamak/ask-temasi-3-2/</loc>
+    <lastmod>2026-05-25</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <!-- /tr/kurslar/edebiyat/klasik-edebiyati-derinlemesine-anlamak-yorumlamak/atmosfer-kurulumu-ve-dikkat-toplama-klasik-edebiyat/index.html -->
+  <url>
+    <loc>https://okankaplanedu.github.io/tr/kurslar/edebiyat/klasik-edebiyati-derinlemesine-anlamak-yorumlamak/atmosfer-kurulumu-ve-dikkat-toplama-klasik-edebiyat/</loc>
+    <lastmod>2026-05-25</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <!-- /tr/kurslar/edebiyat/klasik-edebiyati-derinlemesine-anlamak-yorumlamak/aydinlanma-donemi-ve-klasik-dusunce/index.html -->
+  <url>
+    <loc>https://okankaplanedu.github.io/tr/kurslar/edebiyat/klasik-edebiyati-derinlemesine-anlamak-yorumlamak/aydinlanma-donemi-ve-klasik-dusunce/</loc>
+    <lastmod>2026-05-25</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <!-- /tr/kurslar/edebiyat/klasik-edebiyati-derinlemesine-anlamak-yorumlamak/bireyin-kesfi/index.html -->
+  <url>
+    <loc>https://okankaplanedu.github.io/tr/kurslar/edebiyat/klasik-edebiyati-derinlemesine-anlamak-yorumlamak/bireyin-kesfi/</loc>
+    <lastmod>2026-05-25</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <!-- /tr/kurslar/edebiyat/klasik-edebiyati-derinlemesine-anlamak-yorumlamak/duygu-akil-catisma-romantizm-realizm/index.html -->
+  <url>
+    <loc>https://okankaplanedu.github.io/tr/kurslar/edebiyat/klasik-edebiyati-derinlemesine-anlamak-yorumlamak/duygu-akil-catisma-romantizm-realizm/</loc>
+    <lastmod>2026-05-25</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <!-- /tr/kurslar/edebiyat/klasik-edebiyati-derinlemesine-anlamak-yorumlamak/edebi-donemlerin-birbirini-etkilemesi/index.html -->
+  <url>
+    <loc>https://okankaplanedu.github.io/tr/kurslar/edebiyat/klasik-edebiyati-derinlemesine-anlamak-yorumlamak/edebi-donemlerin-birbirini-etkilemesi/</loc>
+    <lastmod>2026-05-25</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <!-- /tr/kurslar/edebiyat/klasik-edebiyati-derinlemesine-anlamak-yorumlamak/evrensellik-yerellik-gerilimi/index.html -->
+  <url>
+    <loc>https://okankaplanedu.github.io/tr/kurslar/edebiyat/klasik-edebiyati-derinlemesine-anlamak-yorumlamak/evrensellik-yerellik-gerilimi/</loc>
+    <lastmod>2026-05-25</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <!-- /tr/kurslar/edebiyat/klasik-edebiyati-derinlemesine-anlamak-yorumlamak/giris-klasik-edebiyati-derinlemesine-anlamak-ve-yorumlamak/index.html -->
+  <url>
+    <loc>https://okankaplanedu.github.io/tr/kurslar/edebiyat/klasik-edebiyati-derinlemesine-anlamak-yorumlamak/giris-klasik-edebiyati-derinlemesine-anlamak-ve-yorumlamak/</loc>
+    <lastmod>2026-05-25</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <!-- /tr/kurslar/edebiyat/klasik-edebiyati-derinlemesine-anlamak-yorumlamak/insan-merkezli-anlati/index.html -->
+  <url>
+    <loc>https://okankaplanedu.github.io/tr/kurslar/edebiyat/klasik-edebiyati-derinlemesine-anlamak-yorumlamak/insan-merkezli-anlati/</loc>
+    <lastmod>2026-05-25</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <!-- /tr/kurslar/edebiyat/klasik-edebiyati-derinlemesine-anlamak-yorumlamak/insan-psikolojisi-klasik-edebiyat/index.html -->
+  <url>
+    <loc>https://okankaplanedu.github.io/tr/kurslar/edebiyat/klasik-edebiyati-derinlemesine-anlamak-yorumlamak/insan-psikolojisi-klasik-edebiyat/</loc>
+    <lastmod>2026-05-25</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <!-- /tr/kurslar/edebiyat/klasik-edebiyati-derinlemesine-anlamak-yorumlamak/kahraman-arketipleri-antik-edebiyat/index.html -->
+  <url>
+    <loc>https://okankaplanedu.github.io/tr/kurslar/edebiyat/klasik-edebiyati-derinlemesine-anlamak-yorumlamak/kahraman-arketipleri-antik-edebiyat/</loc>
+    <lastmod>2026-05-25</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <!-- /tr/kurslar/edebiyat/klasik-edebiyati-derinlemesine-anlamak-yorumlamak/kanon-nedir-kim-belirler/index.html -->
+  <url>
+    <loc>https://okankaplanedu.github.io/tr/kurslar/edebiyat/klasik-edebiyati-derinlemesine-anlamak-yorumlamak/kanon-nedir-kim-belirler/</loc>
+    <lastmod>2026-05-25</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <!-- /tr/kurslar/edebiyat/klasik-edebiyati-derinlemesine-anlamak-yorumlamak/klasik-algisinin-gunumuzdeki-yanlis-temsili/index.html -->
+  <url>
+    <loc>https://okankaplanedu.github.io/tr/kurslar/edebiyat/klasik-edebiyati-derinlemesine-anlamak-yorumlamak/klasik-algisinin-gunumuzdeki-yanlis-temsili/</loc>
+    <lastmod>2026-05-25</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <!-- /tr/kurslar/edebiyat/klasik-edebiyati-derinlemesine-anlamak-yorumlamak/klasik-edebiyat-derin-okuma-kursu/index.html -->
+  <url>
+    <loc>https://okankaplanedu.github.io/tr/kurslar/edebiyat/klasik-edebiyati-derinlemesine-anlamak-yorumlamak/klasik-edebiyat-derin-okuma-kursu/</loc>
+    <lastmod>2026-05-25</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <!-- /tr/kurslar/edebiyat/klasik-edebiyati-derinlemesine-anlamak-yorumlamak/klasik-edebiyat-donemleri-antik-cag-romantizm/index.html -->
+  <url>
+    <loc>https://okankaplanedu.github.io/tr/kurslar/edebiyat/klasik-edebiyati-derinlemesine-anlamak-yorumlamak/klasik-edebiyat-donemleri-antik-cag-romantizm/</loc>
+    <lastmod>2026-05-25</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <!-- /tr/kurslar/edebiyat/klasik-edebiyati-derinlemesine-anlamak-yorumlamak/klasik-edebiyati-okumayi-gercekten-ogrenin-derin-okuma-ve-edebi-analiz/index.html -->
+  <url>
+    <loc>https://okankaplanedu.github.io/tr/kurslar/edebiyat/klasik-edebiyati-derinlemesine-anlamak-yorumlamak/klasik-edebiyati-okumayi-gercekten-ogrenin-derin-okuma-ve-edebi-analiz/</loc>
+    <lastmod>2026-05-25</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <!-- /tr/kurslar/edebiyat/klasik-edebiyati-derinlemesine-anlamak-yorumlamak/klasik-edebiyatin-kavramsal-tanimi/index.html -->
+  <url>
+    <loc>https://okankaplanedu.github.io/tr/kurslar/edebiyat/klasik-edebiyati-derinlemesine-anlamak-yorumlamak/klasik-edebiyatin-kavramsal-tanimi/</loc>
+    <lastmod>2026-05-25</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <!-- /tr/kurslar/edebiyat/klasik-edebiyati-derinlemesine-anlamak-yorumlamak/klasik-edebiyatin-temel-ozellikleri/index.html -->
+  <url>
+    <loc>https://okankaplanedu.github.io/tr/kurslar/edebiyat/klasik-edebiyati-derinlemesine-anlamak-yorumlamak/klasik-edebiyatin-temel-ozellikleri/</loc>
+    <lastmod>2026-05-25</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <!-- /tr/kurslar/edebiyat/klasik-edebiyati-derinlemesine-anlamak-yorumlamak/klasik-kavraminin-tarihsel-kokeni/index.html -->
+  <url>
+    <loc>https://okankaplanedu.github.io/tr/kurslar/edebiyat/klasik-edebiyati-derinlemesine-anlamak-yorumlamak/klasik-kavraminin-tarihsel-kokeni/</loc>
+    <lastmod>2026-05-25</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <!-- /tr/kurslar/edebiyat/klasik-edebiyati-derinlemesine-anlamak-yorumlamak/mit-destan-tragedya-antik-edebiyat/index.html -->
+  <url>
+    <loc>https://okankaplanedu.github.io/tr/kurslar/edebiyat/klasik-edebiyati-derinlemesine-anlamak-yorumlamak/mit-destan-tragedya-antik-edebiyat/</loc>
+    <lastmod>2026-05-25</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <!-- /tr/kurslar/edebiyat/klasik-edebiyati-derinlemesine-anlamak-yorumlamak/orta-cag-klasik-edebiyati/index.html -->
+  <url>
+    <loc>https://okankaplanedu.github.io/tr/kurslar/edebiyat/klasik-edebiyati-derinlemesine-anlamak-yorumlamak/orta-cag-klasik-edebiyati/</loc>
+    <lastmod>2026-05-25</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <!-- /tr/kurslar/edebiyat/klasik-edebiyati-derinlemesine-anlamak-yorumlamak/romanin-yukselisi/index.html -->
+  <url>
+    <loc>https://okankaplanedu.github.io/tr/kurslar/edebiyat/klasik-edebiyati-derinlemesine-anlamak-yorumlamak/romanin-yukselisi/</loc>
+    <lastmod>2026-05-25</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <!-- /tr/kurslar/edebiyat/klasik-edebiyati-derinlemesine-anlamak-yorumlamak/romantizm-ve-realizme-gecis/index.html -->
+  <url>
+    <loc>https://okankaplanedu.github.io/tr/kurslar/edebiyat/klasik-edebiyati-derinlemesine-anlamak-yorumlamak/romantizm-ve-realizme-gecis/</loc>
+    <lastmod>2026-05-25</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <!-- /tr/kurslar/edebiyat/klasik-edebiyati-derinlemesine-anlamak-yorumlamak/ronesans-donemi-klasik-edebiyati/index.html -->
+  <url>
+    <loc>https://okankaplanedu.github.io/tr/kurslar/edebiyat/klasik-edebiyati-derinlemesine-anlamak-yorumlamak/ronesans-donemi-klasik-edebiyati/</loc>
+    <lastmod>2026-05-25</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <!-- /tr/kurslar/edebiyat/klasik-edebiyati-derinlemesine-anlamak-yorumlamak/tarihsel-kirilma-anlari-edebiyat-tarihi/index.html -->
+  <url>
+    <loc>https://okankaplanedu.github.io/tr/kurslar/edebiyat/klasik-edebiyati-derinlemesine-anlamak-yorumlamak/tarihsel-kirilma-anlari-edebiyat-tarihi/</loc>
+    <lastmod>2026-05-25</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <!-- /tr/kurslar/edebiyat/klasik-edebiyati-derinlemesine-anlamak-yorumlamak/temalara-giris-neden-ayni-konular/index.html -->
+  <url>
+    <loc>https://okankaplanedu.github.io/tr/kurslar/edebiyat/klasik-edebiyati-derinlemesine-anlamak-yorumlamak/temalara-giris-neden-ayni-konular/</loc>
+    <lastmod>2026-05-25</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <!-- /tr/kurslar/edebiyat/klasik-edebiyati-derinlemesine-anlamak-yorumlamak/tematik-derinlik-klasik-edebiyat-analiz/index.html -->
+  <url>
+    <loc>https://okankaplanedu.github.io/tr/kurslar/edebiyat/klasik-edebiyati-derinlemesine-anlamak-yorumlamak/tematik-derinlik-klasik-edebiyat-analiz/</loc>
+    <lastmod>2026-05-25</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <!-- /tr/kurslar/edebiyat/klasik-edebiyati-derinlemesine-anlamak-yorumlamak/toplumsal-gercekcilik-realizm-edebiyat/index.html -->
+  <url>
+    <loc>https://okankaplanedu.github.io/tr/kurslar/edebiyat/klasik-edebiyati-derinlemesine-anlamak-yorumlamak/toplumsal-gercekcilik-realizm-edebiyat/</loc>
+    <lastmod>2026-05-25</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <!-- /tr/kurslar/edebiyat/klasik-edebiyati-derinlemesine-anlamak-yorumlamak/zaman-hafiza-ve-metin-iliskisi-klasik-edebiyat/index.html -->
+  <url>
+    <loc>https://okankaplanedu.github.io/tr/kurslar/edebiyat/klasik-edebiyati-derinlemesine-anlamak-yorumlamak/zaman-hafiza-ve-metin-iliskisi-klasik-edebiyat/</loc>
+    <lastmod>2026-05-25</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <!-- /tr/kurslar/edebiyat/klasik-edebiyati-derinlemesine-anlamak-yorumlamak/zaman-yolculugu-edebi-donemler-genel-bakis/index.html -->
+  <url>
+    <loc>https://okankaplanedu.github.io/tr/kurslar/edebiyat/klasik-edebiyati-derinlemesine-anlamak-yorumlamak/zaman-yolculugu-edebi-donemler-genel-bakis/</loc>
+    <lastmod>2026-05-25</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <!-- /tr/kurslar/edebiyat/klasik-edebiyati-derinlemesine-anlamak-yorumlamak/zamana-direnç-klasik-edebiyat/index.html -->
+  <url>
+    <loc>https://okankaplanedu.github.io/tr/kurslar/edebiyat/klasik-edebiyati-derinlemesine-anlamak-yorumlamak/zamana-direnç-klasik-edebiyat/</loc>
+    <lastmod>2026-05-25</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <!-- /tr/kurslar/edebiyat/zihinsel-matris-gorsel-dusunme-ve-hikaye-uretimi/16-asamali-donusum-anlatisi-gorsel-dizilerde-bilgi-eylem-farkindalik/index.html -->
+  <url>
+    <loc>https://okankaplanedu.github.io/tr/kurslar/edebiyat/zihinsel-matris-gorsel-dusunme-ve-hikaye-uretimi/16-asamali-donusum-anlatisi-gorsel-dizilerde-bilgi-eylem-farkindalik/</loc>
+    <lastmod>2026-05-25</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <!-- /tr/kurslar/edebiyat/zihinsel-matris-gorsel-dusunme-ve-hikaye-uretimi/16-asamali-gorsel-anlati-cozumlemesi-dusunsel-okuma/index.html -->
+  <url>
+    <loc>https://okankaplanedu.github.io/tr/kurslar/edebiyat/zihinsel-matris-gorsel-dusunme-ve-hikaye-uretimi/16-asamali-gorsel-anlati-cozumlemesi-dusunsel-okuma/</loc>
+    <lastmod>2026-05-25</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <!-- /tr/kurslar/edebiyat/zihinsel-matris-gorsel-dusunme-ve-hikaye-uretimi/16-kare-gorsel-matris-bilissel-gelisim-donusum/index.html -->
+  <url>
+    <loc>https://okankaplanedu.github.io/tr/kurslar/edebiyat/zihinsel-matris-gorsel-dusunme-ve-hikaye-uretimi/16-kare-gorsel-matris-bilissel-gelisim-donusum/</loc>
+    <lastmod>2026-05-25</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <!-- /tr/kurslar/edebiyat/zihinsel-matris-gorsel-dusunme-ve-hikaye-uretimi/16-karelik-gorsel-akis-dusunce-algi-anlam-modeli/index.html -->
+  <url>
+    <loc>https://okankaplanedu.github.io/tr/kurslar/edebiyat/zihinsel-matris-gorsel-dusunme-ve-hikaye-uretimi/16-karelik-gorsel-akis-dusunce-algi-anlam-modeli/</loc>
+    <lastmod>2026-05-25</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <!-- /tr/kurslar/edebiyat/zihinsel-matris-gorsel-dusunme-ve-hikaye-uretimi/16-karelik-gorsel-anlati-algisal-donusum-ve-icsel-farkindalik-modeli/index.html -->
+  <url>
+    <loc>https://okankaplanedu.github.io/tr/kurslar/edebiyat/zihinsel-matris-gorsel-dusunme-ve-hikaye-uretimi/16-karelik-gorsel-anlati-algisal-donusum-ve-icsel-farkindalik-modeli/</loc>
+    <lastmod>2026-05-25</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <!-- /tr/kurslar/edebiyat/zihinsel-matris-gorsel-dusunme-ve-hikaye-uretimi/16-karelik-gorsel-anlati-sistemi-parcali-imgelerden-butunsel-dusunmeye/index.html -->
+  <url>
+    <loc>https://okankaplanedu.github.io/tr/kurslar/edebiyat/zihinsel-matris-gorsel-dusunme-ve-hikaye-uretimi/16-karelik-gorsel-anlati-sistemi-parcali-imgelerden-butunsel-dusunmeye/</loc>
+    <lastmod>2026-05-25</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <!-- /tr/kurslar/edebiyat/zihinsel-matris-gorsel-dusunme-ve-hikaye-uretimi/16-karelik-gorsel-matris-algi-zaman-ve-bilinc-katmanlariyla-okuma-modeli/index.html -->
+  <url>
+    <loc>https://okankaplanedu.github.io/tr/kurslar/edebiyat/zihinsel-matris-gorsel-dusunme-ve-hikaye-uretimi/16-karelik-gorsel-matris-algi-zaman-ve-bilinc-katmanlariyla-okuma-modeli/</loc>
+    <lastmod>2026-05-25</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <!-- /tr/kurslar/edebiyat/zihinsel-matris-gorsel-dusunme-ve-hikaye-uretimi/16-karelik-gorsel-matris-bilgi-deneyim-bilinc-donusum/index.html -->
+  <url>
+    <loc>https://okankaplanedu.github.io/tr/kurslar/edebiyat/zihinsel-matris-gorsel-dusunme-ve-hikaye-uretimi/16-karelik-gorsel-matris-bilgi-deneyim-bilinc-donusum/</loc>
+    <lastmod>2026-05-25</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <!-- /tr/kurslar/edebiyat/zihinsel-matris-gorsel-dusunme-ve-hikaye-uretimi/16-karelik-gorsel-matris-dis-dunyadan-icsel-bilince-donusum-sureci/index.html -->
+  <url>
+    <loc>https://okankaplanedu.github.io/tr/kurslar/edebiyat/zihinsel-matris-gorsel-dusunme-ve-hikaye-uretimi/16-karelik-gorsel-matris-dis-dunyadan-icsel-bilince-donusum-sureci/</loc>
+    <lastmod>2026-05-25</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <!-- /tr/kurslar/edebiyat/zihinsel-matris-gorsel-dusunme-ve-hikaye-uretimi/16-karelik-gorsel-matris-lineer-anlatidan-cok-katmanli-ogrenme-modeline-gecis/index.html -->
+  <url>
+    <loc>https://okankaplanedu.github.io/tr/kurslar/edebiyat/zihinsel-matris-gorsel-dusunme-ve-hikaye-uretimi/16-karelik-gorsel-matris-lineer-anlatidan-cok-katmanli-ogrenme-modeline-gecis/</loc>
+    <lastmod>2026-05-25</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <!-- /tr/kurslar/edebiyat/zihinsel-matris-gorsel-dusunme-ve-hikaye-uretimi/16-karelik-gorsel-ogrenme-matrisi-meraktan-bilincli-zihinsel-haritaya-donusum/index.html -->
+  <url>
+    <loc>https://okankaplanedu.github.io/tr/kurslar/edebiyat/zihinsel-matris-gorsel-dusunme-ve-hikaye-uretimi/16-karelik-gorsel-ogrenme-matrisi-meraktan-bilincli-zihinsel-haritaya-donusum/</loc>
+    <lastmod>2026-05-25</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <!-- /tr/kurslar/edebiyat/zihinsel-matris-gorsel-dusunme-ve-hikaye-uretimi/bos-kagit-algisi-ve-matris-cizgileri-ile-dusunceyi-yapilandirma-sureci/index.html -->
+  <url>
+    <loc>https://okankaplanedu.github.io/tr/kurslar/edebiyat/zihinsel-matris-gorsel-dusunme-ve-hikaye-uretimi/bos-kagit-algisi-ve-matris-cizgileri-ile-dusunceyi-yapilandirma-sureci/</loc>
+    <lastmod>2026-05-25</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <!-- /tr/kurslar/edebiyat/zihinsel-matris-gorsel-dusunme-ve-hikaye-uretimi/bu-ne-asamasi-ile-saf-gozlem-ve-algisal-sifirlama-sureci/index.html -->
+  <url>
+    <loc>https://okankaplanedu.github.io/tr/kurslar/edebiyat/zihinsel-matris-gorsel-dusunme-ve-hikaye-uretimi/bu-ne-asamasi-ile-saf-gozlem-ve-algisal-sifirlama-sureci/</loc>
+    <lastmod>2026-05-25</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <!-- /tr/kurslar/edebiyat/zihinsel-matris-gorsel-dusunme-ve-hikaye-uretimi/donusum-transformasyon-dinamik-anlati-gorsel-matris-sistemleri/index.html -->
+  <url>
+    <loc>https://okankaplanedu.github.io/tr/kurslar/edebiyat/zihinsel-matris-gorsel-dusunme-ve-hikaye-uretimi/donusum-transformasyon-dinamik-anlati-gorsel-matris-sistemleri/</loc>
+    <lastmod>2026-05-25</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <!-- /tr/kurslar/edebiyat/zihinsel-matris-gorsel-dusunme-ve-hikaye-uretimi/gorsel-anlati-matrisi-16-karede-bilissel-ve-duygusal-donusum-okumasi/index.html -->
+  <url>
+    <loc>https://okankaplanedu.github.io/tr/kurslar/edebiyat/zihinsel-matris-gorsel-dusunme-ve-hikaye-uretimi/gorsel-anlati-matrisi-16-karede-bilissel-ve-duygusal-donusum-okumasi/</loc>
+    <lastmod>2026-05-25</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <!-- /tr/kurslar/edebiyat/zihinsel-matris-gorsel-dusunme-ve-hikaye-uretimi/gorsel-donusum-matrisi-16-kare-algi-sistem-insan-deneyimi/index.html -->
+  <url>
+    <loc>https://okankaplanedu.github.io/tr/kurslar/edebiyat/zihinsel-matris-gorsel-dusunme-ve-hikaye-uretimi/gorsel-donusum-matrisi-16-kare-algi-sistem-insan-deneyimi/</loc>
+    <lastmod>2026-05-25</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <!-- /tr/kurslar/edebiyat/zihinsel-matris-gorsel-dusunme-ve-hikaye-uretimi/gorsel-donusum-matrisi-belirsizlikten-bilincli-akisa-16-asamali-okuma/index.html -->
+  <url>
+    <loc>https://okankaplanedu.github.io/tr/kurslar/edebiyat/zihinsel-matris-gorsel-dusunme-ve-hikaye-uretimi/gorsel-donusum-matrisi-belirsizlikten-bilincli-akisa-16-asamali-okuma/</loc>
+    <lastmod>2026-05-25</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <!-- /tr/kurslar/edebiyat/zihinsel-matris-gorsel-dusunme-ve-hikaye-uretimi/hangi-neden-nasil-sorulari-ile-matris-sisteminde-soyut-dusunme-ve-yapisal-analiz/index.html -->
+  <url>
+    <loc>https://okankaplanedu.github.io/tr/kurslar/edebiyat/zihinsel-matris-gorsel-dusunme-ve-hikaye-uretimi/hangi-neden-nasil-sorulari-ile-matris-sisteminde-soyut-dusunme-ve-yapisal-analiz/</loc>
+    <lastmod>2026-05-25</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <!-- /tr/kurslar/edebiyat/zihinsel-matris-gorsel-dusunme-ve-hikaye-uretimi/imge-sistemi-ile-zihinsel-kodlama-ruyalarin-ve-fikirlerin-yapisal-anlatisi/index.html -->
+  <url>
+    <loc>https://okankaplanedu.github.io/tr/kurslar/edebiyat/zihinsel-matris-gorsel-dusunme-ve-hikaye-uretimi/imge-sistemi-ile-zihinsel-kodlama-ruyalarin-ve-fikirlerin-yapisal-anlatisi/</loc>
+    <lastmod>2026-05-25</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <!-- /tr/kurslar/edebiyat/zihinsel-matris-gorsel-dusunme-ve-hikaye-uretimi/karakter-donusum-matrisi-16-sahne-gelisim-modeli/index.html -->
+  <url>
+    <loc>https://okankaplanedu.github.io/tr/kurslar/edebiyat/zihinsel-matris-gorsel-dusunme-ve-hikaye-uretimi/karakter-donusum-matrisi-16-sahne-gelisim-modeli/</loc>
+    <lastmod>2026-05-25</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <!-- /tr/kurslar/edebiyat/zihinsel-matris-gorsel-dusunme-ve-hikaye-uretimi/katman-algi-giris-zemini-saf-gozlem-algisal-sifirlama/index.html -->
+  <url>
+    <loc>https://okankaplanedu.github.io/tr/kurslar/edebiyat/zihinsel-matris-gorsel-dusunme-ve-hikaye-uretimi/katman-algi-giris-zemini-saf-gozlem-algisal-sifirlama/</loc>
+    <lastmod>2026-05-25</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <!-- /tr/kurslar/edebiyat/zihinsel-matris-gorsel-dusunme-ve-hikaye-uretimi/katman-anlam-zihinsel-isleme-soyut-sorgulama-iliskisel-yapi/index.html -->
+  <url>
+    <loc>https://okankaplanedu.github.io/tr/kurslar/edebiyat/zihinsel-matris-gorsel-dusunme-ve-hikaye-uretimi/katman-anlam-zihinsel-isleme-soyut-sorgulama-iliskisel-yapi/</loc>
+    <lastmod>2026-05-25</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <!-- /tr/kurslar/edebiyat/zihinsel-matris-gorsel-dusunme-ve-hikaye-uretimi/katman-anlatim-yapilandirma-dusunceyi-aktarilabilir-yapiya-donusturme/index.html -->
+  <url>
+    <loc>https://okankaplanedu.github.io/tr/kurslar/edebiyat/zihinsel-matris-gorsel-dusunme-ve-hikaye-uretimi/katman-anlatim-yapilandirma-dusunceyi-aktarilabilir-yapiya-donusturme/</loc>
+    <lastmod>2026-05-25</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <!-- /tr/kurslar/edebiyat/zihinsel-matris-gorsel-dusunme-ve-hikaye-uretimi/katman-sembolik-anlatim-derinlik-sistemi-gorsel-kodlama/index.html -->
+  <url>
+    <loc>https://okankaplanedu.github.io/tr/kurslar/edebiyat/zihinsel-matris-gorsel-dusunme-ve-hikaye-uretimi/katman-sembolik-anlatim-derinlik-sistemi-gorsel-kodlama/</loc>
+    <lastmod>2026-05-25</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <!-- /tr/kurslar/edebiyat/zihinsel-matris-gorsel-dusunme-ve-hikaye-uretimi/katmanli-blok-sisteminde-zihinsel-evren-tasarimi-ve-ag-tabanli-dusunce-yapisi/index.html -->
+  <url>
+    <loc>https://okankaplanedu.github.io/tr/kurslar/edebiyat/zihinsel-matris-gorsel-dusunme-ve-hikaye-uretimi/katmanli-blok-sisteminde-zihinsel-evren-tasarimi-ve-ag-tabanli-dusunce-yapisi/</loc>
+    <lastmod>2026-05-25</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <!-- /tr/kurslar/edebiyat/zihinsel-matris-gorsel-dusunme-ve-hikaye-uretimi/lineer-anlatidan-cok-katmanli-ogrenme-modeline-gecis/index.html -->
+  <url>
+    <loc>https://okankaplanedu.github.io/tr/kurslar/edebiyat/zihinsel-matris-gorsel-dusunme-ve-hikaye-uretimi/lineer-anlatidan-cok-katmanli-ogrenme-modeline-gecis/</loc>
+    <lastmod>2026-05-25</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <!-- /tr/kurslar/edebiyat/zihinsel-matris-gorsel-dusunme-ve-hikaye-uretimi/matris-tabanli-dusuncenin-somutlastirilmasi-kagit-uzerinde-canli-zihinsel-harita/index.html -->
+  <url>
+    <loc>https://okankaplanedu.github.io/tr/kurslar/edebiyat/zihinsel-matris-gorsel-dusunme-ve-hikaye-uretimi/matris-tabanli-dusuncenin-somutlastirilmasi-kagit-uzerinde-canli-zihinsel-harita/</loc>
+    <lastmod>2026-05-25</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <!-- /tr/kurslar/edebiyat/zihinsel-matris-gorsel-dusunme-ve-hikaye-uretimi/random-matris-hikaye-sistemi-donusen-anlati/index.html -->
+  <url>
+    <loc>https://okankaplanedu.github.io/tr/kurslar/edebiyat/zihinsel-matris-gorsel-dusunme-ve-hikaye-uretimi/random-matris-hikaye-sistemi-donusen-anlati/</loc>
+    <lastmod>2026-05-25</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <!-- /tr/kurslar/edebiyat/zihinsel-matris-gorsel-dusunme-ve-hikaye-uretimi/sebep-sonuc-analitik-16-kare-gorsel-matris-modulu/index.html -->
+  <url>
+    <loc>https://okankaplanedu.github.io/tr/kurslar/edebiyat/zihinsel-matris-gorsel-dusunme-ve-hikaye-uretimi/sebep-sonuc-analitik-16-kare-gorsel-matris-modulu/</loc>
+    <lastmod>2026-05-25</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <!-- /tr/kurslar/edebiyat/zihinsel-matris-gorsel-dusunme-ve-hikaye-uretimi/zihinsel-donusumun-16-asamasi-dusunceden-farkindaliga-gorsel-matris-okumasi/index.html -->
+  <url>
+    <loc>https://okankaplanedu.github.io/tr/kurslar/edebiyat/zihinsel-matris-gorsel-dusunme-ve-hikaye-uretimi/zihinsel-donusumun-16-asamasi-dusunceden-farkindaliga-gorsel-matris-okumasi/</loc>
+    <lastmod>2026-05-25</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <!-- /tr/kurslar/edebiyat/zihinsel-matris-gorsel-dusunme-ve-hikaye-uretimi/zihinsel-gorsel-matris-dusuncenin-16-asamali-olusum-ve-donusum-sureci/index.html -->
+  <url>
+    <loc>https://okankaplanedu.github.io/tr/kurslar/edebiyat/zihinsel-matris-gorsel-dusunme-ve-hikaye-uretimi/zihinsel-gorsel-matris-dusuncenin-16-asamali-olusum-ve-donusum-sureci/</loc>
+    <lastmod>2026-05-25</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <!-- /tr/kurslar/edebiyat/zihinsel-matris-gorsel-dusunme-ve-hikaye-uretimi/zihinsel-matris-yapisi-ile-dusuncelerin-organizasyonu-ve-cok-boyutlu-farkindalik/index.html -->
+  <url>
+    <loc>https://okankaplanedu.github.io/tr/kurslar/edebiyat/zihinsel-matris-gorsel-dusunme-ve-hikaye-uretimi/zihinsel-matris-yapisi-ile-dusuncelerin-organizasyonu-ve-cok-boyutlu-farkindalik/</loc>
+    <lastmod>2026-05-25</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <!-- /tr/kurslar/edebiyat/zihinsel-matris-gorsel-dusunme-ve-hikaye-uretimi/zihinsel-matrisin-otomatiklesmesi-sembolik-dusunce-ile-algisal-haritalama/index.html -->
+  <url>
+    <loc>https://okankaplanedu.github.io/tr/kurslar/edebiyat/zihinsel-matris-gorsel-dusunme-ve-hikaye-uretimi/zihinsel-matrisin-otomatiklesmesi-sembolik-dusunce-ile-algisal-haritalama/</loc>
+    <lastmod>2026-05-25</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
 
-  <sitemap>
-    <loc>https://okankaplanedu.github.io/sitemaps/lessons.xml</loc>
-  </sitemap>
-
-</sitemapindex>
+</urlset>
