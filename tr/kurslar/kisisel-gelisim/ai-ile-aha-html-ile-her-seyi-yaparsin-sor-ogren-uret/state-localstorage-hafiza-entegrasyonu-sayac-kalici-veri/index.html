@@ -1,0 +1,159 @@
+<!DOCTYPE html><html lang="tr">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<title>Akla Mühür Vurmak: State’i LocalStorage ile Kalıcı Hale Getirme | Okan Kaplan Edu</title>
+<meta name="title" content="Akla Mühür Vurmak: State’i LocalStorage ile Kalıcı Hale Getirme | Okan Kaplan Edu">
+<meta name="description" content="JavaScript state mantığını LocalStorage ile birleştirerek kalıcı veri yapısını öğren. Sayaç uygulamasında sayının tarayıcı hafızasında saklanmasını sağlayarak modern web uygulamalarının temelini keşfet.">
+<meta name="keywords" content="localStorage dersi, javascript kalıcı veri, state persistence nedir, sayaç localStorage örneği, frontend hafıza yönetimi, web storage API öğrenme, kalıcı state yönetimi, HTML JS sayaç geliştirme, browser storage kullanımı, web uygulama hafızası, javascript state kaydetme, sayfa yenileme veri koruma, frontend veri saklama, localStorage tutorial, vanilla JS storage, kalıcı sayaç uygulaması, web development state persistence, UI state storage, modern frontend temel, browser memory concept">
+<meta name="author" content="Okan Kaplan">
+<meta name="creator" content="Okan Kaplan">
+<meta name="publisher" content="Okan Kaplan Academy">
+<meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
+<meta name="googlebot" content="index, follow">
+<meta name="bingbot" content="index, follow">
+<meta name="theme-color" content="#0d6efd">
+<meta name="color-scheme" content="light">
+<meta name="referrer" content="strict-origin-when-cross-origin">
+<meta name="msapplication-TileColor" content="#0d6efd">
+<link rel="canonical" href="https://okankaplanedu.github.io/tr/kurslar/kisisel-gelisim/ai-ile-aha-html-ile-her-seyi-yaparsn-sor-ogren-uret/state-localstorage-hafiza-entegrasyonu-sayac-kalici-veri/">
+<meta http-equiv="content-language" content="tr">
+<meta name="language" content="tr">
+<link rel="icon" href="/favicon.ico" sizes="any">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="manifest" href="/manifest.json">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Okan Kaplan Edu">
+<meta property="og:locale" content="tr_TR">
+<meta property="og:title" content="Akla Mühür Vurmak: State’i LocalStorage ile Kalıcı Hale Getirme | Okan Kaplan Edu">
+<meta property="og:description" content="JavaScript state mantığını LocalStorage ile birleştirerek kalıcı veri yapısını öğren. Sayaç uygulamasında sayının tarayıcı hafızasında saklanmasını sağlayarak modern web uygulamalarının temelini keşfet.">
+<meta property="og:url" content="https://okankaplanedu.github.io/">
+<meta property="og:image" content="https://okankaplanedu.github.io/assets/cover.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Okan Kaplan Academy IoT Courses Cover">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Akla Mühür Vurmak: State’i LocalStorage ile Kalıcı Hale Getirme | Okan Kaplan Edu">
+<meta name="twitter:description" content="JavaScript state mantığını LocalStorage ile birleştirerek kalıcı veri yapısını öğren. Sayaç uygulamasında sayının tarayıcı hafızasında saklanmasını sağlayarak modern web uygulamalarının temelini keşfet.">
+<meta name="twitter:image" content="https://okankaplanedu.github.io/assets/cover.jpg">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "name": "Okan Kaplan Edu",
+  "url": "https://okankaplanedu.github.io/",
+  "description": "Akla Mühür Vurmak (Hafıza Entegrasyonu) dersi, JavaScript’te state (durum) kavramının LocalStorage ile birleştirilerek kalıcı veri yönetimine dönüştürülmesini öğreten ileri başlangıç seviyesinde bir web geliştirme eğitimidir. Bu senaryoda sayaç uygulamasındaki state, tarayıcı hafızasına kaydedilerek sayfa yenilense bile verinin korunması sağlanır. Amaç, geçici state kavramını kalıcı uygulama mantığına dönüştürmek ve modern frontend geliştirmede veri sürekliliğini kavratmaktır.",
+  "publisher": {
+    "@type": "Organization",
+    "name": "Okan Kaplan Edu"
+  }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "name": "Okan Kaplan Edu",
+  "url": "https://okankaplanedu.github.io/",
+  "logo": "https://okankaplanedu.github.io/assets/logo.png",
+  "sameAs": [
+    "https://github.com/okankaplanedu",
+    "https://github.com/bandanee"
+  ]
+}
+</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="dns-prefetch" href="//cdn.jsdelivr.net">
+<link rel="dns-prefetch" href="//cdnjs.cloudflare.com">
+<link rel="dns-prefetch" href="//raw.githubusercontent.com">
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="preload" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+<noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"></noscript>
+<script>
+  fetch("https://raw.githubusercontent.com/bandanee/root/main/import/head.html")
+    .then(r => r.text())
+    .then(t => document.head.insertAdjacentHTML("beforeend", t))
+    .catch(e => console.error(e));
+</script>
+<link href="https://okankaplanedu.github.io/assets/css/ind.css" rel="stylesheet">
+<link href="https://okankaplanedu.github.io/assets/css/cat.css" rel="stylesheet">
+</head>
+<body>
+<div id="cat-header-container"></div>
+<script>
+fetch("https://okankaplanedu.github.io/cat-header-container.html")
+  .then(response => response.text())
+  .then(html => {
+    document.getElementById("cat-header-container").innerHTML = html;
+  })
+  .catch(err => console.error("Header load error:", err));
+</script>
+
+<div class="offcanvas offcanvas-start" id="mL"><div class="offcanvas-body"><iframe src="https://okankaplanedu.github.io/archive.html" style="width:100%;height:100%;border:0;"></iframe></div></div>
+<div class="offcanvas offcanvas-end" id="mR"><div class="offcanvas-body"><iframe src="https://okankaplanedu.github.io/toc.html" style="width:100%;height:100%;border:0;"></iframe></div></div>
+
+<main role="main">
+ <div id="main1"></div> 
+<article itemscope itemtype="https://schema.org/Article">
+<h1 itemprop="headline">Akla Mühür Vurmak: State’i LocalStorage ile Kalıcı Hale Getirme</h1>
+
+    <section itemprop="articleBody">
+      <h2>Geçici Aklı Kalıcı Hale Getirmek</h2><p>Önceki aşamada uygulamanın “state” kavramı öğrenilmişti. Ancak bu state geçiciydi. Sayfa yenilendiğinde her şey sıfırlanıyordu.</p><p>Bu derste amaç, bu geçici aklı kalıcı hale getirmektir. Yani uygulama artık unutmaz hale gelir.</p><p><br></p><p><a href="https://www.udemy.com/course/ai-ile-aha-html-ile-her-seyi-yaparsn-sor-ogren-uret/" rel="noopener noreferrer" target="_blank"><strong>https://www.udemy.com/course/ai-ile-aha-html-ile-her-seyi-yaparsn-sor-ogren-uret/</strong></a></p><p><br></p><h2>LocalStorage Nedir?</h2><p>LocalStorage, tarayıcı içinde veri saklamayı sağlayan bir hafıza alanıdır. Bu alan sayesinde:</p><ul><li>Veriler kaybolmaz</li><li>Sayfa yenilense bile korunur</li><li>Kullanıcıya özel durumlar saklanabilir</li></ul><p>Bu yapı, modern web uygulamalarının temel hafıza sistemlerinden biridir.</p><p><br></p><h2>State ve Hafıza Birleşimi</h2><p>Bu aşamada iki kavram birleşir:</p><ul><li>State: Anlık durum</li><li>LocalStorage: Kalıcı hafıza</li></ul><p>Bu birleşim sayesinde uygulama artık sadece çalışan değil, aynı zamanda hatırlayan bir yapıya dönüşür.</p><p><br></p><h2>Sayaç Uygulamasında Kalıcılık Mantığı</h2><p>Sayaç uygulaması artık sadece artıp azalan bir sayı değildir. Aynı zamanda bu sayıyı saklayan bir sisteme dönüşür.</p><p>Sistem şöyle çalışır:</p><ul><li>Sayı değişir</li><li>Yeni değer hafızaya kaydedilir</li><li>Sayfa açıldığında hafızadan okunur</li><li>Son değer ekrana yazılır</li></ul><h2>AI ile Kalıcı Sistem Tasarımı</h2><p>Bu aşamada yapay zekâ, sadece hesaplama değil, veri yönetimi konusunda da rehber olur.</p><p>Sistem:</p><ul><li>State’i günceller</li><li>Veriyi hafızaya yazar</li><li>Sayfa açılışında veriyi geri yükler</li></ul><p>Bu yapı, gerçek dünya uygulamalarının temelidir.</p><p><br></p><h2>Kursiyerin Uygulama Süreci: Hafıza Kilidini Takmak</h2><p>Öğrenci bu aşamada mevcut sayaç sistemini geliştirir.</p><p>Süreç:</p><ul><li>Kod güncellenir</li><li>State değiştikçe veri kaydedilir</li><li>Sayfa açıldığında veri okunur</li><li>Sistem test edilir</li></ul><p>Bu adım sonunda uygulama artık kalıcı hale gelir.</p><p><br></p><h2>Sayfa Yenileme Testi: Hafıza Kontrolü</h2><p>Bu aşamada kritik bir test yapılır:</p><ul><li>Sayı 5 yapılır</li><li>Sayfa yenilenir</li><li>Eğer ekranda 5 görünüyorsa sistem başarılıdır</li></ul><p>Bu test, kalıcı veri yapısının çalıştığını gösterir.</p><p><br></p><h2>Aha! Anı: Kalıcı Uygulama Gerçeği</h2><p>Bu dersin en önemli farkındalığı şudur:</p><ul><li>State tek başına geçicidir</li><li>Hafıza ile birleştiğinde kalıcı olur</li><li>Uygulama artık unutmaz</li></ul><p>Bu, frontend geliştirmede önemli bir eşiktir.</p><p><br></p><h2>Metafor: Akla Mühür Vurmak</h2><p>Bu dersin metaforu oldukça güçlüdür:</p><ul><li>State = akıl</li><li>LocalStorage = kasa</li><li>Kaydetmek = mühür vurmak</li></ul><p>Bu yapı sayesinde bilgi kaybolmaz ve sistem süreklilik kazanır.</p><p><br></p><h2>Sonuç: İlk Kalıcı Uygulama</h2><p>Bu adım ile birlikte sayaç uygulaması artık sadece çalışan bir sistem değil, aynı zamanda hatırlayan bir yapıya dönüşür.</p><p>Bu aşamada öğrenci:</p><ul><li>State ve localStorage ilişkisini öğrenir</li><li>Kalıcı veri mantığını kavrar</li><li>Modern web uygulamalarının temelini anlar</li></ul><p>Bu adım, üretici zihnin “kalıcı sistem tasarımı” seviyesine geçtiği noktadır.</p><p><br></p>
+    </section>
+ 
+    
+  <!-- YouTube Playlist Link -->
+  <div class="yt-link-container">
+    <a href="https://www.youtube.com/playlist?list=PLINEf8JBXAopHpGHa_4d4PSnwCtlZvYW_" target="_blank" rel="noopener noreferrer" class="yt-play-button">
+      <span class="play-icon">&#9658;</span> View Playlist
+    </a>
+  </div>
+
+ 
+    
+    
+  </article>
+<div id="main2"></div> 
+<div id="main3"></div>  
+</main>
+
+ 
+<div id="footer-wrap" role="contentinfo"></div>
+
+ 
+ 
+ <script>
+fetch("https://okankaplanedu.github.io/main1.html")
+  .then(response => response.text())
+  .then(html => {
+    document.getElementById("main1").innerHTML = html;
+  })
+  .catch(err => console.error("Header load error:", err));
+
+fetch("https://okankaplanedu.github.io/main2.html")
+  .then(response => response.text())
+  .then(html => {
+    document.getElementById("main2").innerHTML = html;
+  })
+  .catch(err => console.error("Header load error:", err));
+
+fetch("https://okankaplanedu.github.io/main3.html")
+  .then(response => response.text())
+  .then(html => {
+    document.getElementById("main3").innerHTML = html;
+  })
+  .catch(err => console.error("Header load error:", err));
+
+  fetch('https://raw.githubusercontent.com/bandanee/root/main/import/footer.html')
+    .then(r => r.text())
+    .then(h => document.getElementById('footer-wrap').innerHTML = h)
+    .catch(e => console.error('Footer load error:', e));
+</script>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
