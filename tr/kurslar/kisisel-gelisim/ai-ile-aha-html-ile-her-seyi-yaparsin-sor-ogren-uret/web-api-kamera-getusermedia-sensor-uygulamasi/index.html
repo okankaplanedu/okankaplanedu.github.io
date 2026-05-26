@@ -1,0 +1,159 @@
+<!DOCTYPE html><html lang="tr">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<title>Sensörleri Uyandırmak: getUserMedia ile Tarayıcı Kamerasını Kullanma | Okan Kaplan Edu</title>
+<meta name="title" content="Sensörleri Uyandırmak: getUserMedia ile Tarayıcı Kamerasını Kullanma | Okan Kaplan Edu">
+<meta name="description" content="Web API kullanarak getUserMedia ile tarayıcı üzerinden kameraya erişmeyi öğren. Cihaz sensörlerini aktif hale getirerek web sayfalarının donanım kontrolünü nasıl yaptığını keşfet.">
+<meta name="keywords" content="getUserMedia nedir, web api kamera açma, javascript kamera erişimi, browser camera api, frontend device access, web sensörleri kullanımı, html5 camera stream, mediaDevices getUserMedia örnek, web api tutorial, javascript video stream, tarayıcı kamera örneği, frontend device integration, web hardware access, media stream api, live camera html js, web development advanced, browser permission camera, video element stream, device sensors web, interactive web api project">
+<meta name="author" content="Okan Kaplan">
+<meta name="creator" content="Okan Kaplan">
+<meta name="publisher" content="Okan Kaplan Academy">
+<meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
+<meta name="googlebot" content="index, follow">
+<meta name="bingbot" content="index, follow">
+<meta name="theme-color" content="#0d6efd">
+<meta name="color-scheme" content="light">
+<meta name="referrer" content="strict-origin-when-cross-origin">
+<meta name="msapplication-TileColor" content="#0d6efd">
+<link rel="canonical" href="https://okankaplanedu.github.io/tr/kurslar/kisisel-gelisim/ai-ile-aha-html-ile-her-seyi-yaparsn-sor-ogren-uret/web-api-kamera-getusermedia-sensor-uygulamasi/">
+<meta http-equiv="content-language" content="tr">
+<meta name="language" content="tr">
+<link rel="icon" href="/favicon.ico" sizes="any">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="manifest" href="/manifest.json">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Okan Kaplan Edu">
+<meta property="og:locale" content="tr_TR">
+<meta property="og:title" content="Sensörleri Uyandırmak: getUserMedia ile Tarayıcı Kamerasını Kullanma | Okan Kaplan Edu">
+<meta property="og:description" content="Web API kullanarak getUserMedia ile tarayıcı üzerinden kameraya erişmeyi öğren. Cihaz sensörlerini aktif hale getirerek web sayfalarının donanım kontrolünü nasıl yaptığını keşfet.">
+<meta property="og:url" content="https://okankaplanedu.github.io/">
+<meta property="og:image" content="https://okankaplanedu.github.io/assets/cover.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Okan Kaplan Academy IoT Courses Cover">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Sensörleri Uyandırmak: getUserMedia ile Tarayıcı Kamerasını Kullanma | Okan Kaplan Edu">
+<meta name="twitter:description" content="Web API kullanarak getUserMedia ile tarayıcı üzerinden kameraya erişmeyi öğren. Cihaz sensörlerini aktif hale getirerek web sayfalarının donanım kontrolünü nasıl yaptığını keşfet.">
+<meta name="twitter:image" content="https://okankaplanedu.github.io/assets/cover.jpg">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "name": "Okan Kaplan Edu",
+  "url": "https://okankaplanedu.github.io/",
+  "description": "Sensörleri Uyandırmak (Cihaz Yetenekleri) dersi, modern web API’leri kullanarak tarayıcı üzerinden cihaz donanımlarına erişmeyi öğreten ileri başlangıç seviyesinde bir web geliştirme konusudur. Bu senaryoda getUserMedia API kullanılarak kameraya erişim sağlanır ve canlı video akışı tarayıcı içinde görüntülenir. Amaç, web sayfalarının sadece statik içerik değil, cihaz donanımlarını kontrol edebilen interaktif sistemler olduğunu kavratmaktır.",
+  "publisher": {
+    "@type": "Organization",
+    "name": "Okan Kaplan Edu"
+  }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "name": "Okan Kaplan Edu",
+  "url": "https://okankaplanedu.github.io/",
+  "logo": "https://okankaplanedu.github.io/assets/logo.png",
+  "sameAs": [
+    "https://github.com/okankaplanedu",
+    "https://github.com/bandanee"
+  ]
+}
+</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="dns-prefetch" href="//cdn.jsdelivr.net">
+<link rel="dns-prefetch" href="//cdnjs.cloudflare.com">
+<link rel="dns-prefetch" href="//raw.githubusercontent.com">
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="preload" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+<noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"></noscript>
+<script>
+  fetch("https://raw.githubusercontent.com/bandanee/root/main/import/head.html")
+    .then(r => r.text())
+    .then(t => document.head.insertAdjacentHTML("beforeend", t))
+    .catch(e => console.error(e));
+</script>
+<link href="https://okankaplanedu.github.io/assets/css/ind.css" rel="stylesheet">
+<link href="https://okankaplanedu.github.io/assets/css/cat.css" rel="stylesheet">
+</head>
+<body>
+<div id="cat-header-container"></div>
+<script>
+fetch("https://okankaplanedu.github.io/cat-header-container.html")
+  .then(response => response.text())
+  .then(html => {
+    document.getElementById("cat-header-container").innerHTML = html;
+  })
+  .catch(err => console.error("Header load error:", err));
+</script>
+
+<div class="offcanvas offcanvas-start" id="mL"><div class="offcanvas-body"><iframe src="https://okankaplanedu.github.io/archive.html" style="width:100%;height:100%;border:0;"></iframe></div></div>
+<div class="offcanvas offcanvas-end" id="mR"><div class="offcanvas-body"><iframe src="https://okankaplanedu.github.io/toc.html" style="width:100%;height:100%;border:0;"></iframe></div></div>
+
+<main role="main">
+ <div id="main1"></div> 
+<article itemscope itemtype="https://schema.org/Article">
+<h1 itemprop="headline">Sensörleri Uyandırmak: getUserMedia ile Tarayıcı Kamerasını Kullanma</h1>
+
+    <section itemprop="articleBody">
+      <h2>Web API ve Donanım Erişimi</h2><p>Modern tarayıcılar sadece sayfa göstermekle kalmaz, aynı zamanda cihaz donanımlarına da erişebilir. Bu özellik Web API’ler sayesinde mümkündür.</p><p>Bu API’ler ile:</p><ul><li>Kamera açılabilir</li><li>Mikrofon kullanılabilir</li><li>Sensör verileri alınabilir</li></ul><p><br></p><p><a href="https://www.udemy.com/course/ai-ile-aha-html-ile-her-seyi-yaparsn-sor-ogren-uret/" rel="noopener noreferrer" target="_blank"><strong><em><u>https://www.udemy.com/course/ai-ile-aha-html-ile-her-seyi-yaparsn-sor-ogren-uret/</u></em></strong></a></p><p><br></p><h2>getUserMedia Nedir?</h2><p>getUserMedia, tarayıcının kamera ve mikrofon gibi medya cihazlarına erişmesini sağlayan bir Web API’dir.</p><p>Bu sistem:</p><ul><li>Kullanıcıdan izin ister</li><li>Cihazdan video akışı alır</li><li>Bu akışı sayfada gösterir</li></ul><h2>Kamera Erişimi Mantığı</h2><p>Kamera erişimi, bir medya akışının tarayıcıya aktarılmasıdır.</p><p>Bu süreç:</p><ul><li>Kullanıcıdan izin alınması</li><li>Kameranın aktif hale gelmesi</li><li>Görüntünün video alanına aktarılması</li></ul><p>şeklinde çalışır.</p><p><br></p><h2>Sensörleri Uyandırmak Metaforu</h2><p>Bu dersin temel metaforu “sensörleri uyandırmak”tır.</p><ul><li>Kamera = göz</li><li>Tarayıcı = kontrol paneli</li><li>Web sayfası = komuta merkezi</li></ul><p>Bu yapı sayesinde cihazın donanımı kontrol edilebilir hale gelir.</p><p><br></p><h2>AI ile Kamera Sistemi Tasarımı</h2><p>Yapay zekâ bu süreçte Web API kullanımını kolaylaştırır.</p><p>Sistem:</p><ul><li>Kamera erişimini başlatır</li><li>Video akışını alır</li><li>Sayfada canlı görüntü oluşturur</li></ul><p>Bu yapı modern web uygulamalarının temelidir.</p><p><br></p><h2>Kursiyerin Uygulama Süreci: İlk Donanım Erişimi</h2><p>Öğrenci bu aşamada tarayıcı üzerinden kamerayı çalıştırır.</p><p>Süreç:</p><ul><li>HTML dosyası oluşturulur</li><li>Video elementi eklenir</li><li>getUserMedia çağrısı yapılır</li><li>İzin verilir</li><li>Görüntü ekranda gösterilir</li></ul><h2>Güvenlik ve İzin Sistemi</h2><p>Kamera erişimi otomatik değildir. Tarayıcı güvenlik nedeniyle kullanıcı izni ister.</p><p>Bu sistem:</p><ul><li>Gizliliği korur</li><li>Kullanıcı kontrolünü sağlar</li><li>Güvenli erişim oluşturur</li></ul><h2>Aha! Anı: Tarayıcı Donanım Kontrolü</h2><p>Bu dersin en önemli farkındalığı şudur:</p><ul><li>Web sayfası sadece içerik değildir</li><li>Cihaz donanımına erişebilir</li><li>Gerçek zamanlı veri alabilir</li></ul><h2>Metafor: Kumanda Paneli Gerçeği</h2><p>Bu sistem şu şekilde düşünülebilir:</p><ul><li>Kamera = sensör</li><li>Tarayıcı = kontrol merkezi</li><li>Web sayfası = komuta ekranı</li></ul><p>Bu yapı web teknolojisinin gücünü gösterir.</p><p><br></p><h2>Sonuç: İlk Donanım Entegrasyonu</h2><p>getUserMedia kullanımı ile birlikte uygulama artık sadece bir yazılım değil, cihazla etkileşen bir sistem haline gelir.</p><p>Bu aşamada öğrenci:</p><ul><li>Web API kavramını öğrenir</li><li>Kamera erişimini kullanır</li><li>Donanım entegrasyonunu kavrar</li></ul><p>Bu adım, üretici zihnin “cihaz kontrolü ve sensör yönetimi” seviyesine geçtiği noktadır.</p>
+    </section>
+ 
+    
+  <!-- YouTube Playlist Link -->
+  <div class="yt-link-container">
+    <a href="https://www.youtube.com/playlist?list=PLINEf8JBXAopHpGHa_4d4PSnwCtlZvYW_" target="_blank" rel="noopener noreferrer" class="yt-play-button">
+      <span class="play-icon">&#9658;</span> View Playlist
+    </a>
+  </div>
+
+ 
+    
+    
+  </article>
+<div id="main2"></div> 
+<div id="main3"></div>  
+</main>
+
+ 
+<div id="footer-wrap" role="contentinfo"></div>
+
+ 
+ 
+ <script>
+fetch("https://okankaplanedu.github.io/main1.html")
+  .then(response => response.text())
+  .then(html => {
+    document.getElementById("main1").innerHTML = html;
+  })
+  .catch(err => console.error("Header load error:", err));
+
+fetch("https://okankaplanedu.github.io/main2.html")
+  .then(response => response.text())
+  .then(html => {
+    document.getElementById("main2").innerHTML = html;
+  })
+  .catch(err => console.error("Header load error:", err));
+
+fetch("https://okankaplanedu.github.io/main3.html")
+  .then(response => response.text())
+  .then(html => {
+    document.getElementById("main3").innerHTML = html;
+  })
+  .catch(err => console.error("Header load error:", err));
+
+  fetch('https://raw.githubusercontent.com/bandanee/root/main/import/footer.html')
+    .then(r => r.text())
+    .then(h => document.getElementById('footer-wrap').innerHTML = h)
+    .catch(e => console.error('Footer load error:', e));
+</script>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
