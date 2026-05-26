@@ -1,0 +1,159 @@
+<!DOCTYPE html><html lang="tr">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<title>Sinir Sistemi ve Beyin (JavaScript): HTML Sayfasına Etkileşim Kazandırma | Okan Kaplan Edu</title>
+<meta name="title" content="Sinir Sistemi ve Beyin (JavaScript): HTML Sayfasına Etkileşim Kazandırma | Okan Kaplan Edu">
+<meta name="description" content="JavaScript ile HTML ve CSS yapısına etkileşim kazandırmayı öğren. Butona tıklanınca çalışan basit bir sinir sistemi oluşturarak web sayfalarının nasıl canlı ve tepki veren yapılara dönüştüğünü keşfet.">
+<meta name="keywords" content="JavaScript dersi, JS buton tıklama, web etkileşim sistemi, frontend JavaScript başlangıç, HTML CSS JS ilişkisi, sinir sistemi metafor JS, event listener öğrenme, onclick örneği, web sayfası interaktif yapma, DOM etkileşimi, JavaScript başlangıç eğitimi, buton tıklama mesajı, frontend logic dersi, web geliştirme temel JS, organizma JS metafor, canlı web sayfası, kullanıcı etkileşimi JS, UI etkileşim sistemi, JavaScript öğrenme senaryosu, dinamik web sayfası">
+<meta name="author" content="Okan Kaplan">
+<meta name="creator" content="Okan Kaplan">
+<meta name="publisher" content="Okan Kaplan Academy">
+<meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
+<meta name="googlebot" content="index, follow">
+<meta name="bingbot" content="index, follow">
+<meta name="theme-color" content="#0d6efd">
+<meta name="color-scheme" content="light">
+<meta name="referrer" content="strict-origin-when-cross-origin">
+<meta name="msapplication-TileColor" content="#0d6efd">
+<link rel="canonical" href="https://okankaplanedu.github.io/tr/kurslar/kisisel-gelisim/ai-ile-aha-html-ile-her-seyi-yaparsn-sor-ogren-uret/javascript-sinir-sistemi-ve-beyin-js-etkilesim-dersi/">
+<meta http-equiv="content-language" content="tr">
+<meta name="language" content="tr">
+<link rel="icon" href="/favicon.ico" sizes="any">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="manifest" href="/manifest.json">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Okan Kaplan Edu">
+<meta property="og:locale" content="tr_TR">
+<meta property="og:title" content="Sinir Sistemi ve Beyin (JavaScript): HTML Sayfasına Etkileşim Kazandırma | Okan Kaplan Edu">
+<meta property="og:description" content="JavaScript ile HTML ve CSS yapısına etkileşim kazandırmayı öğren. Butona tıklanınca çalışan basit bir sinir sistemi oluşturarak web sayfalarının nasıl canlı ve tepki veren yapılara dönüştüğünü keşfet.">
+<meta property="og:url" content="https://okankaplanedu.github.io/">
+<meta property="og:image" content="https://okankaplanedu.github.io/assets/cover.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Okan Kaplan Academy IoT Courses Cover">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Sinir Sistemi ve Beyin (JavaScript): HTML Sayfasına Etkileşim Kazandırma | Okan Kaplan Edu">
+<meta name="twitter:description" content="JavaScript ile HTML ve CSS yapısına etkileşim kazandırmayı öğren. Butona tıklanınca çalışan basit bir sinir sistemi oluşturarak web sayfalarının nasıl canlı ve tepki veren yapılara dönüştüğünü keşfet.">
+<meta name="twitter:image" content="https://okankaplanedu.github.io/assets/cover.jpg">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "name": "Okan Kaplan Edu",
+  "url": "https://okankaplanedu.github.io/",
+  "description": "Sinir Sistemi ve Beyin (JavaScript) dersi, kullanıcıların web sayfalarına etkileşim kazandırmayı öğrenmesini sağlayan temel JavaScript eğitimidir. Bu senaryoda JavaScript, bir organizmanın sinir sistemi ve beyni olarak metaforik şekilde ele alınır. HTML iskeleti ve CSS estetiği üzerine eklenen JavaScript katmanı, buton tıklamaları gibi kullanıcı etkileşimlerine tepki veren canlı bir yapı oluşturur. Amaç, statik sayfaları dinamik ve kullanıcıyla iletişim kurabilen sistemlere dönüştürmektir.",
+  "publisher": {
+    "@type": "Organization",
+    "name": "Okan Kaplan Edu"
+  }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "name": "Okan Kaplan Edu",
+  "url": "https://okankaplanedu.github.io/",
+  "logo": "https://okankaplanedu.github.io/assets/logo.png",
+  "sameAs": [
+    "https://github.com/okankaplanedu",
+    "https://github.com/bandanee"
+  ]
+}
+</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="dns-prefetch" href="//cdn.jsdelivr.net">
+<link rel="dns-prefetch" href="//cdnjs.cloudflare.com">
+<link rel="dns-prefetch" href="//raw.githubusercontent.com">
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="preload" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+<noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"></noscript>
+<script>
+  fetch("https://raw.githubusercontent.com/bandanee/root/main/import/head.html")
+    .then(r => r.text())
+    .then(t => document.head.insertAdjacentHTML("beforeend", t))
+    .catch(e => console.error(e));
+</script>
+<link href="https://okankaplanedu.github.io/assets/css/ind.css" rel="stylesheet">
+<link href="https://okankaplanedu.github.io/assets/css/cat.css" rel="stylesheet">
+</head>
+<body>
+<div id="cat-header-container"></div>
+<script>
+fetch("https://okankaplanedu.github.io/cat-header-container.html")
+  .then(response => response.text())
+  .then(html => {
+    document.getElementById("cat-header-container").innerHTML = html;
+  })
+  .catch(err => console.error("Header load error:", err));
+</script>
+
+<div class="offcanvas offcanvas-start" id="mL"><div class="offcanvas-body"><iframe src="https://okankaplanedu.github.io/archive.html" style="width:100%;height:100%;border:0;"></iframe></div></div>
+<div class="offcanvas offcanvas-end" id="mR"><div class="offcanvas-body"><iframe src="https://okankaplanedu.github.io/toc.html" style="width:100%;height:100%;border:0;"></iframe></div></div>
+
+<main role="main">
+ <div id="main1"></div> 
+<article itemscope itemtype="https://schema.org/Article">
+<h1 itemprop="headline">Sinir Sistemi ve Beyin (JavaScript): HTML Sayfasına Etkileşim Kazandırma</h1>
+
+    <section itemprop="articleBody">
+      <h2>Organizmanın Canlanması: Tepkisizlikten Davranışa Geçiş</h2><p>HTML iskeleti oluşturuldu, CSS ile görünüm kazandırıldı. Ancak sistem hâlâ sessizdir. Hiçbir etkileşime tepki vermez.</p><p>Bu noktada devreye JavaScript girer. Artık sayfa sadece görünen bir yapı değil, davranış gösteren bir organizmaya dönüşür.</p><p><br></p><p><a href="https://www.udemy.com/course/ai-ile-aha-html-ile-her-seyi-yaparsn-sor-ogren-uret/" rel="noopener noreferrer" target="_blank"><strong><em><u>https://www.udemy.com/course/ai-ile-aha-html-ile-her-seyi-yaparsn-sor-ogren-uret/</u></em></strong></a></p><p><br></p><h2>JavaScript’in Rolü: Dijital Beyin</h2><p>JavaScript, web sayfasının karar mekanizmasıdır. Kullanıcı bir işlem yaptığında ne olacağını belirler.</p><p>Bu derste JavaScript şu şekilde konumlanır:</p><ul><li>Sinir sistemi</li><li>Beyin</li><li>Karar verici mekanizma</li></ul><p>HTML “ne var” sorusunu, CSS “nasıl görünüyor” sorusunu cevaplar. JavaScript ise “ne yapıyor” sorusunu yanıtlar.</p><p><br></p><h2>Etkileşim Mantığı: Buton ve Tepki</h2><p>Bu senaryoda en temel etkileşim noktası butondur. Kullanıcı butona tıkladığında sistem bir tepki verir.</p><p>İstenen davranış:</p><ul><li>Butona tıklama algılanır</li><li>Sistem çalışır</li><li>Ekranda bir mesaj gösterilir</li><li>Mesaj: “Organizma Uyandı!”</li></ul><p>Bu basit yapı, etkileşim mantığının temelidir.</p><p><br></p><h2>AI ile Sinir Sistemi Kurulumu</h2><p>Yapay zekâdan istenen yapı oldukça nettir. Amaç karmaşık sistemler değil, temel bir etkileşim oluşturmaktır.</p><p>Sistem:</p><ul><li>Buton tıklamasını algılar</li><li>Bir fonksiyon çalıştırır</li><li>Kullanıcıya geri bildirim verir</li></ul><p>Bu yapı, JavaScript’in en temel kullanım biçimidir.</p><p><br></p><h2>Kursiyerin Uygulama Süreci: Organizmayı Uyandırmak</h2><p>Öğrenci bu aşamada mevcut HTML dosyasını günceller.</p><p>Süreç:</p><ul><li>Dosya açılır</li><li>JavaScript bölümü eklenir</li><li>Kod dosyanın sonuna yerleştirilir</li><li>Dosya kaydedilir</li><li>Tarayıcıda test edilir</li></ul><p>Bu işlem sonunda sayfa artık tepki veren bir sistem haline gelir.</p><p><br></p><h2>İlk Tepki Anı: Canlı Sistem Deneyimi</h2><p>Butona basıldığında ekranda bir mesaj görünür. Bu an, öğrenme sürecinde kritik bir dönüşümdür.</p><p>Kullanıcı şunu deneyimler:</p><ul><li>Sayfa artık cevap veriyor</li><li>Sistem kullanıcıyı “anlıyor” gibi davranıyor</li><li>Etkileşim gerçek zamanlı gerçekleşiyor</li></ul><p>Bu, statik yapının kırıldığı andır.</p><p><br></p><h2>Aha! Anı: Yaşayan Web Sayfası</h2><p>Bu dersin en önemli farkındalığı şudur:</p><ul><li>Sayfa artık sadece bir görsel değildir</li><li>Kullanıcıyla etkileşime girer</li><li>Davranış gösterebilir</li></ul><p>Bu noktada öğrenci, bir web sayfası değil bir sistem inşa ettiğini fark eder.</p><p><br></p><h2>Sinir Sistemi Metaforu: JS’in Rolü</h2><p>Bu dersin metaforu “sinir sistemi”dir. Çünkü:</p><ul><li>HTML = iskelet</li><li>CSS = görünüm</li><li>JavaScript = sinir sistemi ve beyin</li></ul><p>Bu yapı sayesinde sistem canlı gibi davranır ve tepki verir.</p><p><br></p><h2>Sonuç: İlk Canlı Sistem</h2><p>JavaScript ile birlikte web sayfası artık sadece bir yapı değildir. Kullanıcıyla etkileşime giren canlı bir organizmaya dönüşmüştür.</p><p>Bu aşamada öğrenci:</p><ul><li>Etkileşim mantığını öğrenir</li><li>JavaScript’in rolünü kavrar</li><li>Dinamik sistem düşüncesine geçer</li></ul><p>Bu adım, üretici zihnin “canlı sistem kurma” seviyesine ulaştığı noktadır.</p>
+    </section>
+ 
+    
+  <!-- YouTube Playlist Link -->
+  <div class="yt-link-container">
+    <a href="https://www.youtube.com/playlist?list=PLINEf8JBXAopHpGHa_4d4PSnwCtlZvYW_" target="_blank" rel="noopener noreferrer" class="yt-play-button">
+      <span class="play-icon">&#9658;</span> View Playlist
+    </a>
+  </div>
+
+ 
+    
+    
+  </article>
+<div id="main2"></div> 
+<div id="main3"></div>  
+</main>
+
+ 
+<div id="footer-wrap" role="contentinfo"></div>
+
+ 
+ 
+ <script>
+fetch("https://okankaplanedu.github.io/main1.html")
+  .then(response => response.text())
+  .then(html => {
+    document.getElementById("main1").innerHTML = html;
+  })
+  .catch(err => console.error("Header load error:", err));
+
+fetch("https://okankaplanedu.github.io/main2.html")
+  .then(response => response.text())
+  .then(html => {
+    document.getElementById("main2").innerHTML = html;
+  })
+  .catch(err => console.error("Header load error:", err));
+
+fetch("https://okankaplanedu.github.io/main3.html")
+  .then(response => response.text())
+  .then(html => {
+    document.getElementById("main3").innerHTML = html;
+  })
+  .catch(err => console.error("Header load error:", err));
+
+  fetch('https://raw.githubusercontent.com/bandanee/root/main/import/footer.html')
+    .then(r => r.text())
+    .then(h => document.getElementById('footer-wrap').innerHTML = h)
+    .catch(e => console.error('Footer load error:', e));
+</script>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
