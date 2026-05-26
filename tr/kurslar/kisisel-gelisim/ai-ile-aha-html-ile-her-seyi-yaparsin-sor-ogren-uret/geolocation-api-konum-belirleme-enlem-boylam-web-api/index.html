@@ -1,0 +1,159 @@
+<!DOCTYPE html><html lang="tr">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<title>Konum Belirleme (Geolocation API): Tarayıcı ile Enlem ve Boylam Alma | Okan Kaplan Edu</title>
+<meta name="title" content="Konum Belirleme (Geolocation API): Tarayıcı ile Enlem ve Boylam Alma | Okan Kaplan Edu">
+<meta name="description" content="Geolocation API kullanarak tarayıcıdan konum bilgisi almayı öğren. Kullanıcı izniyle enlem ve boylam verilerini çekerek web uygulamalarına konum farkındalığı kazandır.">
+<meta name="keywords" content="geolocation api nedir, javascript konum alma, enlem boylam html js, browser location api, frontend konum belirleme, web api geolocation örnek, kullanıcı konum izni, navigator geolocation kullanımı, live location javascript, web development location api, map integration basics, html js location project, device location access, browser permission location, coordinates display js, frontend location tracking, geolocation tutorial, real time coordinates web, javascript location example, web app navigation system">
+<meta name="author" content="Okan Kaplan">
+<meta name="creator" content="Okan Kaplan">
+<meta name="publisher" content="Okan Kaplan Academy">
+<meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
+<meta name="googlebot" content="index, follow">
+<meta name="bingbot" content="index, follow">
+<meta name="theme-color" content="#0d6efd">
+<meta name="color-scheme" content="light">
+<meta name="referrer" content="strict-origin-when-cross-origin">
+<meta name="msapplication-TileColor" content="#0d6efd">
+<link rel="canonical" href="https://okankaplanedu.github.io/tr/kurslar/kisisel-gelisim/ai-ile-aha-html-ile-her-seyi-yaparsn-sor-ogren-uret/geolocation-api-konum-belirleme-enlem-boylam-web-api/">
+<meta http-equiv="content-language" content="tr">
+<meta name="language" content="tr">
+<link rel="icon" href="/favicon.ico" sizes="any">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="manifest" href="/manifest.json">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Okan Kaplan Edu">
+<meta property="og:locale" content="tr_TR">
+<meta property="og:title" content="Konum Belirleme (Geolocation API): Tarayıcı ile Enlem ve Boylam Alma | Okan Kaplan Edu">
+<meta property="og:description" content="Geolocation API kullanarak tarayıcıdan konum bilgisi almayı öğren. Kullanıcı izniyle enlem ve boylam verilerini çekerek web uygulamalarına konum farkındalığı kazandır.">
+<meta property="og:url" content="https://okankaplanedu.github.io/">
+<meta property="og:image" content="https://okankaplanedu.github.io/assets/cover.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Okan Kaplan Academy IoT Courses Cover">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Konum Belirleme (Geolocation API): Tarayıcı ile Enlem ve Boylam Alma | Okan Kaplan Edu">
+<meta name="twitter:description" content="Geolocation API kullanarak tarayıcıdan konum bilgisi almayı öğren. Kullanıcı izniyle enlem ve boylam verilerini çekerek web uygulamalarına konum farkındalığı kazandır.">
+<meta name="twitter:image" content="https://okankaplanedu.github.io/assets/cover.jpg">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "name": "Okan Kaplan Edu",
+  "url": "https://okankaplanedu.github.io/",
+  "description": "Konum Belirleme (Geolocation API) dersi, modern web API’lerini kullanarak tarayıcı üzerinden kullanıcının konum bilgisine erişmeyi öğreten bir web geliştirme eğitimidir. Bu senaryoda kullanıcıdan konum izni alınır ve enlem-boylam (latitude-longitude) bilgileri ekranda gösterilir. Amaç, web uygulamalarının cihazın coğrafi konumunu algılayarak daha akıllı ve bağlama duyarlı sistemler oluşturabilmesini kavratmaktır.",
+  "publisher": {
+    "@type": "Organization",
+    "name": "Okan Kaplan Edu"
+  }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "name": "Okan Kaplan Edu",
+  "url": "https://okankaplanedu.github.io/",
+  "logo": "https://okankaplanedu.github.io/assets/logo.png",
+  "sameAs": [
+    "https://github.com/okankaplanedu",
+    "https://github.com/bandanee"
+  ]
+}
+</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="dns-prefetch" href="//cdn.jsdelivr.net">
+<link rel="dns-prefetch" href="//cdnjs.cloudflare.com">
+<link rel="dns-prefetch" href="//raw.githubusercontent.com">
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="preload" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+<noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"></noscript>
+<script>
+  fetch("https://raw.githubusercontent.com/bandanee/root/main/import/head.html")
+    .then(r => r.text())
+    .then(t => document.head.insertAdjacentHTML("beforeend", t))
+    .catch(e => console.error(e));
+</script>
+<link href="https://okankaplanedu.github.io/assets/css/ind.css" rel="stylesheet">
+<link href="https://okankaplanedu.github.io/assets/css/cat.css" rel="stylesheet">
+</head>
+<body>
+<div id="cat-header-container"></div>
+<script>
+fetch("https://okankaplanedu.github.io/cat-header-container.html")
+  .then(response => response.text())
+  .then(html => {
+    document.getElementById("cat-header-container").innerHTML = html;
+  })
+  .catch(err => console.error("Header load error:", err));
+</script>
+
+<div class="offcanvas offcanvas-start" id="mL"><div class="offcanvas-body"><iframe src="https://okankaplanedu.github.io/archive.html" style="width:100%;height:100%;border:0;"></iframe></div></div>
+<div class="offcanvas offcanvas-end" id="mR"><div class="offcanvas-body"><iframe src="https://okankaplanedu.github.io/toc.html" style="width:100%;height:100%;border:0;"></iframe></div></div>
+
+<main role="main">
+ <div id="main1"></div> 
+<article itemscope itemtype="https://schema.org/Article">
+<h1 itemprop="headline">Konum Belirleme (Geolocation API): Tarayıcı ile Enlem ve Boylam Alma</h1>
+
+    <section itemprop="articleBody">
+      <h2>Konum Farkındalığı ve Web</h2><p>Modern web uygulamaları yalnızca veri göstermez, aynı zamanda kullanıcıyı bulunduğu konuma göre anlayabilir.</p><p><br></p><p><a href="https://www.udemy.com/course/ai-ile-aha-html-ile-her-seyi-yaparsn-sor-ogren-uret/" rel="noopener noreferrer" target="_blank"><strong><em><u>https://www.udemy.com/course/ai-ile-aha-html-ile-her-seyi-yaparsn-sor-ogren-uret/</u></em></strong></a></p><p><br></p><p>Bu yetenek sayesinde:</p><ul><li>Yerel içerik sunulabilir</li><li>Harita sistemleri çalışır</li><li>Konuma özel servisler geliştirilebilir</li></ul><h2>Geolocation API Nedir?</h2><p>Geolocation API, tarayıcının cihazın konum bilgilerini almasını sağlayan bir Web API’dir.</p><p>Bu API:</p><ul><li>Kullanıcıdan izin ister</li><li>Cihazın GPS veya ağ verisini kullanır</li><li>Enlem ve boylam döndürür</li></ul><h2>Konum Verisi Mantığı</h2><p>Konum bilgisi iki temel değerden oluşur:</p><ul><li>Enlem (Latitude)</li><li>Boylam (Longitude)</li></ul><p>Bu iki değer, dünya üzerindeki kesin konumu belirler.</p><p><br></p><h2>İzin Sistemi ve Güvenlik</h2><p>Konum verisi hassas bir bilgidir. Bu nedenle tarayıcı doğrudan erişim vermez.</p><p>Sistem:</p><ul><li>Kullanıcıdan izin ister</li><li>Reddetme seçeneği sunar</li><li>Sadece onay sonrası veri verir</li></ul><h2>AI ile Konum Sistemi Tasarımı</h2><p>Yapay zekâ bu süreçte konum verisini işleyen bir yardımcıdır.</p><p>Sistem:</p><ul><li>Konum isteği başlatır</li><li>Veriyi alır</li><li>Ekrana yansıtır</li></ul><h2>Kursiyerin Uygulama Süreci: İlk Konum Erişimi</h2><p>Öğrenci bu aşamada cihazın konum sistemine bağlanır.</p><p>Süreç:</p><ul><li>Buton eklenir</li><li>Geolocation çağrısı yapılır</li><li>İzin verilir</li><li>Koordinatlar alınır</li><li>Ekranda gösterilir</li></ul><h2>Gerçek Zamanlı Konum Algısı</h2><p>Bu sistem sayesinde uygulama kullanıcıyı “nerede olduğunu bilen” bir yapıya dönüşür.</p><p>Bu özellik:</p><ul><li>Harita uygulamalarında</li><li>Navigasyon sistemlerinde</li><li>Konum bazlı servislerde kullanılır</li></ul><h2>Aha! Anı: Dünya Üzerinde Farkındalık</h2><p>Bu dersin en önemli farkındalığı şudur:</p><ul><li>Uygulama artık sadece ekran değil</li><li>Gerçek dünyayı algılar</li><li>Kullanıcı konumunu bilir</li></ul><h2>Metafor: Dijital Navigasyon Sistemi</h2><p>Bu yapı şöyle düşünülebilir:</p><ul><li>Geolocation API = GPS sensörü</li><li>Tarayıcı = kontrol merkezi</li><li>Web sayfası = navigasyon ekranı</li></ul><p>Bu yapı cihazı dünya ile bağlar.</p><p><br></p><h2>Sonuç: İlk Konum Tabanlı Uygulama</h2><p>Geolocation API ile birlikte uygulama artık gerçek dünyayla bağlantı kurabilen bir sisteme dönüşür.</p><p>Bu aşamada öğrenci:</p><ul><li>Konum API kullanımını öğrenir</li><li>Enlem-boylam verisini işler</li><li>Konum tabanlı mantığı kavrar</li></ul><p>Bu adım, üretici zihnin “mekânsal farkındalık ve cihaz entegrasyonu” seviyesine geçtiği noktadır.</p><p><br></p>
+    </section>
+ 
+    
+  <!-- YouTube Playlist Link -->
+  <div class="yt-link-container">
+    <a href="https://www.youtube.com/playlist?list=PLINEf8JBXAopHpGHa_4d4PSnwCtlZvYW_" target="_blank" rel="noopener noreferrer" class="yt-play-button">
+      <span class="play-icon">&#9658;</span> View Playlist
+    </a>
+  </div>
+
+ 
+    
+    
+  </article>
+<div id="main2"></div> 
+<div id="main3"></div>  
+</main>
+
+ 
+<div id="footer-wrap" role="contentinfo"></div>
+
+ 
+ 
+ <script>
+fetch("https://okankaplanedu.github.io/main1.html")
+  .then(response => response.text())
+  .then(html => {
+    document.getElementById("main1").innerHTML = html;
+  })
+  .catch(err => console.error("Header load error:", err));
+
+fetch("https://okankaplanedu.github.io/main2.html")
+  .then(response => response.text())
+  .then(html => {
+    document.getElementById("main2").innerHTML = html;
+  })
+  .catch(err => console.error("Header load error:", err));
+
+fetch("https://okankaplanedu.github.io/main3.html")
+  .then(response => response.text())
+  .then(html => {
+    document.getElementById("main3").innerHTML = html;
+  })
+  .catch(err => console.error("Header load error:", err));
+
+  fetch('https://raw.githubusercontent.com/bandanee/root/main/import/footer.html')
+    .then(r => r.text())
+    .then(h => document.getElementById('footer-wrap').innerHTML = h)
+    .catch(e => console.error('Footer load error:', e));
+</script>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
