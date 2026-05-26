@@ -190,17 +190,7 @@ body{
 
 <script>
 
-if (!sessionStorage.getItem('courses_auto_refreshed')) {
-
-    localStorage.removeItem(CONFIG.cacheKey);
-
-    sessionStorage.setItem(
-        'courses_auto_refreshed',
-        'true'
-    );
-
-    window.location.reload();
-}
+ 
 
 fetch("https://raw.githubusercontent.com/bandanee/root/main/import/head.html")
 .then(r => r.text())
@@ -288,21 +278,24 @@ Preparing courses...
 <script>
 
 const CONFIG = {
-
     owner: "okankaplanedu",
-
     repo: "okankaplanedu.github.io",
-
     branch: "main",
-
     baseFolder: "tr/kurslar/kisisel-gelisim/ai-ile-aha-html-ile-her-seyi-yaparsin-sor-ogren-uret",
-
     cacheKey: "ok_ai-aha_cache_v1",
-
     cacheTime: 3600000,
-
     fetchDelay: 120
 };
+
+// 🔽 BURAYA
+if (!sessionStorage.getItem('courses_auto_refreshed')) {
+
+    localStorage.removeItem(CONFIG.cacheKey);
+
+    sessionStorage.setItem('courses_auto_refreshed', 'true');
+
+    window.location.reload();
+}
 
 let masonryGrid;
 
