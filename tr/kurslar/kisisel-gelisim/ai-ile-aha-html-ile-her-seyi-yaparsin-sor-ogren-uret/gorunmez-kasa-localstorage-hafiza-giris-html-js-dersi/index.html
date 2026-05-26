@@ -1,0 +1,159 @@
+<!DOCTYPE html><html lang="tr">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<title>Görünmez Kasa: LocalStorage ile Tarayıcı Hafıza Sistemi (HTML & JS Dersi) | Okan Kaplan Edu</title>
+<meta name="title" content="Görünmez Kasa: LocalStorage ile Tarayıcı Hafıza Sistemi (HTML & JS Dersi) | Okan Kaplan Edu">
+<meta name="description" content="Tarayıcı LocalStorage yapısını öğrenerek görünmez bir hafıza sistemi oluştur. Butona tıklanınca veriyi kaydeden basit JavaScript mantığıyla web sayfalarının nasıl veri sakladığını keşfet.">
+<meta name="keywords" content="LocalStorage dersi, JavaScript hafıza sistemi, tarayıcı veri saklama, HTML JS eğitim, web storage öğrenme, frontend veri kaydetme, local storage nedir, basit JavaScript örnek, buton tıklama hafıza, web geliştirme başlangıç, tarayıcı içi veri, görünmez veri sistemi, frontend öğrenme projesi, HTML JS etkileşim, dijital fabrika dersi, web storage tutorial, kullanıcı durumu kaydetme, state management başlangıç, browser memory system, interaktif web öğrenme">
+<meta name="author" content="Okan Kaplan">
+<meta name="creator" content="Okan Kaplan">
+<meta name="publisher" content="Okan Kaplan Academy">
+<meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
+<meta name="googlebot" content="index, follow">
+<meta name="bingbot" content="index, follow">
+<meta name="theme-color" content="#0d6efd">
+<meta name="color-scheme" content="light">
+<meta name="referrer" content="strict-origin-when-cross-origin">
+<meta name="msapplication-TileColor" content="#0d6efd">
+<link rel="canonical" href="https://okankaplanedu.github.io/tr/kurslar/kisisel-gelisim/ai-ile-aha-html-ile-her-seyi-yaparsn-sor-ogren-uret/gorunmez-kasa-localstorage-hafiza-giris-html-js-dersi/">
+<meta http-equiv="content-language" content="tr">
+<meta name="language" content="tr">
+<link rel="icon" href="/favicon.ico" sizes="any">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="manifest" href="/manifest.json">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Okan Kaplan Edu">
+<meta property="og:locale" content="tr_TR">
+<meta property="og:title" content="Görünmez Kasa: LocalStorage ile Tarayıcı Hafıza Sistemi (HTML & JS Dersi) | Okan Kaplan Edu">
+<meta property="og:description" content="Tarayıcı LocalStorage yapısını öğrenerek görünmez bir hafıza sistemi oluştur. Butona tıklanınca veriyi kaydeden basit JavaScript mantığıyla web sayfalarının nasıl veri sakladığını keşfet.">
+<meta property="og:url" content="https://okankaplanedu.github.io/">
+<meta property="og:image" content="https://okankaplanedu.github.io/assets/cover.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Okan Kaplan Academy IoT Courses Cover">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Görünmez Kasa: LocalStorage ile Tarayıcı Hafıza Sistemi (HTML & JS Dersi) | Okan Kaplan Edu">
+<meta name="twitter:description" content="Tarayıcı LocalStorage yapısını öğrenerek görünmez bir hafıza sistemi oluştur. Butona tıklanınca veriyi kaydeden basit JavaScript mantığıyla web sayfalarının nasıl veri sakladığını keşfet.">
+<meta name="twitter:image" content="https://okankaplanedu.github.io/assets/cover.jpg">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "name": "Okan Kaplan Edu",
+  "url": "https://okankaplanedu.github.io/",
+  "description": "Görünmez Kasa (LocalStorage) dersi, kullanıcıların tarayıcı içinde veri saklama mantığını öğrenmesini sağlayan temel bir web geliştirme eğitimidir. Bu senaryoda LocalStorage, fabrikanın görünmez hafızası olarak metaforik şekilde anlatılır ve buton etkileşimi ile tarayıcıya veri kaydedilmesi sağlanır. Amaç, kullanıcıya web sayfalarının sadece görsel değil aynı zamanda veri tutabilen sistemler olduğunu öğretmek ve basit JavaScript ile kalıcı durum yönetimi mantığını kavratmaktır.",
+  "publisher": {
+    "@type": "Organization",
+    "name": "Okan Kaplan Edu"
+  }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "name": "Okan Kaplan Edu",
+  "url": "https://okankaplanedu.github.io/",
+  "logo": "https://okankaplanedu.github.io/assets/logo.png",
+  "sameAs": [
+    "https://github.com/okankaplanedu",
+    "https://github.com/bandanee"
+  ]
+}
+</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="dns-prefetch" href="//cdn.jsdelivr.net">
+<link rel="dns-prefetch" href="//cdnjs.cloudflare.com">
+<link rel="dns-prefetch" href="//raw.githubusercontent.com">
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="preload" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+<noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"></noscript>
+<script>
+  fetch("https://raw.githubusercontent.com/bandanee/root/main/import/head.html")
+    .then(r => r.text())
+    .then(t => document.head.insertAdjacentHTML("beforeend", t))
+    .catch(e => console.error(e));
+</script>
+<link href="https://okankaplanedu.github.io/assets/css/ind.css" rel="stylesheet">
+<link href="https://okankaplanedu.github.io/assets/css/cat.css" rel="stylesheet">
+</head>
+<body>
+<div id="cat-header-container"></div>
+<script>
+fetch("https://okankaplanedu.github.io/cat-header-container.html")
+  .then(response => response.text())
+  .then(html => {
+    document.getElementById("cat-header-container").innerHTML = html;
+  })
+  .catch(err => console.error("Header load error:", err));
+</script>
+
+<div class="offcanvas offcanvas-start" id="mL"><div class="offcanvas-body"><iframe src="https://okankaplanedu.github.io/archive.html" style="width:100%;height:100%;border:0;"></iframe></div></div>
+<div class="offcanvas offcanvas-end" id="mR"><div class="offcanvas-body"><iframe src="https://okankaplanedu.github.io/toc.html" style="width:100%;height:100%;border:0;"></iframe></div></div>
+
+<main role="main">
+ <div id="main1"></div> 
+<article itemscope itemtype="https://schema.org/Article">
+<h1 itemprop="headline">Görünmez Kasa: LocalStorage ile Tarayıcı Hafıza Sistemi (HTML & JS Dersi)</h1>
+
+    <section itemprop="articleBody">
+      <h2>Fabrikanın Görünmeyen Katmanı: Hafıza Sistemi</h2><p>Fabrika artık çalışıyor, ışıkları yanıyor ve makine tepki veriyor. Ancak sistem her yenilendiğinde her şeyin sıfırdan başlaması gerçek bir üretim ortamı için yeterli değildir.</p><p>Bu noktada devreye görünmeyen bir katman girer. Bu katman, tarayıcının içinde saklanan özel bir hafıza alanıdır. Kullanıcı fark etmez ama sistem içeride bilgiyi tutmaya devam eder.</p><p>Bu yapı, fabrikanın hafızasıdır.</p><p><br></p><p><a href="https://www.udemy.com/course/ai-ile-aha-html-ile-her-seyi-yaparsn-sor-ogren-uret/" rel="noopener noreferrer" target="_blank"><strong><em><u>https://www.udemy.com/course/ai-ile-aha-html-ile-her-seyi-yaparsn-sor-ogren-uret/</u></em></strong></a></p><p><br></p><h2>Görünmez Kasa Mantığı: LocalStorage</h2><p>Bu dersin temel kavramı, tarayıcı içinde çalışan küçük ama güçlü bir veri saklama sistemidir. Bu sistem sayesinde web sayfası:</p><ul><li>Veri kaydedebilir</li><li>Durumu hatırlayabilir</li><li>Kullanıcı bilgilerini saklayabilir</li><li>Sayfa yenilense bile bilgiyi koruyabilir</li></ul><p>Bu mekanizma görünmezdir ama etkisi gerçektir.</p><p><br></p><h2>İlk Mühür: Buton ile Hafıza Yazımı</h2><p>Bu senaryoda buton artık sadece bir tetikleyici değil, aynı zamanda hafızaya veri yazan bir araç haline gelir.</p><p>Kullanıcı butona bastığında:</p><ul><li>Sistem bir komut çalıştırır</li><li>Tarayıcı içine bir veri kaydedilir</li><li>“Durum: Aktif” bilgisi hafızaya yazılır</li></ul><p>Ekranda görünür bir değişiklik olmayabilir. Ancak sistemin içinde kalıcı bir iz oluşur.</p><p><br></p><h2>AI ile Hafıza Sistemi Kurulumu</h2><p>Yapay zekâdan istenen yapı oldukça nettir. Amaç karmaşık bir sistem değil, en temel veri saklama mantığını kurmaktır.</p><p>İstenen davranış:</p><ul><li>Butona tıklanınca çalışması</li><li>Tarayıcı hafızasına veri yazması</li><li>Basit ve minimal bir yapı kullanılması</li></ul><p>Bu yaklaşım, “görünmeyen sistemleri anlamak” üzerine kuruludur.</p><p><br></p><h2>Kursiyerin Uygulama Süreci: İçeriye Veri Yazmak</h2><p>Öğrenci bu aşamada mevcut dosyasını günceller ve yeni davranışı sisteme ekler.</p><p>Süreç şu şekilde ilerler:</p><ul><li>Dosya açılır</li><li>Yeni kod parçası eklenir</li><li>Dosya kaydedilir</li><li>Sayfa yenilenir</li><li>Butona bir kez tıklanır</li></ul><p>Bu adımlar sonunda sistem görünmez bir işlem gerçekleştirmiş olur.</p><p><br></p><h2>Görünmeyen Etki: Sessiz Ama Kalıcı Değişim</h2><p>Bu dersin en ilginç noktası, gözle görülmeyen bir değişim üretmesidir. Kullanıcı ekranda farklı bir şey görmez ama sistemin içinde veri saklanır.</p><p>Bu deneyim şunu öğretir:</p><ul><li>Her etkileşim sadece görsel değildir</li><li>Web sayfaları hafıza tutabilir</li><li>Sistemler sessizce veri işleyebilir</li></ul><p>Bu, dijital üretimin bir üst seviyesidir.</p><p><br></p><h2>Aha! Anı: Sistem Hafıza Kazanıyor</h2><p>Bu noktada öğrenci önemli bir farkındalığa ulaşır. Artık sayfa sadece çalışan bir ekran değildir.</p><p>Fark edilen gerçek:</p><ul><li>Sistem durum tutabiliyor</li><li>Tarayıcı bir hafıza gibi davranabiliyor</li><li>Etkileşimler kalıcı iz bırakabiliyor</li></ul><p>Bu, “ben sadece bir sayfa yapmıyorum, bir sistem kuruyorum” hissidir.</p><p><br></p><h2>Fabrika Metaforunda Hafıza Katmanı</h2><p>Fabrika metaforu burada daha da derinleşir:</p><ul><li>Görünen alan = üretim hattı</li><li>Buton = makine</li><li>LocalStorage = gizli kasa</li><li>Veri = mühürlenmiş kayıt</li></ul><p>Bu yapı, sistem düşüncesini güçlendirir.</p><p><br></p><h2>Sonuç: Sessiz Ama Güçlü Bir Adım</h2><p>Görünmez kasa ile birlikte web geliştirme artık sadece görünür çıktılardan ibaret değildir. Sistemler artık veri tutabilen, hatırlayabilen ve devamlılık sağlayabilen yapılara dönüşür.</p><p>Bu ders sonunda öğrenci şunu kazanır:</p><ul><li>Tarayıcı hafızası kavramını anlama</li><li>Veri saklama mantığını öğrenme</li><li>Kalıcı durum yönetimine giriş yapma</li></ul><p>Bu adım, üretici zihnin “sistem kurma” seviyesine geçtiği noktadır.</p>
+    </section>
+ 
+    
+  <!-- YouTube Playlist Link -->
+  <div class="yt-link-container">
+    <a href="https://www.youtube.com/playlist?list=PLINEf8JBXAopHpGHa_4d4PSnwCtlZvYW_" target="_blank" rel="noopener noreferrer" class="yt-play-button">
+      <span class="play-icon">&#9658;</span> View Playlist
+    </a>
+  </div>
+
+ 
+    
+    
+  </article>
+<div id="main2"></div> 
+<div id="main3"></div>  
+</main>
+
+ 
+<div id="footer-wrap" role="contentinfo"></div>
+
+ 
+ 
+ <script>
+fetch("https://okankaplanedu.github.io/main1.html")
+  .then(response => response.text())
+  .then(html => {
+    document.getElementById("main1").innerHTML = html;
+  })
+  .catch(err => console.error("Header load error:", err));
+
+fetch("https://okankaplanedu.github.io/main2.html")
+  .then(response => response.text())
+  .then(html => {
+    document.getElementById("main2").innerHTML = html;
+  })
+  .catch(err => console.error("Header load error:", err));
+
+fetch("https://okankaplanedu.github.io/main3.html")
+  .then(response => response.text())
+  .then(html => {
+    document.getElementById("main3").innerHTML = html;
+  })
+  .catch(err => console.error("Header load error:", err));
+
+  fetch('https://raw.githubusercontent.com/bandanee/root/main/import/footer.html')
+    .then(r => r.text())
+    .then(h => document.getElementById('footer-wrap').innerHTML = h)
+    .catch(e => console.error('Footer load error:', e));
+</script>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
