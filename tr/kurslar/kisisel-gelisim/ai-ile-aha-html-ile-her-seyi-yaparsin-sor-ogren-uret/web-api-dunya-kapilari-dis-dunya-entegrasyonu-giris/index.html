@@ -1,0 +1,159 @@
+<!DOCTYPE html><html lang="tr">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<title>Web API’leri: Dünyaya Açılan Kapılar ve Dış Dünya Entegrasyonu | Okan Kaplan Edu</title>
+<meta name="title" content="Web API’leri: Dünyaya Açılan Kapılar ve Dış Dünya Entegrasyonu | Okan Kaplan Edu">
+<meta name="description" content="Web API’leri ile tarayıcı yeteneklerini ve dış veri kaynaklarını kullanmayı öğren. Konum, cihaz sensörleri ve veri entegrasyonu ile web uygulamalarını gerçek dünya ile bağla.">
+<meta name="keywords" content="web api nedir, dış dünya entegrasyonu web, browser api kullanımı, frontend api giriş, javascript web api öğrenme, cihaz özellikleri web api, geolocation fetch speech api, web development advanced api, tarayıcı yetenekleri kullanımı, modern frontend architecture, external data integration js, web sensors api, real world web apps, api integration fundamentals, dynamic web systems, javascript api tutorial, browser capabilities, frontend data flow, web app connectivity, modern javascript concepts">
+<meta name="author" content="Okan Kaplan">
+<meta name="creator" content="Okan Kaplan">
+<meta name="publisher" content="Okan Kaplan Academy">
+<meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
+<meta name="googlebot" content="index, follow">
+<meta name="bingbot" content="index, follow">
+<meta name="theme-color" content="#0d6efd">
+<meta name="color-scheme" content="light">
+<meta name="referrer" content="strict-origin-when-cross-origin">
+<meta name="msapplication-TileColor" content="#0d6efd">
+<link rel="canonical" href="https://okankaplanedu.github.io/tr/kurslar/kisisel-gelisim/ai-ile-aha-html-ile-her-seyi-yaparsn-sor-ogren-uret/web-api-dunya-kapilari-dis-dunya-entegrasyonu-giris/">
+<meta http-equiv="content-language" content="tr">
+<meta name="language" content="tr">
+<link rel="icon" href="/favicon.ico" sizes="any">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="manifest" href="/manifest.json">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Okan Kaplan Edu">
+<meta property="og:locale" content="tr_TR">
+<meta property="og:title" content="Web API’leri: Dünyaya Açılan Kapılar ve Dış Dünya Entegrasyonu | Okan Kaplan Edu">
+<meta property="og:description" content="Web API’leri ile tarayıcı yeteneklerini ve dış veri kaynaklarını kullanmayı öğren. Konum, cihaz sensörleri ve veri entegrasyonu ile web uygulamalarını gerçek dünya ile bağla.">
+<meta property="og:url" content="https://okankaplanedu.github.io/">
+<meta property="og:image" content="https://okankaplanedu.github.io/assets/cover.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Okan Kaplan Academy IoT Courses Cover">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Web API’leri: Dünyaya Açılan Kapılar ve Dış Dünya Entegrasyonu | Okan Kaplan Edu">
+<meta name="twitter:description" content="Web API’leri ile tarayıcı yeteneklerini ve dış veri kaynaklarını kullanmayı öğren. Konum, cihaz sensörleri ve veri entegrasyonu ile web uygulamalarını gerçek dünya ile bağla.">
+<meta name="twitter:image" content="https://okankaplanedu.github.io/assets/cover.jpg">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "name": "Okan Kaplan Edu",
+  "url": "https://okankaplanedu.github.io/",
+  "description": "Web API’leri — Dünyaya Açılan Kapılar dersi, modern web uygulamalarının dış dünya ile nasıl iletişim kurduğunu öğreten temel bir frontend geliştirme giriş konusudur. Bu bölümde tarayıcı yetenekleri, cihaz sensörleri, konum bilgisi, veri alma süreçleri ve dış API entegrasyonu ele alınır. Amaç, web sistemlerinin sadece kapalı yapılar olmadığını, gerçek dünya ile etkileşim kurabilen dinamik sistemler olduğunu kavratmaktır.",
+  "publisher": {
+    "@type": "Organization",
+    "name": "Okan Kaplan Edu"
+  }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "name": "Okan Kaplan Edu",
+  "url": "https://okankaplanedu.github.io/",
+  "logo": "https://okankaplanedu.github.io/assets/logo.png",
+  "sameAs": [
+    "https://github.com/okankaplanedu",
+    "https://github.com/bandanee"
+  ]
+}
+</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="dns-prefetch" href="//cdn.jsdelivr.net">
+<link rel="dns-prefetch" href="//cdnjs.cloudflare.com">
+<link rel="dns-prefetch" href="//raw.githubusercontent.com">
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="preload" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+<noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"></noscript>
+<script>
+  fetch("https://raw.githubusercontent.com/bandanee/root/main/import/head.html")
+    .then(r => r.text())
+    .then(t => document.head.insertAdjacentHTML("beforeend", t))
+    .catch(e => console.error(e));
+</script>
+<link href="https://okankaplanedu.github.io/assets/css/ind.css" rel="stylesheet">
+<link href="https://okankaplanedu.github.io/assets/css/cat.css" rel="stylesheet">
+</head>
+<body>
+<div id="cat-header-container"></div>
+<script>
+fetch("https://okankaplanedu.github.io/cat-header-container.html")
+  .then(response => response.text())
+  .then(html => {
+    document.getElementById("cat-header-container").innerHTML = html;
+  })
+  .catch(err => console.error("Header load error:", err));
+</script>
+
+<div class="offcanvas offcanvas-start" id="mL"><div class="offcanvas-body"><iframe src="https://okankaplanedu.github.io/archive.html" style="width:100%;height:100%;border:0;"></iframe></div></div>
+<div class="offcanvas offcanvas-end" id="mR"><div class="offcanvas-body"><iframe src="https://okankaplanedu.github.io/toc.html" style="width:100%;height:100%;border:0;"></iframe></div></div>
+
+<main role="main">
+ <div id="main1"></div> 
+<article itemscope itemtype="https://schema.org/Article">
+<h1 itemprop="headline">Web API’leri: Dünyaya Açılan Kapılar ve Dış Dünya Entegrasyonu</h1>
+
+    <section itemprop="articleBody">
+      <h2>Dış Dünya Entegrasyonuna Giriş</h2><p>Modern web uygulamaları yalnızca kendi içinde çalışan kapalı sistemler değildir. Tarayıcılar sayesinde dış dünya ile iletişim kurabilirler.</p><p>Bu iletişim:</p><p><br></p><p><a href="https://www.udemy.com/course/ai-ile-aha-html-ile-her-seyi-yaparsn-sor-ogren-uret/" rel="noopener noreferrer" target="_blank"><strong><em><u>https://www.udemy.com/course/ai-ile-aha-html-ile-her-seyi-yaparsn-sor-ogren-uret/</u></em></strong></a></p><p><br></p><ul><li>Cihaz özellikleri</li><li>İnternet üzerindeki veri kaynakları</li><li>Kullanıcı etkileşimleri</li></ul><p>üzerinden gerçekleşir.</p><p><br></p><h2>Web API Nedir?</h2><p>Web API’ler, tarayıcıya ek yetenekler kazandıran sistemlerdir. Bu sistemler sayesinde web sayfaları sadece içerik göstermez, aynı zamanda cihazla ve internetle etkileşir.</p><p>Bu yetenekler:</p><ul><li>Kamera kullanımı</li><li>Konum erişimi</li><li>Ses tanıma</li><li>Veri çekme</li></ul><p>gibi işlemleri mümkün kılar.</p><p><br></p><h2>Dış Dünya Entegrasyonu Mantığı</h2><p>Dış dünya entegrasyonu, web uygulamasının kendi sınırlarını aşarak dış sistemlerle veri alışverişi yapmasıdır.</p><p>Bu yapı sayesinde:</p><ul><li>Gerçek zamanlı veri alınır</li><li>Cihaz özellikleri kullanılır</li><li>Etkileşim seviyesi artar</li></ul><h2>Tarayıcı Yetenekleri</h2><p>Modern tarayıcılar güçlü bir platformdur. Sadece sayfa göstermekle kalmaz, cihazın donanımına erişebilir.</p><p>Bu yetenekler:</p><ul><li>Sensör kullanımı</li><li>Mikrofon ve kamera erişimi</li><li>Konum bilgisi alma</li><li>İnternet verisi çekme</li></ul><h2>Veri Alma Süreçleri</h2><p>Web uygulamaları dış kaynaklardan veri alabilir. Bu süreç genellikle API’ler aracılığıyla gerçekleşir.</p><p>Bu sistem:</p><ul><li>İstek gönderir</li><li>Veri alır</li><li>İşler ve gösterir</li></ul><h2>AI ile Entegrasyon Yaklaşımı</h2><p>Yapay zekâ bu süreçte farklı sistemleri birleştiren bir yapı kurar.</p><p>AI:</p><ul><li>API’leri organize eder</li><li>Veri akışını yönetir</li><li>Sistem davranışını optimize eder</li></ul><h2>Sistemlerin Gerçek Dünya ile Bağlantısı</h2><p>Web API’ler sayesinde uygulamalar artık gerçek dünya ile bağlantılı hale gelir.</p><p>Bu bağlantı:</p><ul><li>Konum bazlı</li><li>Veri bazlı</li><li>Cihaz bazlı olabilir</li></ul><h2>Aha! Anı: Kapalı Sistemden Açık Sisteme Geçiş</h2><p>Bu bölümün en önemli farkındalığı şudur:</p><ul><li>Sistem artık kapalı değildir</li><li>Dış dünyadan veri alır</li><li>Gerçek zamanlı çalışır</li></ul><h2>Metafor: Dijital Kapılar</h2><p>Web API’ler şu şekilde düşünülebilir:</p><ul><li>Her API = bir kapı</li><li>Tarayıcı = kontrol merkezi</li><li>Web uygulaması = bu kapıları yöneten sistem</li></ul><h2>Sonuç: Dış Dünyaya Açılan Sistemler</h2><p>Web API’leri ile birlikte uygulamalar artık sadece içerik değil, etkileşimli sistemler haline gelir.</p><p>Bu aşamada:</p><ul><li>Dış veri entegrasyonu anlaşılır</li><li>Cihaz yetenekleri kullanılır</li><li>Gerçek dünya bağlantısı kurulur</li></ul><p>Bu adım, üretici zihnin “açık sistem mimarisi” seviyesine geçtiği noktadır.</p><p><br></p>
+    </section>
+ 
+    
+  <!-- YouTube Playlist Link -->
+  <div class="yt-link-container">
+    <a href="https://www.youtube.com/playlist?list=PLINEf8JBXAopHpGHa_4d4PSnwCtlZvYW_" target="_blank" rel="noopener noreferrer" class="yt-play-button">
+      <span class="play-icon">&#9658;</span> View Playlist
+    </a>
+  </div>
+
+ 
+    
+    
+  </article>
+<div id="main2"></div> 
+<div id="main3"></div>  
+</main>
+
+ 
+<div id="footer-wrap" role="contentinfo"></div>
+
+ 
+ 
+ <script>
+fetch("https://okankaplanedu.github.io/main1.html")
+  .then(response => response.text())
+  .then(html => {
+    document.getElementById("main1").innerHTML = html;
+  })
+  .catch(err => console.error("Header load error:", err));
+
+fetch("https://okankaplanedu.github.io/main2.html")
+  .then(response => response.text())
+  .then(html => {
+    document.getElementById("main2").innerHTML = html;
+  })
+  .catch(err => console.error("Header load error:", err));
+
+fetch("https://okankaplanedu.github.io/main3.html")
+  .then(response => response.text())
+  .then(html => {
+    document.getElementById("main3").innerHTML = html;
+  })
+  .catch(err => console.error("Header load error:", err));
+
+  fetch('https://raw.githubusercontent.com/bandanee/root/main/import/footer.html')
+    .then(r => r.text())
+    .then(h => document.getElementById('footer-wrap').innerHTML = h)
+    .catch(e => console.error('Footer load error:', e));
+</script>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
