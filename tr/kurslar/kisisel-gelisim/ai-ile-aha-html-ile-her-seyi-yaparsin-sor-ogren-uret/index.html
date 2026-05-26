@@ -1,378 +1,468 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
+ <html lang="en"><head>
 <meta charset="UTF-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
 
-<title>Okan Kaplan Academy – Courses Archive</title>
+<title>AI ile Aha! HTML ile Her Şeyi Yaparsın: Sor, Öğren, Üret! | Okan Kaplan Academy</title>
 
-<meta name="title" content="Okan Kaplan Academy – Courses Archive">
-<meta name="description" content="Explore all Okan Kaplan Academy courses including JavaScript, WebGL, IoT, AI, Frontend, 3D Graphics, CDN Libraries, Game Engines, and Real-World Software Development Projects.">
-<meta name="keywords" content="Okan Kaplan Academy, courses, JavaScript courses, WebGL, IoT, AI, frontend development, Three.js, Chart.js, programming tutorials, software engineering">
+<meta name="description" content="AI destekli tek dosya HTML yaklaşımıyla sıfırdan çalışan web uygulamaları üretmeyi öğrenin. Okan Kaplan Academy ile modern web geliştirme becerilerinizi geliştirin.">
+<meta name="keywords" content="HTML, AI ile kodlama, web geliştirme, tek dosya HTML, JavaScript, frontend, Okan Kaplan Academy">
 
 <meta name="author" content="Okan Kaplan">
-<meta name="creator" content="Okan Kaplan">
 <meta name="publisher" content="Okan Kaplan Academy">
 
+<!-- Robots -->
 <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
+<meta name="googlebot" content="index, follow">
 
-<meta property="og:type" content="website">
-<meta property="og:site_name" content="Okan Kaplan Academy">
-<meta property="og:title" content="Okan Kaplan Academy – Courses Archive">
-<meta property="og:description" content="Browse all programming and engineering courses from Okan Kaplan Academy.">
-<meta property="og:url" content="https://okankaplanedu.github.io/tr/kurslar/kisisel-gelisim/ai-ile-aha-html-ile-her-seyi-yaparsin-sor-ogren-uret/">
-<meta property="og:image" content="https://okankaplanedu.github.io/assets/cover.jpg">
-
-<meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="Okan Kaplan Academy – Courses Archive">
-<meta name="twitter:description" content="Explore all software engineering and development courses.">
-<meta name="twitter:image" content="https://okankaplanedu.github.io/assets/cover.jpg">
-
+<!-- Canonical (KRİTİK: doğru sayfa olmalı) -->
 <link rel="canonical" href="https://okankaplanedu.github.io/tr/kurslar/kisisel-gelisim/ai-ile-aha-html-ile-her-seyi-yaparsin-sor-ogren-uret/">
 
-<link rel="icon" href="/favicon.ico" sizes="any">
+<!-- Language -->
+<meta http-equiv="content-language" content="tr">
+<meta name="language" content="tr">
+
+<!-- Theme -->
+<meta name="theme-color" content="#0d6efd">
+<meta name="color-scheme" content="light">
+
+<!-- Favicon -->
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
 <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
 
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<!-- Open Graph -->
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Okan Kaplan Academy">
+<meta property="og:locale" content="tr_TR">
+<meta property="og:title" content="AI ile Aha! HTML ile Her Şeyi Yaparsın">
+<meta property="og:description" content="AI destekli tek dosya HTML ile çalışan web uygulamaları üretmeyi öğrenin.">
+<meta property="og:url" content="https://okankaplanedu.github.io/tr/kurslar/kisisel-gelisim/ai-ile-aha-html-ile-her-seyi-yaparsin-sor-ogren-uret/">
+<meta property="og:image" content="https://okankaplanedu.github.io/assets/cover.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="AI HTML Course Cover">
 
+<!-- Twitter -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="AI ile Aha! HTML ile Her Şeyi Yaparsın">
+<meta name="twitter:description" content="AI destekli tek dosya HTML ile web uygulamaları üretmeyi öğrenin.">
+<meta name="twitter:image" content="https://okankaplanedu.github.io/assets/cover.jpg">
+<link rel="manifest" href="/manifest.json">
+
+<link rel="icon" href="/favicon.ico" sizes="any">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+
+<meta name="msapplication-TileColor" content="#0d6efd">
+<meta name="theme-color" content="#0d6efd">
+
+
+<link href="https://okankaplanedu.github.io/assets/css/style.css" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
 <link rel="dns-prefetch" href="//cdn.jsdelivr.net">
 <link rel="dns-prefetch" href="//cdnjs.cloudflare.com">
 <link rel="dns-prefetch" href="//raw.githubusercontent.com">
 
-<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600&amp;display=swap" rel="stylesheet">
 
-<link rel="preload"
-      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
-      as="style"
-      onload="this.onload=null;this.rel='stylesheet'">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
 
 <noscript>
-<link rel="stylesheet"
-      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css">
 </noscript>
 
-<link href="https://okankaplanedu.github.io/assets/css/style.css" rel="stylesheet">
-
-<style>
-
-:root{
-    --card-bg:#ffffff;
-    --border:#e5e7eb;
-    --text:#111827;
-    --muted:#6b7280;
-    --primary:#0d6efd;
-}
-
-body{
-    font-family:'Montserrat',sans-serif;
-    background:#f5f7fb;
-    color:var(--text);
-}
-
-.grid{
-    margin:0 auto;
-}
-
-.grid-sizer,
-.grid-item{
-    width:33.333%;
-}
-
-@media(max-width:992px){
-    .grid-sizer,
-    .grid-item{
-        width:50%;
-    }
-}
-
-@media(max-width:576px){
-    .grid-sizer,
-    .grid-item{
-        width:100%;
-    }
-}
-
-.grid-item{
-    padding:12px;
-}
-
-.grid-item.is-hidden{
-    display:none;
-}
-
-.card-custom{
-    background:var(--card-bg);
-    border-radius:20px;
-    overflow:hidden;
-    border:1px solid var(--border);
-    box-shadow:0 5px 18px rgba(0,0,0,0.06);
-    transition:0.25s ease;
-    height:100%;
-}
-
-.card-custom:hover{
-    transform:translateY(-4px);
-    box-shadow:0 12px 30px rgba(0,0,0,0.1);
-}
-
-.card-cover{
-    width:100%;
-    display:block;
-    object-fit:cover;
-    max-height:240px;
-}
-
-.card-body-custom{
-    padding:20px;
-}
-
-.card-title-custom{
-    font-size:1.1rem;
-    font-weight:700;
-    line-height:1.5;
-    margin-bottom:14px;
-}
-
-.card-desc-custom{
-    color:var(--muted);
-    font-size:14px;
-    line-height:1.7;
-    margin-bottom:14px;
-}
-
-.card-keywords-custom{
-    font-size:12px;
-    line-height:1.7;
-    color:#2563eb;
-    margin-bottom:18px;
-}
-
-.btn-open{
-    display:inline-flex;
-    align-items:center;
-    justify-content:center;
-    padding:10px 18px;
-    border-radius:12px;
-    background:var(--primary);
-    color:#fff;
-    text-decoration:none;
-    font-weight:600;
-    transition:0.2s ease;
-}
-
-.btn-open:hover{
-    opacity:.9;
-}
-
-#status{
-    display:inline-flex;
-    align-items:center;
-    gap:10px;
-    padding:12px 20px;
-    background:#fff;
-    border-radius:14px;
-    box-shadow:0 5px 15px rgba(0,0,0,0.08);
-    font-size:14px;
-}
-
-</style>
 
 <script type="application/ld+json">
 {
-  "@context":"https://schema.org",
-  "@type":"WebSite",
-  "name":"Okan Kaplan Academy Courses",
-  "url":"https://okankaplanedu.github.io/tr/kurslar/kisisel-gelisim/ai-ile-aha-html-ile-her-seyi-yaparsin-sor-ogren-uret/"
+  "@context": "https://schema.org",
+  "@graph": [
+
+    {
+      "@type": "WebPage",
+      "@id": "https://okankaplanedu.github.io/tr/kurslar/kisisel-gelisim/ai-ile-aha-html-ile-her-seyi-yaparsin-sor-ogren-uret/#webpage",
+      "url": "https://okankaplanedu.github.io/tr/kurslar/kisisel-gelisim/ai-ile-aha-html-ile-her-seyi-yaparsin-sor-ogren-uret/",
+      "name": "AI ile Aha! HTML ile Her Şeyi Yaparsın",
+      "description": "AI destekli tek dosya HTML yaklaşımıyla sıfırdan çalışan web uygulamaları üretmeyi öğrenin.",
+      "inLanguage": "tr",
+      "isPartOf": {
+        "@id": "https://okankaplanedu.github.io/#website"
+      },
+      "about": {
+        "@id": "https://okankaplanedu.github.io/#organization"
+      }
+    },
+
+    {
+      "@type": "Course",
+      "@id": "https://okankaplanedu.github.io/tr/kurslar/kisisel-gelisim/ai-ile-aha-html-ile-her-seyi-yaparsin-sor-ogren-uret/#course",
+      "name": "AI ile Aha! HTML ile Her Şeyi Yaparsın: Sor, Öğren, Üret!",
+      "description": "AI destekli tek dosya HTML yaklaşımıyla sıfırdan çalışan web uygulamaları üretmeyi öğrenin.",
+      "provider": {
+        "@id": "https://okankaplanedu.github.io/#organization"
+      },
+      "inLanguage": "tr",
+      "courseMode": "online",
+      "educationalLevel": "beginner",
+      "url": "https://okankaplanedu.github.io/tr/kurslar/kisisel-gelisim/ai-ile-aha-html-ile-her-seyi-yaparsin-sor-ogren-uret/"
+    },
+
+    {
+      "@type": "BreadcrumbList",
+      "@id": "https://okankaplanedu.github.io/tr/kurslar/kisisel-gelisim/ai-ile-aha-html-ile-her-seyi-yaparsin-sor-ogren-uret/#breadcrumb",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Ana Sayfa",
+          "item": "https://okankaplanedu.github.io/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Kurslar",
+          "item": "https://okankaplanedu.github.io/tr/kurslar/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Kişisel Gelişim",
+          "item": "https://okankaplanedu.github.io/tr/kurslar/kisisel-gelisim/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 4,
+          "name": "AI ile Aha! HTML ile Her Şeyi Yaparsın"
+        }
+      ]
+    }
+
+  ]
 }
 </script>
-
-<script>
-
  
+<script>
+    if (!sessionStorage.getItem('auto_refreshed')) {
+        localStorage.removeItem("ok_academy_cache_v26");
+        sessionStorage.setItem('auto_refreshed', 'true');
+        window.location.reload();
+    }
 
-fetch("https://raw.githubusercontent.com/bandanee/root/main/import/head.html")
-.then(r => r.text())
-.then(t => document.head.insertAdjacentHTML("beforeend", t))
-.catch(e => console.error(e));
-
+    fetch("https://raw.githubusercontent.com/bandanee/root/main/import/head.html")
+        .then(r => r.text())
+        .then(t => document.head.insertAdjacentHTML("beforeend", t))
+        .catch(e => console.error(e));
 </script>
 
 </head>
-
 <body>
 
-<div id="header-container"></div>
+<div id="header-container"><style>
+
+  :root{
+    --nav-height: 64px;
+  }
+
+  *,
+  *::before,
+  *::after{
+    box-sizing:border-box;
+  }
+
+  html{
+    -webkit-text-size-adjust:100%;
+    scroll-behavior:smooth;
+  }
+
+  body{
+    margin:0;
+    padding-top:var(--nav-height);
+    text-rendering:optimizeLegibility;
+    -webkit-font-smoothing:antialiased;
+    -moz-osx-font-smoothing:grayscale;
+  }
+
+  /* Accessibility */
+
+  .visually-hidden{
+    position:absolute !important;
+    width:1px !important;
+    height:1px !important;
+    padding:0 !important;
+    margin:-1px !important;
+    overflow:hidden !important;
+    clip:rect(0,0,0,0) !important;
+    white-space:nowrap !important;
+    border:0 !important;
+  }
+
+  a:focus-visible,
+  button:focus-visible,
+  input:focus-visible{
+    outline:3px solid rgba(255,255,255,.45);
+    outline-offset:2px;
+  }
+
+  /* Navbar */
+
+  .navbar{
+    min-height:var(--nav-height);
+    backdrop-filter:blur(10px);
+    -webkit-backdrop-filter:blur(10px);
+  }
+
+  .navbar-brand{
+    font-size:1rem;
+    line-height:1.2;
+    letter-spacing:.2px;
+  }
+
+  /* Toggle Buttons */
+
+  #offcanvasLeftToggle,
+  #offcanvasRightToggle{
+    position:relative !important;
+    left:auto !important;
+    right:auto !important;
+    top:auto !important;
+    transform:none !important;
+
+    display:inline-flex !important;
+    align-items:center;
+    justify-content:center;
+
+    width:42px;
+    height:42px;
+
+    z-index:1030;
+    flex-shrink:0;
+
+    border-radius:10px;
+    transition:
+      transform .15s ease,
+      opacity .2s ease,
+      box-shadow .2s ease;
+  }
+
+  #offcanvasLeftToggle:hover,
+  #offcanvasRightToggle:hover{
+    opacity:.95;
+  }
+
+  #offcanvasLeftToggle:active,
+  #offcanvasRightToggle:active{
+    transform:scale(.97);
+  }
+
+  /* Search */
+
+  .search-container{
+    min-width:0;
+  }
+
+  .search-container input{
+    max-width:140px;
+    min-width:90px;
+
+    border-radius:10px;
+
+    transition:
+      width .2s ease,
+      border-color .2s ease,
+      box-shadow .2s ease;
+  }
+
+  .search-container input:focus{
+    width:180px;
+  }
+
+  /* CLS protection */
+
+  .btn,
+  .form-control{
+    min-height:38px;
+  }
+
+  /* Mobile */
+
+  @media (max-width:768px){
+
+    .navbar-brand{
+      max-width:120px;
+      overflow:hidden;
+      text-overflow:ellipsis;
+      white-space:nowrap;
+    }
+
+    .search-container input{
+      max-width:100px;
+    }
+
+    .search-container input:focus{
+      width:120px;
+    }
+
+  }
+
+  /* Reduced Motion */
+
+  @media (prefers-reduced-motion:reduce){
+
+    *,
+    *::before,
+    *::after{
+      animation-duration:.01ms !important;
+      animation-iteration-count:1 !important;
+      transition-duration:.01ms !important;
+      scroll-behavior:auto !important;
+    }
+
+  }
+
+</style>
+
+<header>
+
+  <nav class="navbar navbar-dark fixed-top shadow py-2" aria-label="Main navigation">
+
+    <div class="container-fluid d-flex align-items-center justify-content-between flex-nowrap">
+
+      <!-- Left Area -->
+      <div class="d-flex align-items-center min-w-0">
+
+        <button type="button" class="btn btn-light shadow-sm" id="offcanvasLeftToggle" data-bs-toggle="offcanvas" data-bs-target="#offcanvasLeft" aria-controls="offcanvasLeft" aria-expanded="false" aria-label="Open main navigation menu">
+          <span aria-hidden="true">☰</span>
+          <span class="visually-hidden">Menu</span>
+        </button>
+
+        <a class="navbar-brand fw-bold ms-2 mb-0 text-truncate" href="/" aria-label="Go to homepage - Okan Kaplan">
+          Okan Kaplan
+        </a>
+
+      </div>
+
+      <!-- Right Area -->
+      <div class="d-flex gap-2 align-items-center">
+
+        <a href="https://okankaplanedu.github.io/courses/" class="btn btn-sm btn-outline-light" aria-label="View courses">
+          Courses
+        </a>
+
+        <a href="https://okankaplanedu.github.io/lab/" class="btn btn-sm btn-outline-light" aria-label="Open laboratory projects">
+          Lab
+        </a>
+
+        <button type="button" class="btn btn-light shadow-sm" id="offcanvasRightToggle" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight" aria-expanded="false" aria-label="Open chat panel">
+          <i class="fas fa-comment-dots" aria-hidden="true"></i>
+          <span class="visually-hidden">Chat</span>
+        </button>
+
+        <form class="search-container ms-1" role="search" action="/search" method="GET" aria-label="Site search form">
+
+          <label for="search-input" class="visually-hidden">
+            Search
+          </label>
+
+          <input type="search" id="search-input" name="q" class="form-control form-control-sm" placeholder="Search..." aria-label="Search site content" autocomplete="off" enterkeyhint="search" inputmode="search">
+
+        </form>
+
+      </div>
+
+    </div>
+
+  </nav>
+
+</header>
+</div> 
 
 <script>
-
 fetch("https://okankaplanedu.github.io/header.html")
-.then(response => response.text())
-.then(html => {
-
-    document.getElementById(
-        "header-container"
-    ).innerHTML = html;
-
-})
-.catch(err => console.error(err));
-
+  .then(response => response.text())
+  .then(html => {
+    document.getElementById("header-container").innerHTML = html;
+  })
+  .catch(err => console.error("Header load error:", err));
 </script>
+
+<div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasLeft" aria-labelledby="offcanvasLeftLabel" aria-hidden="true">
+
+  <div class="offcanvas-header border-bottom">
+    <h5 class="offcanvas-title" id="offcanvasLeftLabel">
+      Navigation Menu
+    </h5>
+
+    <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close navigation menu"></button>
+  </div>
+
+  <div class="offcanvas-body p-0 h-100">
+    <iframe src="https://okankaplanedu.github.io/archive.html" class="w-100 h-100 border-0" title="Archive navigation content" loading="lazy"></iframe>
+  </div>
+
+</div>
+
+
+<div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasRight" aria-labelledby="offcanvasRightLabel" aria-hidden="true">
+
+  <div class="offcanvas-header border-bottom">
+    <h5 class="offcanvas-title" id="offcanvasRightLabel">
+      Table of Contents
+    </h5>
+
+    <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close table of contents"></button>
+  </div>
+
+  <div class="offcanvas-body p-0" style="min-height: 500px;">
+    <iframe src="https://okankaplanedu.github.io/toc.html" id="toc-iframe" class="w-100 border-0" style="height: 600px; overflow: hidden;" title="Table of Contents navigation" loading="lazy"></iframe>
+  </div>
+
+</div>
 
 <main class="container-fluid px-3 px-md-4 py-4">
 
 <div class="text-center mb-4">
 
 <h1 class="fw-bold">
-Okan Kaplan Academy Courses
+AI ile Aha! HTML ile Her Şeyi Yaparsın: Sor, Öğren, Üret!
 </h1>
 
 <p class="text-secondary">
-Explore all course categories and real-world engineering lessons.
+AI destekli tek dosya HTML yaklaşımıyla sıfırdan çalışan web uygulamaları üretmeyi öğrenin
 </p>
 
 </div>
 
-<div
-class="text-center mb-4"
-id="status-container"
-style="display:none"
-aria-live="polite"
->
+<div class="text-center mb-4" id="status-container" style="display: none;" aria-live="polite">
 
 <div id="status">
 
-<div
-class="spinner-border spinner-border-sm text-primary"
-role="status"
-id="status-spinner"
-></div>
+        <span style="color:#10b981">●</span>
 
-<span id="status-message">
-Preparing courses...
-</span>
+        <span style="
+                font-size:13px;
+                font-weight:600;
+            ">
+
+            Courses Updated
+
+        </span>
+
+    </div>
 
 </div>
 
-</div>
-
-<div class="grid" id="masonry-container">
+<div class="grid" id="masonry-container" style="position: relative; height: 5480px;">
 
 <div class="grid-sizer"></div>
 
-</div>
-
-</main>
-
-<div id="footer-placeholder"></div>
-
-<script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
-
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
-
-<script src="https://unpkg.com/masonry-layout@4/dist/masonry.pkgd.min.js"></script>
-
-<script src="https://unpkg.com/imagesloaded@5/imagesloaded.pkgd.min.js"></script>
-
-<script>
-
-const CONFIG = {
-    owner: "okankaplanedu",
-    repo: "okankaplanedu.github.io",
-    branch: "main",
-    baseFolder: "tr/kurslar/kisisel-gelisim/ai-ile-aha-html-ile-her-seyi-yaparsin-sor-ogren-uret",
-    cacheKey: "ok_ai-aha_cache_v1",
-    cacheTime: 3600000,
-    fetchDelay: 120
-};
-
-// 🔽 BURAYA
-if (!sessionStorage.getItem('courses_auto_refreshed')) {
-
-    localStorage.removeItem(CONFIG.cacheKey);
-
-    sessionStorage.setItem('courses_auto_refreshed', 'true');
-
-    window.location.reload();
-}
-
-let masonryGrid;
-
-let tempArchive = [];
-
-function initMasonry(){
-
-    masonryGrid = $('#masonry-container').masonry({
-
-        itemSelector: '.grid-item',
-
-        columnWidth: '.grid-sizer',
-
-        percentPosition: true,
-
-        transitionDuration: '0.3s'
-    });
-}
-
-const Cache = {
-
-    get: () => {
-
-        const data = localStorage.getItem(
-            CONFIG.cacheKey
-        );
-
-        if(!data) return null;
-
-        const parsed = JSON.parse(data);
-
-        if(
-            Date.now() - parsed.timestamp >
-            CONFIG.cacheTime
-        ){
-            return null;
-        }
-
-        return parsed.articles;
-    },
-
-    set: (articles) => {
-
-        localStorage.setItem(
-            CONFIG.cacheKey,
-
-            JSON.stringify({
-
-                timestamp: Date.now(),
-
-                articles: articles
-
-            })
-        );
-    }
-};
-
-function renderCard(article){
-
-    const plainText = `
-        ${article.title}
-        ${article.description}
-        ${article.keywords}
-    `.toLowerCase();
-
-    const imageHTML = article.image
-    ? `
-       
-    `
-    : "";
-
-    const cardHTML = `
-
-    <div
-        class="grid-item"
-        data-search="${plainText}"
-    >
+<div class="grid-item" data-search="
+        ai destekli tek dosya html: kendi mini web araçlarını yarat | okan kaplan edu
+        html, css ve javascript’i tek dosyada birleştirerek hızlı ve taşınabilir web araçları oluşturmayı öğren. ai destekli üretim yaklaşımıyla fikirlerini çalışan mini uygulamalara dönüştür ve prototip geliştirme becerisi kazan.
+        tek dosya html, ai destekli kodlama, mini web araçları, html css js tek dosya, hızlı prototip geliştirme, web araçları oluşturma, yapay zekâ ile kod üretimi, frontend mini uygulama, bağımsız html uygulaması, taşınabilir web araçları, no framework web geliştirme, ai üretim ortağı, hızlı web prototipleme, modern html eğitimi, tek sayfa uygulama mantığı, vanilla js projeleri, frontend öğrenme, web app basics, üretim odaklı kodlama, ai ile yazılım geliştirme
+    " style="position: absolute; left: 0%; top: 0px;">
 
         <div class="card-custom">
 
@@ -381,23 +471,18 @@ function renderCard(article){
             <div class="card-body-custom">
 
                 <h2 class="card-title-custom">
-                    ${article.title}
+                    AI Destekli Tek Dosya HTML: Kendi Mini Web Araçlarını Yarat | Okan Kaplan Edu
                 </h2>
 
                 <p class="card-desc-custom">
-                    ${article.description}
+                    HTML, CSS ve JavaScript’i tek dosyada birleştirerek hızlı ve taşınabilir web araçları oluşturmayı öğren. AI destekli üretim yaklaşımıyla fikirlerini çalışan mini uygulamalara dönüştür ve prototip geliştirme becerisi kazan.
                 </p>
 
                 <div class="card-keywords-custom">
-                    ${article.keywords}
+                    tek dosya HTML, AI destekli kodlama, mini web araçları, HTML CSS JS tek dosya, hızlı prototip geliştirme, web araçları oluşturma, yapay zekâ ile kod üretimi, frontend mini uygulama, bağımsız HTML uygulaması, taşınabilir web araçları, no framework web geliştirme, AI üretim ortağı, hızlı web prototipleme, modern HTML eğitimi, tek sayfa uygulama mantığı, vanilla JS projeleri, frontend öğrenme, web app basics, üretim odaklı kodlama, AI ile yazılım geliştirme
                 </div>
 
-                <a
-                    href="${article.url}"
-                    class="btn-open"
-                    target="_top"
-                    rel="noopener noreferrer"
-                >
+                <a href="https://okankaplanedu.github.io/tr/kurslar/kisisel-gelisim/ai-ile-aha-html-ile-her-seyi-yaparsin-sor-ogren-uret/ai-destekli-tek-dosya-html-mini-arac-uretimi/" class="btn-open" target="_top" rel="noopener noreferrer">
 
                     Kursu İnceler →
 
@@ -407,309 +492,1358 @@ function renderCard(article){
 
         </div>
 
+    </div><div class="grid-item" data-search="
+        ai ile aha! html ile her şeyi yaparsın: sor, öğren, üret | okan kaplan edu
+        html ve yapay zekâ ile öğrenmenin yeni yolunu keşfet. sorular sor, uygulayarak öğren, gerçek projeler üret ve üretici bir zihniyet geliştir. ezberden uzak, tamamen düşünme, keşfetme ve üretim odaklı modern html eğitimiyle dijital dünyada kendi projelerini oluşturmaya başla.
+        ai html kursu, yapay zekâ ile html öğrenme, html başlangıç eğitimi, uygulamalı html kursu, proje tabanlı web geliştirme, üretim odaklı öğrenme, html ile web sitesi yapma, yapay zekâ destekli kodlama, frontend başlangıç eğitimi, modern html eğitimi, dijital üretim, web tasarım temelleri, html projeleri, interaktif kodlama eğitimi, yapay zekâ ile web geliştirme, yaratıcı web tasarımı, html öğrenme rehberi, sıfırdan html, web sayfası oluşturma, üretici zihniyet geliştirme
+    " style="position: absolute; left: 33.3323%; top: 0px;">
+
+        <div class="card-custom">
+
+            
+
+            <div class="card-body-custom">
+
+                <h2 class="card-title-custom">
+                    AI ile Aha! HTML ile Her Şeyi Yaparsın: Sor, Öğren, Üret | Okan Kaplan Edu
+                </h2>
+
+                <p class="card-desc-custom">
+                    HTML ve yapay zekâ ile öğrenmenin yeni yolunu keşfet. Sorular sor, uygulayarak öğren, gerçek projeler üret ve üretici bir zihniyet geliştir. Ezberden uzak, tamamen düşünme, keşfetme ve üretim odaklı modern HTML eğitimiyle dijital dünyada kendi projelerini oluşturmaya başla.
+                </p>
+
+                <div class="card-keywords-custom">
+                    AI HTML kursu, yapay zekâ ile HTML öğrenme, HTML başlangıç eğitimi, uygulamalı HTML kursu, proje tabanlı web geliştirme, üretim odaklı öğrenme, HTML ile web sitesi yapma, yapay zekâ destekli kodlama, frontend başlangıç eğitimi, modern HTML eğitimi, dijital üretim, web tasarım temelleri, HTML projeleri, interaktif kodlama eğitimi, yapay zekâ ile web geliştirme, yaratıcı web tasarımı, HTML öğrenme rehberi, sıfırdan HTML, web sayfası oluşturma, üretici zihniyet geliştirme
+                </div>
+
+                <a href="https://okankaplanedu.github.io/tr/kurslar/kisisel-gelisim/ai-ile-aha-html-ile-her-seyi-yaparsin-sor-ogren-uret/ai-ile-aha-html-ile-her-seyi-yaparsin-sor-ogren-uret/" class="btn-open" target="_top" rel="noopener noreferrer">
+
+                    Kursu İnceler →
+
+                </a>
+
+            </div>
+
+        </div>
+
+    </div><div class="grid-item" data-search="
+        ai ile sistem tasarımı: yapay zekâyı üretim ortağı olarak kullanma | okan kaplan edu
+        yapay zekâyı sadece soru-cevap aracı değil, planlama, üretim ve geliştirme süreçlerinde aktif bir sistem tasarım ortağı olarak kullanmayı öğren. uçtan uca projeler geliştirme yaklaşımını keşfet.
+        ai ile sistem tasarımı, yapay zeka üretim ortağı, ai coding workflow, prompt engineering sistem tasarımı, ai destekli yazılım geliştirme, uçtan uca proje geliştirme, structured ai prompts, ai planning development process, modern software design ai, artificial intelligence workflow, ai assisted programming, system design with ai, scalable project architecture, ai driven development, prompt based engineering, professional software design ai, ai collaboration development, full stack project planning ai, structured output ai, production ready ai code
+    " style="position: absolute; left: 66.6647%; top: 0px;">
+
+        <div class="card-custom">
+
+            
+
+            <div class="card-body-custom">
+
+                <h2 class="card-title-custom">
+                    AI ile Sistem Tasarımı: Yapay Zekâyı Üretim Ortağı Olarak Kullanma | Okan Kaplan Edu
+                </h2>
+
+                <p class="card-desc-custom">
+                    Yapay zekâyı sadece soru-cevap aracı değil, planlama, üretim ve geliştirme süreçlerinde aktif bir sistem tasarım ortağı olarak kullanmayı öğren. Uçtan uca projeler geliştirme yaklaşımını keşfet.
+                </p>
+
+                <div class="card-keywords-custom">
+                    ai ile sistem tasarımı, yapay zeka üretim ortağı, ai coding workflow, prompt engineering sistem tasarımı, ai destekli yazılım geliştirme, uçtan uca proje geliştirme, structured ai prompts, ai planning development process, modern software design ai, artificial intelligence workflow, ai assisted programming, system design with ai, scalable project architecture, ai driven development, prompt based engineering, professional software design ai, ai collaboration development, full stack project planning ai, structured output ai, production ready ai code
+                </div>
+
+                <a href="https://okankaplanedu.github.io/tr/kurslar/kisisel-gelisim/ai-ile-aha-html-ile-her-seyi-yaparsin-sor-ogren-uret/ai-ile-sistem-tasarimi-uretim-ortagi-yapay-zeka/" class="btn-open" target="_top" rel="noopener noreferrer">
+
+                    Kursu İnceler →
+
+                </a>
+
+            </div>
+
+        </div>
+
+    </div><div class="grid-item" data-search="
+        veri ve sensörün birleşimi: akıllı günlük (geolocation + fetch + speech + localstorage) | okan kaplan edu
+        geolocation, fetch api ve speech recognition’ı birleştirerek akıllı günlük uygulaması oluştur. konum, hava durumu ve sesli notları tek sistemde toplayarak ileri seviye web entegrasyonunu öğren.
+        akıllı günlük projesi, geolocation fetch speech api birleşimi, javascript multi api proje, localstorage akıllı uygulama, web api entegrasyon örneği, frontend advanced project, weather api location, speech recognition localstorage, javascript real world project, full stack frontend demo, browser api birleşimi, interactive smart app, html js advanced project, device sensors web integration, api orchestration frontend, dynamic data fusion web, ai destekli web projesi, modern javascript uygulama, smart journal app, web development capstone project
+    " style="position: absolute; left: 0%; top: 497.4px;">
+
+        <div class="card-custom">
+
+            
+
+            <div class="card-body-custom">
+
+                <h2 class="card-title-custom">
+                    Veri ve Sensörün Birleşimi: Akıllı Günlük (Geolocation + Fetch + Speech + LocalStorage) | Okan Kaplan Edu
+                </h2>
+
+                <p class="card-desc-custom">
+                    Geolocation, Fetch API ve Speech Recognition’ı birleştirerek Akıllı Günlük uygulaması oluştur. Konum, hava durumu ve sesli notları tek sistemde toplayarak ileri seviye web entegrasyonunu öğren.
+                </p>
+
+                <div class="card-keywords-custom">
+                    akıllı günlük projesi, geolocation fetch speech api birleşimi, javascript multi api proje, localstorage akıllı uygulama, web api entegrasyon örneği, frontend advanced project, weather api location, speech recognition localstorage, javascript real world project, full stack frontend demo, browser api birleşimi, interactive smart app, html js advanced project, device sensors web integration, api orchestration frontend, dynamic data fusion web, ai destekli web projesi, modern javascript uygulama, smart journal app, web development capstone project
+                </div>
+
+                <a href="https://okankaplanedu.github.io/tr/kurslar/kisisel-gelisim/ai-ile-aha-html-ile-her-seyi-yaparsin-sor-ogren-uret/akilli-gunluk-geolocation-fetch-speech-localstorage-proje/" class="btn-open" target="_top" rel="noopener noreferrer">
+
+                    Kursu İnceler →
+
+                </a>
+
+            </div>
+
+        </div>
+
+    </div><div class="grid-item" data-search="
+        akıllı i̇letişim (giriş ve çıktı): input ile kullanıcıyı tanıyan html &amp; javascript sistemi | okan kaplan edu
+        html input ve javascript kullanarak kullanıcıdan veri alan ve buna göre dinamik yanıt veren akıllı bir sistem oluşturmayı öğren. web sayfalarının nasıl kişiselleştirilmiş deneyimler sunduğunu keşfet.
+        html input dersi, javascript kullanıcı girişi, form input örneği, dinamik web sayfası, kullanıcı etkileşimi js, prompt input sistemi, frontend giriş çıkış, dom input okuma, web geliştirme başlangıç js, kişiselleştirilmiş web deneyimi, html js etkileşim, kullanıcı adı alma js, akıllı web sistemi, interactive input form, web sayfası kişiselleştirme, input button event, js mesaj gösterme, frontend öğrenme projesi, canlı kullanıcı etkileşimi, dijital organizma dersi
+    " style="position: absolute; left: 66.6647%; top: 517.8px;">
+
+        <div class="card-custom">
+
+            
+
+            <div class="card-body-custom">
+
+                <h2 class="card-title-custom">
+                    Akıllı İletişim (Giriş ve Çıktı): Input ile Kullanıcıyı Tanıyan HTML &amp; JavaScript Sistemi | Okan Kaplan Edu
+                </h2>
+
+                <p class="card-desc-custom">
+                    HTML input ve JavaScript kullanarak kullanıcıdan veri alan ve buna göre dinamik yanıt veren akıllı bir sistem oluşturmayı öğren. Web sayfalarının nasıl kişiselleştirilmiş deneyimler sunduğunu keşfet.
+                </p>
+
+                <div class="card-keywords-custom">
+                    HTML input dersi, JavaScript kullanıcı girişi, form input örneği, dinamik web sayfası, kullanıcı etkileşimi JS, prompt input sistemi, frontend giriş çıkış, DOM input okuma, web geliştirme başlangıç JS, kişiselleştirilmiş web deneyimi, HTML JS etkileşim, kullanıcı adı alma JS, akıllı web sistemi, interactive input form, web sayfası kişiselleştirme, input button event, JS mesaj gösterme, frontend öğrenme projesi, canlı kullanıcı etkileşimi, dijital organizma dersi
+                </div>
+
+                <a href="https://okankaplanedu.github.io/tr/kurslar/kisisel-gelisim/ai-ile-aha-html-ile-her-seyi-yaparsin-sor-ogren-uret/akilli-iletisim-input-kullanici-etkilesim-html-js-dersi/" class="btn-open" target="_top" rel="noopener noreferrer">
+
+                    Kursu İnceler →
+
+                </a>
+
+            </div>
+
+        </div>
+
+    </div><div class="grid-item" data-search="
+        liste mantığı (array state): javascript ile to-do list uygulaması oluşturma | okan kaplan edu
+        javascript array state mantığını öğrenerek yapılacaklar listesi (to-do) uygulaması oluştur. birden fazla veriyi yönetmeyi, listeye eklemeyi ve dinamik ui oluşturmayı keşfet.
+        array state nedir, javascript dizi mantığı, to do list html js, yapılacaklar listesi uygulaması, frontend array state, javascript liste ekleme, dynamic list ui, dom list rendering, html js proje, vanilla js todo app, web geliştirme başlangıç, array management frontend, kullanıcı liste sistemi, interaktif liste uygulaması, js push metodu öğrenme, frontend state array, web app liste mantığı, javascript öğrenme projesi, dinamik veri yönetimi, ui liste oluşturma
+    " style="position: absolute; left: 33.3323%; top: 521.2px;">
+
+        <div class="card-custom">
+
+            
+
+            <div class="card-body-custom">
+
+                <h2 class="card-title-custom">
+                    Liste Mantığı (Array State): JavaScript ile To-Do List Uygulaması Oluşturma | Okan Kaplan Edu
+                </h2>
+
+                <p class="card-desc-custom">
+                    JavaScript array state mantığını öğrenerek yapılacaklar listesi (to-do) uygulaması oluştur. Birden fazla veriyi yönetmeyi, listeye eklemeyi ve dinamik UI oluşturmayı keşfet.
+                </p>
+
+                <div class="card-keywords-custom">
+                    array state nedir, javascript dizi mantığı, to do list html js, yapılacaklar listesi uygulaması, frontend array state, javascript liste ekleme, dynamic list UI, DOM list rendering, html js proje, vanilla js todo app, web geliştirme başlangıç, array management frontend, kullanıcı liste sistemi, interaktif liste uygulaması, js push metodu öğrenme, frontend state array, web app liste mantığı, javascript öğrenme projesi, dinamik veri yönetimi, UI liste oluşturma
+                </div>
+
+                <a href="https://okankaplanedu.github.io/tr/kurslar/kisisel-gelisim/ai-ile-aha-html-ile-her-seyi-yaparsin-sor-ogren-uret/array-state-liste-mantigi-todo-uygulamasi-html-js/" class="btn-open" target="_top" rel="noopener noreferrer">
+
+                    Kursu İnceler →
+
+                </a>
+
+            </div>
+
+        </div>
+
+    </div><div class="grid-item" data-search="
+        karakter ve elbise (css): html i̇skeletine stil ve kimlik kazandırma | okan kaplan edu
+        css ile html iskeletine stil kazandırmayı öğren. arka plan, yazı rengi ve buton tasarımıyla web sayfalarını nasıl görsel olarak dönüştürebileceğini keşfet. web tasarımın estetik katmanını öğren.
+        css dersi, html css başlangıç, web tasarım stil verme, css renk değişimi, neon tasarım css, frontend stil eğitimi, html css ilişki, buton tasarımı css, arka plan değiştirme, web estetik tasarım, css öğrenme senaryosu, stilist css metafor, frontend tasarım temelleri, css görsel düzenleme, html head style kullanımı, web sayfası tasarım dersi, ui tasarım başlangıç, modern css eğitimi, görsel web geliştirme, css ile sayfa dönüşümü
+    " style="position: absolute; left: 33.3323%; top: 994.8px;">
+
+        <div class="card-custom">
+
+            
+
+            <div class="card-body-custom">
+
+                <h2 class="card-title-custom">
+                    Karakter ve Elbise (CSS): HTML İskeletine Stil ve Kimlik Kazandırma | Okan Kaplan Edu
+                </h2>
+
+                <p class="card-desc-custom">
+                    CSS ile HTML iskeletine stil kazandırmayı öğren. Arka plan, yazı rengi ve buton tasarımıyla web sayfalarını nasıl görsel olarak dönüştürebileceğini keşfet. Web tasarımın estetik katmanını öğren.
+                </p>
+
+                <div class="card-keywords-custom">
+                    CSS dersi, HTML CSS başlangıç, web tasarım stil verme, CSS renk değişimi, neon tasarım CSS, frontend stil eğitimi, HTML CSS ilişki, buton tasarımı CSS, arka plan değiştirme, web estetik tasarım, CSS öğrenme senaryosu, stilist CSS metafor, frontend tasarım temelleri, CSS görsel düzenleme, HTML head style kullanımı, web sayfası tasarım dersi, UI tasarım başlangıç, modern CSS eğitimi, görsel web geliştirme, CSS ile sayfa dönüşümü
+                </div>
+
+                <a href="https://okankaplanedu.github.io/tr/kurslar/kisisel-gelisim/ai-ile-aha-html-ile-her-seyi-yaparsin-sor-ogren-uret/css-karakter-ve-elbise-stil-verme-html-dersi/" class="btn-open" target="_top" rel="noopener noreferrer">
+
+                    Kursu İnceler →
+
+                </a>
+
+            </div>
+
+        </div>
+
+    </div><div class="grid-item" data-search="
+        dinamik state yönetimi ve hafıza özeti: modern web veri akışını anlamak | okan kaplan edu
+        dinamik state yönetimi ve veri kalıcılığı kavramlarını özetle öğren. sürekli değişen verilerin nasıl yönetildiğini, güncellendiğini ve sürdürülebilir frontend mimarisi içinde nasıl kullanıldığını keşfet.
+        dinamik state özeti, frontend state management özet, javascript veri yönetimi, localstorage özet, web app state lifecycle, dynamic data flow frontend, modern web development summary, ai ile frontend öğrenme, sürdürülebilir veri yönetimi, reactive state basics, javascript liste yönetimi özet, web architecture overview, dom state update, frontend mimari kavramlar, veri kalıcılığı mantığı, dynamic ui concept, yazılım öğrenme özeti, web development fundamentals, state management giriş özeti, frontend sistem düşüncesi
+    " style="position: absolute; left: 0%; top: 1041.6px;">
+
+        <div class="card-custom">
+
+            
+
+            <div class="card-body-custom">
+
+                <h2 class="card-title-custom">
+                    Dinamik State Yönetimi ve Hafıza Özeti: Modern Web Veri Akışını Anlamak | Okan Kaplan Edu
+                </h2>
+
+                <p class="card-desc-custom">
+                    Dinamik state yönetimi ve veri kalıcılığı kavramlarını özetle öğren. Sürekli değişen verilerin nasıl yönetildiğini, güncellendiğini ve sürdürülebilir frontend mimarisi içinde nasıl kullanıldığını keşfet.
+                </p>
+
+                <div class="card-keywords-custom">
+                    dinamik state özeti, frontend state management özet, javascript veri yönetimi, localstorage özet, web app state lifecycle, dynamic data flow frontend, modern web development summary, ai ile frontend öğrenme, sürdürülebilir veri yönetimi, reactive state basics, javascript liste yönetimi özet, web architecture overview, dom state update, frontend mimari kavramlar, veri kalıcılığı mantığı, dynamic ui concept, yazılım öğrenme özeti, web development fundamentals, state management giriş özeti, frontend sistem düşüncesi
+                </div>
+
+                <a href="https://okankaplanedu.github.io/tr/kurslar/kisisel-gelisim/ai-ile-aha-html-ile-her-seyi-yaparsin-sor-ogren-uret/dinamik-state-hafiza-ozet-frontend-veri-yonetimi/" class="btn-open" target="_top" rel="noopener noreferrer">
+
+                    Kursu İnceler →
+
+                </a>
+
+            </div>
+
+        </div>
+
+    </div><div class="grid-item" data-search="
+        dinamik state yönetimi ve hafıza: modern frontend veri kontrolü | okan kaplan edu
+        dinamik state yönetimi ve veri kalıcılığı kavramlarını öğren. sürekli değişen verileri düzenli, sürdürülebilir ve ai destekli yaklaşımla yöneterek modern frontend mimarisini keşfet.
+        dinamik state yönetimi, frontend state management, javascript veri yönetimi, localstorage ileri seviye, dinamik veri yapıları, web uygulama state, sürdürülebilir frontend mimari, ai ile yazılım öğrenme, javascript liste yönetimi, veri kalıcılığı mantığı, modern web development, reactive state concept, frontend architecture, dom state sync, dynamic ui update, web app data flow, javascript öğrenme ileri seviye, state lifecycle frontend, veri yönetim sistemi, yazılım mimarisi giriş
+    " style="position: absolute; left: 66.6647%; top: 1041.6px;">
+
+        <div class="card-custom">
+
+            
+
+            <div class="card-body-custom">
+
+                <h2 class="card-title-custom">
+                    Dinamik State Yönetimi ve Hafıza: Modern Frontend Veri Kontrolü | Okan Kaplan Edu
+                </h2>
+
+                <p class="card-desc-custom">
+                    Dinamik state yönetimi ve veri kalıcılığı kavramlarını öğren. Sürekli değişen verileri düzenli, sürdürülebilir ve AI destekli yaklaşımla yöneterek modern frontend mimarisini keşfet.
+                </p>
+
+                <div class="card-keywords-custom">
+                    dinamik state yönetimi, frontend state management, javascript veri yönetimi, localstorage ileri seviye, dinamik veri yapıları, web uygulama state, sürdürülebilir frontend mimari, ai ile yazılım öğrenme, javascript liste yönetimi, veri kalıcılığı mantığı, modern web development, reactive state concept, frontend architecture, dom state sync, dynamic ui update, web app data flow, javascript öğrenme ileri seviye, state lifecycle frontend, veri yönetim sistemi, yazılım mimarisi giriş
+                </div>
+
+                <a href="https://okankaplanedu.github.io/tr/kurslar/kisisel-gelisim/ai-ile-aha-html-ile-her-seyi-yaparsin-sor-ogren-uret/dinamik-state-yonetimi-hafiza-frontend-ileri-seviye/" class="btn-open" target="_top" rel="noopener noreferrer">
+
+                    Kursu İnceler →
+
+                </a>
+
+            </div>
+
+        </div>
+
+    </div><div class="grid-item" data-search="
+        fabrikayı uyandırmak: i̇lk html dosyanı oluştur ve tarayıcıda çalıştır | okan kaplan edu
+        boş bir ekranı bir üretim fabrikasına dönüştür. i̇lk html dosyanı oluştur, tarayıcıda çalıştır ve web geliştirme sürecinin nasıl başladığını keşfet. kod yazmadan üretim mantığını öğrenmeye başla.
+        html başlangıç dersi, ilk html dosyası, web geliştirmeye giriş, fabrika metaforu html, tarayıcıda html çalıştırma, dosya oluşturma eğitimi, web üretim mantığı, başlangıç seviyesinde html, kodsuz öğrenme html, temel web tasarım dersi, html öğrenme adımları, dijital üretim mantığı, fabrika senaryosu eğitim, frontend başlangıç, web geliştirme ilk adım, html proje başlatma, üretim odaklı öğrenme, tarayıcıda dosya açma, html zihniyet eğitimi, interaktif web öğrenme
+    " style="position: absolute; left: 33.3323%; top: 1471.8px;">
+
+        <div class="card-custom">
+
+            
+
+            <div class="card-body-custom">
+
+                <h2 class="card-title-custom">
+                    Fabrikayı Uyandırmak: İlk HTML Dosyanı Oluştur ve Tarayıcıda Çalıştır | Okan Kaplan Edu
+                </h2>
+
+                <p class="card-desc-custom">
+                    Boş bir ekranı bir üretim fabrikasına dönüştür. İlk HTML dosyanı oluştur, tarayıcıda çalıştır ve web geliştirme sürecinin nasıl başladığını keşfet. Kod yazmadan üretim mantığını öğrenmeye başla.
+                </p>
+
+                <div class="card-keywords-custom">
+                    HTML başlangıç dersi, ilk HTML dosyası, web geliştirmeye giriş, fabrika metaforu HTML, tarayıcıda HTML çalıştırma, dosya oluşturma eğitimi, web üretim mantığı, başlangıç seviyesinde HTML, kodsuz öğrenme HTML, temel web tasarım dersi, HTML öğrenme adımları, dijital üretim mantığı, fabrika senaryosu eğitim, frontend başlangıç, web geliştirme ilk adım, HTML proje başlatma, üretim odaklı öğrenme, tarayıcıda dosya açma, HTML zihniyet eğitimi, interaktif web öğrenme
+                </div>
+
+                <a href="https://okankaplanedu.github.io/tr/kurslar/kisisel-gelisim/ai-ile-aha-html-ile-her-seyi-yaparsin-sor-ogren-uret/fabrikayi-uyandirma-ilk-html-dosya-olusturma-kurs/" class="btn-open" target="_top" rel="noopener noreferrer">
+
+                    Kursu İnceler →
+
+                </a>
+
+            </div>
+
+        </div>
+
+    </div><div class="grid-item" data-search="
+        dış dünyadan haber almak: fetch api ile canlı veri çekme sistemi | okan kaplan edu
+        fetch api kullanarak internetten canlı veri çekmeyi öğren. ücretsiz api’lerden veri alıp sayfanda göstererek web uygulamalarının dış dünya ile nasıl iletişim kurduğunu keşfet.
+        fetch api nedir, javascript api veri çekme, canlı veri çekme html js, web api fetch örneği, json api kullanımı, frontend data fetching, internetten veri alma javascript, quote api örneği, currency api javascript, async await fetch, web development api tutorial, dynamic data loading, browser fetch request, ajax yerine fetch, real time data web, javascript http request, api integration frontend, web haberci sistemi, live data display, external api connection
+    " style="position: absolute; left: 66.6647%; top: 1515.2px;">
+
+        <div class="card-custom">
+
+            
+
+            <div class="card-body-custom">
+
+                <h2 class="card-title-custom">
+                    Dış Dünyadan Haber Almak: Fetch API ile Canlı Veri Çekme Sistemi | Okan Kaplan Edu
+                </h2>
+
+                <p class="card-desc-custom">
+                    Fetch API kullanarak internetten canlı veri çekmeyi öğren. Ücretsiz API’lerden veri alıp sayfanda göstererek web uygulamalarının dış dünya ile nasıl iletişim kurduğunu keşfet.
+                </p>
+
+                <div class="card-keywords-custom">
+                    fetch api nedir, javascript api veri çekme, canlı veri çekme html js, web api fetch örneği, json api kullanımı, frontend data fetching, internetten veri alma javascript, quote api örneği, currency api javascript, async await fetch, web development api tutorial, dynamic data loading, browser fetch request, ajax yerine fetch, real time data web, javascript http request, api integration frontend, web haberci sistemi, live data display, external api connection
+                </div>
+
+                <a href="https://okankaplanedu.github.io/tr/kurslar/kisisel-gelisim/ai-ile-aha-html-ile-her-seyi-yaparsin-sor-ogren-uret/fetch-api-canli-veri-haberci-sistemi-web-api/" class="btn-open" target="_top" rel="noopener noreferrer">
+
+                    Kursu İnceler →
+
+                </a>
+
+            </div>
+
+        </div>
+
+    </div><div class="grid-item" data-search="
+        konum belirleme (geolocation api): tarayıcı ile enlem ve boylam alma | okan kaplan edu
+        geolocation api kullanarak tarayıcıdan konum bilgisi almayı öğren. kullanıcı izniyle enlem ve boylam verilerini çekerek web uygulamalarına konum farkındalığı kazandır.
+        geolocation api nedir, javascript konum alma, enlem boylam html js, browser location api, frontend konum belirleme, web api geolocation örnek, kullanıcı konum izni, navigator geolocation kullanımı, live location javascript, web development location api, map integration basics, html js location project, device location access, browser permission location, coordinates display js, frontend location tracking, geolocation tutorial, real time coordinates web, javascript location example, web app navigation system
+    " style="position: absolute; left: 0%; top: 1559.4px;">
+
+        <div class="card-custom">
+
+            
+
+            <div class="card-body-custom">
+
+                <h2 class="card-title-custom">
+                    Konum Belirleme (Geolocation API): Tarayıcı ile Enlem ve Boylam Alma | Okan Kaplan Edu
+                </h2>
+
+                <p class="card-desc-custom">
+                    Geolocation API kullanarak tarayıcıdan konum bilgisi almayı öğren. Kullanıcı izniyle enlem ve boylam verilerini çekerek web uygulamalarına konum farkındalığı kazandır.
+                </p>
+
+                <div class="card-keywords-custom">
+                    geolocation api nedir, javascript konum alma, enlem boylam html js, browser location api, frontend konum belirleme, web api geolocation örnek, kullanıcı konum izni, navigator geolocation kullanımı, live location javascript, web development location api, map integration basics, html js location project, device location access, browser permission location, coordinates display js, frontend location tracking, geolocation tutorial, real time coordinates web, javascript location example, web app navigation system
+                </div>
+
+                <a href="https://okankaplanedu.github.io/tr/kurslar/kisisel-gelisim/ai-ile-aha-html-ile-her-seyi-yaparsin-sor-ogren-uret/geolocation-api-konum-belirleme-enlem-boylam-web-api/" class="btn-open" target="_top" rel="noopener noreferrer">
+
+                    Kursu İnceler →
+
+                </a>
+
+            </div>
+
+        </div>
+
+    </div><div class="grid-item" data-search="
+        görünmez kasa: localstorage ile tarayıcı hafıza sistemi (html &amp; js dersi) | okan kaplan edu
+        tarayıcı localstorage yapısını öğrenerek görünmez bir hafıza sistemi oluştur. butona tıklanınca veriyi kaydeden basit javascript mantığıyla web sayfalarının nasıl veri sakladığını keşfet.
+        localstorage dersi, javascript hafıza sistemi, tarayıcı veri saklama, html js eğitim, web storage öğrenme, frontend veri kaydetme, local storage nedir, basit javascript örnek, buton tıklama hafıza, web geliştirme başlangıç, tarayıcı içi veri, görünmez veri sistemi, frontend öğrenme projesi, html js etkileşim, dijital fabrika dersi, web storage tutorial, kullanıcı durumu kaydetme, state management başlangıç, browser memory system, interaktif web öğrenme
+    " style="position: absolute; left: 33.3323%; top: 1969.2px;">
+
+        <div class="card-custom">
+
+            
+
+            <div class="card-body-custom">
+
+                <h2 class="card-title-custom">
+                    Görünmez Kasa: LocalStorage ile Tarayıcı Hafıza Sistemi (HTML &amp; JS Dersi) | Okan Kaplan Edu
+                </h2>
+
+                <p class="card-desc-custom">
+                    Tarayıcı LocalStorage yapısını öğrenerek görünmez bir hafıza sistemi oluştur. Butona tıklanınca veriyi kaydeden basit JavaScript mantığıyla web sayfalarının nasıl veri sakladığını keşfet.
+                </p>
+
+                <div class="card-keywords-custom">
+                    LocalStorage dersi, JavaScript hafıza sistemi, tarayıcı veri saklama, HTML JS eğitim, web storage öğrenme, frontend veri kaydetme, local storage nedir, basit JavaScript örnek, buton tıklama hafıza, web geliştirme başlangıç, tarayıcı içi veri, görünmez veri sistemi, frontend öğrenme projesi, HTML JS etkileşim, dijital fabrika dersi, web storage tutorial, kullanıcı durumu kaydetme, state management başlangıç, browser memory system, interaktif web öğrenme
+                </div>
+
+                <a href="https://okankaplanedu.github.io/tr/kurslar/kisisel-gelisim/ai-ile-aha-html-ile-her-seyi-yaparsin-sor-ogren-uret/gorunmez-kasa-localstorage-hafiza-giris-html-js-dersi/" class="btn-open" target="_top" rel="noopener noreferrer">
+
+                    Kursu İnceler →
+
+                </a>
+
+            </div>
+
+        </div>
+
+    </div><div class="grid-item" data-search="
+        i̇skeleti kurmak (html): web sayfasının temel yapısını oluşturma | okan kaplan edu
+        html ile web sayfasının iskeletini kurmayı öğren. başlık, paragraf ve buton gibi temel yapıları oluşturarak bir web organizmasının temelini inşa et. css ve js olmadan saf html yapısını keşfet.
+        html iskelet dersi, web sayfası temel yapı, html h1 p button, frontend başlangıç dersi, html öğrenme senaryosu, web geliştirme temel yapı, html iskelet mantığı, css olmadan html, javascript olmadan html, başlangıç web tasarım, organizma html metafor, frontend temel eğitim, html yapı kurma, web sayfası elementi, html temel ders, dijital yapı oluşturma, html başlangıç projesi, web iskeleti nedir, sade html öğrenme, üretim odaklı html eğitimi
+    " style="position: absolute; left: 66.6647%; top: 1988.8px;">
+
+        <div class="card-custom">
+
+            
+
+            <div class="card-body-custom">
+
+                <h2 class="card-title-custom">
+                    İskeleti Kurmak (HTML): Web Sayfasının Temel Yapısını Oluşturma | Okan Kaplan Edu
+                </h2>
+
+                <p class="card-desc-custom">
+                    HTML ile web sayfasının iskeletini kurmayı öğren. Başlık, paragraf ve buton gibi temel yapıları oluşturarak bir web organizmasının temelini inşa et. CSS ve JS olmadan saf HTML yapısını keşfet.
+                </p>
+
+                <div class="card-keywords-custom">
+                    HTML iskelet dersi, web sayfası temel yapı, HTML h1 p button, frontend başlangıç dersi, HTML öğrenme senaryosu, web geliştirme temel yapı, HTML iskelet mantığı, CSS olmadan HTML, JavaScript olmadan HTML, başlangıç web tasarım, organizma HTML metafor, frontend temel eğitim, HTML yapı kurma, web sayfası elementi, HTML temel ders, dijital yapı oluşturma, HTML başlangıç projesi, web iskeleti nedir, sade HTML öğrenme, üretim odaklı HTML eğitimi
+                </div>
+
+                <a href="https://okankaplanedu.github.io/tr/kurslar/kisisel-gelisim/ai-ile-aha-html-ile-her-seyi-yaparsin-sor-ogren-uret/html-iskelet-kurmak-ilk-yapi-h1-p-button-dersi/" class="btn-open" target="_top" rel="noopener noreferrer">
+
+                    Kursu İnceler →
+
+                </a>
+
+            </div>
+
+        </div>
+
+    </div><div class="grid-item" data-search="
+        i̇lk makineyi kurmak: etkileşimli html buton ile sistem aktifleştirme | okan kaplan edu
+        html ile ilk etkileşimli makineni kur. butona tıklama olayını öğren, kullanıcıyla konuşan basit bir sistem oluştur ve web sayfalarının nasıl interaktif hale geldiğini keşfet.
+        html buton dersi, onclick etkileşimi, web interaktif öğrenme, ilk javascript etkileşimi, sistem çalıştırma butonu, frontend etkileşim dersi, html kullanıcı etkileşimi, basit js alert, web geliştirme başlangıç, tıklanabilir buton yapma, tarayıcı etkileşimleri, öğrenme tabanlı html, fabrika metaforu ders, ui etkileşim sistemi, frontend temel ders, kullanıcı geri bildirimi html, interaktif web sayfası, başlangıç javascript, html öğrenme projesi, dijital üretim etkileşim
+    " style="position: absolute; left: 0%; top: 2053.4px;">
+
+        <div class="card-custom">
+
+            
+
+            <div class="card-body-custom">
+
+                <h2 class="card-title-custom">
+                    İlk Makineyi Kurmak: Etkileşimli HTML Buton ile Sistem Aktifleştirme | Okan Kaplan Edu
+                </h2>
+
+                <p class="card-desc-custom">
+                    HTML ile ilk etkileşimli makineni kur. Butona tıklama olayını öğren, kullanıcıyla konuşan basit bir sistem oluştur ve web sayfalarının nasıl interaktif hale geldiğini keşfet.
+                </p>
+
+                <div class="card-keywords-custom">
+                    HTML buton dersi, onclick etkileşimi, web interaktif öğrenme, ilk JavaScript etkileşimi, sistem çalıştırma butonu, frontend etkileşim dersi, HTML kullanıcı etkileşimi, basit JS alert, web geliştirme başlangıç, tıklanabilir buton yapma, tarayıcı etkileşimleri, öğrenme tabanlı HTML, fabrika metaforu ders, UI etkileşim sistemi, frontend temel ders, kullanıcı geri bildirimi HTML, interaktif web sayfası, başlangıç JavaScript, HTML öğrenme projesi, dijital üretim etkileşim
+                </div>
+
+                <a href="https://okankaplanedu.github.io/tr/kurslar/kisisel-gelisim/ai-ile-aha-html-ile-her-seyi-yaparsin-sor-ogren-uret/ilk-makineyi-kurmak-etkilesimli-html-buton-dersi/" class="btn-open" target="_top" rel="noopener noreferrer">
+
+                    Kursu İnceler →
+
+                </a>
+
+            </div>
+
+        </div>
+
+    </div><div class="grid-item" data-search="
+        sinir sistemi ve beyin (javascript): html sayfasına etkileşim kazandırma | okan kaplan edu
+        javascript ile html ve css yapısına etkileşim kazandırmayı öğren. butona tıklanınca çalışan basit bir sinir sistemi oluşturarak web sayfalarının nasıl canlı ve tepki veren yapılara dönüştüğünü keşfet.
+        javascript dersi, js buton tıklama, web etkileşim sistemi, frontend javascript başlangıç, html css js ilişkisi, sinir sistemi metafor js, event listener öğrenme, onclick örneği, web sayfası interaktif yapma, dom etkileşimi, javascript başlangıç eğitimi, buton tıklama mesajı, frontend logic dersi, web geliştirme temel js, organizma js metafor, canlı web sayfası, kullanıcı etkileşimi js, ui etkileşim sistemi, javascript öğrenme senaryosu, dinamik web sayfası
+    " style="position: absolute; left: 33.3323%; top: 2466.6px;">
+
+        <div class="card-custom">
+
+            
+
+            <div class="card-body-custom">
+
+                <h2 class="card-title-custom">
+                    Sinir Sistemi ve Beyin (JavaScript): HTML Sayfasına Etkileşim Kazandırma | Okan Kaplan Edu
+                </h2>
+
+                <p class="card-desc-custom">
+                    JavaScript ile HTML ve CSS yapısına etkileşim kazandırmayı öğren. Butona tıklanınca çalışan basit bir sinir sistemi oluşturarak web sayfalarının nasıl canlı ve tepki veren yapılara dönüştüğünü keşfet.
+                </p>
+
+                <div class="card-keywords-custom">
+                    JavaScript dersi, JS buton tıklama, web etkileşim sistemi, frontend JavaScript başlangıç, HTML CSS JS ilişkisi, sinir sistemi metafor JS, event listener öğrenme, onclick örneği, web sayfası interaktif yapma, DOM etkileşimi, JavaScript başlangıç eğitimi, buton tıklama mesajı, frontend logic dersi, web geliştirme temel JS, organizma JS metafor, canlı web sayfası, kullanıcı etkileşimi JS, UI etkileşim sistemi, JavaScript öğrenme senaryosu, dinamik web sayfası
+                </div>
+
+                <a href="https://okankaplanedu.github.io/tr/kurslar/kisisel-gelisim/ai-ile-aha-html-ile-her-seyi-yaparsin-sor-ogren-uret/javascript-sinir-sistemi-ve-beyin-js-etkilesim-dersi/" class="btn-open" target="_top" rel="noopener noreferrer">
+
+                    Kursu İnceler →
+
+                </a>
+
+            </div>
+
+        </div>
+
+    </div><div class="grid-item" data-search="
+        karmaşık paketleme (json mührü): to-do list verilerini localstorage’a kaydetme | okan kaplan edu
+        javascript ile json.stringify ve json.parse kullanarak to-do list verilerini localstorage’a kaydetmeyi öğren. karmaşık veri yapılarını paketleyerek kalıcı frontend uygulamaları oluşturmayı keşfet.
+        json stringify parse dersi, localstorage json kullanımı, todo list localstorage, array state json kaydetme, javascript veri paketleme, frontend kalıcı veri yönetimi, json muhür nedir, web storage advanced, javascript array localstorage, dynamic todo app save, web development data persistence, vanilla js json storage, browser storage todo, state persistence json, frontend data packaging, js serialize deserialize, modern web app storage, localstorage array save, ui state json, yazılım veri paketleme mantığı
+    " style="position: absolute; left: 66.6647%; top: 2486.2px;">
+
+        <div class="card-custom">
+
+            
+
+            <div class="card-body-custom">
+
+                <h2 class="card-title-custom">
+                    Karmaşık Paketleme (JSON Mührü): To-Do List Verilerini LocalStorage’a Kaydetme | Okan Kaplan Edu
+                </h2>
+
+                <p class="card-desc-custom">
+                    JavaScript ile JSON.stringify ve JSON.parse kullanarak To-Do list verilerini LocalStorage’a kaydetmeyi öğren. Karmaşık veri yapılarını paketleyerek kalıcı frontend uygulamaları oluşturmayı keşfet.
+                </p>
+
+                <div class="card-keywords-custom">
+                    json stringify parse dersi, localstorage json kullanımı, todo list localstorage, array state json kaydetme, javascript veri paketleme, frontend kalıcı veri yönetimi, json muhür nedir, web storage advanced, javascript array localstorage, dynamic todo app save, web development data persistence, vanilla js json storage, browser storage todo, state persistence json, frontend data packaging, js serialize deserialize, modern web app storage, localstorage array save, ui state json, yazılım veri paketleme mantığı
+                </div>
+
+                <a href="https://okankaplanedu.github.io/tr/kurslar/kisisel-gelisim/ai-ile-aha-html-ile-her-seyi-yaparsin-sor-ogren-uret/json-muhur-localstorage-todo-paketleme-array-state/" class="btn-open" target="_top" rel="noopener noreferrer">
+
+                    Kursu İnceler →
+
+                </a>
+
+            </div>
+
+        </div>
+
+    </div><div class="grid-item" data-search="
+        neden kütüphane kullanırız? vanilla js vs flatpickr karşılaştırması | okan kaplan edu
+        kütüphanelerin neden kullanıldığını öğren. vanilla javascript ile karmaşık tarih seçici yapmanın zorluğunu ve flatpickr gibi kütüphanelerin sağladığı hız ve kolaylığı karşılaştır.
+        neden kütüphane kullanırız, javascript kütüphane nedir, vanilla js zorlukları, flatpickr nedir, date picker javascript, calendar ui library, frontend kütüphane avantajları, javascript vs library, ui component libraries, web development tools, why use libraries in javascript, date picker implementation, vanilla js complexity, reusable components frontend, modern js libraries, dependency usage benefits, ui development shortcuts, javascript ecosystem, frontend productivity tools, library vs vanilla js
+    " style="position: absolute; left: 0%; top: 2527px;">
+
+        <div class="card-custom">
+
+            
+
+            <div class="card-body-custom">
+
+                <h2 class="card-title-custom">
+                    Neden Kütüphane Kullanırız? Vanilla JS vs Flatpickr Karşılaştırması | Okan Kaplan Edu
+                </h2>
+
+                <p class="card-desc-custom">
+                    Kütüphanelerin neden kullanıldığını öğren. Vanilla JavaScript ile karmaşık tarih seçici yapmanın zorluğunu ve Flatpickr gibi kütüphanelerin sağladığı hız ve kolaylığı karşılaştır.
+                </p>
+
+                <div class="card-keywords-custom">
+                    neden kütüphane kullanırız, javascript kütüphane nedir, vanilla js zorlukları, flatpickr nedir, date picker javascript, calendar ui library, frontend kütüphane avantajları, javascript vs library, ui component libraries, web development tools, why use libraries in javascript, date picker implementation, vanilla js complexity, reusable components frontend, modern js libraries, dependency usage benefits, ui development shortcuts, javascript ecosystem, frontend productivity tools, library vs vanilla js
+                </div>
+
+                <a href="https://okankaplanedu.github.io/tr/kurslar/kisisel-gelisim/ai-ile-aha-html-ile-her-seyi-yaparsin-sor-ogren-uret/neden-kutuphane-kullaniriz-vanilla-js-vs-flatpickr/" class="btn-open" target="_top" rel="noopener noreferrer">
+
+                    Kursu İnceler →
+
+                </a>
+
+            </div>
+
+        </div>
+
+    </div><div class="grid-item" data-search="
+        saf güç (sıfır bağımlılık): vanilla html, css ve js ile not defteri | okan kaplan edu
+        hiçbir kütüphane kullanmadan sadece html, css ve javascript ile tek dosyada çalışan not defteri uygulaması oluşturmayı öğren. vanilla javascript ile bağımsız web geliştirme mantığını keşfet.
+        vanilla javascript nedir, saf html css js proje, kütüphanesiz web geliştirme, not defteri html js, bootstrap kullanmadan proje, jquery alternatifi vanilla js, frontend bağımsız uygulama, tek dosya web app, local web app örneği, javascript not uygulaması, vanilla js project tutorial, bağımsız frontend geliştirme, saf javascript örnekleri, browser native api usage, lightweight web app, html css js mini proje, dependency free web app, modern vanilla js, web fundamentals project, zero dependency frontend
+    " style="position: absolute; left: 33.3323%; top: 2990.4px;">
+
+        <div class="card-custom">
+
+            
+
+            <div class="card-body-custom">
+
+                <h2 class="card-title-custom">
+                    Saf Güç (Sıfır Bağımlılık): Vanilla HTML, CSS ve JS ile Not Defteri | Okan Kaplan Edu
+                </h2>
+
+                <p class="card-desc-custom">
+                    Hiçbir kütüphane kullanmadan sadece HTML, CSS ve JavaScript ile tek dosyada çalışan not defteri uygulaması oluşturmayı öğren. Vanilla JavaScript ile bağımsız web geliştirme mantığını keşfet.
+                </p>
+
+                <div class="card-keywords-custom">
+                    vanilla javascript nedir, saf html css js proje, kütüphanesiz web geliştirme, not defteri html js, bootstrap kullanmadan proje, jquery alternatifi vanilla js, frontend bağımsız uygulama, tek dosya web app, local web app örneği, javascript not uygulaması, vanilla js project tutorial, bağımsız frontend geliştirme, saf javascript örnekleri, browser native api usage, lightweight web app, html css js mini proje, dependency free web app, modern vanilla js, web fundamentals project, zero dependency frontend
+                </div>
+
+                <a href="https://okankaplanedu.github.io/tr/kurslar/kisisel-gelisim/ai-ile-aha-html-ile-her-seyi-yaparsin-sor-ogren-uret/saf-guc-vanilla-html-css-javascript-not-defteri/" class="btn-open" target="_top" rel="noopener noreferrer">
+
+                    Kursu İnceler →
+
+                </a>
+
+            </div>
+
+        </div>
+
+    </div><div class="grid-item" data-search="
+        sesle komut (speech recognition api): tarayıcı ile sesli not sistemi | okan kaplan edu
+        speech recognition api kullanarak tarayıcıda mikrofonu dinleyen ve konuşmaları yazıya çeviren sesli not sistemi oluştur. web uygulamalarında sesle kontrol ve doğal etkileşimi keşfet.
+        speech recognition api nedir, javascript ses tanıma, web speech api örnek, mikrofon dinleme html js, voice to text browser, sesli not sistemi javascript, chrome speech api, speech to text web app, frontend voice control, mikrofon erişimi web api, konuşmayı yazıya çevirme, interactive voice app, javascript speech recognition, web development voice api, sesli komut sistemi, voice input html js, browser microphone api, real time speech to text, hands free web app, speech recognition tutorial
+    " style="position: absolute; left: 66.6647%; top: 3010px;">
+
+        <div class="card-custom">
+
+            
+
+            <div class="card-body-custom">
+
+                <h2 class="card-title-custom">
+                    Sesle Komut (Speech Recognition API): Tarayıcı ile Sesli Not Sistemi | Okan Kaplan Edu
+                </h2>
+
+                <p class="card-desc-custom">
+                    Speech Recognition API kullanarak tarayıcıda mikrofonu dinleyen ve konuşmaları yazıya çeviren sesli not sistemi oluştur. Web uygulamalarında sesle kontrol ve doğal etkileşimi keşfet.
+                </p>
+
+                <div class="card-keywords-custom">
+                    speech recognition api nedir, javascript ses tanıma, web speech api örnek, mikrofon dinleme html js, voice to text browser, sesli not sistemi javascript, chrome speech api, speech to text web app, frontend voice control, mikrofon erişimi web api, konuşmayı yazıya çevirme, interactive voice app, javascript speech recognition, web development voice api, sesli komut sistemi, voice input html js, browser microphone api, real time speech to text, hands free web app, speech recognition tutorial
+                </div>
+
+                <a href="https://okankaplanedu.github.io/tr/kurslar/kisisel-gelisim/ai-ile-aha-html-ile-her-seyi-yaparsin-sor-ogren-uret/speech-recognition-api-sesli-not-tarayici-mikrofon/" class="btn-open" target="_top" rel="noopener noreferrer">
+
+                    Kursu İnceler →
+
+                </a>
+
+            </div>
+
+        </div>
+
+    </div><div class="grid-item" data-search="
+        akla mühür vurmak: state’i localstorage ile kalıcı hale getirme | okan kaplan edu
+        javascript state mantığını localstorage ile birleştirerek kalıcı veri yapısını öğren. sayaç uygulamasında sayının tarayıcı hafızasında saklanmasını sağlayarak modern web uygulamalarının temelini keşfet.
+        localstorage dersi, javascript kalıcı veri, state persistence nedir, sayaç localstorage örneği, frontend hafıza yönetimi, web storage api öğrenme, kalıcı state yönetimi, html js sayaç geliştirme, browser storage kullanımı, web uygulama hafızası, javascript state kaydetme, sayfa yenileme veri koruma, frontend veri saklama, localstorage tutorial, vanilla js storage, kalıcı sayaç uygulaması, web development state persistence, ui state storage, modern frontend temel, browser memory concept
+    " style="position: absolute; left: 0%; top: 3021px;">
+
+        <div class="card-custom">
+
+            
+
+            <div class="card-body-custom">
+
+                <h2 class="card-title-custom">
+                    Akla Mühür Vurmak: State’i LocalStorage ile Kalıcı Hale Getirme | Okan Kaplan Edu
+                </h2>
+
+                <p class="card-desc-custom">
+                    JavaScript state mantığını LocalStorage ile birleştirerek kalıcı veri yapısını öğren. Sayaç uygulamasında sayının tarayıcı hafızasında saklanmasını sağlayarak modern web uygulamalarının temelini keşfet.
+                </p>
+
+                <div class="card-keywords-custom">
+                    localStorage dersi, javascript kalıcı veri, state persistence nedir, sayaç localStorage örneği, frontend hafıza yönetimi, web storage API öğrenme, kalıcı state yönetimi, HTML JS sayaç geliştirme, browser storage kullanımı, web uygulama hafızası, javascript state kaydetme, sayfa yenileme veri koruma, frontend veri saklama, localStorage tutorial, vanilla JS storage, kalıcı sayaç uygulaması, web development state persistence, UI state storage, modern frontend temel, browser memory concept
+                </div>
+
+                <a href="https://okankaplanedu.github.io/tr/kurslar/kisisel-gelisim/ai-ile-aha-html-ile-her-seyi-yaparsin-sor-ogren-uret/state-localstorage-hafiza-entegrasyonu-sayac-kalici-veri/" class="btn-open" target="_top" rel="noopener noreferrer">
+
+                    Kursu İnceler →
+
+                </a>
+
+            </div>
+
+        </div>
+
+    </div><div class="grid-item" data-search="
+        “state (durum) nedir?”: basit sayaç uygulaması ile javascript state mantığı | okan kaplan edu
+        state (durum) kavramını basit bir sayaç uygulaması ile öğren. javascript’te sayının anlık değişimini yöneterek uygulamaların nasıl “anlık hafızaya” sahip olduğunu keşfet ve temel frontend mantığını kavra.
+        state nedir, javascript state mantığı, sayaç uygulaması html js, frontend state yönetimi, basit sayaç örneği, html button click sayaç, javascript artı eksi buton, uygulama durumu nedir, frontend öğrenme dersi, dynamic state concept, web geliştirme başlangıç, dom state yönetimi, interaktif sayaç projesi, vanilla js sayaç, tek dosya html proje, state management giriş, ui state mantığı, web uygulama aklı, javascript öğrenme senaryosu, başlangıç frontend projesi
+    " style="position: absolute; left: 66.6647%; top: 3483.6px;">
+
+        <div class="card-custom">
+
+            
+
+            <div class="card-body-custom">
+
+                <h2 class="card-title-custom">
+                    “State (Durum) Nedir?”: Basit Sayaç Uygulaması ile JavaScript State Mantığı | Okan Kaplan Edu
+                </h2>
+
+                <p class="card-desc-custom">
+                    State (durum) kavramını basit bir sayaç uygulaması ile öğren. JavaScript’te sayının anlık değişimini yöneterek uygulamaların nasıl “anlık hafızaya” sahip olduğunu keşfet ve temel frontend mantığını kavra.
+                </p>
+
+                <div class="card-keywords-custom">
+                    state nedir, javascript state mantığı, sayaç uygulaması HTML JS, frontend state yönetimi, basit sayaç örneği, HTML button click sayaç, JavaScript artı eksi buton, uygulama durumu nedir, frontend öğrenme dersi, dynamic state concept, web geliştirme başlangıç, DOM state yönetimi, interaktif sayaç projesi, vanilla JS sayaç, tek dosya HTML proje, state management giriş, UI state mantığı, web uygulama aklı, javascript öğrenme senaryosu, başlangıç frontend projesi
+                </div>
+
+                <a href="https://okankaplanedu.github.io/tr/kurslar/kisisel-gelisim/ai-ile-aha-html-ile-her-seyi-yaparsin-sor-ogren-uret/state-nedir-sayac-uygulamasi-html-js-dersi/" class="btn-open" target="_top" rel="noopener noreferrer">
+
+                    Kursu İnceler →
+
+                </a>
+
+            </div>
+
+        </div>
+
+    </div><div class="grid-item" data-search="
+        tarayıcı tabanlı ai ide: html, css, js canlı önizlemeli geliştirme ortamı | okan kaplan edu
+        tarayıcı üzerinden çalışan html, css ve javascript destekli ai ide tasarlayın. canlı önizleme, dosya import/export, mod geçişleri ve sekmeli editör yapısıyla modern web geliştirme deneyimini keşfedin. tam entegre frontend geliştirme ortamı oluşturma rehberi.
+        tarayıcı tabanlı ide, ai ide tasarımı, html css js editör, canlı preview iframe, frontend ide projesi, web tabanlı kod editörü, no install ide, online code editor, javascript ide projesi, split view editor, kod editörü tasarımı, modern web ide, import export html, live preview system, frontend development tool, browser ide, interactive coding environment, web development tool, ai destekli ide, code editor architecture
+    " style="position: absolute; left: 33.3323%; top: 3487.8px;">
+
+        <div class="card-custom">
+
+            
+
+            <div class="card-body-custom">
+
+                <h2 class="card-title-custom">
+                    Tarayıcı Tabanlı AI IDE: HTML, CSS, JS Canlı Önizlemeli Geliştirme Ortamı | Okan Kaplan Edu
+                </h2>
+
+                <p class="card-desc-custom">
+                    Tarayıcı üzerinden çalışan HTML, CSS ve JavaScript destekli AI IDE tasarlayın. Canlı önizleme, dosya import/export, mod geçişleri ve sekmeli editör yapısıyla modern web geliştirme deneyimini keşfedin. Tam entegre frontend geliştirme ortamı oluşturma rehberi.
+                </p>
+
+                <div class="card-keywords-custom">
+                    tarayıcı tabanlı IDE, AI IDE tasarımı, HTML CSS JS editör, canlı preview iframe, frontend IDE projesi, web tabanlı kod editörü, no install IDE, online code editor, JavaScript IDE projesi, split view editor, kod editörü tasarımı, modern web IDE, import export HTML, live preview system, frontend development tool, browser IDE, interactive coding environment, web development tool, AI destekli IDE, code editor architecture
+                </div>
+
+                <a href="https://okankaplanedu.github.io/tr/kurslar/kisisel-gelisim/ai-ile-aha-html-ile-her-seyi-yaparsin-sor-ogren-uret/tarayici-tabanli-ai-ide-kodsuz-web-gelistirme-editoru/" class="btn-open" target="_top" rel="noopener noreferrer">
+
+                    Kursu İnceler →
+
+                </a>
+
+            </div>
+
+        </div>
+
+    </div><div class="grid-item" data-search="
+        tarayıcınızdaki yapay zeka laboratuvarı: ai destekli yeni nesil dijital üretim deneyimi | okan kaplan edu
+        tarayıcı tabanlı yapay zekâ destekli editörlerle tasarımdan koda, interaktif içeriklerden dinamik kullanıcı deneyimlerine kadar her şeyi tek panel üzerinden üretin. karmaşık kurulumlara ihtiyaç duymadan dijital projeler geliştirin, kendi araçlarınızı oluşturun ve modern web üretim süreçlerini hızlandırın.
+        yapay zekâ editörü, ai destekli web editörü, tarayıcı tabanlı editör, frontend geliştirme, web tasarım araçları, no code geliştirme, dijital üretkenlik, ai web geliştirme, interaktif içerik oluşturma, modern web araçları, yapay zekâ ile kod üretimi, browser based editor, ai frontend tools, yaratıcı üretim platformu, web development tools, kullanıcı deneyimi tasarımı, dinamik web sayfası geliştirme, yapay zekâ laboratuvarı, geleceğin web teknolojileri, ai powered editor
+    " style="position: absolute; left: 0%; top: 3518.4px;">
+
+        <div class="card-custom">
+
+            
+
+            <div class="card-body-custom">
+
+                <h2 class="card-title-custom">
+                    Tarayıcınızdaki Yapay Zeka Laboratuvarı: AI Destekli Yeni Nesil Dijital Üretim Deneyimi | Okan Kaplan Edu
+                </h2>
+
+                <p class="card-desc-custom">
+                    Tarayıcı tabanlı yapay zekâ destekli editörlerle tasarımdan koda, interaktif içeriklerden dinamik kullanıcı deneyimlerine kadar her şeyi tek panel üzerinden üretin. Karmaşık kurulumlara ihtiyaç duymadan dijital projeler geliştirin, kendi araçlarınızı oluşturun ve modern web üretim süreçlerini hızlandırın.
+                </p>
+
+                <div class="card-keywords-custom">
+                    yapay zekâ editörü, AI destekli web editörü, tarayıcı tabanlı editör, frontend geliştirme, web tasarım araçları, no code geliştirme, dijital üretkenlik, AI web geliştirme, interaktif içerik oluşturma, modern web araçları, yapay zekâ ile kod üretimi, browser based editor, AI frontend tools, yaratıcı üretim platformu, web development tools, kullanıcı deneyimi tasarımı, dinamik web sayfası geliştirme, yapay zekâ laboratuvarı, geleceğin web teknolojileri, AI powered editor
+                </div>
+
+                <a href="https://okankaplanedu.github.io/tr/kurslar/kisisel-gelisim/ai-ile-aha-html-ile-her-seyi-yaparsin-sor-ogren-uret/tarayicinizdaki-yapay-zeka-laboratuvari-fikirlerinizi-aninda-gercege-donusturun/" class="btn-open" target="_top" rel="noopener noreferrer">
+
+                    Kursu İnceler →
+
+                </a>
+
+            </div>
+
+        </div>
+
+    </div><div class="grid-item" data-search="
+        ui frameworkleri: hazır düzen ve görsellik ile profesyonel üretim süreci | okan kaplan edu
+        ui frameworkleri ile hazır bileşenler ve grid sistemlerini kullanarak profesyonel web tasarımları oluşturmayı öğren. yapay zekâ ile katmanlı, modüler ve planlı sistem tasarımı yap.
+        ui frameworkleri nedir, frontend framework kullanımı, bootstrap tailwind nedir, grid sistemi web tasarım, hazır ui bileşenleri, modern frontend mimari, ai ile yazılım üretimi, component based design, responsive web design framework, tailwind css avantajları, bootstrap kullanım mantığı, modular ui design, system design frontend, professional web layout, design system nedir, ui kit kullanımı, frontend architecture ai, structured web development, reusable components web, modern css frameworks
+    " style="position: absolute; left: 66.6647%; top: 3981px;">
+
+        <div class="card-custom">
+
+            
+
+            <div class="card-body-custom">
+
+                <h2 class="card-title-custom">
+                    UI Frameworkleri: Hazır Düzen ve Görsellik ile Profesyonel Üretim Süreci | Okan Kaplan Edu
+                </h2>
+
+                <p class="card-desc-custom">
+                    UI frameworkleri ile hazır bileşenler ve grid sistemlerini kullanarak profesyonel web tasarımları oluşturmayı öğren. Yapay zekâ ile katmanlı, modüler ve planlı sistem tasarımı yap.
+                </p>
+
+                <div class="card-keywords-custom">
+                    ui frameworkleri nedir, frontend framework kullanımı, bootstrap tailwind nedir, grid sistemi web tasarım, hazır ui bileşenleri, modern frontend mimari, ai ile yazılım üretimi, component based design, responsive web design framework, tailwind css avantajları, bootstrap kullanım mantığı, modular ui design, system design frontend, professional web layout, design system nedir, ui kit kullanımı, frontend architecture ai, structured web development, reusable components web, modern css frameworks
+                </div>
+
+                <a href="https://okankaplanedu.github.io/tr/kurslar/kisisel-gelisim/ai-ile-aha-html-ile-her-seyi-yaparsin-sor-ogren-uret/ui-frameworkleri-hazir-duzen-gorsellik-ai-uretim-sureci/" class="btn-open" target="_top" rel="noopener noreferrer">
+
+                    Kursu İnceler →
+
+                </a>
+
+            </div>
+
+        </div>
+
+    </div><div class="grid-item" data-search="
+        vanilla js gücü: bağımsız sistem tasarımı ve saf güç yaklaşımı | okan kaplan edu
+        vanilla javascript ile bağımsız sistemler kurmayı öğren. dış kütüphanelere ihtiyaç duymadan hafif, hızlı ve kontrol edilebilir web uygulamaları geliştirerek mimari düşünceyi güçlendir.
+        vanilla js nedir, bağımsız sistem tasarımı javascript, saf güç yaklaşımı web geliştirme, kütüphanesiz javascript mimari, vanilla javascript avantajları, frontend bağımsız yapı, lightweight web app design, dependency free javascript, modern vanilla js architecture, web development fundamentals, javascript design principles, ai destekli kod mimarisi, vanilla js öğrenme, custom framework mantığı, browser native development, performans odaklı frontend, scalable web architecture, javascript best practices, minimal web app design, self contained web systems
+    " style="position: absolute; left: 33.3323%; top: 3988.6px;">
+
+        <div class="card-custom">
+
+            
+
+            <div class="card-body-custom">
+
+                <h2 class="card-title-custom">
+                    Vanilla JS Gücü: Bağımsız Sistem Tasarımı ve Saf Güç Yaklaşımı | Okan Kaplan Edu
+                </h2>
+
+                <p class="card-desc-custom">
+                    Vanilla JavaScript ile bağımsız sistemler kurmayı öğren. Dış kütüphanelere ihtiyaç duymadan hafif, hızlı ve kontrol edilebilir web uygulamaları geliştirerek mimari düşünceyi güçlendir.
+                </p>
+
+                <div class="card-keywords-custom">
+                    vanilla js nedir, bağımsız sistem tasarımı javascript, saf güç yaklaşımı web geliştirme, kütüphanesiz javascript mimari, vanilla javascript avantajları, frontend bağımsız yapı, lightweight web app design, dependency free javascript, modern vanilla js architecture, web development fundamentals, javascript design principles, ai destekli kod mimarisi, vanilla js öğrenme, custom framework mantığı, browser native development, performans odaklı frontend, scalable web architecture, javascript best practices, minimal web app design, self contained web systems
+                </div>
+
+                <a href="https://okankaplanedu.github.io/tr/kurslar/kisisel-gelisim/ai-ile-aha-html-ile-her-seyi-yaparsin-sor-ogren-uret/vanilla-js-gucu-bagimsiz-sistem-tasarimi-saf-guc/" class="btn-open" target="_top" rel="noopener noreferrer">
+
+                    Kursu İnceler →
+
+                </a>
+
+            </div>
+
+        </div>
+
+    </div><div class="grid-item" data-search="
+        web’in anatomisinin derinleşmesi: html, css ve javascript konu başlıkları | okan kaplan edu
+        web’in anatomisini konu başlıkları üzerinden öğren: html, css ve javascript’in iskelet, görünüm ve etkileşim katmanlarını sistemli şekilde keşfet. yapay zekâ destekli öğrenme ile web yapısını yeniden kurma becerisi kazan.
+        web anatomisi konu başlıkları, html css js ders başlıkları, frontend temel konular, web geliştirme iskelet görünüm etkileşim, html css javascript giriş, sistemli web öğrenme, frontend konu listesi, web architecture topics, yapay zekâ ile öğrenme web, modern frontend eğitim, web geliştirme modülleri, html css js yapılandırma, dijital üretim öğrenme, katmanlı web sistemi, frontend öğrenme planı, web tasarım konuları, yazılım öğrenme başlıkları, web geliştirme temel modüller, üretici kodlama eğitimi, ai destekli frontend öğrenme
+    " style="position: absolute; left: 0%; top: 4066px;">
+
+        <div class="card-custom">
+
+            
+
+            <div class="card-body-custom">
+
+                <h2 class="card-title-custom">
+                    Web’in Anatomisinin Derinleşmesi: HTML, CSS ve JavaScript Konu Başlıkları | Okan Kaplan Edu
+                </h2>
+
+                <p class="card-desc-custom">
+                    Web’in anatomisini konu başlıkları üzerinden öğren: HTML, CSS ve JavaScript’in iskelet, görünüm ve etkileşim katmanlarını sistemli şekilde keşfet. Yapay zekâ destekli öğrenme ile web yapısını yeniden kurma becerisi kazan.
+                </p>
+
+                <div class="card-keywords-custom">
+                    web anatomisi konu başlıkları, HTML CSS JS ders başlıkları, frontend temel konular, web geliştirme iskelet görünüm etkileşim, HTML CSS JavaScript giriş, sistemli web öğrenme, frontend konu listesi, web architecture topics, yapay zekâ ile öğrenme web, modern frontend eğitim, web geliştirme modülleri, HTML CSS JS yapılandırma, dijital üretim öğrenme, katmanlı web sistemi, frontend öğrenme planı, web tasarım konuları, yazılım öğrenme başlıkları, web geliştirme temel modüller, üretici kodlama eğitimi, AI destekli frontend öğrenme
+                </div>
+
+                <a href="https://okankaplanedu.github.io/tr/kurslar/kisisel-gelisim/ai-ile-aha-html-ile-her-seyi-yaparsin-sor-ogren-uret/web-anatomisi-derinlesme-html-css-js-konu-basliklari/" class="btn-open" target="_top" rel="noopener noreferrer">
+
+                    Kursu İnceler →
+
+                </a>
+
+            </div>
+
+        </div>
+
+    </div><div class="grid-item" data-search="
+        web’in anatomisi özeti: html, css ve javascript’i sistemli anlama | okan kaplan edu
+        web’in anatomisini özetle öğren: html, css ve javascript’in iskelet, görünüm ve etkileşim katmanlarını anlayarak sistemli üretim yaklaşımını kavra. yapay zekâ destekli öğrenme ile web yapısını yeniden kurma becerisi kazan.
+        web anatomisi özeti, html css js özet, frontend temel yapı, web geliştirme katmanları, html css javascript giriş, sistemli web öğrenme, frontend mimari özet, web yapısı nedir, iskelet görünüm etkileşim, ai ile web öğrenme, modern frontend kavramları, web geliştirme temel anlatım, html css js ilişkisi, dijital yapı mantığı, katmanlı web sistemi, frontend öğrenme özeti, web architecture basics, yazılım öğrenme temel, web tasarım mantığı, üretici yazılım eğitimi
+    " style="position: absolute; left: 66.6647%; top: 4454.6px;">
+
+        <div class="card-custom">
+
+            
+
+            <div class="card-body-custom">
+
+                <h2 class="card-title-custom">
+                    Web’in Anatomisi Özeti: HTML, CSS ve JavaScript’i Sistemli Anlama | Okan Kaplan Edu
+                </h2>
+
+                <p class="card-desc-custom">
+                    Web’in anatomisini özetle öğren: HTML, CSS ve JavaScript’in iskelet, görünüm ve etkileşim katmanlarını anlayarak sistemli üretim yaklaşımını kavra. Yapay zekâ destekli öğrenme ile web yapısını yeniden kurma becerisi kazan.
+                </p>
+
+                <div class="card-keywords-custom">
+                    web anatomisi özeti, HTML CSS JS özet, frontend temel yapı, web geliştirme katmanları, HTML CSS JavaScript giriş, sistemli web öğrenme, frontend mimari özet, web yapısı nedir, iskelet görünüm etkileşim, AI ile web öğrenme, modern frontend kavramları, web geliştirme temel anlatım, HTML CSS JS ilişkisi, dijital yapı mantığı, katmanlı web sistemi, frontend öğrenme özeti, web architecture basics, yazılım öğrenme temel, web tasarım mantığı, üretici yazılım eğitimi
+                </div>
+
+                <a href="https://okankaplanedu.github.io/tr/kurslar/kisisel-gelisim/ai-ile-aha-html-ile-her-seyi-yaparsin-sor-ogren-uret/web-anatomisi-html-css-js-ozet-temel-yapi/" class="btn-open" target="_top" rel="noopener noreferrer">
+
+                    Kursu İnceler →
+
+                </a>
+
+            </div>
+
+        </div>
+
+    </div><div class="grid-item" data-search="
+        web’in anatomisi: html, css ve javascript’i sistemli öğrenme ve yeniden kurma | okan kaplan edu
+        web’in temel anatomisini öğren: html, css ve javascript’in iskelet, görünüm ve etkileşim katmanlarını anlayarak sistemli üretim yaklaşımına geç. yapay zekâ destekli öğrenme ile web yapısını yeniden kurmayı keşfet.
+        web anatomisi, html css js öğrenme, frontend temel yapı, web geliştirme katmanları, iskelet görünüm etkileşim, html css javascript giriş, ai ile öğrenme web, sistemli web geliştirme, frontend mimari, web yapısını öğrenme, temel web teknolojileri, yapay zekâ destekli eğitim, modern frontend öğrenme, web geliştirme mantığı, html css js ilişkisi, component mantığı frontend, web sistemi çözümleme, dijital yapı analizi, öğrenme odaklı kodlama, web architecture basics
+    " style="position: absolute; left: 33.3323%; top: 4482.6px;">
+
+        <div class="card-custom">
+
+            
+
+            <div class="card-body-custom">
+
+                <h2 class="card-title-custom">
+                    Web’in Anatomisi: HTML, CSS ve JavaScript’i Sistemli Öğrenme ve Yeniden Kurma | Okan Kaplan Edu
+                </h2>
+
+                <p class="card-desc-custom">
+                    Web’in temel anatomisini öğren: HTML, CSS ve JavaScript’in iskelet, görünüm ve etkileşim katmanlarını anlayarak sistemli üretim yaklaşımına geç. Yapay zekâ destekli öğrenme ile web yapısını yeniden kurmayı keşfet.
+                </p>
+
+                <div class="card-keywords-custom">
+                    web anatomisi, HTML CSS JS öğrenme, frontend temel yapı, web geliştirme katmanları, iskelet görünüm etkileşim, HTML CSS JavaScript giriş, AI ile öğrenme web, sistemli web geliştirme, frontend mimari, web yapısını öğrenme, temel web teknolojileri, yapay zekâ destekli eğitim, modern frontend öğrenme, web geliştirme mantığı, HTML CSS JS ilişkisi, component mantığı frontend, web sistemi çözümleme, dijital yapı analizi, öğrenme odaklı kodlama, web architecture basics
+                </div>
+
+                <a href="https://okankaplanedu.github.io/tr/kurslar/kisisel-gelisim/ai-ile-aha-html-ile-her-seyi-yaparsin-sor-ogren-uret/web-anatomisi-html-css-js-temel-yapi-ve-ai-ile-ogrenme/" class="btn-open" target="_top" rel="noopener noreferrer">
+
+                    Kursu İnceler →
+
+                </a>
+
+            </div>
+
+        </div>
+
+    </div><div class="grid-item" data-search="
+        web api’leri: dünyaya açılan kapılar ve dış dünya entegrasyonu | okan kaplan edu
+        web api’leri ile tarayıcı yeteneklerini ve dış veri kaynaklarını kullanmayı öğren. konum, cihaz sensörleri ve veri entegrasyonu ile web uygulamalarını gerçek dünya ile bağla.
+        web api nedir, dış dünya entegrasyonu web, browser api kullanımı, frontend api giriş, javascript web api öğrenme, cihaz özellikleri web api, geolocation fetch speech api, web development advanced api, tarayıcı yetenekleri kullanımı, modern frontend architecture, external data integration js, web sensors api, real world web apps, api integration fundamentals, dynamic web systems, javascript api tutorial, browser capabilities, frontend data flow, web app connectivity, modern javascript concepts
+    " style="position: absolute; left: 0%; top: 4583.8px;">
+
+        <div class="card-custom">
+
+            
+
+            <div class="card-body-custom">
+
+                <h2 class="card-title-custom">
+                    Web API’leri: Dünyaya Açılan Kapılar ve Dış Dünya Entegrasyonu | Okan Kaplan Edu
+                </h2>
+
+                <p class="card-desc-custom">
+                    Web API’leri ile tarayıcı yeteneklerini ve dış veri kaynaklarını kullanmayı öğren. Konum, cihaz sensörleri ve veri entegrasyonu ile web uygulamalarını gerçek dünya ile bağla.
+                </p>
+
+                <div class="card-keywords-custom">
+                    web api nedir, dış dünya entegrasyonu web, browser api kullanımı, frontend api giriş, javascript web api öğrenme, cihaz özellikleri web api, geolocation fetch speech api, web development advanced api, tarayıcı yetenekleri kullanımı, modern frontend architecture, external data integration js, web sensors api, real world web apps, api integration fundamentals, dynamic web systems, javascript api tutorial, browser capabilities, frontend data flow, web app connectivity, modern javascript concepts
+                </div>
+
+                <a href="https://okankaplanedu.github.io/tr/kurslar/kisisel-gelisim/ai-ile-aha-html-ile-her-seyi-yaparsin-sor-ogren-uret/web-api-dunya-kapilari-dis-dunya-entegrasyonu-giris/" class="btn-open" target="_top" rel="noopener noreferrer">
+
+                    Kursu İnceler →
+
+                </a>
+
+            </div>
+
+        </div>
+
+    </div><div class="grid-item" data-search="
+        web api’leri özeti: dünyaya açılan kapılar ve dış dünya entegrasyonu | okan kaplan edu
+        web api’leri ile dış dünya entegrasyonunu özetle öğren. tarayıcı yetenekleri, cihaz erişimi ve veri alma süreçleriyle modern web uygulamalarının nasıl dış dünyaya bağlandığını keşfet.
+        web api özeti, dış dünya entegrasyonu özet, browser api summary, javascript web api kavramı, frontend api giriş özeti, geolocation fetch speech api özet, web development api fundamentals, modern web architecture, tarayıcı yetenekleri özeti, external data integration summary, javascript api overview, device access web api, real world web apps summary, frontend system design, dynamic web applications, web connectivity concepts, api integration basics, modern javascript summary, web system architecture, dijital sistemler özet
+    " style="position: absolute; left: 66.6647%; top: 4952px;">
+
+        <div class="card-custom">
+
+            
+
+            <div class="card-body-custom">
+
+                <h2 class="card-title-custom">
+                    Web API’leri Özeti: Dünyaya Açılan Kapılar ve Dış Dünya Entegrasyonu | Okan Kaplan Edu
+                </h2>
+
+                <p class="card-desc-custom">
+                    Web API’leri ile dış dünya entegrasyonunu özetle öğren. Tarayıcı yetenekleri, cihaz erişimi ve veri alma süreçleriyle modern web uygulamalarının nasıl dış dünyaya bağlandığını keşfet.
+                </p>
+
+                <div class="card-keywords-custom">
+                    web api özeti, dış dünya entegrasyonu özet, browser api summary, javascript web api kavramı, frontend api giriş özeti, geolocation fetch speech api özet, web development api fundamentals, modern web architecture, tarayıcı yetenekleri özeti, external data integration summary, javascript api overview, device access web api, real world web apps summary, frontend system design, dynamic web applications, web connectivity concepts, api integration basics, modern javascript summary, web system architecture, dijital sistemler özet
+                </div>
+
+                <a href="https://okankaplanedu.github.io/tr/kurslar/kisisel-gelisim/ai-ile-aha-html-ile-her-seyi-yaparsin-sor-ogren-uret/web-api-dunya-kapilari-ozet-dis-dunya-entegrasyonu/" class="btn-open" target="_top" rel="noopener noreferrer">
+
+                    Kursu İnceler →
+
+                </a>
+
+            </div>
+
+        </div>
+
+    </div><div class="grid-item" data-search="
+        sensörleri uyandırmak: getusermedia ile tarayıcı kamerasını kullanma | okan kaplan edu
+        web api kullanarak getusermedia ile tarayıcı üzerinden kameraya erişmeyi öğren. cihaz sensörlerini aktif hale getirerek web sayfalarının donanım kontrolünü nasıl yaptığını keşfet.
+        getusermedia nedir, web api kamera açma, javascript kamera erişimi, browser camera api, frontend device access, web sensörleri kullanımı, html5 camera stream, mediadevices getusermedia örnek, web api tutorial, javascript video stream, tarayıcı kamera örneği, frontend device integration, web hardware access, media stream api, live camera html js, web development advanced, browser permission camera, video element stream, device sensors web, interactive web api project
+    " style="position: absolute; left: 33.3323%; top: 5006.4px;">
+
+        <div class="card-custom">
+
+            
+
+            <div class="card-body-custom">
+
+                <h2 class="card-title-custom">
+                    Sensörleri Uyandırmak: getUserMedia ile Tarayıcı Kamerasını Kullanma | Okan Kaplan Edu
+                </h2>
+
+                <p class="card-desc-custom">
+                    Web API kullanarak getUserMedia ile tarayıcı üzerinden kameraya erişmeyi öğren. Cihaz sensörlerini aktif hale getirerek web sayfalarının donanım kontrolünü nasıl yaptığını keşfet.
+                </p>
+
+                <div class="card-keywords-custom">
+                    getUserMedia nedir, web api kamera açma, javascript kamera erişimi, browser camera api, frontend device access, web sensörleri kullanımı, html5 camera stream, mediaDevices getUserMedia örnek, web api tutorial, javascript video stream, tarayıcı kamera örneği, frontend device integration, web hardware access, media stream api, live camera html js, web development advanced, browser permission camera, video element stream, device sensors web, interactive web api project
+                </div>
+
+                <a href="https://okankaplanedu.github.io/tr/kurslar/kisisel-gelisim/ai-ile-aha-html-ile-her-seyi-yaparsin-sor-ogren-uret/web-api-kamera-getusermedia-sensor-uygulamasi/" class="btn-open" target="_top" rel="noopener noreferrer">
+
+                    Kursu İnceler →
+
+                </a>
+
+            </div>
+
+        </div>
+
+    </div></div>
+
+</main>
+
+
+
+ 
+ 
+<script>
+fetch("https://okankaplanedu.github.io/main1.html")
+  .then(response => response.text())
+  .then(html => {
+    document.getElementById("main1").innerHTML = html;
+  })
+  .catch(err => console.error("main1", err));
+
+fetch("https://okankaplanedu.github.io/main2.html")
+  .then(response => response.text())
+  .then(html => {
+    document.getElementById("main2").innerHTML = html;
+  })
+  .catch(err => console.error("main2", err));
+
+fetch("https://okankaplanedu.github.io/main3.html")
+  .then(response => response.text())
+  .then(html => {
+    document.getElementById("main3").innerHTML = html;
+  })
+  .catch(err => console.error("main3", err));
+</script>
+
+
+
+
+ 
+<div id="footer-placeholder"> 
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" integrity="sha512-v2v..." crossorigin="anonymous" referrerpolicy="no-referrer">
+
+<style>
+.footer-github {
+  border-top: 1px solid #e5e7eb;
+  padding: 20px 0;
+  font-size: 14px;
+  color: #57606a;
+  background: #fff;
+}
+
+.footer-inner {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.footer-copy {
+  white-space: nowrap;
+}
+
+.footer-links {
+  display: flex;
+  gap: 16px;
+}
+
+.footer-links a {
+  color: #57606a;
+  text-decoration: none;
+  transition: color 0.2s ease;
+  font-size: 16px;
+}
+
+.footer-links a:hover {
+  color: #0969da; /* GitHub blue */
+}
+
+#scrollTopBtn {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  border: none;
+  background: #24292f; /* GitHub tonu */
+  color: #fff;
+  font-size: 18px;
+  cursor: pointer;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 8px 24px rgba(0,0,0,.2);
+  transition: all .3s ease;
+  z-index: 999;
+}
+
+#scrollTopBtn:hover {
+  background: #000;
+  transform: translateY(-4px);
+}
+</style>
+
+<footer class="footer-github">
+  <div class="container">
+    <div class="footer-inner">
+      <!-- Lisans ve Copyright -->
+      <span class="footer-copy">
+        © 2026 Okan Kaplan – MIT License 
+        <a href="LICENSE" target="_blank" rel="noopener noreferrer" aria-label="Read full MIT license">Read full license</a>
+      </span>
+
+      <!-- Sosyal ikonlar -->
+      <div class="footer-links">
+        <a href="https://www.youtube.com/@Ki%C5%9FiselGeli%C5%9Fim-Video-Pdf-img" target="_blank" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+        <a href="https://github.com" target="_blank" aria-label="GitHub"><i class="fab fa-github"></i></a>
+        <a href="https://www.udemy.com/user/okan-kaplan-7" target="_blank" aria-label="Udemy"><i class="fas fa-graduation-cap"></i></a>
+        <a href="https://linkedin.com/in/canvasor" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+        <a href="https://medium.com/@livehtml" target="_blank" aria-label="Medium"><i class="fab fa-medium"></i></a>
+        <a href="https://dev.to/okan_kaplan_livehtml" target="_blank" aria-label="Dev.to"><i class="fab fa-dev"></i></a>
+        <a href="https://gitlab.com/bandanee/" target="_blank" aria-label="GitLab"><i class="fab fa-gitlab"></i></a>
+      </div>
     </div>
-    `;
+  </div>
+
+  <!-- Scroll To Top Button -->
+  <button id="scrollTopBtn" aria-label="Yukarı Çık">
+    <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" fill="currentColor" class="bi bi-arrow-up-circle-fill" viewBox="0 0 16 16">
+      <path d="M16 8A8 8 0 1 0 0 8a8 8 0 0 0 16 0m-7.5 3.5a.5.5 0 0 1-1 0V5.707L5.354 7.854a.5.5 0 1 1-.708-.708l3-3a.5.5 0 0 1 .708 0l3 3a.5.5 0 0 1-.708.708L8.5 5.707z"></path>
+    </svg>
+  </button>
+</footer>
+
+ 
+
+<!-- MIT Lisans Comment -->
+<!--
+MIT License
+Copyright (c) 2026 Okan Kaplan
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.
+-->
+</div>
+
+<script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+<script src="https://unpkg.com/masonry-layout@4/dist/masonry.pkgd.min.js"></script>
+<script src="https://unpkg.com/imagesloaded@5/imagesloaded.pkgd.min.js"></script>
+
+<script>
+ 
+
+let masonryGrid;
+let tempArchive = [];
+
+function initMasonry() {
+    masonryGrid = $('#masonry-container').masonry({
+        itemSelector: '.grid-item',
+        columnWidth: '.grid-sizer',
+        percentPosition: true,
+        transitionDuration: '0.3s'
+    });
+}
+
+ 
+function renderCard(article) {
+
+    const plainText = `
+        ${article.title}
+        ${article.description}
+        ${article.keywords}
+    `.toLowerCase();
+
+    const cardHTML = `
+    <div class="grid-item" data-search="${plainText}" role="article">
+
+        <div class="card-custom">
+
+            <div class="card-body-custom">
+
+                <h2 class="card-title-custom">
+                    <span itemprop="headline">${article.title}</span>
+                </h2>
+
+                <p class="card-desc-custom">
+                    ${article.description || ""}
+                </p>
+
+                <div class="card-keywords-custom">
+                    ${article.keywords || ""}
+                </div>
+
+<a href="${article.url}"
+   class="btn-open"
+   target="_top"
+   rel="noopener noreferrer">
+   View Details →
+</a>
+
+<a href="${location.origin}/pub/${article.url
+      .split('/')
+      .filter(Boolean)
+      .pop()}.pdf"
+   class="btn-pdf"
+   target="_blank"
+   rel="noopener noreferrer">
+   View PDF →
+</a>
+
+            </div>
+
+        </div>
+
+    </div>`;
 
     const $item = $(cardHTML);
 
     $('#masonry-container').append($item);
 
     $item.imagesLoaded(() => {
-
-        masonryGrid
-        .masonry('appended', $item)
-        .masonry('layout');
-
+        if (masonryGrid) {
+            masonryGrid
+                .masonry('appended', $item)
+                .masonry('layout');
+        }
     });
 }
 
-function applySearch(val){
+ 
+function applySearch(val) {
+    val = (val || '').toLowerCase().trim();
 
-    val = (val || '')
-    .toLowerCase()
-    .trim();
-
-    $('.grid-item').each(function(){
-
-        const text = $(this)
-        .data('search') || '';
-
+    $('.grid-item').each(function () {
+        const text = $(this).data('search') || '';
         $(this).toggleClass(
-
             'is-hidden',
-
-            val !== '' &&
-            text.indexOf(val) === -1
-
+            val !== '' && text.indexOf(val) === -1
         );
     });
 
-    if(masonryGrid){
-
+    if (masonryGrid) {
         masonryGrid.masonry('layout');
     }
 }
 
-$(document).on(
-    'input keyup',
-    '#search-input',
+$(document).on('input keyup', '#search-input', function () {
+    applySearch($(this).val());
+});
 
-    function(){
-
-        applySearch($(this).val());
-
-    }
-);
-
-const headerObserver = new MutationObserver(function(){
-
+/* header sync */
+const headerObserver = new MutationObserver(function () {
     const $input = $('#search-input');
-
-    if($input.length){
-
+    if ($input.length) {
         applySearch($input.val());
-
     }
 });
 
 headerObserver.observe(
-
-    document.getElementById(
-        'header-container'
-    ),
-
-    {
-        childList:true,
-        subtree:true
-    }
+    document.getElementById('header-container'),
+    { childList: true, subtree: true }
 );
 
-function updateUIStatus(msg){
 
-    const txt = document.getElementById(
-        "status-message"
-    );
-
-    if(txt){
-
-        txt.innerText = msg;
-    }
-}
-
-function finalizeUI(isCache=false){
-
-    const spinner = document.getElementById(
-        "status-spinner"
-    );
-
-    if(spinner){
-
-        spinner.style.display = "none";
-    }
-
-    document.getElementById(
-        "status"
-    ).innerHTML = `
-
-        <span style="color:#10b981">●</span>
-
-        <span
-            style="
-                font-size:13px;
-                font-weight:600;
-            "
-        >
-
-            ${
-                isCache
-                ? 'Fast Cache Load'
-                : 'Courses Updated'
-            }
-
-        </span>
-
-    `;
-
-    setTimeout(() => {
-
-        $('#status-container').fadeOut();
-
-    }, 2500);
-}
-
-async function scanAndCache(path){
-
-    try{
-
-        const res = await fetch(
-
-            `https://api.github.com/repos/${CONFIG.owner}/${CONFIG.repo}/contents/${path}`
-
-        );
-
-        if(!res.ok) return;
-
-        const items = await res.json();
-
-        for(const item of items){
-
-            if(item.type === "dir"){
-
-                await scanAndCache(item.path);
-
-            }
-
-            else if(
-
-                item.name === "index.html" &&
-                path !== CONFIG.baseFolder
-
-            ){
-
-                updateUIStatus(
-
-                    `Scanning: ${
-                        item.path
-                        .split('/')
-                        .slice(-2,-1)
-                    }`
-
-                );
-
-                const contentRes = await fetch(
-
-                    `https://raw.githubusercontent.com/${CONFIG.owner}/${CONFIG.repo}/${CONFIG.branch}/${item.path}`
-
-                );
-
-                if(contentRes.ok){
-
-                    const html =
-                    await contentRes.text();
-
-                    const doc = new DOMParser()
-                    .parseFromString(
-                        html,
-                        "text/html"
-                    );
-
-                    const title =
-                    doc.querySelector("title")
-                    ?.innerText
-                    ?.trim()
-                    || "Untitled";
-
-                    const description =
-                    doc.querySelector(
-                        'meta[name="description"]'
-                    )
-                    ?.getAttribute("content")
-                    ?.trim()
-                    || "";
-
-                    const keywords =
-                    doc.querySelector(
-                        'meta[name="keywords"]'
-                    )
-                    ?.getAttribute("content")
-                    ?.trim()
-                    || "";
-
-                    const image =
-                    doc.querySelector(
-                        'meta[property="og:image"]'
-                    )
-                    ?.getAttribute("content")
-                    ?.trim()
-                    || "";
-
-                    const data = {
-
-                        url:
-                        `https://${CONFIG.repo}/${
-                            item.path.replace(
-                                'index.html',
-                                ''
-                            )
-                        }`,
-
-                        title,
-                        description,
-                        keywords,
-                        image
-                    };
-
-                    tempArchive.push(data);
-
-                    renderCard(data);
-                }
-
-                await new Promise(
-
-                    r => setTimeout(
-                        r,
-                        CONFIG.fetchDelay
-                    )
-
-                );
-            }
-        }
-
-    }catch(e){
-
-        console.error(
-            "Scan Error:",
-            e
-        );
-    }
-}
-
-async function startApp(){
-
-    $('#status-container').show();
+async function startApp() {
 
     initMasonry();
 
-    const cachedArticles = Cache.get();
-
-    if(cachedArticles){
-
-        cachedArticles.forEach(
-            art => renderCard(art)
-        );
-
-        finalizeUI(true);
-
-    }else{
-
-        await scanAndCache(
-            CONFIG.baseFolder
-        );
-
-        if(tempArchive.length > 0){
-
-            Cache.set(tempArchive);
-        }
-
-        finalizeUI(false);
-    }
+ 
 }
 
 $(document).ready(startApp);
 
-fetch(
-'https://raw.githubusercontent.com/bandanee/root/main/import/footer.html'
-)
-.then(r => r.text())
-.then(h => {
-
-    document.getElementById(
-        'footer-placeholder'
-    ).innerHTML = h;
-
-});
+/* footer */
+fetch('https://raw.githubusercontent.com/bandanee/root/main/import/footer.html')
+    .then(r => r.text())
+    .then(h => document.getElementById('footer-placeholder').innerHTML = h);
 
 </script>
+   
 
-</body>
-</html>
+
+
+</body></html>
+
+
+
+
