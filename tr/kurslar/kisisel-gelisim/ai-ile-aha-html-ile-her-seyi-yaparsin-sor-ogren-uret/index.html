@@ -192,10 +192,10 @@ body{
 
 if (!sessionStorage.getItem('courses_auto_refreshed')) {
 
-    localStorage.removeItem("ok_ai-aha_cache");
+    localStorage.removeItem(CONFIG.cacheKey);
 
     sessionStorage.setItem(
-        'zihinselmatris_auto_refreshed',
+        'courses_auto_refreshed',
         'true'
     );
 
@@ -383,7 +383,7 @@ function renderCard(article){
 
         <div class="card-custom">
 
-            ${imageHTML}
+            
 
             <div class="card-body-custom">
 
@@ -406,7 +406,7 @@ function renderCard(article){
                     rel="noopener noreferrer"
                 >
 
-                    Open Course →
+                    Kursu İnceler →
 
                 </a>
 
