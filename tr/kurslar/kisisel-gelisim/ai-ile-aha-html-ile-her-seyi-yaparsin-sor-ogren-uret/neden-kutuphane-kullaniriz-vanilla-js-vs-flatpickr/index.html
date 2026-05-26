@@ -1,0 +1,159 @@
+<!DOCTYPE html><html lang="tr">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<title>Neden Kütüphane Kullanırız? Vanilla JS vs Flatpickr Karşılaştırması | Okan Kaplan Edu</title>
+<meta name="title" content="Neden Kütüphane Kullanırız? Vanilla JS vs Flatpickr Karşılaştırması | Okan Kaplan Edu">
+<meta name="description" content="Kütüphanelerin neden kullanıldığını öğren. Vanilla JavaScript ile karmaşık tarih seçici yapmanın zorluğunu ve Flatpickr gibi kütüphanelerin sağladığı hız ve kolaylığı karşılaştır.">
+<meta name="keywords" content="neden kütüphane kullanırız, javascript kütüphane nedir, vanilla js zorlukları, flatpickr nedir, date picker javascript, calendar ui library, frontend kütüphane avantajları, javascript vs library, ui component libraries, web development tools, why use libraries in javascript, date picker implementation, vanilla js complexity, reusable components frontend, modern js libraries, dependency usage benefits, ui development shortcuts, javascript ecosystem, frontend productivity tools, library vs vanilla js">
+<meta name="author" content="Okan Kaplan">
+<meta name="creator" content="Okan Kaplan">
+<meta name="publisher" content="Okan Kaplan Academy">
+<meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
+<meta name="googlebot" content="index, follow">
+<meta name="bingbot" content="index, follow">
+<meta name="theme-color" content="#0d6efd">
+<meta name="color-scheme" content="light">
+<meta name="referrer" content="strict-origin-when-cross-origin">
+<meta name="msapplication-TileColor" content="#0d6efd">
+<link rel="canonical" href="https://okankaplanedu.github.io/tr/kurslar/kisisel-gelisim/ai-ile-aha-html-ile-her-seyi-yaparsn-sor-ogren-uret/neden-kutuphane-kullaniriz-vanilla-js-vs-flatpickr/">
+<meta http-equiv="content-language" content="tr">
+<meta name="language" content="tr">
+<link rel="icon" href="/favicon.ico" sizes="any">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="manifest" href="/manifest.json">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Okan Kaplan Edu">
+<meta property="og:locale" content="tr_TR">
+<meta property="og:title" content="Neden Kütüphane Kullanırız? Vanilla JS vs Flatpickr Karşılaştırması | Okan Kaplan Edu">
+<meta property="og:description" content="Kütüphanelerin neden kullanıldığını öğren. Vanilla JavaScript ile karmaşık tarih seçici yapmanın zorluğunu ve Flatpickr gibi kütüphanelerin sağladığı hız ve kolaylığı karşılaştır.">
+<meta property="og:url" content="https://okankaplanedu.github.io/">
+<meta property="og:image" content="https://okankaplanedu.github.io/assets/cover.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Okan Kaplan Academy IoT Courses Cover">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Neden Kütüphane Kullanırız? Vanilla JS vs Flatpickr Karşılaştırması | Okan Kaplan Edu">
+<meta name="twitter:description" content="Kütüphanelerin neden kullanıldığını öğren. Vanilla JavaScript ile karmaşık tarih seçici yapmanın zorluğunu ve Flatpickr gibi kütüphanelerin sağladığı hız ve kolaylığı karşılaştır.">
+<meta name="twitter:image" content="https://okankaplanedu.github.io/assets/cover.jpg">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "name": "Okan Kaplan Edu",
+  "url": "https://okankaplanedu.github.io/",
+  "description": "Neden Kütüphane Kullanırız? dersi, yazılım geliştirmede kütüphanelerin neden gerekli olduğunu ve Vanilla JavaScript ile karmaşık UI bileşenleri geliştirmenin zorluklarını açıklayan temel bir web geliştirme konusudur. Bu derste tarih seçici (calendar/date picker) gibi bir arayüzün sıfırdan Vanilla JS ile nasıl karmaşık hale geldiği ve buna karşılık Flatpickr gibi hazır kütüphanelerin bu işi nasıl saniyeler içinde çözdüğü karşılaştırılır. Amaç, geliştiricinin kütüphane kullanımını bir “kolaylık” değil, bir “uzmanlık paylaşımı” olarak görmesini sağlamaktır.",
+  "publisher": {
+    "@type": "Organization",
+    "name": "Okan Kaplan Edu"
+  }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "name": "Okan Kaplan Edu",
+  "url": "https://okankaplanedu.github.io/",
+  "logo": "https://okankaplanedu.github.io/assets/logo.png",
+  "sameAs": [
+    "https://github.com/okankaplanedu",
+    "https://github.com/bandanee"
+  ]
+}
+</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="dns-prefetch" href="//cdn.jsdelivr.net">
+<link rel="dns-prefetch" href="//cdnjs.cloudflare.com">
+<link rel="dns-prefetch" href="//raw.githubusercontent.com">
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="preload" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+<noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"></noscript>
+<script>
+  fetch("https://raw.githubusercontent.com/bandanee/root/main/import/head.html")
+    .then(r => r.text())
+    .then(t => document.head.insertAdjacentHTML("beforeend", t))
+    .catch(e => console.error(e));
+</script>
+<link href="https://okankaplanedu.github.io/assets/css/ind.css" rel="stylesheet">
+<link href="https://okankaplanedu.github.io/assets/css/cat.css" rel="stylesheet">
+</head>
+<body>
+<div id="cat-header-container"></div>
+<script>
+fetch("https://okankaplanedu.github.io/cat-header-container.html")
+  .then(response => response.text())
+  .then(html => {
+    document.getElementById("cat-header-container").innerHTML = html;
+  })
+  .catch(err => console.error("Header load error:", err));
+</script>
+
+<div class="offcanvas offcanvas-start" id="mL"><div class="offcanvas-body"><iframe src="https://okankaplanedu.github.io/archive.html" style="width:100%;height:100%;border:0;"></iframe></div></div>
+<div class="offcanvas offcanvas-end" id="mR"><div class="offcanvas-body"><iframe src="https://okankaplanedu.github.io/toc.html" style="width:100%;height:100%;border:0;"></iframe></div></div>
+
+<main role="main">
+ <div id="main1"></div> 
+<article itemscope itemtype="https://schema.org/Article">
+<h1 itemprop="headline">Neden Kütüphane Kullanırız? Vanilla JS vs Flatpickr Karşılaştırması</h1>
+
+    <section itemprop="articleBody">
+      <h2>Kütüphane Nedir?</h2><p>Kütüphane, belirli bir problemi çözmek için uzmanlaşmış hazır kod paketidir.</p><p><br></p><p><a href="https://www.udemy.com/course/ai-ile-aha-html-ile-her-seyi-yaparsn-sor-ogren-uret/" rel="noopener noreferrer" target="_blank"><strong><em><u>https://www.udemy.com/course/ai-ile-aha-html-ile-her-seyi-yaparsn-sor-ogren-uret/</u></em></strong></a></p><p><br></p><p>Bu paketler:</p><ul><li>Tekrar kullanılabilir</li><li>Optimize edilmiş</li><li>Test edilmiş çözümler içerir</li></ul><h2>Vanilla JS ile Tarih Seçici Yapmak</h2><p>Sadece Vanilla JavaScript kullanarak bir takvim veya tarih seçici yapmak oldukça karmaşık bir süreçtir.</p><p>Bu süreçte:</p><ul><li>Tarih hesaplama mantığı yazılır</li><li>Takvim UI tasarlanır</li><li>Ay ve yıl geçişleri kontrol edilir</li><li>Kullanıcı etkileşimleri yönetilir</li></ul><p>Sonuç olarak çok sayıda kod satırı gerekir ve hata yapma ihtimali yüksektir.</p><p><br></p><h2>Karmaşıklığın Nedenleri</h2><p>Tarih seçici gibi bileşenler basit görünse de aslında oldukça karmaşıktır.</p><p>Çünkü:</p><ul><li>Farklı ay uzunlukları vardır</li><li>Artık yıllar hesaplanmalıdır</li><li>UI sürekli güncellenmelidir</li><li>Kullanıcı etkileşimi yönetilmelidir</li></ul><h2>Flatpickr Gibi Kütüphaneler</h2><p>Flatpickr gibi kütüphaneler bu karmaşık sistemi hazır olarak sunar.</p><p>Bu kütüphane:</p><ul><li>Hızlı kurulur</li><li>Hafiftir</li><li>Özelleştirilebilir</li><li>Cross-browser uyumludur</li></ul><h2>Kod Karmaşıklığı Karşılaştırması</h2><p>Vanilla JS ile:</p><ul><li>Uzun mantık zincirleri</li><li>Çok sayıda fonksiyon</li><li>Manuel UI yönetimi</li></ul><p>Kütüphane ile:</p><ul><li>Tek satırlık kurulum</li><li>Hazır UI</li><li>Otomatik işleyiş</li></ul><h2>Üretkenlik Farkı</h2><p>Kütüphane kullanımı geliştiricinin hızını ciddi şekilde artırır.</p><p>Bu fark:</p><ul><li>Geliştirme süresini azaltır</li><li>Hata riskini düşürür</li><li>Daha stabil sonuç verir</li></ul><h2>Ne Zaman Kütüphane Kullanılmalı?</h2><p>Kütüphaneler özellikle şu durumlarda tercih edilir:</p><ul><li>Karmaşık UI bileşenleri</li><li>Zaman alan hesaplamalar</li><li>Standartlaştırılmış çözümler</li></ul><h2>Aha! Anı: Tekerleği Yeniden İcat Etme</h2><p>Bu dersin en önemli farkındalığı şudur:</p><ul><li>Her şeyi sıfırdan yapmak gerekmez</li><li>Uzmanların çözümleri kullanılabilir</li><li>Zaman ve emek kazanılır</li></ul><h2>Metafor: Uzman İşçiler</h2><p>Kütüphaneler şöyle düşünülebilir:</p><ul><li>Vanilla JS = her şeyi kendi yapmak</li><li>Kütüphane = uzman işçiyi çağırmak</li><li>Proje = ortak üretim hattı</li></ul><h2>Sonuç: Akıllı Araç Kullanımı</h2><p>Kütüphane kullanımı bir “kolay kaçış” değil, bilinçli bir üretim tercihidir.</p><p>Bu yaklaşım sayesinde geliştirici:</p><ul><li>Daha hızlı üretir</li><li>Daha az hata yapar</li><li>Profesyonel araçları kullanır</li></ul><p>Bu adım, üretici zihnin “verimli araç kullanımı ve optimizasyon” seviyesine geçtiği noktadır.</p><p><br></p><p><br></p><p><br></p><p><br></p><p><br></p>
+    </section>
+ 
+    
+  <!-- YouTube Playlist Link -->
+  <div class="yt-link-container">
+    <a href="https://www.youtube.com/playlist?list=PLINEf8JBXAopHpGHa_4d4PSnwCtlZvYW_" target="_blank" rel="noopener noreferrer" class="yt-play-button">
+      <span class="play-icon">&#9658;</span> View Playlist
+    </a>
+  </div>
+
+ 
+    
+    
+  </article>
+<div id="main2"></div> 
+<div id="main3"></div>  
+</main>
+
+ 
+<div id="footer-wrap" role="contentinfo"></div>
+
+ 
+ 
+ <script>
+fetch("https://okankaplanedu.github.io/main1.html")
+  .then(response => response.text())
+  .then(html => {
+    document.getElementById("main1").innerHTML = html;
+  })
+  .catch(err => console.error("Header load error:", err));
+
+fetch("https://okankaplanedu.github.io/main2.html")
+  .then(response => response.text())
+  .then(html => {
+    document.getElementById("main2").innerHTML = html;
+  })
+  .catch(err => console.error("Header load error:", err));
+
+fetch("https://okankaplanedu.github.io/main3.html")
+  .then(response => response.text())
+  .then(html => {
+    document.getElementById("main3").innerHTML = html;
+  })
+  .catch(err => console.error("Header load error:", err));
+
+  fetch('https://raw.githubusercontent.com/bandanee/root/main/import/footer.html')
+    .then(r => r.text())
+    .then(h => document.getElementById('footer-wrap').innerHTML = h)
+    .catch(e => console.error('Footer load error:', e));
+</script>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
