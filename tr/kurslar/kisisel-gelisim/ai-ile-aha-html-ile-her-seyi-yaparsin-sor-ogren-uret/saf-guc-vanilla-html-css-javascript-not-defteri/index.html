@@ -1,0 +1,159 @@
+<!DOCTYPE html><html lang="tr">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<title>Saf Güç (Sıfır Bağımlılık): Vanilla HTML, CSS ve JS ile Not Defteri | Okan Kaplan Edu</title>
+<meta name="title" content="Saf Güç (Sıfır Bağımlılık): Vanilla HTML, CSS ve JS ile Not Defteri | Okan Kaplan Edu">
+<meta name="description" content="Hiçbir kütüphane kullanmadan sadece HTML, CSS ve JavaScript ile tek dosyada çalışan not defteri uygulaması oluşturmayı öğren. Vanilla JavaScript ile bağımsız web geliştirme mantığını keşfet.">
+<meta name="keywords" content="vanilla javascript nedir, saf html css js proje, kütüphanesiz web geliştirme, not defteri html js, bootstrap kullanmadan proje, jquery alternatifi vanilla js, frontend bağımsız uygulama, tek dosya web app, local web app örneği, javascript not uygulaması, vanilla js project tutorial, bağımsız frontend geliştirme, saf javascript örnekleri, browser native api usage, lightweight web app, html css js mini proje, dependency free web app, modern vanilla js, web fundamentals project, zero dependency frontend">
+<meta name="author" content="Okan Kaplan">
+<meta name="creator" content="Okan Kaplan">
+<meta name="publisher" content="Okan Kaplan Academy">
+<meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
+<meta name="googlebot" content="index, follow">
+<meta name="bingbot" content="index, follow">
+<meta name="theme-color" content="#0d6efd">
+<meta name="color-scheme" content="light">
+<meta name="referrer" content="strict-origin-when-cross-origin">
+<meta name="msapplication-TileColor" content="#0d6efd">
+<link rel="canonical" href="https://okankaplanedu.github.io/tr/kurslar/kisisel-gelisim/ai-ile-aha-html-ile-her-seyi-yaparsn-sor-ogren-uret/saf-guc-vanilla-html-css-javascript-not-defteri/">
+<meta http-equiv="content-language" content="tr">
+<meta name="language" content="tr">
+<link rel="icon" href="/favicon.ico" sizes="any">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="manifest" href="/manifest.json">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Okan Kaplan Edu">
+<meta property="og:locale" content="tr_TR">
+<meta property="og:title" content="Saf Güç (Sıfır Bağımlılık): Vanilla HTML, CSS ve JS ile Not Defteri | Okan Kaplan Edu">
+<meta property="og:description" content="Hiçbir kütüphane kullanmadan sadece HTML, CSS ve JavaScript ile tek dosyada çalışan not defteri uygulaması oluşturmayı öğren. Vanilla JavaScript ile bağımsız web geliştirme mantığını keşfet.">
+<meta property="og:url" content="https://okankaplanedu.github.io/">
+<meta property="og:image" content="https://okankaplanedu.github.io/assets/cover.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Okan Kaplan Academy IoT Courses Cover">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Saf Güç (Sıfır Bağımlılık): Vanilla HTML, CSS ve JS ile Not Defteri | Okan Kaplan Edu">
+<meta name="twitter:description" content="Hiçbir kütüphane kullanmadan sadece HTML, CSS ve JavaScript ile tek dosyada çalışan not defteri uygulaması oluşturmayı öğren. Vanilla JavaScript ile bağımsız web geliştirme mantığını keşfet.">
+<meta name="twitter:image" content="https://okankaplanedu.github.io/assets/cover.jpg">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "name": "Okan Kaplan Edu",
+  "url": "https://okankaplanedu.github.io/",
+  "description": "Saf Güç (Sıfır Bağımlılık) dersi, hiçbir dış kütüphane veya framework kullanılmadan yalnızca saf HTML, CSS ve JavaScript ile tek dosya içinde çalışan bir not defteri uygulaması geliştirmeyi öğreten temel-orta seviye bir web geliştirme konusudur. Bu yaklaşımda Bootstrap, jQuery gibi bağımlılıklar kullanılmaz ve tüm işlevsellik tarayıcının yerel yetenekleriyle oluşturulur. Amaç, geliştiricinin web teknolojilerinin çekirdek yapısını anlaması ve bağımsız, hafif ve doğrudan çalışan uygulamalar geliştirebilmesini sağlamaktır.",
+  "publisher": {
+    "@type": "Organization",
+    "name": "Okan Kaplan Edu"
+  }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "name": "Okan Kaplan Edu",
+  "url": "https://okankaplanedu.github.io/",
+  "logo": "https://okankaplanedu.github.io/assets/logo.png",
+  "sameAs": [
+    "https://github.com/okankaplanedu",
+    "https://github.com/bandanee"
+  ]
+}
+</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="dns-prefetch" href="//cdn.jsdelivr.net">
+<link rel="dns-prefetch" href="//cdnjs.cloudflare.com">
+<link rel="dns-prefetch" href="//raw.githubusercontent.com">
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="preload" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+<noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"></noscript>
+<script>
+  fetch("https://raw.githubusercontent.com/bandanee/root/main/import/head.html")
+    .then(r => r.text())
+    .then(t => document.head.insertAdjacentHTML("beforeend", t))
+    .catch(e => console.error(e));
+</script>
+<link href="https://okankaplanedu.github.io/assets/css/ind.css" rel="stylesheet">
+<link href="https://okankaplanedu.github.io/assets/css/cat.css" rel="stylesheet">
+</head>
+<body>
+<div id="cat-header-container"></div>
+<script>
+fetch("https://okankaplanedu.github.io/cat-header-container.html")
+  .then(response => response.text())
+  .then(html => {
+    document.getElementById("cat-header-container").innerHTML = html;
+  })
+  .catch(err => console.error("Header load error:", err));
+</script>
+
+<div class="offcanvas offcanvas-start" id="mL"><div class="offcanvas-body"><iframe src="https://okankaplanedu.github.io/archive.html" style="width:100%;height:100%;border:0;"></iframe></div></div>
+<div class="offcanvas offcanvas-end" id="mR"><div class="offcanvas-body"><iframe src="https://okankaplanedu.github.io/toc.html" style="width:100%;height:100%;border:0;"></iframe></div></div>
+
+<main role="main">
+ <div id="main1"></div> 
+<article itemscope itemtype="https://schema.org/Article">
+<h1 itemprop="headline">Saf Güç (Sıfır Bağımlılık): Vanilla HTML, CSS ve JS ile Not Defteri</h1>
+
+    <section itemprop="articleBody">
+      <h2>Saf Güç Nedir?</h2><p>Saf güç yaklaşımı, web geliştirmede hiçbir dış kütüphane kullanmadan tamamen tarayıcının kendi yetenekleri ile uygulama geliştirme yöntemidir.</p><p>Bu yaklaşım:</p><ul><li>Dış bağımlılıkları ortadan kaldırır</li><li>Temel web teknolojilerini öğretir</li><li>Performans ve kontrol sağlar</li></ul><p><br></p><p><a href="https://www.udemy.com/course/ai-ile-aha-html-ile-her-seyi-yaparsn-sor-ogren-uret/" rel="noopener noreferrer" target="_blank"><strong><em><u>https://www.udemy.com/course/ai-ile-aha-html-ile-her-seyi-yaparsn-sor-ogren-uret/</u></em></strong></a></p><p><br></p><h2>Vanilla JavaScript Mantığı</h2><p>Vanilla JavaScript, herhangi bir framework veya kütüphane olmadan doğrudan JavaScript kullanımıdır.</p><p>Bu yapı:</p><ul><li>Saf tarayıcı API’lerini kullanır</li><li>Ekstra yük getirmez</li><li>Tam kontrol sağlar</li></ul><h2>Not Defteri Uygulaması Mantığı</h2><p>Bu projede basit bir not defteri oluşturulur.</p><p>Sistem:</p><ul><li>Kullanıcıdan metin alır</li><li>Notları listeler</li><li>İstenirse silme veya ekleme yapılır</li></ul><h2>Tek Dosya Yapısı</h2><p>Bu uygulamanın en önemli özelliği tek dosyada çalışmasıdır.</p><p>Bu yapı:</p><ul><li>HTML, CSS ve JS aynı dosyada bulunur</li><li>Harici dosya gerektirmez</li><li>Taşınabilirlik sağlar</li></ul><h2>Bağımsız Sistem Felsefesi</h2><p>Bu yaklaşımda hiçbir dış kaynak kullanılmaz.</p><p>Bu nedenle:</p><ul><li>CDN yoktur</li><li>Framework yoktur</li><li>Harici script yoktur</li></ul><p>Sistem tamamen bağımsızdır.</p><p><br></p><h2>AI ile Saf Sistem Üretimi</h2><p>Yapay zekâ burada sade ve doğrudan çalışan bir sistem üretir.</p><p>AI:</p><ul><li>Gereksiz bağımlılıkları kaldırır</li><li>Temel işlevleri kurar</li><li>Hafif bir yapı oluşturur</li></ul><h2>Kursiyerin Uygulama Süreci</h2><p>Öğrenci bu aşamada tamamen bağımsız bir uygulama geliştirir.</p><p>Adımlar:</p><ul><li>Tek HTML dosyası oluşturulur</li><li>CSS ve JS içine yazılır</li><li>Not ekleme sistemi kurulur</li><li>Tarayıcıda test edilir</li></ul><h2>Kaynak Kod Bağımsızlığı</h2><p>Bu yaklaşımda tüm kod tek bir dosyadadır.</p><p>Bu sayede:</p><ul><li>Kolay taşınır</li><li>Kolay incelenir</li><li>Hızlı çalışır</li></ul><h2>Aha! Anı: Kütüphanesiz Güç</h2><p>Bu dersin en önemli farkındalığı şudur:</p><ul><li>Hiçbir dış araca ihtiyaç yoktur</li><li>Tarayıcı tek başına yeterlidir</li><li>Temel bilgi en güçlü araçtır</li></ul><h2>Metafor: Tek Başına Evren</h2><p>Bu yapı şöyle düşünülebilir:</p><ul><li>Dosya = bağımsız evren</li><li>JavaScript = motor</li><li>HTML = iskelet</li><li>CSS = görünüm</li></ul><p>Hepsi tek sistemde birleşir.</p><p><br></p><h2>Sonuç: Gerçek Bağımsız Geliştirici</h2><p>Saf güç yaklaşımı ile birlikte geliştirici artık:</p><ul><li>Dış bağımlılıklara ihtiyaç duymaz</li><li>Temel teknolojileri doğrudan kullanır</li><li>Daha sağlam bir altyapı kurar</li></ul><p>Bu adım, üretici zihnin “bağımsız sistem mimarisi” seviyesine geçtiği noktadır.</p>
+    </section>
+ 
+    
+  <!-- YouTube Playlist Link -->
+  <div class="yt-link-container">
+    <a href="https://www.youtube.com/playlist?list=PLINEf8JBXAopHpGHa_4d4PSnwCtlZvYW_" target="_blank" rel="noopener noreferrer" class="yt-play-button">
+      <span class="play-icon">&#9658;</span> View Playlist
+    </a>
+  </div>
+
+ 
+    
+    
+  </article>
+<div id="main2"></div> 
+<div id="main3"></div>  
+</main>
+
+ 
+<div id="footer-wrap" role="contentinfo"></div>
+
+ 
+ 
+ <script>
+fetch("https://okankaplanedu.github.io/main1.html")
+  .then(response => response.text())
+  .then(html => {
+    document.getElementById("main1").innerHTML = html;
+  })
+  .catch(err => console.error("Header load error:", err));
+
+fetch("https://okankaplanedu.github.io/main2.html")
+  .then(response => response.text())
+  .then(html => {
+    document.getElementById("main2").innerHTML = html;
+  })
+  .catch(err => console.error("Header load error:", err));
+
+fetch("https://okankaplanedu.github.io/main3.html")
+  .then(response => response.text())
+  .then(html => {
+    document.getElementById("main3").innerHTML = html;
+  })
+  .catch(err => console.error("Header load error:", err));
+
+  fetch('https://raw.githubusercontent.com/bandanee/root/main/import/footer.html')
+    .then(r => r.text())
+    .then(h => document.getElementById('footer-wrap').innerHTML = h)
+    .catch(e => console.error('Footer load error:', e));
+</script>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
