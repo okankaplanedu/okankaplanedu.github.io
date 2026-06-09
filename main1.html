@@ -1,3 +1,34 @@
 <article>
-m1
+
+  <div class="video-container">
+    <iframe
+      src="https://www.youtube.com/embed/h84qtM0frb8?autoplay=1&mute=1&controls=1&rel=0"
+      title="YouTube video player"
+      frameborder="0"
+      allow="autoplay; encrypted-media; picture-in-picture"
+      allowfullscreen>
+    </iframe>
+  </div>
+
+  <p>m1</p>
+
 </article>
+
+<style>
+.video-container {
+  position: relative;
+  width: 100%;
+  padding-top: 56.25%; /* 16:9 aspect ratio */
+  overflow: hidden;
+  border-radius: 12px;
+}
+
+.video-container iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border: 0;
+}
+</style>
