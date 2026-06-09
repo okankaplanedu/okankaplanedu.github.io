@@ -1,62 +1,6 @@
 <article>
 
-  <div class="video-container" data-video="DILHgrqbzw0">
-    <div class="video-placeholder" role="button" aria-label="Play video"></div>
-  </div>
+m1 
 
 </article>
-
-<style>
-.video-container {
-  position: relative;
-  width: 100%;
-  padding-top: 56.25%;
-  border-radius: 12px;
-  overflow: hidden;
-  background: #000;
-}
-
-.video-placeholder {
-  position: absolute;
-  inset: 0;
-  background: url("https://img.youtube.com/vi/DILHgrqbzw0/maxresdefault.jpg") center/cover;
-  cursor: pointer;
-}
-</style>
-
-<script>
-document.querySelectorAll(".video-container").forEach(container => {
-  const videoId = container.dataset.video;
-
-  container.addEventListener("click", () => {
-
-    const iframe = document.createElement("iframe");
-
-    iframe.id = "ytplayer";
-    iframe.src =
-      "https://www.youtube.com/embed/" +
-      videoId +
-      "?autoplay=1&mute=1&enablejsapi=1&rel=0&modestbranding=1";
-
-    iframe.setAttribute("frameborder", "0");
-    iframe.setAttribute("allow", "autoplay; encrypted-media; picture-in-picture");
-    iframe.setAttribute("allowfullscreen", "");
-
-    container.innerHTML = "";
-    container.appendChild(iframe);
-
-    // 🔥 UNMUTE AFTER LOAD (REAL SOLUTION)
-    setTimeout(() => {
-      iframe.contentWindow.postMessage(
-        JSON.stringify({
-          event: "command",
-          func: "unMute",
-          args: []
-        }),
-        "*"
-      );
-    }, 800);
-
-  });
-});
-</script>
+ 
