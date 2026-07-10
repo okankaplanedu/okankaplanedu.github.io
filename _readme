@@ -1,0 +1,42 @@
+# Okan Kaplan Edu — Multi-Page Static Site
+
+**Oluşturulma:** 10.07.2026 21:37:45
+**Toplam Sayfa:** 44
+**Toplam Konu:** 42
+**Keywords:** 475
+**Root URL:** https://okankaplanedu.github.io
+
+## FTP'ye Yükleme
+```
+site/ klasörünün içindeki tüm dosyaları FTP'ye yükleyin
+Örnek: public_html/ klasörüne atın
+```
+
+## GitHub Pages
+1. `site/` klasörünü repo root'una atın
+2. Settings > Pages > Source: root
+3. `index.html` otomatik ana sayfa olur
+
+## Netlify / Vercel
+`site/` klasörünü doğrudan drag-drop ile yükleyin
+
+## Klasör Yapısı
+```
+site/
+  index.html           (Ana Sayfa)
+  sitemap.xml          (SEO Sitemap)
+  robots.txt           (SEO Robots)
+  .htaccess            (Apache FTP)
+  keywords/
+    index.html         (Keywords İndeksi)
+  [konu-slug]/
+    index.html         (Konu — Türkçe karakter dönüşümü uygulandı)
+    [alt-konu]/
+      index.html
+```
+
+## URL Slug Kuralları
+- Türkçe karakterler dönüştürülür: ş→s ğ→g ü→u ı→i ö→o ç→c
+- Boşluklar - ile değiştirilir
+- Sadece a-z, 0-9, - karakterleri kullanılır
+- Örnek: "Dikkat Kaybı Analizi" → "dikkat-kaybi-analizi"
