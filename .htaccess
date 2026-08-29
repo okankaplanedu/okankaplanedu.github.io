@@ -1,24 +1,16 @@
-Options -Indexes
-ErrorDocument 404 /index.html
-
-<IfModule mod_rewrite.c>
-  RewriteEngine On
-  RewriteBase /
-  RewriteRule ^index\.html$ - [L]
-  RewriteCond %{REQUEST_FILENAME} !-f
-  RewriteCond %{REQUEST_FILENAME} !-d
-  RewriteRule . /index.html [L]
-</IfModule>
-
-<IfModule mod_headers.c>
+ <IfModule mod_headers.c>
   Header set X-Content-Type-Options "nosniff"
   Header set X-Frame-Options "SAMEORIGIN"
   Header set X-XSS-Protection "1; mode=block"
   Header set Referrer-Policy "strict-origin-when-cross-origin"
-  Header set Cache-Control "public, max-age=31536000" "expr=%{REQUEST_URI} =~ /\.(css|js|png|jpg|gif|ico|woff2)$/"
-  Header set Cache-Control "no-cache, must-revalidate" "expr=%{REQUEST_URI} =~ /\.html$/"
-</IfModule>
+  
+  # HTML dosyaları için önbellek yok
+  <FilesMatch "\.(html)$">
+    Header set Cache-Control "no-cache, must-revalidate"
+  </FilesMatch>
 
-<IfModule mod_deflate.c>
-  AddOutputFilterByType DEFLATE text/html text/css application/javascript
+  # Statik dosyalar için uzun süreli önbellek
+  <FilesMatch "\.(css|js|png|jpg|gif|ico|woff2)$">
+    Header set Cache-Control "public, max-age=31536000"
+  </FilesMatch>
 </IfModule>
