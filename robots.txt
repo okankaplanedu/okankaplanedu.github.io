@@ -1,11 +1,5 @@
-# Okan Kaplan Edu — düzeltilmiş robots.txt
-# Not: "Host:" satırı kaldırıldı (Yandex'in 2018'de kullanımdan kaldırdığı,
-# Google'ın hiç tanımadığı bir direktifti). Sitemap satırı artık gerçek bir
-# dosyaya işaret ediyor. /exports/ kuralı korundu (ileride ham export dosyaları
-# yayınlanırsa dizine eklenmesinler diye); o dizini hiç yayınlamayacaksan
-# "Disallow: /exports/" satırını da silebilirsin.
-
 User-agent: *
+Allow: /
 Disallow: /exports/
-
 Sitemap: https://okankaplanedu.github.io/sitemap.xml
+Host: okankaplanedu.github.io
