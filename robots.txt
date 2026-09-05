@@ -1,5 +1,6 @@
 User-agent: *
 Allow: /
+
 Disallow: /exports/
+
 Sitemap: https://okankaplanedu.github.io/sitemap.xml
-Host: okankaplanedu.github.io
