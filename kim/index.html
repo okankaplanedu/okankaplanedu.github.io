@@ -1,0 +1,1811 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Okan Kaplan | Öğrenme · Kültür · Araştırma · Dijital Üretim</title>
+
+<meta name="description"
+content="Okan Kaplan — eğitim eşitliği, kişisel gelişim, akademik araştırma, kültür, kaynak okuryazarlığı ve dijital üretim çalışmaları.">
+
+<meta name="author" content="Okan Kaplan">
+
+<meta property="og:title"
+content="Okan Kaplan | Öğrenme, Kültür, Araştırma ve Dijital Üretim">
+
+<meta property="og:description"
+content="Bilgiyi araştırmak, bilgiyi beceriye dönüştürmek ve üretilen bilginin toplumsal faydasını artırmak.">
+
+<meta property="og:type" content="website">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Source+Serif+4:opsz,wght@8..60,400;8..60,500;8..60,600&display=swap"
+rel="stylesheet">
+
+<style>
+
+:root{
+    --bg:#edf1f5;
+    --surface:#edf1f5;
+    --text:#253140;
+    --muted:#687585;
+    --accent:#536d8b;
+    --accent-soft:#dfe7ef;
+    --border:rgba(255,255,255,.75);
+
+    --shadow-out:
+        14px 14px 30px rgba(163,174,189,.45),
+        -14px -14px 30px rgba(255,255,255,.92);
+
+    --shadow-in:
+        inset 7px 7px 15px rgba(163,174,189,.32),
+        inset -7px -7px 15px rgba(255,255,255,.85);
+
+    --radius:24px;
+    --max:1180px;
+}
+
+*{
+    box-sizing:border-box;
+    margin:0;
+    padding:0;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    background:var(--bg);
+    color:var(--text);
+    font-family:Inter,system-ui,sans-serif;
+    line-height:1.7;
+}
+
+/* =========================
+   GLOBAL
+========================= */
+
+.container{
+    width:min(var(--max),calc(100% - 40px));
+    margin:auto;
+}
+
+section{
+    padding:90px 0;
+}
+
+h1,h2,h3{
+    line-height:1.2;
+}
+
+h1,h2,h3{
+    font-weight:800;
+}
+
+p{
+    color:var(--muted);
+}
+
+a{
+    color:inherit;
+    text-decoration:none;
+}
+
+.serif{
+    font-family:"Source Serif 4",Georgia,serif;
+}
+
+/* =========================
+   SOFT UI
+========================= */
+
+.soft{
+    background:var(--surface);
+    border:1px solid var(--border);
+    box-shadow:var(--shadow-out);
+    border-radius:var(--radius);
+}
+
+.soft-in{
+    box-shadow:var(--shadow-in);
+    border-radius:var(--radius);
+}
+
+button,
+.link-btn{
+    border:0;
+    cursor:pointer;
+    background:var(--surface);
+    color:var(--text);
+    padding:12px 18px;
+    border-radius:16px;
+
+    box-shadow:
+        6px 6px 12px rgba(163,174,189,.35),
+        -6px -6px 12px rgba(255,255,255,.9);
+
+    transition:.25s ease;
+}
+
+button:hover,
+.link-btn:hover{
+    transform:translateY(-2px);
+}
+
+button:active,
+.link-btn:active{
+    box-shadow:var(--shadow-in);
+    transform:translateY(0);
+}
+
+/* =========================
+   HEADER
+========================= */
+
+header{
+    position:sticky;
+    top:0;
+    z-index:1000;
+    backdrop-filter:blur(18px);
+    background:rgba(237,241,245,.82);
+    border-bottom:1px solid rgba(255,255,255,.7);
+}
+
+.nav{
+    min-height:76px;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    gap:20px;
+}
+
+.brand{
+    display:flex;
+    align-items:center;
+    gap:13px;
+    font-weight:800;
+}
+
+.brand-mark{
+    width:42px;
+    height:42px;
+    display:grid;
+    place-items:center;
+    border-radius:14px;
+    color:white;
+    background:linear-gradient(145deg,#607d9d,#415872);
+    box-shadow:
+        5px 5px 10px rgba(163,174,189,.5),
+        -5px -5px 10px rgba(255,255,255,.8);
+}
+
+.brand-text span{
+    display:block;
+}
+
+.brand-sub{
+    font-size:11px;
+    font-weight:500;
+    color:var(--muted);
+    letter-spacing:.08em;
+}
+
+nav{
+    display:flex;
+    gap:8px;
+    flex-wrap:wrap;
+}
+
+nav a{
+    font-size:13px;
+    color:var(--muted);
+    padding:9px 13px;
+    border-radius:12px;
+}
+
+nav a:hover{
+    color:var(--accent);
+    background:rgba(255,255,255,.45);
+}
+
+/* =========================
+   HERO
+========================= */
+
+.hero{
+    padding:110px 0 80px;
+}
+
+.hero-grid{
+    display:grid;
+    grid-template-columns:1.25fr .75fr;
+    gap:50px;
+    align-items:center;
+}
+
+.eyebrow{
+    display:inline-flex;
+    align-items:center;
+    gap:9px;
+    padding:9px 14px;
+    border-radius:14px;
+    font-size:12px;
+    font-weight:700;
+    color:var(--accent);
+    box-shadow:var(--shadow-in);
+    margin-bottom:25px;
+}
+
+.eyebrow-dot{
+    width:7px;
+    height:7px;
+    border-radius:50%;
+    background:#6e8daa;
+}
+
+.hero h1{
+    font-size:clamp(42px,6vw,74px);
+    letter-spacing:-.045em;
+    max-width:850px;
+}
+
+.hero h1 span{
+    color:var(--accent);
+}
+
+.hero-lead{
+    margin-top:25px;
+    max-width:720px;
+    font-size:18px;
+}
+
+.hero-actions{
+    display:flex;
+    gap:14px;
+    flex-wrap:wrap;
+    margin-top:30px;
+}
+
+.primary{
+    background:linear-gradient(145deg,#607d9d,#455e79);
+    color:white;
+}
+
+.hero-card{
+    padding:32px;
+}
+
+.profile-symbol{
+    width:100px;
+    height:100px;
+    border-radius:30px;
+    display:grid;
+    place-items:center;
+    margin-bottom:28px;
+    font-size:40px;
+    font-weight:800;
+    color:white;
+    background:linear-gradient(145deg,#6e89a6,#435b74);
+    box-shadow:
+        10px 10px 20px rgba(163,174,189,.45),
+        -10px -10px 20px rgba(255,255,255,.9);
+}
+
+.hero-card h3{
+    font-size:24px;
+    margin-bottom:10px;
+}
+
+.hero-card p{
+    font-size:14px;
+}
+
+/* =========================
+   SECTION HEAD
+========================= */
+
+.section-head{
+    max-width:760px;
+    margin-bottom:45px;
+}
+
+.section-kicker{
+    font-size:12px;
+    font-weight:800;
+    color:var(--accent);
+    letter-spacing:.12em;
+    text-transform:uppercase;
+    margin-bottom:10px;
+}
+
+.section-head h2{
+    font-size:clamp(30px,4vw,46px);
+    letter-spacing:-.035em;
+}
+
+.section-head p{
+    margin-top:15px;
+}
+
+/* =========================
+   MISSION
+========================= */
+
+.mission{
+    padding:45px;
+}
+
+.mission-quote{
+    font-family:"Source Serif 4",Georgia,serif;
+    font-size:clamp(25px,3vw,38px);
+    line-height:1.45;
+    color:var(--text);
+}
+
+.mission-note{
+    margin-top:25px;
+    max-width:800px;
+}
+
+/* =========================
+   PILLARS
+========================= */
+
+.grid-4{
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:20px;
+}
+
+.pillar{
+    padding:28px;
+    min-height:230px;
+}
+
+.number{
+    width:38px;
+    height:38px;
+    display:grid;
+    place-items:center;
+    border-radius:12px;
+    color:var(--accent);
+    font-size:12px;
+    font-weight:800;
+    box-shadow:var(--shadow-in);
+    margin-bottom:24px;
+}
+
+.pillar h3{
+    font-size:19px;
+    margin-bottom:10px;
+}
+
+.pillar p{
+    font-size:14px;
+}
+
+/* =========================
+   RESEARCH
+========================= */
+
+.research-grid{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:25px;
+}
+
+.research-card{
+    padding:34px;
+}
+
+.research-card h3{
+    font-size:22px;
+    margin-bottom:15px;
+}
+
+.research-card ul{
+    list-style:none;
+    margin-top:20px;
+}
+
+.research-card li{
+    padding:11px 0;
+    border-bottom:1px solid rgba(100,120,140,.12);
+    color:var(--muted);
+    font-size:14px;
+}
+
+.research-card li::before{
+    content:"→";
+    color:var(--accent);
+    margin-right:10px;
+    font-weight:bold;
+}
+
+.doi-box{
+    margin-top:25px;
+    padding:22px;
+    border-radius:18px;
+    box-shadow:var(--shadow-in);
+}
+
+.doi-label{
+    font-size:11px;
+    font-weight:800;
+    color:var(--accent);
+    letter-spacing:.1em;
+    margin-bottom:7px;
+}
+
+/* =========================
+   PROCESS
+========================= */
+
+.process{
+    display:grid;
+    grid-template-columns:repeat(5,1fr);
+    gap:14px;
+}
+
+.process-item{
+    padding:25px 18px;
+    text-align:center;
+}
+
+.process-number{
+    font-size:12px;
+    font-weight:800;
+    color:var(--accent);
+}
+
+.process-title{
+    font-weight:800;
+    margin-top:8px;
+}
+
+.process p{
+    font-size:12px;
+    margin-top:6px;
+}
+
+/* =========================
+   PROJECTS
+========================= */
+
+.projects{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:22px;
+}
+
+.project{
+    padding:30px;
+    min-height:250px;
+    display:flex;
+    flex-direction:column;
+}
+
+.project-tag{
+    display:inline-block;
+    width:max-content;
+    padding:6px 10px;
+    border-radius:9px;
+    font-size:10px;
+    font-weight:800;
+    color:var(--accent);
+    box-shadow:var(--shadow-in);
+    margin-bottom:20px;
+}
+
+.project h3{
+    font-size:20px;
+    margin-bottom:10px;
+}
+
+.project p{
+    font-size:14px;
+}
+
+.project a{
+    margin-top:auto;
+    padding-top:20px;
+    color:var(--accent);
+    font-size:13px;
+    font-weight:700;
+}
+
+/* =========================
+   CULTURE
+========================= */
+
+.culture{
+    display:grid;
+    grid-template-columns:.8fr 1.2fr;
+    gap:35px;
+    align-items:stretch;
+}
+
+.culture-main{
+    padding:40px;
+}
+
+.culture-main h2{
+    font-family:"Source Serif 4",Georgia,serif;
+    font-size:40px;
+}
+
+.culture-main p{
+    margin-top:20px;
+}
+
+.culture-map{
+    padding:30px;
+}
+
+.map-row{
+    display:flex;
+    align-items:center;
+    gap:12px;
+    padding:15px 0;
+    border-bottom:1px solid rgba(100,120,140,.12);
+}
+
+.map-row:last-child{
+    border-bottom:0;
+}
+
+.map-node{
+    width:42px;
+    height:42px;
+    display:grid;
+    place-items:center;
+    border-radius:13px;
+    box-shadow:var(--shadow-in);
+    color:var(--accent);
+    font-weight:800;
+    font-size:12px;
+}
+
+.map-row strong{
+    display:block;
+    font-size:14px;
+}
+
+.map-row span{
+    color:var(--muted);
+    font-size:12px;
+}
+
+/* =========================
+   DIGITAL ECOSYSTEM
+========================= */
+
+.ecosystem{
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:20px;
+}
+
+.eco{
+    padding:28px;
+    text-align:center;
+}
+
+.eco-icon{
+    width:65px;
+    height:65px;
+    display:grid;
+    place-items:center;
+    margin:0 auto 20px;
+    border-radius:20px;
+    box-shadow:var(--shadow-in);
+    color:var(--accent);
+    font-weight:800;
+}
+
+.eco h3{
+    font-size:18px;
+    margin-bottom:7px;
+}
+
+.eco p{
+    font-size:13px;
+}
+
+.eco a{
+    display:inline-block;
+    margin-top:16px;
+    color:var(--accent);
+    font-size:12px;
+    font-weight:700;
+}
+
+/* =========================
+   NETWORK
+========================= */
+
+.network{
+    text-align:center;
+    padding:60px 40px;
+}
+
+.network h2{
+    font-size:38px;
+}
+
+.network p{
+    max-width:680px;
+    margin:15px auto 30px;
+}
+
+.network-actions{
+    display:flex;
+    justify-content:center;
+    gap:14px;
+    flex-wrap:wrap;
+}
+
+/* =========================
+   FOOTER
+========================= */
+
+footer{
+    padding:50px 0;
+}
+
+.footer-inner{
+    display:flex;
+    justify-content:space-between;
+    gap:20px;
+    align-items:center;
+    color:var(--muted);
+    font-size:12px;
+}
+
+.footer-links{
+    display:flex;
+    gap:18px;
+}
+
+.footer-links a:hover{
+    color:var(--accent);
+}
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media(max-width:950px){
+
+    nav{
+        display:none;
+    }
+
+    .hero-grid,
+    .research-grid,
+    .culture{
+        grid-template-columns:1fr;
+    }
+
+    .grid-4{
+        grid-template-columns:repeat(2,1fr);
+    }
+
+    .projects{
+        grid-template-columns:repeat(2,1fr);
+    }
+
+    .ecosystem{
+        grid-template-columns:repeat(2,1fr);
+    }
+
+    .process{
+        grid-template-columns:repeat(2,1fr);
+    }
+}
+
+@media(max-width:600px){
+
+    section{
+        padding:65px 0;
+    }
+
+    .container{
+        width:min(100% - 26px,var(--max));
+    }
+
+    .hero{
+        padding:75px 0 50px;
+    }
+
+    .hero h1{
+        font-size:42px;
+    }
+
+    .grid-4,
+    .projects,
+    .ecosystem,
+    .process{
+        grid-template-columns:1fr;
+    }
+
+    .mission,
+    .research-card,
+    .culture-main,
+    .culture-map,
+    .network{
+        padding:25px;
+    }
+
+    .footer-inner{
+        flex-direction:column;
+        align-items:flex-start;
+    }
+
+}
+
+/* =========================
+   ACCESSIBILITY
+========================= */
+
+:focus-visible{
+    outline:3px solid rgba(83,109,139,.35);
+    outline-offset:4px;
+}
+
+</style>
+</head>
+
+<body>
+
+<header>
+
+<div class="container nav">
+
+<a class="brand" href="#top">
+
+<div class="brand-mark">
+OK
+</div>
+
+<div class="brand-text">
+<span>Okan Kaplan</span>
+<span class="brand-sub">ÖĞRENME · ARAŞTIRMA · ÜRETİM</span>
+</div>
+
+</a>
+
+<nav>
+
+<a href="#amac">Amaç</a>
+<a href="#arastirma">Araştırma</a>
+<a href="#projeler">Projeler</a>
+<a href="#kultur">Kültür</a>
+<a href="#baglantilar">Bağlantılar</a>
+
+</nav>
+
+</div>
+
+</header>
+
+
+<main id="top">
+
+<!-- HERO -->
+
+<section class="hero">
+
+<div class="container hero-grid">
+
+<div>
+
+<div class="eyebrow">
+<span class="eyebrow-dot"></span>
+KİŞİSEL ARAŞTIRMA VE ÜRETİM PORTFÖYÜ
+</div>
+
+<h1>
+Bilgiyi
+<span>araştırmak.</span><br>
+Anlamlandırmak.<br>
+Üretime dönüştürmek.
+</h1>
+
+<p class="hero-lead">
+Eğitim eşitliği, kişisel gelişim, akademik kaynak okuryazarlığı,
+kültür ve dijital üretim alanlarını bir araya getiren
+kişisel çalışma ekosistemim.
+</p>
+
+<div class="hero-actions">
+
+<a class="link-btn primary"
+href="#amac">
+Çalışmalarımı Keşfet
+</a>
+
+<a class="link-btn"
+href="https://okankaplanedu.github.io/"
+target="_blank"
+rel="noopener">
+Dijital Arşiv
+</a>
+
+</div>
+
+</div>
+
+
+<div class="hero-card soft">
+
+<div class="profile-symbol">
+OK
+</div>
+
+<h3>Okan Kaplan</h3>
+
+<p>
+Eğitim, araştırma, kültür ve dijital üretim
+arasındaki bağlantıları araştıran bağımsız üretim çalışmaları.
+</p>
+
+<br>
+
+<p>
+<strong>Temel düşünce:</strong><br>
+Bilgi yalnızca edinilecek bir şey değil;
+sorgulanacak, ilişkilendirilecek, uygulanacak
+ve faydalı bir üretime dönüştürülecek bir değerdir.
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- AMAÇ -->
+
+<section id="amac">
+
+<div class="container">
+
+<div class="section-head">
+
+<div class="section-kicker">
+01 · AMAÇ
+</div>
+
+<h2>
+Çalışmalarımın temel amacı
+</h2>
+
+<p>
+Teknolojiyi yalnızca teknik üretim için değil,
+öğrenme, araştırma ve toplumsal faydayı destekleyen
+bir araç olarak değerlendirmek.
+</p>
+
+</div>
+
+
+<div class="mission soft">
+
+<div class="mission-quote">
+“Öğrenmenin sonucu yalnızca bilmek değil;
+uygulayabilmek, üretebilmek ve
+başkaları için faydalı hale getirebilmektir.”
+</div>
+
+<p class="mission-note">
+Bu yaklaşım doğrultusunda eğitim eşitliği,
+yaşam boyu öğrenme, kişisel gelişim,
+akademik kaynaklara erişim, kültür ve
+dijital üretim alanlarında çalışmalar yürütüyorum.
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- PILLARS -->
+
+<section>
+
+<div class="container">
+
+<div class="section-head">
+
+<div class="section-kicker">
+02 · TEMEL ALANLAR
+</div>
+
+<h2>
+Birbirini tamamlayan dört eksen
+</h2>
+
+</div>
+
+
+<div class="grid-4">
+
+<div class="pillar soft">
+
+<div class="number">01</div>
+
+<h3>Eğitim Eşitliği</h3>
+
+<p>
+Bilgiye ve öğrenme kaynaklarına erişimi
+genişletmek, farklı öğrenme biçimlerini
+desteklemek ve dijital araçları erişilebilir
+hale getirmek.
+</p>
+
+</div>
+
+
+<div class="pillar soft">
+
+<div class="number">02</div>
+
+<h3>Kişisel Gelişim</h3>
+
+<p>
+Öğrenmeyi öğrenme, eleştirel düşünme,
+araştırma, problem çözme, yaratıcılık
+ve üretim alışkanlıklarını geliştirmek.
+</p>
+
+</div>
+
+
+<div class="pillar soft">
+
+<div class="number">03</div>
+
+<h3>Akademik Araştırma</h3>
+
+<p>
+DOI, akademik metadata, kaynak karşılaştırması,
+referans takibi ve konu tabanlı kaynak
+haritaları oluşturmak.
+</p>
+
+</div>
+
+
+<div class="pillar soft">
+
+<div class="number">04</div>
+
+<h3>Toplumsal Fayda</h3>
+
+<p>
+Araştırılan bilgiyi eğitim materyallerine,
+dijital araçlara ve daha geniş kullanıcı
+gruplarının faydalanabileceği çalışmalara
+dönüştürmek.
+</p>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- ARAŞTIRMA -->
+
+<section id="arastirma">
+
+<div class="container">
+
+<div class="section-head">
+
+<div class="section-kicker">
+03 · AKADEMİK ARAŞTIRMA
+</div>
+
+<h2>
+Kaynağı bulmaktan bilgi sistemine
+</h2>
+
+<p>
+Akademik araştırmayı yalnızca makale okumak
+olarak değil, kaynaklar arasında ilişkiler
+kurabilen yapılandırılmış bir bilgi sistemi
+oluşturma süreci olarak ele alıyorum.
+</p>
+
+</div>
+
+
+<div class="research-grid">
+
+<div class="research-card soft">
+
+<h3>
+DOI ve Akademik Metadata
+</h3>
+
+<p>
+Akademik yayınları DOI üzerinden araştırabilir,
+bibliyografik bilgileri yapılandırabilir ve
+konulara göre sınıflandırabilirim.
+</p>
+
+<ul>
+
+<li>DOI araştırması</li>
+
+<li>Başlık ve yazar sorgulama</li>
+
+<li>Yayın ve dergi bilgileri</li>
+
+<li>Yayın tarihi ve metadata</li>
+
+<li>Kaynak karşılaştırması</li>
+
+<li>Referans yapılandırması</li>
+
+</ul>
+
+<div class="doi-box">
+
+<div class="doi-label">
+ARAŞTIRMA MANTIĞI
+</div>
+
+<strong>
+DOI → Metadata → Kaynak → Kavram → İlişki
+</strong>
+
+</div>
+
+</div>
+
+
+<div class="research-card soft">
+
+<h3>
+Kişisel Akademik Kaynak Veritabanı
+</h3>
+
+<p>
+Amaç yalnızca kaynak biriktirmek değil;
+kaynakları konu, kavram, yazar ve yayın
+ilişkileri üzerinden yeniden kullanılabilir
+bir araştırma altyapısına dönüştürmek.
+</p>
+
+<ul>
+
+<li>Konu ağaçları</li>
+
+<li>Kaynak sınıflandırması</li>
+
+<li>Yazar ve eser ilişkileri</li>
+
+<li>DOI kayıtları</li>
+
+<li>Kavram haritaları</li>
+
+<li>Kaynaklardan eğitim içeriği üretimi</li>
+
+</ul>
+
+<div class="doi-box">
+
+<div class="doi-label">
+ÖRNEK ALANLAR
+</div>
+
+<strong>
+Pedagoji · Psikoloji · Öğrenme · Kültür · Edebiyat
+</strong>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- PROCESS -->
+
+<section>
+
+<div class="container">
+
+<div class="section-head">
+
+<div class="section-kicker">
+04 · ARAŞTIRMA SÜRECİ
+</div>
+
+<h2>
+Bilginin üretime dönüşüm döngüsü
+</h2>
+
+</div>
+
+
+<div class="process">
+
+<div class="process-item soft">
+
+<div class="process-number">01</div>
+
+<div class="process-title">
+Araştır
+</div>
+
+<p>
+Soru ve kaynakları belirle.
+</p>
+
+</div>
+
+
+<div class="process-item soft">
+
+<div class="process-number">02</div>
+
+<div class="process-title">
+Doğrula
+</div>
+
+<p>
+Kaynağı ve metadata'yı incele.
+</p>
+
+</div>
+
+
+<div class="process-item soft">
+
+<div class="process-number">03</div>
+
+<div class="process-title">
+İlişkilendir
+</div>
+
+<p>
+Kavramlar arasında bağlantılar kur.
+</p>
+
+</div>
+
+
+<div class="process-item soft">
+
+<div class="process-number">04</div>
+
+<div class="process-title">
+Üret
+</div>
+
+<p>
+Bilgiyi dijital esere dönüştür.
+</p>
+
+</div>
+
+
+<div class="process-item soft">
+
+<div class="process-number">05</div>
+
+<div class="process-title">
+Paylaş
+</div>
+
+<p>
+Toplumsal faydaya aç.
+</p>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- PROJELER -->
+
+<section id="projeler">
+
+<div class="container">
+
+<div class="section-head">
+
+<div class="section-kicker">
+05 · DİJİTAL ÜRETİM
+</div>
+
+<h2>
+Araştırmadan çalışan sistemlere
+</h2>
+
+<p>
+Kodlama benim için amaç değil;
+düşünceyi çalışan bir sisteme dönüştürme aracıdır.
+</p>
+
+</div>
+
+
+<div class="projects">
+
+
+<div class="project soft">
+
+<div class="project-tag">
+EĞİTİM
+</div>
+
+<h3>
+Araştırma ve Kaynak Okuryazarlığı
+</h3>
+
+<p>
+Bilgi arama, kaynak değerlendirme,
+karşılaştırma ve bilgiyi sentezleyerek
+yapılandırılmış çalışmalara dönüştürme.
+</p>
+
+<a href="https://www.udemy.com/user/okan-kaplan-7/"
+target="_blank"
+rel="noopener">
+Udemy çalışmalarını incele →
+</a>
+
+</div>
+
+
+<div class="project soft">
+
+<div class="project-tag">
+GENERATİF MÜZİK
+</div>
+
+<h3>
+Orchestra
+</h3>
+
+<p>
+JavaScript ve Web Audio teknolojileriyle
+algoritmik müzik, melodi, armoni, ritim
+ve orkestral katmanlar üzerine deneysel çalışmalar.
+</p>
+
+<a href="https://okankaplanedu.github.io/"
+target="_blank"
+rel="noopener">
+Projeleri incele →
+</a>
+
+</div>
+
+
+<div class="project soft">
+
+<div class="project-tag">
+3D · KÜLTÜR
+</div>
+
+<h3>
+Dijital Kültürel Miras
+</h3>
+
+<p>
+3D modeller, arazi görselleştirme ve
+tarihî yapıların dijital ortamda
+incelenmesi ve sunulması.
+</p>
+
+<a href="https://okankaplanedu.github.io/"
+target="_blank"
+rel="noopener">
+Dijital arşivi incele →
+</a>
+
+</div>
+
+
+<div class="project soft">
+
+<div class="project-tag">
+WEB
+</div>
+
+<h3>
+Tarayıcı Tabanlı Eğitim Araçları
+</h3>
+
+<p>
+Kurulum gerektirmeden çalışan HTML,
+CSS ve JavaScript tabanlı interaktif
+öğrenme araçları.
+</p>
+
+<a href="https://okankaplanedu.github.io/"
+target="_blank"
+rel="noopener">
+Web projelerini incele →
+</a>
+
+</div>
+
+
+<div class="project soft">
+
+<div class="project-tag">
+BİLGİ · BECERİ
+</div>
+
+<h3>
+Bilgi-Beceri
+</h3>
+
+<p>
+Bilgiyi yalnızca tüketmek yerine
+beceriye, dijital üretime ve
+somut projelere dönüştürme yaklaşımı.
+</p>
+
+<a href="https://bilgibeceri.com"
+target="_blank"
+rel="noopener">
+Bilgi-Beceri →
+</a>
+
+</div>
+
+
+<div class="project soft">
+
+<div class="project-tag">
+DİJİTAL ARAŞTIRMA
+</div>
+
+<h3>
+Akademik Bilgi Sistemleri
+</h3>
+
+<p>
+Kaynak, DOI, kavram, konu ve referans
+ilişkilerini bir araya getiren
+araştırma altyapıları.
+</p>
+
+<a href="#arastirma">
+Araştırma modelini incele →
+</a>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- CULTURE -->
+
+<section id="kultur">
+
+<div class="container">
+
+<div class="culture">
+
+<div class="culture-main soft">
+
+<div class="section-kicker">
+06 · KÜLTÜR VE DÜŞÜNCE
+</div>
+
+<h2>
+Teknolojinin ötesinde:
+İnsan, kültür ve düşünce
+</h2>
+
+<p>
+Edebiyat, tarih, sanat, bilim tarihi,
+pedagoji, psikoloji ve genel kültür
+alanlarını teknoloji çalışmalarından
+ayrı görmüyorum.
+</p>
+
+<p>
+Farklı disiplinlerin aynı soruya
+farklı açılardan bakabilmesi,
+yeni öğrenme ve üretim biçimleri
+ortaya çıkarabilir.
+</p>
+
+</div>
+
+
+<div class="culture-map soft">
+
+<div class="map-row">
+
+<div class="map-node">
+E
+</div>
+
+<div>
+<strong>Edebiyat</strong>
+<span>Anlatı · dil · düşünce</span>
+</div>
+
+</div>
+
+
+<div class="map-row">
+
+<div class="map-node">
+T
+</div>
+
+<div>
+<strong>Tarih</strong>
+<span>İnsan · toplum · değişim</span>
+</div>
+
+</div>
+
+
+<div class="map-row">
+
+<div class="map-node">
+S
+</div>
+
+<div>
+<strong>Sanat</strong>
+<span>Gözlem · ifade · yaratıcılık</span>
+</div>
+
+</div>
+
+
+<div class="map-row">
+
+<div class="map-node">
+B
+</div>
+
+<div>
+<strong>Bilim</strong>
+<span>Araştırma · yöntem · kanıt</span>
+</div>
+
+</div>
+
+
+<div class="map-row">
+
+<div class="map-node">
+T
+</div>
+
+<div>
+<strong>Teknoloji</strong>
+<span>Modelleme · üretim · uygulama</span>
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- ECOSYSTEM -->
+
+<section id="baglantilar">
+
+<div class="container">
+
+<div class="section-head">
+
+<div class="section-kicker">
+07 · DİJİTAL EKOSİSTEM
+</div>
+
+<h2>
+Çalışmalarımı keşfedin
+</h2>
+
+<p>
+Eğitim, video, kod ve dijital üretim
+çalışmalarımın farklı noktaları.
+</p>
+
+</div>
+
+
+<div class="ecosystem">
+
+
+<div class="eco soft">
+
+<div class="eco-icon">
+EDU
+</div>
+
+<h3>Udemy</h3>
+
+<p>
+Eğitim ve araştırma çalışmaları.
+</p>
+
+<a href="https://www.udemy.com/user/okan-kaplan-7/"
+target="_blank"
+rel="noopener">
+Profili Gör →
+</a>
+
+</div>
+
+
+<div class="eco soft">
+
+<div class="eco-icon">
+YT
+</div>
+
+<h3>YouTube</h3>
+
+<p>
+Video anlatımlar ve dijital deneyler.
+</p>
+
+<a href="https://youtube.com/@bilgibeceri"
+target="_blank"
+rel="noopener">
+Kanalı Gör →
+</a>
+
+</div>
+
+
+<div class="eco soft">
+
+<div class="eco-icon">
+GH
+</div>
+
+<h3>GitHub</h3>
+
+<p>
+Kod, projeler ve teknik çalışmalar.
+</p>
+
+<a href="https://okankaplanedu.github.io/"
+target="_blank"
+rel="noopener">
+Projeleri Gör →
+</a>
+
+</div>
+
+
+<div class="eco soft">
+
+<div class="eco-icon">
+BB
+</div>
+
+<h3>Bilgi-Beceri</h3>
+
+<p>
+Bilgiyi beceriye dönüştüren üretim ekosistemi.
+</p>
+
+<a href="https://bilgibeceri.com"
+target="_blank"
+rel="noopener">
+Siteyi Gör →
+</a>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- NETWORK -->
+
+<section>
+
+<div class="container">
+
+<div class="network soft">
+
+<div class="section-kicker">
+08 · FİKİR ALIŞVERİŞİ
+</div>
+
+<h2>
+Farklı disiplinler arasında bağlantılar kurmak
+</h2>
+
+<p>
+Bir hekimin insanı gözlemleme biçimi;
+bir eğitimcinin öğrenmeye bakışı;
+bir araştırmacının kaynak değerlendirme yöntemi;
+bir sanatçının dünyayı yorumlama biçimi
+ve bir yazılımcının sistem kurma yaklaşımı
+bir araya geldiğinde yeni sorular ortaya çıkabilir.
+</p>
+
+<div class="network-actions">
+
+<a class="link-btn primary"
+href="mailto:bilgi@bilgibeceri.com">
+İletişime Geç
+</a>
+
+<a class="link-btn"
+href="https://okankaplanedu.github.io/"
+target="_blank"
+rel="noopener">
+Dijital Çalışmaları Gör
+</a>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+</main>
+
+
+<footer>
+
+<div class="container footer-inner">
+
+<div>
+© 2026 Okan Kaplan
+</div>
+
+<div class="footer-links">
+
+<a href="https://www.udemy.com/user/okan-kaplan-7/"
+target="_blank"
+rel="noopener">
+Udemy
+</a>
+
+<a href="https://youtube.com/@bilgibeceri"
+target="_blank"
+rel="noopener">
+YouTube
+</a>
+
+<a href="https://okankaplanedu.github.io/"
+target="_blank"
+rel="noopener">
+GitHub
+</a>
+
+<a href="https://bilgibeceri.com"
+target="_blank"
+rel="noopener">
+Bilgi-Beceri
+</a>
+
+</div>
+
+</div>
+
+</footer>
+
+
+<script>
+
+/* ==========================================
+   SMALL INTERACTION LAYER
+========================================== */
+
+document.querySelectorAll('a[href^="#"]').forEach(link => {
+
+    link.addEventListener('click', function(e){
+
+        const target = document.querySelector(this.getAttribute('href'));
+
+        if(target){
+
+            e.preventDefault();
+
+            target.scrollIntoView({
+                behavior:'smooth',
+                block:'start'
+            });
+
+        }
+
+    });
+
+});
+
+
+/* Subtle reveal */
+
+const observer = new IntersectionObserver(
+(entries) => {
+
+    entries.forEach(entry => {
+
+        if(entry.isIntersecting){
+
+            entry.target.animate(
+                [
+                    {
+                        opacity:0,
+                        transform:'translateY(18px)'
+                    },
+                    {
+                        opacity:1,
+                        transform:'translateY(0)'
+                    }
+                ],
+                {
+                    duration:650,
+                    easing:'cubic-bezier(.2,.7,.2,1)',
+                    fill:'forwards'
+                }
+            );
+
+            observer.unobserve(entry.target);
+
+        }
+
+    });
+
+},
+{
+    threshold:.08
+});
+
+
+document
+.querySelectorAll('.soft')
+.forEach(el => observer.observe(el));
+
+</script>
+
+</body>
+</html>
